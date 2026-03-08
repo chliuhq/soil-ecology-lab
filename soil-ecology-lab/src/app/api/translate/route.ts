@@ -21,12 +21,11 @@ export async function POST(req: NextRequest) {
   const prompt = `Translate the following JSON values from Chinese to ${LANG_NAMES[targetLang]}. Keep the JSON keys unchanged. Only output the translated JSON, no explanation.\n\n${JSON.stringify(texts, null, 2)}`;
 
   try {
-    const response = await fetch(`${BASE_URL}/v1/messages`, {
+    const response = await fetch(`${BASE_URL}/v1/chat/completions`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": ANTHROPIC_API_KEY,
-        "anthropic-version": "2023-06-01",
+        "Authorization": `Bearer ${ANTHROPIC_API_KEY}`,
       },
       body: JSON.stringify({ model: MODEL, max_tokens: 4096, messages: [{ role: "user", content: prompt }] }),
     });
@@ -37,7 +36,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json();
-    const text = data.content?.[0]?.text || "{}";
+    const text = data.choices?.[0]?.message?.content || "{}";
     const jsonMatch = text.match(/\{[\s\S]*\}/);
     const translated = jsonMatch ? JSON.parse(jsonMatch[0]) : {};
     return NextResponse.json({ translated });

@@ -31,14 +31,17 @@ export async function POST(req: NextRequest) {
   ];
 
   try {
-    const response = await fetch(`${BASE_URL}/v1/messages`, {
+    const response = await fetch(`${BASE_URL}/v1/chat/completions`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": ANTHROPIC_API_KEY,
-        "anthropic-version": "2023-06-01",
+        "Authorization": `Bearer ${ANTHROPIC_API_KEY}`,
       },
-      body: JSON.stringify({ model: MODEL, max_tokens: 1024, system: SYSTEM_PROMPT, messages }),
+      body: JSON.stringify({
+        model: MODEL,
+        max_tokens: 1024,
+        messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
+      }),
     });
 
     if (!response.ok) {
@@ -47,7 +50,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json();
-    const reply = data.content?.[0]?.text || "抱歉，暂时无法回答。";
+    const reply = data.choices?.[0]?.message?.content || "抱歉，暂时无法回答。";
     return NextResponse.json({ reply });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
