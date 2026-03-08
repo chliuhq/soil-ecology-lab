@@ -9,7 +9,7 @@ export async function GET() {
   const results: any[] = [];
 
   // 测试不同的认证方式和路径组合
-  const tests = [
+  const tests: { label: string; url: string; headers: Record<string, string> }[] = [
     { label: "x-api-key + /v1/messages", url: `${BASE_URL}/v1/messages`, headers: { "Content-Type": "application/json", "x-api-key": ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" } },
     { label: "Bearer + /v1/messages", url: `${BASE_URL}/v1/messages`, headers: { "Content-Type": "application/json", "Authorization": `Bearer ${ANTHROPIC_API_KEY}`, "anthropic-version": "2023-06-01" } },
     { label: "Bearer + /v1/messages (no version)", url: `${BASE_URL}/v1/messages`, headers: { "Content-Type": "application/json", "Authorization": `Bearer ${ANTHROPIC_API_KEY}` } },
