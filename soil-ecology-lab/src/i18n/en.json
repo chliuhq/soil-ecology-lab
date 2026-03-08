@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "people": "People",
+    "research": "Research",
+    "publications": "Publications",
+    "projects": "Projects",
+    "joinus": "Join Us",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Soil Ecology & Conservation Lab",
+    "subtitle": "Guangxi University",
+    "description": "We focus on plant diversity–soil water-carbon coupling, soil organic carbon dynamics, soil erosion and conservation, and remote sensing-based monitoring. Our research integrates meta-analysis, field observations, and laboratory experiments across multiple scales.",
+    "learnMore": "Learn More",
+    "featuredPubs": "Featured Publications",
+    "viewAllPubs": "View All Publications",
+    "researchAreas": "Research Areas",
+    "latestNews": "Latest News",
+    "viewAllNews": "View All"
+  },
+  "people": {
+    "title": "People",
+    "pi": "Principal Investigators",
+    "students": "Graduate Students",
+    "alumni": "Alumni",
+    "noStudents": "We are recruiting graduate students. Welcome to join us!"
+  },
+  "research": {
+    "title": "Research",
+    "relatedPubs": "Related Publications"
+  },
+  "publications": {
+    "title": "Publications",
+    "all": "All",
+    "year": "Year",
+    "journal": "Journal",
+    "doi": "DOI",
+    "pdf": "PDF",
+    "abstract": "Abstract",
+    "paperLink": "Paper Link",
+    "summary": "Paper Summary",
+    "collapseSummary": "Collapse",
+    "keyFindings": "Research Highlights"
+  },
+  "projects": {
+    "title": "Projects",
+    "ongoing": "Ongoing",
+    "completed": "Completed",
+    "pi": "PI",
+    "co": "Co-PI",
+    "funding": "Funding"
+  },
+  "joinus": {
+    "title": "Join Us",
+    "subtitle": "Welcome to Our Lab",
+    "directions": "Programs",
+    "requirements": "What We Look For",
+    "contact": "Contact",
+    "welcome": "Our lab is committed to cultivating students' innovation, research literacy, and practical skills, providing comprehensive guidance and rich research opportunities with a well-equipped platform and a collaborative team atmosphere."
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "Address",
+    "email": "Email",
+    "profiles": "Academic Profiles"
+  },
+  "common": {
+    "switchLang": "中文",
+    "copyright": "Soil Ecology & Conservation Lab · Guangxi University"
+  }
+}

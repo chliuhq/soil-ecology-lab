@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "people": "团队成员",
+    "research": "研究方向",
+    "publications": "论文发表",
+    "projects": "科研项目",
+    "joinus": "招生信息",
+    "contact": "联系我们"
+  },
+  "home": {
+    "title": "土壤生态与水土保持课题组",
+    "subtitle": "广西大学",
+    "description": "聚焦植物多样性与土壤水碳耦合关系、土壤有机碳形成与转化机制、土壤侵蚀与水土保持、多源遥感定量监测等前沿方向，综合采用荟萃分析、野外观测和室内实验等方法，开展多尺度土壤生态学研究。",
+    "learnMore": "了解更多",
+    "featuredPubs": "精选论文",
+    "viewAllPubs": "查看全部论文",
+    "researchAreas": "研究方向",
+    "latestNews": "最新动态",
+    "viewAllNews": "查看全部"
+  },
+  "people": {
+    "title": "团队成员",
+    "pi": "课题组负责人",
+    "students": "研究生",
+    "alumni": "已毕业校友",
+    "noStudents": "课题组正在招收研究生，欢迎有志青年加入！"
+  },
+  "research": {
+    "title": "研究方向",
+    "relatedPubs": "相关论文"
+  },
+  "publications": {
+    "title": "论文发表",
+    "all": "全部",
+    "year": "年份",
+    "journal": "期刊",
+    "doi": "DOI",
+    "pdf": "PDF",
+    "abstract": "摘要",
+    "paperLink": "论文链接",
+    "summary": "论文解读",
+    "collapseSummary": "收起",
+    "keyFindings": "研究要点"
+  },
+  "projects": {
+    "title": "科研项目",
+    "ongoing": "在研项目",
+    "completed": "已结题项目",
+    "pi": "主持",
+    "co": "参与",
+    "funding": "资助"
+  },
+  "joinus": {
+    "title": "招生信息",
+    "subtitle": "欢迎加入我们的课题组",
+    "directions": "招生方向",
+    "requirements": "我们期待的你",
+    "contact": "联系方式",
+    "welcome": "课题组以培养学生的创新能力、科研素养和实践技能为核心，提供多方位的指导和丰富的科研实践机会，拥有完备的实验平台和融洽的团队氛围。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "address": "地址",
+    "email": "邮箱",
+    "profiles": "学术主页"
+  },
+  "common": {
+    "switchLang": "English",
+    "copyright": "土壤生态与水土保持课题组 · 广西大学"
+  }
+}

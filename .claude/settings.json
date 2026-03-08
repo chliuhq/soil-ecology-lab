@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add -A)",
+      "Bash(git commit:*)",
+      "Bash(git config user.name \"chliuhq\")",
+      "Bash(git config user.email \"chliuhq@users.noreply.github.com\")",
+      "Bash(git branch -M main)",
+      "Bash(git push -u origin main)",
+      "Bash(git push)"
+    ],
+    "additionalDirectories": [
+      "C:\\temp-build",
+      "\\\\Desktop-g9u3urg\\e\\Claude\\Github_SoilEcoloy\\soil-ecology-lab\\public\\images"
+    ]
+  }
+}

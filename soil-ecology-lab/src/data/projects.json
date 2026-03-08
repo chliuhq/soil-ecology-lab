@@ -1,0 +1,100 @@
+[
+  {
+    "title": {
+      "zh": "树种多样性调控多源DOM输入驱动土壤碳形成与稳定",
+      "en": "Tree Species Diversity Regulates Multi-source DOM Input Driving Soil Carbon Formation and Stabilization"
+    },
+    "funding": {
+      "zh": "广西自然科学基金青年科学基金项目",
+      "en": "Guangxi Natural Science Foundation for Young Scientists"
+    },
+    "period": "2026.01–2028.12",
+    "role": "pi",
+    "member": "huaqing-liu",
+    "status": "ongoing"
+  },
+  {
+    "title": {
+      "zh": "广西坡耕地土壤侵蚀定量评价与未来趋势预测",
+      "en": "Quantitative Assessment and Future Trend Prediction of Soil Erosion on Sloping Farmland in Guangxi"
+    },
+    "funding": {
+      "zh": "广西自然科学基金青年科学基金项目",
+      "en": "Guangxi Natural Science Foundation for Young Scientists"
+    },
+    "period": "2026.01–2028.12",
+    "role": "pi",
+    "member": "jiahui-yang",
+    "status": "ongoing"
+  },
+  {
+    "title": {
+      "zh": "高层次人才启动经费",
+      "en": "High-level Talent Start-up Fund"
+    },
+    "funding": {
+      "zh": "广西大学",
+      "en": "Guangxi University"
+    },
+    "period": "2025.08–2031.08",
+    "role": "pi",
+    "member": "jiahui-yang",
+    "status": "ongoing"
+  },
+  {
+    "title": {
+      "zh": "中国科协青年人才托举工程博士生专项计划",
+      "en": "CAST Young Talent Support Program for Doctoral Students"
+    },
+    "funding": {
+      "zh": "中国科学技术协会",
+      "en": "China Association for Science and Technology"
+    },
+    "period": "2024.01–2025.12",
+    "role": "pi",
+    "member": "jiahui-yang",
+    "status": "completed"
+  },
+  {
+    "title": {
+      "zh": "混交林根系重塑土壤孔隙网络调控水碳迁移的机理研究",
+      "en": "Mechanisms of Mixed Forest Root Systems Reshaping Soil Pore Networks to Regulate Water-Carbon Migration"
+    },
+    "funding": {
+      "zh": "广西森林生态与保育重点实验室开放课题",
+      "en": "Open Project of Guangxi Key Laboratory of Forest Ecology and Conservation"
+    },
+    "period": "2026.01–2027.12",
+    "role": "co",
+    "member": "huaqing-liu",
+    "status": "ongoing"
+  },
+  {
+    "title": {
+      "zh": "国家自然科学基金区域创新联合基金重点项目",
+      "en": "NSFC Regional Innovation Joint Fund Key Project"
+    },
+    "funding": {
+      "zh": "国家自然科学基金",
+      "en": "National Natural Science Foundation of China"
+    },
+    "period": "2023.01–2026.12",
+    "role": "co",
+    "member": "huaqing-liu",
+    "status": "ongoing"
+  },
+  {
+    "title": {
+      "zh": "十四五重点研发计划项目",
+      "en": "14th Five-Year National Key R&D Program"
+    },
+    "funding": {
+      "zh": "科技部",
+      "en": "Ministry of Science and Technology"
+    },
+    "period": "2021.07–2025.12",
+    "role": "co",
+    "member": "huaqing-liu",
+    "status": "completed"
+  }
+]

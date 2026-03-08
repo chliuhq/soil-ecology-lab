@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone https://github.com/chliuhq/deeppolicylab.github.io.git)",
+      "Read(///Desktop-g9u3urg/e/Claude/**)",
+      "Bash(npx create-next-app@latest soil-ecology-lab --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
+      "Read(///Desktop-g9u3urg/e/Claude/Github_SoilEcoloy/**)",
+      "Bash(npm init -y)",
+      "Bash(npm install next@14 react react-dom typescript @types/react @types/node tailwindcss postcss autoprefixer)",
+      "Bash(npm uninstall tailwindcss postcss autoprefixer)",
+      "Bash(npm install tailwindcss@3 postcss@8 autoprefixer@10)",
+      "Bash(npx next build)",
+      "Bash(net use Z: \"\\\\\\\\Desktop-g9u3urg\\\\e\")",
+      "Bash(net use)",
+      "Bash(cmd.exe /c \"pushd \\\\\\\\Desktop-g9u3urg\\\\e\\\\Claude\\\\Github_SoilEcoloy\\\\soil-ecology-lab && npx next build\")",
+      "Bash(npx tsc --noEmit)",
+      "Read(///desktop-g9u3urg/e/Claude/Github_SoilEcoloy/**)",
+      "Bash(node -e \"const d=require\\(''./src/data/publications.json''\\); d.filter\\(p=>p.category&&p.category.includes\\(''featured''\\)\\).forEach\\(p=>console.log\\(''id=''+p.id+'' member=''+p.member+'' title=''+p.title.substring\\(0,60\\)\\)\\)\")",
+      "Bash(node -e \":*)",
+      "Bash(cp -r \"//desktop-g9u3urg/e/Claude/Github_SoilEcoloy/soil-ecology-lab\" /c/temp-build)"
+    ]
+  }
+}

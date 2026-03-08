@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== 全局基础样式 ===== */
+html { scroll-behavior: smooth; }
+body { @apply text-text-main font-sans text-base md:text-lg leading-relaxed; }
+
+/* ===== 学术风格链接 ===== */
+a { @apply transition-colors duration-200; }
+
+/* ===== 导航栏样式 ===== */
+.nav-link {
+  @apply text-base font-medium text-gray-600 hover:text-primary transition-colors px-3 py-2 rounded-md;
+}
+.nav-link.active {
+  @apply text-primary bg-green-50;
+}
+
+/* ===== 卡片悬停效果 ===== */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* ===== 论文条目 ===== */
+.pub-item {
+  @apply border-l-4 border-transparent hover:border-primary pl-4 py-3 transition-all duration-200;
+}
+
+/* ===== 标签按钮 ===== */
+.tag {
+  @apply inline-block text-sm px-2.5 py-1 rounded-full font-medium;
+}
+.tag-primary { @apply bg-green-100 text-green-800; }
+.tag-accent { @apply bg-amber-100 text-amber-800; }
+
+/* ===== Section 标题 ===== */
+.section-title {
+  @apply text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-2;
+}
+.section-subtitle {
+  @apply text-text-light text-lg md:text-xl mb-8;
+}
+
+/* ===== 响应式容器 ===== */
+.container-main {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}

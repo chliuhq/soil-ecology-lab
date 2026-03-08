@@ -1,0 +1,217 @@
+/**
+ * 构建脚本：将 content/ 目录下的 Markdown 文件转换为 src/data/ 下的 JSON 文件
+ * Build script: Convert Markdown files in content/ to JSON files in src/data/
+ *
+ * 用法 / Usage:  node scripts/build-content.js
+ */
+
+const fs = require("fs");
+const path = require("path");
+const matter = require("gray-matter");
+
+const CONTENT_DIR = path.join(__dirname, "..", "content");
+const DATA_DIR = path.join(__dirname, "..", "src", "data");
+
+// ── 工具函数 ──────────────────────────────────────────────
+function readMdFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".md"))
+    .sort()
+    .map((f) => {
+      const raw = fs.readFileSync(path.join(dir, f), "utf-8");
+      const { data, content } = matter(raw);
+      return { ...data, _content: content.trim(), _file: f };
+    });
+}
+
+function parseBio(content) {
+  // 从 markdown 正文中提取中英文简介，用 --- 分隔
+  const parts = content.split(/^---$/m).map((s) => s.trim());
+  // 去掉 ## 标题行
+  const clean = (s) =>
+    s
+      .replace(/^##.*$/gm, "")
+      .trim();
+  const zh = parts[0] ? clean(parts[0]) : "";
+  const en = parts[1] ? clean(parts[1]) : "";
+  return { zh, en };
+}
+
+function parsePubSummary(content) {
+  // 解析论文摘要：中文摘要、研究亮点、English Summary、Highlights
+  const sections = content.split(/^## /m).filter(Boolean);
+  let zh = "", en = "";
+  let highlights_zh = [], highlights_en = [];
+
+  for (const sec of sections) {
+    const lines = sec.trim().split("\n");
+    const title = lines[0].trim();
+    const body = lines.slice(1).join("\n").trim();
+
+    if (title.includes("中文")) {
+      const parts = body.split(/^### 研究亮点$/m);
+      zh = parts[0].trim();
+      if (parts[1]) {
+        highlights_zh = parts[1]
+          .trim()
+          .split("\n")
+          .filter((l) => l.startsWith("- "))
+          .map((l) => l.replace(/^- /, ""));
+      }
+    } else if (title.includes("English")) {
+      const parts = body.split(/^### Highlights$/m);
+      en = parts[0].trim();
+      if (parts[1]) {
+        highlights_en = parts[1]
+          .trim()
+          .split("\n")
+          .filter((l) => l.startsWith("- "))
+          .map((l) => l.replace(/^- /, ""));
+      }
+    }
+  }
+  return { zh, en, highlights: { zh: highlights_zh, en: highlights_en } };
+}
+
+// ── 构建 news.json ────────────────────────────────────────
+function buildNews() {
+  const items = readMdFiles(path.join(CONTENT_DIR, "news"));
+  return items.map(({ date, title_zh, title_en }) => ({
+    date,
+    title: { zh: title_zh, en: title_en },
+  }));
+}
+
+// ── 构建 research.json ────────────────────────────────────
+function buildResearch() {
+  const items = readMdFiles(path.join(CONTENT_DIR, "research"));
+  return items.map(({ id, title_zh, title_en, description_zh, description_en, icon, image }) => ({
+    id,
+    title: { zh: title_zh, en: title_en },
+    description: { zh: description_zh, en: description_en },
+    icon,
+    image,
+  }));
+}
+
+// ── 构建 projects.json ────────────────────────────────────
+function buildProjects() {
+  const items = readMdFiles(path.join(CONTENT_DIR, "projects"));
+  return items.map(({ title_zh, title_en, funding_zh, funding_en, period, role, member, status }) => ({
+    title: { zh: title_zh, en: title_en },
+    funding: { zh: funding_zh, en: funding_en },
+    period,
+    role,
+    member,
+    status,
+  }));
+}
+
+// ── 构建 publications.json ────────────────────────────────
+function buildPublications() {
+  const items = readMdFiles(path.join(CONTENT_DIR, "publications"));
+  return items.map((item) => {
+    const summary = parsePubSummary(item._content);
+    const images = (item.images || []).map((img) => ({
+      src: img.src,
+      caption: { zh: img.caption_zh || "", en: img.caption_en || "" },
+    }));
+    return {
+      id: item.id,
+      authors: item.authors,
+      title: item.title,
+      journal: item.journal,
+      year: item.year,
+      volume: item.volume || "",
+      pages: item.pages || "",
+      doi: item.doi || "",
+      pdf: item.pdf || "",
+      category: item.category || [],
+      member: item.member || "",
+      summary: { zh: summary.zh, en: summary.en, highlights: summary.highlights, images },
+    };
+  });
+}
+
+// ── 构建 members.json ─────────────────────────────────────
+function buildMembers() {
+  const piDir = path.join(CONTENT_DIR, "members", "pi");
+  const studentsDir = path.join(CONTENT_DIR, "members", "students");
+  const alumniDir = path.join(CONTENT_DIR, "members", "alumni");
+
+  const buildPi = (item) => {
+    const bio = parseBio(item._content);
+    return {
+      id: item.id,
+      name: { zh: item.name_zh, en: item.name_en },
+      title: { zh: item.title_zh, en: item.title_en },
+      department: { zh: item.department_zh, en: item.department_en },
+      departmentUrl: item.departmentUrl || "",
+      universityUrl: item.universityUrl || "",
+      admissionUrl: item.admissionUrl || "",
+      email: item.email || "",
+      photo: item.photo || "",
+      researchgate: item.researchgate || "",
+      googlescholar: item.googlescholar || "",
+      education: (item.education || []).map((e) => ({
+        period: e.period,
+        institution: { zh: e.institution_zh, en: e.institution_en },
+        url: e.url || "",
+        degree: { zh: e.degree_zh, en: e.degree_en },
+      })),
+      bio,
+      courses: { zh: item.courses_zh || [], en: item.courses_en || [] },
+      enrollment: { zh: item.enrollment_zh || "", en: item.enrollment_en || "" },
+    };
+  };
+
+  const buildStudent = (item) => ({
+    id: item.id,
+    name: { zh: item.name_zh, en: item.name_en },
+    major: { zh: item.major_zh, en: item.major_en },
+    enrollment: item.enrollment || "",
+    undergraduate: { zh: item.undergraduate_zh, en: item.undergraduate_en },
+    advisor: item.advisor || "",
+  });
+
+  const buildAlumnus = (item) => ({
+    id: item.id,
+    name: { zh: item.name_zh, en: item.name_en },
+    degree: { zh: item.degree_zh || "", en: item.degree_en || "" },
+    graduation: item.graduation || "",
+    currentPosition: { zh: item.currentPosition_zh || "", en: item.currentPosition_en || "" },
+  });
+
+  return {
+    pi: readMdFiles(piDir).map(buildPi),
+    students: readMdFiles(studentsDir).map(buildStudent),
+    alumni: readMdFiles(alumniDir).map(buildAlumnus),
+  };
+}
+
+// ── 主函数 ────────────────────────────────────────────────
+function main() {
+  // 确保输出目录存在
+  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+
+  const write = (name, data) => {
+    const file = path.join(DATA_DIR, name);
+    fs.writeFileSync(file, JSON.stringify(data, null, 2) + "\n", "utf-8");
+    console.log(`  ✓ ${name}  (${Array.isArray(data) ? data.length + " 条" : "OK"})`);
+  };
+
+  console.log("\n📦 正在从 Markdown 生成 JSON 数据...\n");
+
+  write("news.json", buildNews());
+  write("research.json", buildResearch());
+  write("projects.json", buildProjects());
+  write("publications.json", buildPublications());
+  write("members.json", buildMembers());
+
+  console.log("\n✅ 全部完成！JSON 数据已更新到 src/data/\n");
+}
+
+main();
+

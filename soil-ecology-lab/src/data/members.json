@@ -1,0 +1,180 @@
+{
+  "pi": [
+    {
+      "id": "huaqing-liu",
+      "name": {
+        "zh": "刘华清",
+        "en": "Huaqing Liu"
+      },
+      "title": {
+        "zh": "助理教授 / 博士",
+        "en": "Assistant Professor / Ph.D."
+      },
+      "department": {
+        "zh": "广西大学林学院",
+        "en": "College of Forestry, Guangxi University"
+      },
+      "departmentUrl": "https://lxy.gxu.edu.cn/",
+      "universityUrl": "https://www.gxu.edu.cn/",
+      "admissionUrl": "https://lxy.gxu.edu.cn/yjsjy/yjszs.htm",
+      "email": "huaqingliu@gxu.edu.cn",
+      "photo": "/images/team/HuaqingLiu.jpg",
+      "researchgate": "https://www.researchgate.net/profile/Huaqing-Liu-8",
+      "googlescholar": "https://scholar.google.com/citations?user=AyQBphkAAAAJ",
+      "education": [
+        {
+          "period": "2021.09–2025.06",
+          "institution": {
+            "zh": "中国科学院大学 水土保持与生态环境研究中心",
+            "en": "University of Chinese Academy of Sciences, Institute of Soil and Water Conservation"
+          },
+          "url": "http://www.iswc.ac.cn/",
+          "degree": {
+            "zh": "农学博士（土壤学）",
+            "en": "Ph.D. in Soil Science"
+          }
+        },
+        {
+          "period": "2018.09–2020.06",
+          "institution": {
+            "zh": "山东农业大学 水利土木工程学院",
+            "en": "Shandong Agricultural University, College of Water Conservancy and Civil Engineering"
+          },
+          "url": "https://shuitu.sdau.edu.cn/",
+          "degree": {
+            "zh": "工程硕士（水利工程）",
+            "en": "M.Eng. in Water Resources Engineering"
+          }
+        },
+        {
+          "period": "2014.09–2018.06",
+          "institution": {
+            "zh": "山东农业大学 水利土木工程学院",
+            "en": "Shandong Agricultural University, College of Water Conservancy and Civil Engineering"
+          },
+          "url": "https://shuitu.sdau.edu.cn/",
+          "degree": {
+            "zh": "工学学士（水文与水资源工程）",
+            "en": "B.Eng. in Hydrology and Water Resources"
+          }
+        }
+      ],
+      "bio": {
+        "zh": "主要关注植物多样性与土壤水碳耦合关系、土壤有机碳形成与转化机制和土壤侵蚀与水土保持等方向。综合采用公共数据库、荟萃（meta）分析和野外以及室内实验等方法，开展全球、区域和样地尺度的土壤生态学、森林生态系统和生态水文等方向的研究。",
+        "en": "My research focuses on plant diversity–soil water-carbon coupling, soil organic carbon formation and transformation mechanisms, and soil erosion and conservation. I integrate public databases, meta-analysis, field observations, and laboratory experiments to conduct multi-scale research in soil ecology, forest ecosystems, and ecohydrology."
+      },
+      "courses": {
+        "zh": [
+          "数据采集与预处理",
+          "恢复生态学",
+          "景观生态学"
+        ],
+        "en": [
+          "Data Collection and Preprocessing",
+          "Restoration Ecology",
+          "Landscape Ecology"
+        ]
+      },
+      "enrollment": {
+        "zh": "生态学（学硕）；林业（专硕）；风景园林（专硕）",
+        "en": "Ecology (Academic Master); Forestry (Professional Master); Landscape Architecture (Professional Master)"
+      }
+    },
+    {
+      "id": "jiahui-yang",
+      "name": {
+        "zh": "杨佳慧",
+        "en": "Jiahui Yang"
+      },
+      "title": {
+        "zh": "助理教授 / 博士",
+        "en": "Assistant Professor / Ph.D."
+      },
+      "department": {
+        "zh": "广西大学农学院",
+        "en": "College of Agriculture, Guangxi University"
+      },
+      "departmentUrl": "https://nxy.gxu.edu.cn/",
+      "universityUrl": "https://www.gxu.edu.cn/",
+      "admissionUrl": "https://nxy.gxu.edu.cn/yjsjy/xkjs.htm",
+      "email": "jiahuiyang@gxu.edu.cn",
+      "photo": "/images/team/JiahuiYang.jpg",
+      "researchgate": "https://www.researchgate.net/profile/Jiahui-Yang-9",
+      "googlescholar": "https://scholar.google.com/citations?user=spXTiCIAAAAJ",
+      "education": [
+        {
+          "period": "2021.09–2025.06",
+          "institution": {
+            "zh": "西北农林科技大学 资源环境学院",
+            "en": "Northwest A&F University, College of Resources and Environment"
+          },
+          "url": "https://zhxy.nwsuaf.edu.cn/",
+          "degree": {
+            "zh": "农学博士（土壤学）",
+            "en": "Ph.D. in Soil Science"
+          }
+        },
+        {
+          "period": "2018.09–2021.06",
+          "institution": {
+            "zh": "山东农业大学 水利土木工程学院",
+            "en": "Shandong Agricultural University, College of Water Conservancy and Civil Engineering"
+          },
+          "url": "https://shuitu.sdau.edu.cn/",
+          "degree": {
+            "zh": "工学硕士（水利水电工程）",
+            "en": "M.Eng. in Hydraulic and Hydropower Engineering"
+          }
+        },
+        {
+          "period": "2014.09–2018.06",
+          "institution": {
+            "zh": "山东农业大学 水利土木工程学院",
+            "en": "Shandong Agricultural University, College of Water Conservancy and Civil Engineering"
+          },
+          "url": "https://shuitu.sdau.edu.cn/",
+          "degree": {
+            "zh": "工学学士（水利水电工程）",
+            "en": "B.Eng. in Hydraulic and Hydropower Engineering"
+          }
+        }
+      ],
+      "bio": {
+        "zh": "主要研究方向为多源遥感定量监测、热融灾害时空分布特征、水土保持与气候变化、土壤侵蚀过程与机理。",
+        "en": "My research focuses on multi-source remote sensing quantitative monitoring, spatiotemporal distribution of thaw-induced hazards, soil and water conservation under climate change, and soil erosion processes and mechanisms."
+      },
+      "courses": {
+        "zh": [
+          "水土保持学"
+        ],
+        "en": [
+          "Soil and Water Conservation"
+        ]
+      },
+      "enrollment": {
+        "zh": "农业资源与环境（学硕）；资源利用与植物保护（专硕）",
+        "en": "Agricultural Resources and Environment (Academic Master); Resource Utilization and Plant Protection (Professional Master)"
+      }
+    }
+  ],
+  "students": [
+    {
+      "id": "manyu-luo",
+      "name": {
+        "zh": "罗曼玉",
+        "en": "Manyu Luo"
+      },
+      "major": {
+        "zh": "资源利用与植物保护（专硕）",
+        "en": "Resource Utilization and Plant Protection (Professional Master)"
+      },
+      "enrollment": "2025.09",
+      "undergraduate": {
+        "zh": "福州大学",
+        "en": "Fuzhou University"
+      },
+      "advisor": "jiahui-yang"
+    }
+  ],
+  "alumni": []
+}
