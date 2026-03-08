@@ -22,7 +22,7 @@ export default function ChatWidget() {
     setMsgs((prev) => [...prev, userMsg]);
     setLoading(true);
     try {
-      const res = await fetch("/api/chat", {
+      const res = await fetch("/api/chat/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: q, history: msgs }),
