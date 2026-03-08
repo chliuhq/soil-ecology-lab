@@ -74,7 +74,7 @@ export default function JoinUsPage() {
       </h2>
       <div className="max-w-3xl space-y-3 text-text-light leading-relaxed mb-12">
         <p>{lt({
-          zh: "课题组秉持"以学生为中心"的培养理念，注重科研能力与综合素质的协同发展。我们相信每位学生都有独特的潜力，导师的角色是引导、支持和激发，而非简单的任务分配。",
+          zh: "课题组秉持「以学生为中心」的培养理念，注重科研能力与综合素质的协同发展。我们相信每位学生都有独特的潜力，导师的角色是引导、支持和激发，而非简单的任务分配。",
           en: "Our lab upholds a student-centered philosophy, emphasizing the synergistic development of research capabilities and comprehensive qualities. We believe every student has unique potential, and the advisor's role is to guide, support, and inspire rather than simply assign tasks."
         })}</p>
         <p>{lt({
