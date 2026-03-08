@@ -96,5 +96,19 @@
     "role": "co",
     "member": "huaqing-liu",
     "status": "completed"
+  },
+  {
+    "title": {
+      "zh": "高层次人才启动经费",
+      "en": "High-level Talent Start-up Fund"
+    },
+    "funding": {
+      "zh": "广西大学",
+      "en": "Guangxi University"
+    },
+    "period": "2025.08–2031.08",
+    "role": "pi",
+    "member": "huaqing-liu",
+    "status": "ongoing"
   }
 ]

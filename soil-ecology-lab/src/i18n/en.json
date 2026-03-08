@@ -20,6 +20,10 @@
     "latestNews": "Latest News",
     "viewAllNews": "View All"
   },
+  "news": {
+    "title": "News",
+    "readMore": "Read More"
+  },
   "people": {
     "title": "People",
     "pi": "Principal Investigators",

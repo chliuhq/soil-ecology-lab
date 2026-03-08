@@ -41,7 +41,11 @@ export default function PeoplePage() {
                 <p className="text-base text-text-light mt-1">
                   📧 <a href={`mailto:${m.email}`} className="hover:text-primary">{m.email}</a>
                 </p>
-                <div className="flex gap-3 mt-2">
+                <div className="flex gap-3 mt-2 flex-wrap">
+                  {(m as any).homepage && (
+                    <a href={(m as any).homepage} target="_blank" rel="noopener noreferrer"
+                       className="text-sm tag tag-primary">🏫 {lt({ zh: "学校主页", en: "University Profile" })}</a>
+                  )}
                   {m.researchgate && (
                     <a href={m.researchgate} target="_blank" rel="noopener noreferrer"
                        className="text-sm tag tag-primary">ResearchGate</a>

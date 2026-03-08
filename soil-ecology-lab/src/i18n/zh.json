@@ -20,6 +20,10 @@
     "latestNews": "最新动态",
     "viewAllNews": "查看全部"
   },
+  "news": {
+    "title": "新闻动态",
+    "readMore": "阅读详情"
+  },
   "people": {
     "title": "团队成员",
     "pi": "课题组负责人",

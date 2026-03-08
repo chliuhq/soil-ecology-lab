@@ -4,6 +4,8 @@ import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import publications from "@/data/publications.json";
 import research from "@/data/research.json";
 import news from "@/data/news.json";
+import projects from "@/data/projects.json";
+import members from "@/data/members.json";
 
 export default function HomePage() {
   const { t } = useI18n();
@@ -41,6 +43,26 @@ export default function HomePage() {
             >
               {t.nav.joinus}
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 数据概览 ===== */}
+      <section className="py-8 bg-white border-b border-gray-100">
+        <div className="container-main">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {[
+              { num: research.length, label: lt({ zh: "研究方向", en: "Research Areas" }), icon: "🔬" },
+              { num: publications.length, label: lt({ zh: "学术论文", en: "Publications" }), icon: "📄" },
+              { num: (projects as any[]).length, label: lt({ zh: "科研项目", en: "Projects" }), icon: "📋" },
+              { num: members.pi.length + members.students.length, label: lt({ zh: "团队成员", en: "Team Members" }), icon: "👥" },
+            ].map((s, i) => (
+              <div key={i}>
+                <span className="text-2xl">{s.icon}</span>
+                <p className="text-3xl font-bold text-primary mt-1">{s.num}</p>
+                <p className="text-sm text-text-light">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -103,12 +125,18 @@ export default function HomePage() {
           <h2 className="section-title text-center">{t.home.latestNews}</h2>
           <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
           <div className="max-w-2xl mx-auto space-y-4">
-            {news.slice(0, 5).map((n, i) => (
-              <div key={i} className="flex gap-4 items-start py-3 border-b border-gray-50">
+            {news.slice(0, 5).map((n: any, i: number) => (
+              <Link key={i} href={`/news#news-${n.id}`}
+                className="flex gap-4 items-start py-3 border-b border-gray-50 hover:bg-green-50/50 rounded px-2 -mx-2 transition-colors group">
                 <span className="text-base text-text-light whitespace-nowrap">{n.date}</span>
-                <p className="text-gray-900">{lt(n.title)}</p>
-              </div>
+                <p className="text-gray-900 group-hover:text-primary transition-colors">{lt(n.title)}</p>
+              </Link>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/news" className="text-primary hover:underline font-medium">
+              {t.home.viewAllNews} →
+            </Link>
           </div>
         </div>
       </section>

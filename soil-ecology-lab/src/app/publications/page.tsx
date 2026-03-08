@@ -4,12 +4,29 @@ import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import publications from "@/data/publications.json";
 
+function genBibtex(pub: any) {
+  const key = `${pub.authors.split(",")[0].trim().split(" ").pop()}${pub.year}`;
+  return `@article{${key},
+  author    = {${pub.authors.replace(/\*/g, "")}},
+  title     = {${pub.title}},
+  journal   = {${pub.journal}},
+  year      = {${pub.year}},${pub.volume ? `\n  volume    = {${pub.volume}},` : ""}${pub.pages ? `\n  pages     = {${pub.pages}},` : ""}${pub.doi ? `\n  doi       = {${pub.doi}},` : ""}
+}`;
+}
+
+function genApa(pub: any) {
+  const authors = pub.authors.replace(/\*/g, "");
+  return `${authors} (${pub.year}). ${pub.title}. ${pub.journal}${pub.volume ? `, ${pub.volume}` : ""}${pub.pages ? `, ${pub.pages}` : ""}.${pub.doi ? ` https://doi.org/${pub.doi}` : ""}`;
+}
+
 export default function PublicationsPage() {
   const { t } = useI18n();
   const lt = useLocaleText();
   const [filter, setFilter] = useState<string>("all");
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+  const [citeId, setCiteId] = useState<number | null>(null);
+  const [copied, setCopied] = useState("");
 
   const sorted = [...publications].sort((a, b) => b.year - a.year);
   const years = [...new Set(sorted.map((p) => p.year))];
@@ -119,13 +136,47 @@ export default function PublicationsPage() {
                               </svg>
                             </button>
                           )}
+                          <button
+                            onClick={() => { setCiteId(citeId === pub.id ? null : pub.id); setCopied(""); }}
+                            className={`inline-flex items-center gap-1 text-sm px-3 py-1 rounded-full transition-colors ${
+                              citeId === pub.id ? "bg-purple-200 text-purple-900" : "bg-purple-100 text-purple-800 hover:bg-purple-200"
+                            }`}
+                          >
+                            <span>{lt({ zh: "引用", en: "Cite" })}</span>
+                          </button>
                         </div>
+
+                        {/* 引用格式面板 */}
+                        {citeId === pub.id && (
+                          <div className="mt-3 p-4 bg-purple-50 rounded-lg border border-purple-100 text-sm space-y-3">
+                            <div>
+                              <div className="flex items-center justify-between mb-1">
+                                <span className="font-semibold text-purple-900">APA</span>
+                                <button onClick={() => { navigator.clipboard.writeText(genApa(pub)); setCopied("apa"); }}
+                                  className="text-xs text-purple-700 hover:text-purple-900">
+                                  {copied === "apa" ? "✓ Copied" : lt({ zh: "复制", en: "Copy" })}
+                                </button>
+                              </div>
+                              <p className="text-text-light bg-white rounded p-2 break-all">{genApa(pub)}</p>
+                            </div>
+                            <div>
+                              <div className="flex items-center justify-between mb-1">
+                                <span className="font-semibold text-purple-900">BibTeX</span>
+                                <button onClick={() => { navigator.clipboard.writeText(genBibtex(pub)); setCopied("bib"); }}
+                                  className="text-xs text-purple-700 hover:text-purple-900">
+                                  {copied === "bib" ? "✓ Copied" : lt({ zh: "复制", en: "Copy" })}
+                                </button>
+                              </div>
+                              <pre className="text-text-light bg-white rounded p-2 overflow-x-auto whitespace-pre-wrap text-xs">{genBibtex(pub)}</pre>
+                            </div>
+                          </div>
+                        )}
 
                         {/* 论文解读展开区 - 图文并茂 */}
                         {expandedId === pub.id && summary && (
                           <div className="mt-3 p-5 bg-amber-50 rounded-lg border border-amber-100 text-base text-text-main leading-relaxed">
                             {/* 概述 */}
-                            <p className="mb-4">{lt(summary)}</p>
+                            <div className="mb-4 pub-summary" dangerouslySetInnerHTML={{ __html: lt(summary) as string }} />
 
                             {/* 图片区域 */}
                             {hasImages && (

@@ -13,6 +13,7 @@ email: "huaqingliu@gxu.edu.cn"
 photo: "/images/team/HuaqingLiu.jpg"
 researchgate: "https://www.researchgate.net/profile/Huaqing-Liu-8"
 googlescholar: "https://scholar.google.com/citations?user=AyQBphkAAAAJ"
+homepage: "https://prof.gxu.edu.cn/teacherDetails/5d9bd35f-9cc5-41cc-8aa7-3f25fef5fe4f"
 education:
   - period: "2021.09–2025.06"
     institution_zh: "中国科学院大学 水土保持与生态环境研究中心"

@@ -8,6 +8,7 @@
 const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
+const { marked } = require("marked");
 
 const CONTENT_DIR = path.join(__dirname, "..", "content");
 const DATA_DIR = path.join(__dirname, "..", "src", "data");
@@ -72,15 +73,36 @@ function parsePubSummary(content) {
       }
     }
   }
-  return { zh, en, highlights: { zh: highlights_zh, en: highlights_en } };
+  // 将 markdown 转为 HTML
+  const zhHtml = zh ? marked.parse(zh) : "";
+  const enHtml = en ? marked.parse(en) : "";
+  return { zh: zhHtml, en: enHtml, highlights: { zh: highlights_zh, en: highlights_en } };
+}
+
+// ── 解析 news 正文（中英文） ─────────────────────────────
+function parseNewsContent(content) {
+  if (!content) return { zh: "", en: "" };
+  const sections = content.split(/^## /m).filter(Boolean);
+  let zh = "", en = "";
+  for (const sec of sections) {
+    const lines = sec.trim().split("\n");
+    const title = lines[0].trim();
+    const body = lines.slice(1).join("\n").trim();
+    if (title.includes("中文")) zh = body;
+    else if (title.includes("English")) en = body;
+  }
+  return { zh: zh || content, en: en || content };
 }
 
 // ── 构建 news.json ────────────────────────────────────────
 function buildNews() {
   const items = readMdFiles(path.join(CONTENT_DIR, "news"));
-  return items.map(({ date, title_zh, title_en }) => ({
-    date,
-    title: { zh: title_zh, en: title_en },
+  return items.map((item, idx) => ({
+    id: item._file.replace(/\.md$/, ""),
+    date: item.date,
+    title: { zh: item.title_zh, en: item.title_en },
+    link: item.link || "",
+    content: parseNewsContent(item._content),
   }));
 }
 
@@ -155,6 +177,7 @@ function buildMembers() {
       photo: item.photo || "",
       researchgate: item.researchgate || "",
       googlescholar: item.googlescholar || "",
+      homepage: item.homepage || "",
       education: (item.education || []).map((e) => ({
         period: e.period,
         institution: { zh: e.institution_zh, en: e.institution_en },

@@ -13,6 +13,7 @@ email: "jiahuiyang@gxu.edu.cn"
 photo: "/images/team/JiahuiYang.jpg"
 researchgate: "https://www.researchgate.net/profile/Jiahui-Yang-9"
 googlescholar: "https://scholar.google.com/citations?user=spXTiCIAAAAJ"
+homepage: "https://prof.gxu.edu.cn/teacherDetails/8d6c0a8a-e88c-42e3-b1c5-9ad97d8c71ee"
 education:
   - period: "2021.09–2025.06"
     institution_zh: "西北农林科技大学 资源环境学院"
