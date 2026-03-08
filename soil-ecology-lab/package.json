@@ -8,7 +8,7 @@
     "prebuild": "node scripts/build-content.js",
     "predev": "node scripts/build-content.js",
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/build-content.js && next build",
     "start": "next start"
   },
   "keywords": [],
