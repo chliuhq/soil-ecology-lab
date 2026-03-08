@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
-const BASE_URL = process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com";
+const BASE_URL = (process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com").replace(/\/+$/, "");
 const MODEL = process.env.CHAT_MODEL || "claude-sonnet-4-6";
 
 const LANG_NAMES: Record<string, string> = {

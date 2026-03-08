@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import knowledgeBase from "@/data/knowledge-base.json";
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
-const BASE_URL = process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com";
+const BASE_URL = (process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com").replace(/\/+$/, "");
 const MODEL = process.env.CHAT_MODEL || "claude-sonnet-4-6";
 
 const SYSTEM_PROMPT = `你是"土壤生态与水土保持课题组"（广西大学）的智能助手。请根据以下课题组信息回答访客的问题。
