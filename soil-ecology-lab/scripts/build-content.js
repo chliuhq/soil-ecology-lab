@@ -214,6 +214,49 @@ function buildMembers() {
   };
 }
 
+// ── 构建知识库 ─────────────────────────────────────────────
+function buildKnowledgeBase() {
+  const s = [];
+
+  // 研究方向
+  s.push("## 研究方向 / Research Areas");
+  readMdFiles(path.join(CONTENT_DIR, "research")).forEach((d) => {
+    s.push(`- ${d.title_zh} (${d.title_en}): ${d.description_zh}`);
+  });
+
+  // 成员
+  s.push("\n## 团队成员 / Team Members");
+  readMdFiles(path.join(CONTENT_DIR, "members", "pi")).forEach((d) => {
+    s.push(`- ${d.name_zh} (${d.name_en}), ${d.title_zh}, ${d.department_zh}, Email: ${d.email}`);
+    if (d.courses_zh) s.push(`  授课: ${d.courses_zh.join(", ")}`);
+    if (d.enrollment_zh) s.push(`  招生方向: ${d.enrollment_zh}`);
+    if (d._content) s.push(`  简介: ${d._content.split("---")[0].replace(/^##.*$/gm, "").trim()}`);
+  });
+
+  // 论文
+  s.push("\n## 代表性论文 / Publications");
+  readMdFiles(path.join(CONTENT_DIR, "publications")).forEach((d) => {
+    s.push(`- ${d.authors}: "${d.title}". ${d.journal}, ${d.year}. DOI: ${d.doi || "N/A"}`);
+  });
+
+  // 项目
+  s.push("\n## 科研项目 / Projects");
+  readMdFiles(path.join(CONTENT_DIR, "projects")).forEach((d) => {
+    s.push(`- ${d.title_zh} (${d.title_en}), ${d.funding_zh}, ${d.period}, 状态: ${d.status}`);
+  });
+
+  // 招生信息
+  s.push("\n## 招生信息 / Join Us");
+  s.push("课题组隶属广西大学，欢迎生态学、土壤学、水文学、林学、农业资源与环境、遥感等相关专业背景的学生报考。");
+  s.push("网站: https://soil-ecology-lab.vercel.app");
+  s.push("广西大学研究生招生网: https://yjsc.gxu.edu.cn/zsgz/bszs.htm");
+
+  const kb = s.join("\n");
+  const outPath = path.join(DATA_DIR, "knowledge-base.json");
+  fs.writeFileSync(outPath, JSON.stringify({ content: kb }), "utf-8");
+  console.log(`  ✓ knowledge-base.json  (${kb.length} 字符)`);
+}
+
 // ── 主函数 ────────────────────────────────────────────────
 function main() {
   // 确保输出目录存在
@@ -232,6 +275,9 @@ function main() {
   write("projects.json", buildProjects());
   write("publications.json", buildPublications());
   write("members.json", buildMembers());
+
+  // 生成知识库
+  buildKnowledgeBase();
 
   console.log("\n✅ 全部完成！JSON 数据已更新到 src/data/\n");
 }
