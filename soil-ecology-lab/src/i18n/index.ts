@@ -1,14 +1,24 @@
-export type Locale = "zh" | "en";
+export type NativeLocale = "zh" | "en";
+export type TranslatedLocale = "ja" | "ko" | "fr" | "de" | "es" | "ru";
+export type Locale = NativeLocale | TranslatedLocale;
 
 export const defaultLocale: Locale = "zh";
 
-export const locales: Locale[] = ["zh", "en"];
+export const nativeLocales: NativeLocale[] = ["zh", "en"];
+export const translatedLocales: TranslatedLocale[] = ["ja", "ko", "fr", "de", "es", "ru"];
+export const locales: Locale[] = [...nativeLocales, ...translatedLocales];
 
-const dictionaries: Record<Locale, () => Promise<Record<string, any>>> = {
-  zh: () => import("./zh.json").then((m) => m.default),
-  en: () => import("./en.json").then((m) => m.default),
+export const localeNames: Record<Locale, string> = {
+  zh: "中文",
+  en: "English",
+  ja: "日本語",
+  ko: "한국어",
+  fr: "Français",
+  de: "Deutsch",
+  es: "Español",
+  ru: "Русский",
 };
 
-export const getDictionary = async (locale: Locale) => {
-  return dictionaries[locale]();
-};
+export function isNativeLocale(l: Locale): l is NativeLocale {
+  return l === "zh" || l === "en";
+}
