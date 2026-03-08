@@ -24,7 +24,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <span className="text-primary text-xl">🌱</span>
           <span className="font-serif font-bold text-lg text-gray-900 hidden sm:inline">
-            {locale === "zh" ? "土壤生态课题组" : "Soil Ecology Lab"}
+            {locale === "zh" ? "土壤生态与水土保持课题组" : "Soil Ecology & Conservation Lab"}
           </span>
         </Link>
 

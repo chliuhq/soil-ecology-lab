@@ -1,16 +1,21 @@
 "use client";
 import { useState } from "react";
-import { useI18n } from "@/lib/i18n-context";
+import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import publications from "@/data/publications.json";
 
 export default function PublicationsPage() {
   const { t } = useI18n();
+  const lt = useLocaleText();
   const [filter, setFilter] = useState<string>("all");
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const sorted = [...publications].sort((a, b) => b.year - a.year);
   const years = [...new Set(sorted.map((p) => p.year))];
-
   const filtered = filter === "all" ? sorted : sorted.filter((p) => p.year === Number(filter));
+
+  const toggleSummary = (id: number) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
   return (
     <div className="container-main py-16">
@@ -53,7 +58,7 @@ export default function PublicationsPage() {
                 {filtered
                   .filter((p) => p.year === year)
                   .map((pub) => (
-                    <div key={pub.id} className="pub-item">
+                    <div key={pub.id} id={`pub-${pub.id}`} className="pub-item scroll-mt-20">
                       <h3 className="font-medium text-gray-900 mb-1">{pub.title}</h3>
                       <p className="text-sm text-text-light">{pub.authors}</p>
                       <p className="text-sm mt-1">
@@ -61,15 +66,44 @@ export default function PublicationsPage() {
                         {pub.volume && <span className="text-text-light">, {pub.volume}</span>}
                         {pub.pages && <span className="text-text-light">: {pub.pages}</span>}
                       </p>
-                      {pub.doi && (
-                        <a
-                          href={`https://doi.org/${pub.doi}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block mt-1 text-xs tag tag-primary"
-                        >
-                          DOI
-                        </a>
+
+                      {/* 按钮行 */}
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {pub.doi && (
+                          <a
+                            href={`https://doi.org/${pub.doi}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-full bg-green-100 text-green-800 hover:bg-green-200 transition-colors"
+                          >
+                            <span>DOI</span>
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
+                        )}
+                        {pub.summary && (
+                          <button
+                            onClick={() => toggleSummary(pub.id)}
+                            className={`inline-flex items-center gap-1 text-xs px-3 py-1 rounded-full transition-colors ${
+                              expandedId === pub.id
+                                ? "bg-amber-200 text-amber-900"
+                                : "bg-amber-100 text-amber-800 hover:bg-amber-200"
+                            }`}
+                          >
+                            <span>{expandedId === pub.id ? (t.publications as any).collapseSummary : (t.publications as any).summary}</span>
+                            <svg className={`w-3 h-3 transition-transform ${expandedId === pub.id ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                        )}
+                      </div>
+
+                      {/* 论文解读展开区 */}
+                      {expandedId === pub.id && pub.summary && (
+                        <div className="mt-3 p-4 bg-amber-50 rounded-lg border border-amber-100 text-sm text-text-main leading-relaxed">
+                          <p>{lt(pub.summary)}</p>
+                        </div>
                       )}
                     </div>
                   ))}

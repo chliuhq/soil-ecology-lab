@@ -78,14 +78,15 @@ export default function HomePage() {
           <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
           <div className="space-y-4 max-w-4xl mx-auto">
             {featured.map((pub) => (
-              <div key={pub.id} className="pub-item bg-white rounded-lg p-5 border border-gray-100">
-                <h3 className="font-medium text-gray-900 mb-1">{pub.title}</h3>
+              <Link key={pub.id} href={`/publications#pub-${pub.id}`}
+                className="pub-item bg-white rounded-lg p-5 border border-gray-100 block hover:border-primary/30">
+                <h3 className="font-medium text-gray-900 mb-1 hover:text-primary transition-colors">{pub.title}</h3>
                 <p className="text-sm text-text-light mb-1">{pub.authors}</p>
                 <p className="text-sm">
                   <span className="font-medium text-primary">{pub.journal}</span>
                   <span className="text-text-light">, {pub.year}</span>
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-8">

@@ -38,7 +38,10 @@
     "journal": "Journal",
     "doi": "DOI",
     "pdf": "PDF",
-    "abstract": "Abstract"
+    "abstract": "Abstract",
+    "paperLink": "Paper Link",
+    "summary": "Paper Summary",
+    "collapseSummary": "Collapse"
   },
   "projects": {
     "title": "Projects",

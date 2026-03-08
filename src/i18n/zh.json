@@ -38,7 +38,10 @@
     "journal": "期刊",
     "doi": "DOI",
     "pdf": "PDF",
-    "abstract": "摘要"
+    "abstract": "摘要",
+    "paperLink": "论文链接",
+    "summary": "论文解读",
+    "collapseSummary": "收起"
   },
   "projects": {
     "title": "科研项目",
