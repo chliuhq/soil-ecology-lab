@@ -1,0 +1,42 @@
+[
+  {
+    "id": "soil-water-carbon",
+    "title": { "zh": "植物多样性与土壤水碳耦合", "en": "Plant Diversity & Soil Water-Carbon Coupling" },
+    "description": {
+      "zh": "研究植物多样性如何影响土壤水分运移和碳循环过程，揭示植物-土壤-水分的耦合机制，为生态系统管理提供科学依据。",
+      "en": "Investigating how plant diversity affects soil water transport and carbon cycling, revealing plant-soil-water coupling mechanisms to inform ecosystem management."
+    },
+    "icon": "leaf",
+    "image": "/images/research/soil-water-carbon.jpg"
+  },
+  {
+    "id": "soc",
+    "title": { "zh": "土壤有机碳形成与转化", "en": "Soil Organic Carbon Dynamics" },
+    "description": {
+      "zh": "探究土壤有机碳的形成、转化与稳定机制，关注微生物驱动的碳循环过程及其对全球变化的响应。",
+      "en": "Exploring the formation, transformation, and stabilization of soil organic carbon, with a focus on microbially-driven carbon cycling and its response to global change."
+    },
+    "icon": "layers",
+    "image": "/images/research/soc.jpg"
+  },
+  {
+    "id": "erosion",
+    "title": { "zh": "土壤侵蚀与水土保持", "en": "Soil Erosion & Conservation" },
+    "description": {
+      "zh": "研究土壤侵蚀过程与机理，开发水土保持技术与措施，关注冻融作用、降雨径流等对坡面侵蚀的影响。",
+      "en": "Studying soil erosion processes and mechanisms, developing conservation techniques, with focus on freeze-thaw effects and rainfall-runoff impacts on hillslope erosion."
+    },
+    "icon": "mountain",
+    "image": "/images/research/erosion.jpg"
+  },
+  {
+    "id": "remote-sensing",
+    "title": { "zh": "多源遥感定量监测", "en": "Multi-source Remote Sensing Monitoring" },
+    "description": {
+      "zh": "利用InSAR、Google Earth Engine等多源遥感技术，定量监测土壤侵蚀、热融灾害等地表过程的时空演变特征。",
+      "en": "Utilizing InSAR, Google Earth Engine, and other multi-source remote sensing technologies for quantitative monitoring of spatiotemporal dynamics of soil erosion and thaw-induced hazards."
+    },
+    "icon": "satellite",
+    "image": "/images/research/remote-sensing.jpg"
+  }
+]
