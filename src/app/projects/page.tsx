@@ -16,8 +16,15 @@ export default function ProjectsPage() {
   };
 
   const renderProject = (p: (typeof projects)[0], i: number) => (
-    <div key={i} className="pub-item bg-white rounded-lg p-5 border border-gray-100">
-      <h3 className="font-medium text-gray-900 mb-1">{lt(p.title)}</h3>
+    <div key={i} className={`pub-item bg-white rounded-lg p-5 border ${p.status === "completed" ? "border-gray-200 opacity-80" : "border-gray-100"}`}>
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="font-medium text-gray-900 mb-1">{lt(p.title)}</h3>
+        {p.status === "completed" && (
+          <span className="shrink-0 text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">
+            {t.projects.completed}
+          </span>
+        )}
+      </div>
       <p className="text-base text-text-light mb-2">{lt(p.funding)}</p>
       <div className="flex flex-wrap gap-3 text-sm">
         <span className="tag tag-primary">{p.period}</span>

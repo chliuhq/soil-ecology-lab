@@ -29,12 +29,12 @@
     "period": "2024.01–2025.12",
     "role": "pi",
     "member": "jiahui-yang",
-    "status": "ongoing"
+    "status": "completed"
   },
   {
     "title": { "zh": "混交林根系重塑土壤孔隙网络调控水碳迁移的机理研究", "en": "Mechanisms of Mixed Forest Root Systems Reshaping Soil Pore Networks to Regulate Water-Carbon Migration" },
     "funding": { "zh": "广西森林生态与保育重点实验室开放课题", "en": "Open Project of Guangxi Key Laboratory of Forest Ecology and Conservation" },
-    "period": "2025",
+    "period": "2026.01–2027.12",
     "role": "co",
     "member": "huaqing-liu",
     "status": "ongoing"
@@ -53,6 +53,6 @@
     "period": "2021.07–2025.12",
     "role": "co",
     "member": "huaqing-liu",
-    "status": "ongoing"
+    "status": "completed"
   }
 ]

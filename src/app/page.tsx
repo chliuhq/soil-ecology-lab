@@ -12,7 +12,7 @@ export default function HomePage() {
   const featured = publications
     .filter((p) => p.category.includes("featured"))
     .sort((a, b) => b.year - a.year)
-    .slice(0, 3);
+    .slice(0, 4);
 
   return (
     <>

@@ -147,7 +147,7 @@ export default function PublicationsPage() {
                                   {pubs.keyFindings || "Research Highlights"}
                                 </h4>
                                 <ul className="space-y-1.5">
-                                  {lt(summary.highlights).map((h: string, idx: number) => (
+                                  {(lt(summary.highlights) as string[]).map((h: string, idx: number) => (
                                     <li key={idx} className="flex items-start gap-2 text-sm">
                                       <span className="text-primary mt-0.5 shrink-0">&#10003;</span>
                                       <span>{h}</span>

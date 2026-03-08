@@ -22,20 +22,22 @@ export default function PeoplePage() {
           <div key={m.id} className="card-hover bg-white border border-gray-100 rounded-xl p-6">
             <div className="flex gap-5 items-start">
               {/* 头像 */}
-              <div className="w-24 h-24 rounded-full bg-green-100 overflow-hidden shrink-0">
+              <div className="w-28 h-28 rounded-full bg-green-100 overflow-hidden shrink-0 border-2 border-green-200">
                 <Image
                   src={m.photo}
                   alt={lt(m.name)}
-                  width={96}
-                  height={96}
-                  className="w-full h-full object-cover"
+                  width={112}
+                  height={112}
+                  className="w-full h-full object-cover object-top"
                   unoptimized
                 />
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="text-lg font-bold text-gray-900">{lt(m.name)}</h3>
                 <p className="text-base text-primary font-medium">{lt(m.title)}</p>
-                <p className="text-base text-text-light mt-1">{lt(m.department)}</p>
+                <p className="text-base text-text-light mt-1">
+                  <a href={(m as any).departmentUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:underline">{lt(m.department)}</a>
+                </p>
                 <p className="text-base text-text-light mt-1">
                   📧 <a href={`mailto:${m.email}`} className="hover:text-primary">{m.email}</a>
                 </p>
@@ -64,7 +66,11 @@ export default function PeoplePage() {
                 {m.education.map((e, i) => (
                   <div key={i} className="text-sm text-text-light flex gap-2">
                     <span className="whitespace-nowrap font-mono">{e.period}</span>
-                    <span>{lt(e.institution)}</span>
+                    <span>
+                      {(e as any).url ? (
+                        <a href={(e as any).url} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:underline">{lt(e.institution)}</a>
+                      ) : lt(e.institution)}
+                    </span>
                     <span className="text-gray-400">|</span>
                     <span>{lt(e.degree)}</span>
                   </div>
