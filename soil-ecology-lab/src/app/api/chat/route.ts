@@ -1,5 +1,5 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import knowledgeBase from "../src/data/knowledge-base.json";
+import { NextRequest, NextResponse } from "next/server";
+import knowledgeBase from "@/data/knowledge-base.json";
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
 const BASE_URL = process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com";
@@ -15,26 +15,18 @@ const SYSTEM_PROMPT = `你是"土壤生态与水土保持课题组"（广西大�
 课题组信息：
 ${knowledgeBase.content}`;
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
+export async function POST(req: NextRequest) {
   if (!ANTHROPIC_API_KEY) {
-    return res.status(500).json({ error: "API key not configured" });
+    return NextResponse.json({ error: "API key not configured" }, { status: 500 });
   }
 
-  const { message, history = [] } = req.body;
+  const { message, history = [] } = await req.json();
   if (!message || typeof message !== "string") {
-    return res.status(400).json({ error: "Message is required" });
+    return NextResponse.json({ error: "Message is required" }, { status: 400 });
   }
 
-  // 构建消息历史（最多保留最近6轮）
   const messages = [
-    ...history.slice(-12).map((m: any) => ({
-      role: m.role,
-      content: m.content,
-    })),
+    ...history.slice(-12).map((m: any) => ({ role: m.role, content: m.content })),
     { role: "user", content: message },
   ];
 
@@ -46,24 +38,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         "x-api-key": ANTHROPIC_API_KEY,
         "anthropic-version": "2023-06-01",
       },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 1024,
-        system: SYSTEM_PROMPT,
-        messages,
-      }),
+      body: JSON.stringify({ model: MODEL, max_tokens: 1024, system: SYSTEM_PROMPT, messages }),
     });
 
     if (!response.ok) {
       const err = await response.text();
-      return res.status(response.status).json({ error: err });
+      return NextResponse.json({ error: err }, { status: response.status });
     }
 
     const data = await response.json();
     const reply = data.content?.[0]?.text || "抱歉，暂时无法回答。";
-    return res.status(200).json({ reply });
+    return NextResponse.json({ reply });
   } catch (e: any) {
-    return res.status(500).json({ error: e.message });
+    return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }
 
