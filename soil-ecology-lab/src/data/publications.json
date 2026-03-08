@@ -15,20 +15,20 @@
     ],
     "member": "huaqing-liu",
     "summary": {
-      "zh": "本研究通过模拟极端降水实验，揭示了草本植物物种多样性对减少水土流失和养分损失的关键作用。研究发现，物种多样性越高，地表径流和养分流失越少，为生态系统应对极端气候事件提供了重要的科学依据。",
-      "en": "This study reveals through simulated extreme precipitation experiments that grass species diversity plays a critical role in reducing water and nutrient loss. Higher species diversity significantly decreased surface runoff and nutrient losses, providing important scientific evidence for ecosystem resilience under extreme climate events.",
+      "zh": "土壤饱和导水率（Ks）是衡量土壤水分渗透和运动能力的关键参数，直接影响生态系统的水循环和旱涝灾害调节。长期以来，人们对植物多样性如何影响 Ks 的认识往往停留在宏观假设。研究团队通过在黄土高原进行长期的草本物种丰富度控制实验，结合先进的 X 射线显微计算机断层扫描（X-ray micro-CT）技术，从微观角度定量揭示了植物多样性提升土壤导水能力的核心机理。研究发现：物种丰富度的增加并不仅是通过改变孔隙的大小，而是通过显著增加土壤孔隙的“连通性”（即改善土壤的“血管网络”）来增强 Ks。\r\n\r\n### 研究方法与关键发现\r\n\r\n研究团队设置了包含 1、2、4、8、16 种草本植物的物种丰富度梯度试验样地。通过对采集的土柱进行 3D CT 扫描（分辨率达 50 μm），精确重建了不同处理下的土壤孔隙结构。\r\n\r\n- 连通性是关键：随着草本植物物种丰富度的增加，土壤饱和导水率（Ks）呈显著上升趋势。关键在于，这种提升并非归因于孔隙总量的增加或孔隙变得更大，而是因为大孔隙（直径 > 0.25 mm）的数量密度和连通性指标（如欧拉指数密度）显著提高。物种多样性越高，土壤中越容易形成贯穿性的、复杂的流体通道。\r\n- 根系是幕后推手：研究进一步通过结构方程模型（SEM）证明，植物多样性通过增加根系生物量和根体积密度，直接推动了土壤孔隙连通性的改善。不同物种根系在土壤中的互补分布和相互作用，如同自然界的“掘进机”，在土体中编织出一张复杂的、高度连通的“生物通道网”。\r\n- 大孔隙的作用：尽管大孔隙（>1 mm）在总孔隙中占比很小，但由于其极高的连通性，它们是水分流动最有效的通道。物种丰富度显著增加了这类大孔隙的连通性。\r\n\r\n### 科学意义与应用前景\r\n\r\n本研究通过微观 CT 技术提供了坚实的实验证据，证实了植物多样性在塑造高效土壤孔隙网络中的决定性作用。这一发现将植物群落功能特性与土壤水动力学过程直接联系起来，为以下方面提供了重要的科学依据：\r\n\r\n- 生态恢复：在进行植被恢复（如退耕还林还草）时，应优先考虑使用高多样性的草本植物组合，以更有效地改善土壤结构，增强土壤的水分涵养和入渗能力。\r\n- 水文模型：研究结果可用于改进由于忽视植被多样性而导致的土壤导水率估算偏差，提升区域水文模型的准确性。",
+      "en": "Soil saturated hydraulic conductivity (Ks) is a key parameter for measuring soil water infiltration and movement, directly affecting ecosystem water cycling and flood regulation. This study combined long-term herbaceous species richness controlled experiments on the Loess Plateau with advanced X-ray micro-CT technology to quantitatively reveal the core mechanisms by which plant diversity enhances soil hydraulic conductivity from a microscopic perspective. The findings show that increased species richness enhances Ks not merely by altering pore size, but by significantly increasing soil pore connectivity.\r\n\r\n### Methods and Key Findings\r\n\r\nThe research team established experimental plots with species richness gradients of 1, 2, 4, 8, and 16 herbaceous plant species. 3D CT scanning of collected soil columns (resolution of 50 μm) precisely reconstructed soil pore structures under different treatments.\r\n\r\n- Connectivity is key: As herbaceous species richness increased, Ks showed a significant upward trend. Critically, this enhancement was not attributable to increased total porosity or larger pores, but rather to significantly improved macropore (diameter > 0.25 mm) number density and connectivity indices (e.g., Euler number density). Higher species diversity facilitated the formation of penetrating, complex fluid channels in the soil.\r\n- Roots are the driving force: Structural equation modeling (SEM) further demonstrated that plant diversity directly promoted soil pore connectivity improvement by increasing root biomass and root volume density. The complementary distribution and interaction of different species' root systems in the soil weave a complex, highly connected biological channel network.\r\n- Role of macropores: Although macropores (>1 mm) account for a small proportion of total porosity, their extremely high connectivity makes them the most effective channels for water flow. Species richness significantly increased the connectivity of these macropores.\r\n\r\n### Scientific Significance and Applications\r\n\r\nThis study provides solid experimental evidence through micro-CT technology, confirming the decisive role of plant diversity in shaping efficient soil pore networks. This finding directly links plant community functional traits with soil hydrodynamic processes, providing important scientific basis for:\r\n\r\n- Ecological restoration: When conducting vegetation restoration (e.g., converting farmland to forests and grasslands), priority should be given to high-diversity herbaceous plant combinations to more effectively improve soil structure and enhance soil water retention and infiltration capacity.\r\n- Hydrological modeling: The results can be used to improve Ks estimation biases caused by neglecting vegetation diversity, enhancing the accuracy of regional hydrological models.",
       "highlights": {
         "zh": [
-          "构建1-8种草本植物多样性梯度，模拟极端降水事件",
-          "物种多样性显著降低地表径流量和泥沙流失量",
-          "高多样性群落减少了氮磷等养分的流失",
-          "互补效应是多样性减少水土流失的主要机制"
+          "构建1-16种草本植物物种丰富度梯度，结合X射线微CT扫描\r",
+          "物种丰富度显著提升土壤饱和导水率（Ks）\r",
+          "孔隙连通性而非孔隙大小是驱动Ks提升的关键机制\r",
+          "多样性植物群落的根系构建了高度连通的生物通道网络"
         ],
         "en": [
-          "Constructed 1-8 species diversity gradients under simulated extreme precipitation",
-          "Species diversity significantly reduced surface runoff and sediment loss",
-          "High-diversity communities decreased nitrogen and phosphorus nutrient losses",
-          "Complementarity effects are the primary mechanism for diversity-driven erosion reduction"
+          "Established 1-16 species richness gradients with X-ray micro-CT scanning\r",
+          "Species richness significantly enhanced soil saturated hydraulic conductivity (Ks)\r",
+          "Pore connectivity, not pore size, is the key mechanism driving Ks improvement\r",
+          "Root systems from diverse plant communities create highly connected biological channel networks"
         ]
       },
       "images": [
