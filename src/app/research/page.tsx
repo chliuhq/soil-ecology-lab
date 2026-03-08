@@ -39,13 +39,13 @@ export default function ResearchPage() {
 
               {relatedPubs.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                  <h3 className="text-base font-semibold text-gray-500 uppercase tracking-wide mb-3">
                     {t.research.relatedPubs}
                   </h3>
                   <div className="space-y-3">
                     {relatedPubs.map((pub) => (
                       <Link key={pub.id} href={`/publications#pub-${pub.id}`}
-                        className="pub-item text-sm block hover:bg-green-50/50">
+                        className="pub-item text-base block hover:bg-green-50/50">
                         <p className="font-medium text-gray-800 hover:text-primary transition-colors">{pub.title}</p>
                         <p className="text-text-light">
                           {pub.authors} — <span className="text-primary">{pub.journal}</span>, {pub.year}

@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-gray-100 bg-gray-50 mt-20">
-      <div className="container-main py-10 text-center text-sm text-text-light">
+      <div className="container-main py-10 text-center text-base text-text-light">
         <p className="mb-2">{t.common.copyright}</p>
         <p>&copy; {year}. All rights reserved.</p>
       </div>

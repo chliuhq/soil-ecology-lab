@@ -20,11 +20,11 @@ export default function ContactPage() {
               </div>
               <div>
                 <h2 className="text-lg font-bold text-gray-900">{lt(m.name)}</h2>
-                <p className="text-sm text-primary">{lt(m.title)}</p>
+                <p className="text-base text-primary">{lt(m.title)}</p>
               </div>
             </div>
 
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-base">
               <div>
                 <span className="font-semibold text-gray-700">{t.contact.address}:</span>
                 <p className="text-text-light mt-1">{lt(m.department)}</p>

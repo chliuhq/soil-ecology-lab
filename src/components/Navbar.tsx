@@ -66,7 +66,7 @@ export default function Navbar() {
             <Link
               key={item.key}
               href={item.href}
-              className="block px-6 py-2.5 text-sm text-gray-600 hover:text-primary hover:bg-green-50"
+              className="block px-6 py-2.5 text-base text-gray-600 hover:text-primary hover:bg-green-50"
               onClick={() => setOpen(false)}
             >
               {(t.nav as any)[item.key]}

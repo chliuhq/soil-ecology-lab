@@ -6,7 +6,7 @@
       "title": { "zh": "助理教授 / 博士", "en": "Assistant Professor / Ph.D." },
       "department": { "zh": "广西大学林学院", "en": "College of Forestry, Guangxi University" },
       "email": "huaqingliu@gxu.edu.cn",
-      "photo": "/images/team/huaqing-liu.jpg",
+      "photo": "/images/team/HuaqingLiu.jpg",
       "researchgate": "https://www.researchgate.net/profile/Huaqing-Liu-8",
       "googlescholar": "https://scholar.google.com/citations?user=AyQBphkAAAAJ",
       "education": [
@@ -33,7 +33,7 @@
       "title": { "zh": "助理教授 / 博士", "en": "Assistant Professor / Ph.D." },
       "department": { "zh": "广西大学农学院", "en": "College of Agriculture, Guangxi University" },
       "email": "jiahuiyang@gxu.edu.cn",
-      "photo": "/images/team/jiahui-yang.jpg",
+      "photo": "/images/team/JiahuiYang.jpg",
       "researchgate": "https://www.researchgate.net/profile/Jiahui-Yang-9",
       "googlescholar": "https://scholar.google.com/citations?user=spXTiCIAAAAJ",
       "education": [
@@ -55,6 +55,15 @@
       }
     }
   ],
-  "students": [],
+  "students": [
+    {
+      "id": "manyu-luo",
+      "name": { "zh": "罗曼玉", "en": "Manyu Luo" },
+      "major": { "zh": "资源利用与植物保护（专硕）", "en": "Resource Utilization and Plant Protection (Professional Master)" },
+      "enrollment": "2025.09",
+      "undergraduate": { "zh": "福州大学", "en": "Fuzhou University" },
+      "advisor": "jiahui-yang"
+    }
+  ],
   "alumni": []
 }

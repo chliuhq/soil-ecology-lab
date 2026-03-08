@@ -22,10 +22,10 @@ export default function HomePage() {
           <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-4 leading-tight">
             {t.home.title}
           </h1>
-          <p className="text-lg md:text-xl text-primary font-medium mb-6">
+          <p className="text-xl md:text-2xl text-primary font-medium mb-6">
             {t.home.subtitle}
           </p>
-          <p className="max-w-3xl mx-auto text-text-light text-base md:text-lg leading-relaxed mb-8">
+          <p className="max-w-3xl mx-auto text-text-light text-lg md:text-xl leading-relaxed mb-8">
             {t.home.description}
           </p>
           <div className="flex gap-4 justify-center">
@@ -64,7 +64,7 @@ export default function HomePage() {
                   {r.icon === "satellite" && "🛰️"}
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">{lt(r.title)}</h3>
-                <p className="text-sm text-text-light line-clamp-3">{lt(r.description)}</p>
+                <p className="text-base text-text-light line-clamp-3">{lt(r.description)}</p>
               </Link>
             ))}
           </div>
@@ -81,8 +81,8 @@ export default function HomePage() {
               <Link key={pub.id} href={`/publications#pub-${pub.id}`}
                 className="pub-item bg-white rounded-lg p-5 border border-gray-100 block hover:border-primary/30">
                 <h3 className="font-medium text-gray-900 mb-1 hover:text-primary transition-colors">{pub.title}</h3>
-                <p className="text-sm text-text-light mb-1">{pub.authors}</p>
-                <p className="text-sm">
+                <p className="text-base text-text-light mb-1">{pub.authors}</p>
+                <p className="text-base">
                   <span className="font-medium text-primary">{pub.journal}</span>
                   <span className="text-text-light">, {pub.year}</span>
                 </p>
@@ -105,7 +105,7 @@ export default function HomePage() {
           <div className="max-w-2xl mx-auto space-y-4">
             {news.slice(0, 5).map((n, i) => (
               <div key={i} className="flex gap-4 items-start py-3 border-b border-gray-50">
-                <span className="text-sm text-text-light whitespace-nowrap">{n.date}</span>
+                <span className="text-base text-text-light whitespace-nowrap">{n.date}</span>
                 <p className="text-gray-900">{lt(n.title)}</p>
               </div>
             ))}

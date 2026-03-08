@@ -18,16 +18,16 @@ export default function JoinUsPage() {
       </div>
 
       {/* 招生方向 */}
-      <h2 className="text-xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
         {t.joinus.directions}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {members.pi.map((m) => (
           <div key={m.id} className="bg-white border border-gray-100 rounded-xl p-6">
             <h3 className="font-bold text-gray-900 mb-1">{lt(m.name)}</h3>
-            <p className="text-sm text-primary mb-3">{lt(m.department)}</p>
-            <p className="text-sm text-text-main">{lt(m.enrollment)}</p>
-            <p className="text-sm text-text-light mt-3">
+            <p className="text-base text-primary mb-3">{lt(m.department)}</p>
+            <p className="text-base text-text-main">{lt(m.enrollment)}</p>
+            <p className="text-base text-text-light mt-3">
               📧 <a href={`mailto:${m.email}`} className="hover:text-primary">{m.email}</a>
             </p>
           </div>
@@ -35,7 +35,7 @@ export default function JoinUsPage() {
       </div>
 
       {/* 我们期待的你 */}
-      <h2 className="text-xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
         {t.joinus.requirements}
       </h2>
       <div className="max-w-3xl space-y-3 text-text-light leading-relaxed">
