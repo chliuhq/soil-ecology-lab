@@ -2,7 +2,8 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import knowledgeBase from "../src/data/knowledge-base.json";
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
-const MODEL = process.env.CHAT_MODEL || "claude-sonnet-4-20250514";
+const BASE_URL = process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com";
+const MODEL = process.env.CHAT_MODEL || "claude-sonnet-4-6";
 
 const SYSTEM_PROMPT = `你是"土壤生态与水土保持课题组"（广西大学）的智能助手。请根据以下课题组信息回答访客的问题。
 回答要求：
@@ -38,7 +39,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   ];
 
   try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+    const response = await fetch(`${BASE_URL}/v1/messages`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

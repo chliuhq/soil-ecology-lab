@@ -1,7 +1,8 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
-const MODEL = process.env.CHAT_MODEL || "claude-sonnet-4-20250514";
+const BASE_URL = process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com";
+const MODEL = process.env.CHAT_MODEL || "claude-sonnet-4-6";
 
 const LANG_NAMES: Record<string, string> = {
   ja: "Japanese", ko: "Korean", fr: "French", de: "German", es: "Spanish", ru: "Russian",
@@ -20,7 +21,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const prompt = `Translate the following JSON values from Chinese to ${LANG_NAMES[targetLang]}. Keep the JSON keys unchanged. Only output the translated JSON, no explanation.\n\n${JSON.stringify(texts, null, 2)}`;
 
   try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+    const response = await fetch(`${BASE_URL}/v1/messages`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
