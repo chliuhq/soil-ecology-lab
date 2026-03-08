@@ -24,9 +24,9 @@ export default function NewsPage() {
               )}
             </div>
             <h2 className="text-lg font-semibold text-gray-900 mb-3">{lt(n.title)}</h2>
-            {lt(n.content) && (
-              <p className="text-base text-text-main leading-relaxed">{lt(n.content) as string}</p>
-            )}
+            {n.content ? (
+              <p className="text-base text-text-main leading-relaxed">{String(lt(n.content))}</p>
+            ) : null}
           </article>
         ))}
       </div>
