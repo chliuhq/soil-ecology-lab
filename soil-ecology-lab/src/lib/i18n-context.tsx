@@ -67,7 +67,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     }
     // 调用 API 翻译整个 UI 字典
     setTranslating(true);
-    fetch("/api/translate/", {
+    fetch("/api/translate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ texts: zhDict, targetLang: locale }),
@@ -101,7 +101,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     // 异步翻译，先返回英文，翻译完后更新
     if (!cache[`__pending_${obj.zh}`]) {
       cache[`__pending_${obj.zh}`] = "1";
-      fetch("/api/translate/", {
+      fetch("/api/translate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ texts: { t: obj.zh }, targetLang: locale }),
