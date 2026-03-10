@@ -49,7 +49,7 @@ export default function ResearchPage() {
             .slice(0, 5);
 
           const rAny = r as any;
-          const methods = lt(rAny.methods || { zh: "", en: "" });
+          const methods = String(lt(rAny.methods || { zh: "", en: "" }) || "");
           const methodList = methods ? methods.split(/、|,\s*/).map((m: string) => m.trim()).filter(Boolean) : [];
           const bodyHtml = rAny.bodyHtml || "";
 
