@@ -64,7 +64,7 @@ a { @apply transition-colors duration-200; }
   @apply text-base font-semibold text-gray-700 mt-4 mb-2;
 }
 .research-content p {
-  @apply mb-3 leading-relaxed text-gray-600;
+  @apply text-sm mb-3 leading-relaxed text-gray-600;
 }
 .research-content ul {
   @apply list-disc pl-5 my-2 space-y-1.5;
