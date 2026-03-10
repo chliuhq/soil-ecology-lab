@@ -79,13 +79,21 @@ export default function ResearchPage() {
                 </div>
               )}
 
-              {/* 研究详细内容（研究方法 + 研究特点） */}
-              {bodyHtml && (
-                <div
-                  className="research-content bg-gray-50 rounded-xl p-6 mb-6"
-                  dangerouslySetInnerHTML={{ __html: bodyHtml }}
-                />
-              )}
+              {/* 研究详细内容（研究方法 + 研究特点），按 h2 拆分为独立卡片 */}
+              {bodyHtml && (() => {
+                const sections = (bodyHtml as string).split(/(?=<h2>)/).filter((s: string) => s.trim());
+                return (
+                  <div className="space-y-6 mb-6">
+                    {sections.map((section: string, i: number) => (
+                      <div
+                        key={i}
+                        className="research-content bg-gray-50 rounded-xl p-6"
+                        dangerouslySetInnerHTML={{ __html: section }}
+                      />
+                    ))}
+                  </div>
+                );
+              })()}
 
               {/* 代表性论文 */}
               {relatedPubs.length > 0 && (
