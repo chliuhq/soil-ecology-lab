@@ -52,6 +52,15 @@ function isSimilarTitle(a, b) {
   return maxMatch / shorter.length > 0.6;
 }
 
+// 预印本平台关键词（不收录）
+const PREPRINT_KEYWORDS = ["preprint", "egusphere", "arxiv", "biorxiv", "medrxiv", "ssrn", "researchsquare", "authorea", "eartharxiv"];
+
+function isPreprint(article) {
+  const pub = (article.publication || "").toLowerCase();
+  const title = (article.title || "").toLowerCase();
+  return PREPRINT_KEYWORDS.some((kw) => pub.includes(kw) || title.includes(kw));
+}
+
 function slugify(t) { return t.toLowerCase().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-").substring(0, 50).replace(/-+$/, ""); }
 
 function guessCategories(title) {
@@ -184,7 +193,7 @@ async function main() {
   for (const a of unique) {
     const nt = normalizeTitle(a.title);
     if (existingNTs.some((et) => isSimilarTitle(nt, et))) continue;
-    // DOI 去重会在查询后进行
+    if (isPreprint(a)) { console.log(`  ⏭️  预印本跳过: ${a.title.substring(0, 50)}...`); continue; }
     newArticles.push(a);
   }
   console.log(`🆕 发现 ${newArticles.length} 篇新论文\n`);
