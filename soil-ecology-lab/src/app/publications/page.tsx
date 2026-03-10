@@ -193,7 +193,6 @@ export default function PublicationsPage() {
                                         width={800}
                                         height={400}
                                         className="w-full h-auto object-contain"
-                                        unoptimized
                                       />
                                     </div>
                                     <figcaption className="text-sm text-text-light mt-1.5 text-center italic">
@@ -243,7 +242,6 @@ export default function PublicationsPage() {
               width={1200}
               height={800}
               className="max-w-full max-h-[85vh] object-contain rounded-lg"
-              unoptimized
             />
             <button
               onClick={() => setLightboxImg(null)}

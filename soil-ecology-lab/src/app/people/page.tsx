@@ -29,7 +29,6 @@ export default function PeoplePage() {
                   width={112}
                   height={112}
                   className="w-full h-full object-cover object-top"
-                  unoptimized
                 />
               </div>
               <div className="flex-1 min-w-0">
