@@ -2,15 +2,20 @@
   {
     "id": "erosion",
     "title": {
-      "zh": "土壤侵蚀与水土保持",
-      "en": "Soil Erosion & Conservation"
+      "zh": "土壤侵蚀过程与机理",
+      "en": "Soil Erosion Processes and Mechanisms"
     },
     "description": {
-      "zh": "研究土壤侵蚀过程与机理，开发水土保持技术与措施，关注冻融作用、降雨径流等对坡面侵蚀的影响。",
-      "en": "Studying soil erosion processes and mechanisms, developing conservation techniques, with focus on freeze-thaw effects and rainfall-runoff impacts on hillslope erosion."
+      "zh": "研究土壤侵蚀过程与机理，关注气候变化、降雨径流等对坡面侵蚀的影响，揭示不同环境因子驱动下的侵蚀产沙规律。",
+      "en": "Studying soil erosion processes and mechanisms, with focus on climate change and rainfall-runoff impacts on hillslope erosion, revealing erosion and sediment yield patterns under different environmental drivers."
     },
     "icon": "mountain",
-    "image": "/images/research/erosion.jpg"
+    "image": "/images/research/erosion.jpg",
+    "methods": {
+      "zh": "人工模拟降雨试验、径流小区观测、RUSLE侵蚀模型模拟、气候模拟试验",
+      "en": "Artificial rainfall simulation, runoff plot monitoring, RUSLE erosion modeling, climate simulation"
+    },
+    "bodyHtml": "<h2>主要研究方法</h2>\n<h3>野外观测与原位试验</h3>\n<ul>\n<li><strong>径流小区观测</strong>：在典型坡面布设不同坡度、坡长的标准径流小区，长期监测自然降雨条件下的产流产沙过程</li>\n<li><strong>人工模拟降雨试验</strong>：利用便携式人工降雨器，在可控条件下研究不同雨强、坡度、土壤类型对侵蚀过程的影响</li>\n</ul>\n<h3>室内模拟与分析</h3>\n<ul>\n<li><strong>气候模拟试验</strong>：在人工气候箱中进行气候梯度处理，研究气候变化对土壤结构、抗蚀性及侵蚀过程的影响机理</li>\n<li><strong>土壤理化性质分析</strong>：测定土壤团聚体稳定性、抗剪强度、渗透性等指标，揭示土壤可蚀性的影响因素</li>\n</ul>\n<h3>数值模拟与建模</h3>\n<ul>\n<li><strong>RUSLE模型</strong>：修正通用土壤流失方程，评估区域尺度的土壤侵蚀风险与水土流失量</li>\n<li><strong>耦合模型开发</strong>：将环境、植被、地形等因子纳入侵蚀模型，提升复杂环境下的侵蚀预测精度</li>\n</ul>\n<h2>研究特点与优势</h2>\n<h3>🏠 以室内实验为主，科研体验友好</h3>\n<p>本方向的核心研究工作主要在实验室内完成——人工模拟降雨、人工培养试验、土壤理化分析等均可在室内可控条件下开展。<strong>不需要频繁出野外</strong>，避免了长时间风吹日晒和恶劣天气的困扰，科研生活更加规律、舒适。</p>\n<h3>🎯 实验过程可控，结果可重复</h3>\n<p>室内模拟实验可以精确控制降雨强度、温湿度、坡度等变量，实验条件标准化程度高。这意味着你的实验数据质量有保障，结果可重复验证，<strong>可产出高质量的学术论文</strong>。</p>\n<h3>📋 培养流程清晰，成长路径明确</h3>\n<p>课题组已形成成熟的&quot;文献阅读→实验设计→室内实验→数据分析→论文撰写&quot;全链条培养体系。从入学第一天起，你就能清楚知道每个阶段的目标和任务，<strong>不会迷茫、不走弯路</strong>。导师团队全程指导，确保每位同学都能高效完成学业。</p>\n<h3>⏰ 科研节奏合理，效率高</h3>\n<p>室内实验不受季节和天气限制，可以全年持续推进。一组完整的模拟试验通常在数周内即可完成，<strong>数据产出快、反馈周期短</strong>，有利于在读研期间积累充足的科研成果。</p>\n<h3>🔬 技能实用，就业面广</h3>\n<p>在课题组你将掌握实验设计、数据统计分析、模型模拟、学术写作等核心技能。这些能力不仅适用于学术深造，在环保、国土、水利、生态修复等行业同样具有很强的竞争力。</p>\n"
   },
   {
     "id": "remote-sensing",
@@ -19,11 +24,16 @@
       "en": "Multi-source Remote Sensing Monitoring"
     },
     "description": {
-      "zh": "利用InSAR、Google Earth Engine等多源遥感技术，定量监测土壤侵蚀、热融灾害等地表过程的时空演变特征。",
-      "en": "Utilizing InSAR, Google Earth Engine, and other multi-source remote sensing technologies for quantitative monitoring of spatiotemporal dynamics of soil erosion and thaw-induced hazards."
+      "zh": "利用InSAR、Google Earth Engine等多源遥感技术，定量监测土壤侵蚀、地表变化等过程的时空演变特征。",
+      "en": "Utilizing InSAR, Google Earth Engine, and other multi-source remote sensing technologies for quantitative monitoring of spatiotemporal dynamics of soil erosion and land surface changes."
     },
     "icon": "satellite",
-    "image": "/images/research/remote-sensing.jpg"
+    "image": "/images/research/remote-sensing.jpg",
+    "methods": {
+      "zh": "InSAR时序分析、Google Earth Engine云计算、无人机遥感、多光谱/高光谱影像分析、GIS空间分析、遥感反演建模",
+      "en": "InSAR time-series analysis, Google Earth Engine cloud computing, UAV remote sensing, multispectral/hyperspectral image analysis, GIS spatial analysis, remote sensing inversion modeling"
+    },
+    "bodyHtml": "<h2>主要研究方法</h2>\n<h3>卫星遥感与InSAR技术</h3>\n<ul>\n<li><strong>InSAR时序分析</strong>：利用合成孔径雷达干涉测量技术（SBAS-InSAR、PS-InSAR等），高精度监测地表形变、沉降等变化过程，精度可达毫米级</li>\n<li><strong>多源卫星影像分析</strong>：综合Sentinel-2、Landsat等多源光学卫星数据，提取植被覆盖度、土地利用变化等关键地表参数</li>\n</ul>\n<h3>云计算与大数据处理</h3>\n<ul>\n<li><strong>Google Earth Engine平台</strong>：基于GEE云计算平台处理海量遥感数据，实现大尺度、长时序的地表过程动态监测与趋势分析</li>\n<li><strong>遥感反演建模</strong>：基于机器学习算法（随机森林、深度学习等），建立遥感数据与地表参数（土壤侵蚀量、有机碳含量等）之间的定量反演模型</li>\n</ul>\n<h3>无人机遥感与近地面监测</h3>\n<ul>\n<li><strong>无人机多光谱遥感</strong>：利用无人机搭载多光谱/RGB相机获取高分辨率影像，精细化监测小流域尺度的侵蚀与植被变化</li>\n<li><strong>数字高程模型（DEM）构建</strong>：通过无人机摄影测量生成高精度DEM，定量分析地形变化与侵蚀沟演变</li>\n</ul>\n<h3>GIS空间分析</h3>\n<ul>\n<li><strong>地理信息系统建模</strong>：利用ArcGIS/QGIS进行空间分析、叠置分析与制图，为侵蚀评价和生态管理提供空间决策支持</li>\n<li><strong>景观格局分析</strong>：分析土地利用格局与侵蚀风险的空间关系，识别生态脆弱区和重点防治区域</li>\n</ul>\n<h2>研究特点与优势</h2>\n<h3>💻 以电脑为主要工具，纯数据驱动研究</h3>\n<p>本方向以遥感影像处理和数据分析为核心，主要工作在电脑前完成。<strong>无需做化学实验、不用频繁出野外</strong>，工作环境舒适，适合喜欢数据分析和编程的同学。</p>\n<h3>🌍 前沿技术，视野开阔</h3>\n<p>InSAR、GEE云计算、深度学习遥感等技术是当前地球科学领域的热门方向。掌握这些技术不仅在学术上有广阔前景，<strong>在测绘、国土、环境监测等行业也有极大的就业需求</strong>。</p>\n<h3>📋 培养流程清晰，技能可迁移</h3>\n<p>课题组已形成&quot;遥感原理学习→GEE/Python编程→影像处理→论文撰写&quot;的系统化培养路径。你将掌握的编程（Python/JavaScript）、数据处理、空间分析能力，<strong>在IT、地理信息、环境咨询等多个行业通用</strong>。</p>\n<h3>⚡ 数据获取便捷，产出效率高</h3>\n<p>遥感数据大多为公开免费数据（Sentinel、Landsat等），无需耗时耗资采集样品。借助GEE云计算，可快速处理全球范围的时空数据，<strong>研究效率高、论文产出快</strong>。</p>\n"
   },
   {
     "id": "soc",
@@ -36,7 +46,12 @@
       "en": "Exploring the formation, transformation, and stabilization of soil organic carbon, with a focus on microbially-driven carbon cycling and its response to global change."
     },
     "icon": "layers",
-    "image": "/images/research/soc.jpg"
+    "image": "/images/research/soc.jpg",
+    "methods": {
+      "zh": "土壤有机碳组分分析、室内培养试验、微生物群落高通量测序、宏基因组测序、稳定同位素示踪、土壤孔隙结构分析、机器学习建模",
+      "en": "SOC fractionation analysis, laboratory incubation experiments, microbial high-throughput sequencing, metagenomics sequencing, stable isotope tracing, soil pore structure analysis, machine learning modeling"
+    },
+    "bodyHtml": "<h2>主要研究方法</h2>\n<h3>室内培养与模拟试验</h3>\n<ul>\n<li><strong>土壤微宇宙培养试验</strong>：在恒温恒湿条件下进行长期或短期土壤培养实验，监测有机碳矿化速率与CO₂释放动态，解析有机碳分解转化过程</li>\n<li><strong>稳定同位素示踪（¹³C标记）</strong>：利用¹³C标记底物追踪有机碳在土壤-微生物系统中的流向与转化路径，定量评估微生物对有机碳稳定化的贡献</li>\n</ul>\n<h3>土壤分析与测定</h3>\n<ul>\n<li><strong>有机碳组分分析</strong>：采用物理分级（颗粒态/矿物结合态）和化学分级方法，解析不同稳定性有机碳组分的含量与比例变化</li>\n<li><strong>土壤孔隙结构分析</strong>：利用CT扫描、压汞法等技术表征土壤孔隙大小分布与连通性，揭示土壤微观结构对有机碳物理保护和水分传输的影响机制</li>\n</ul>\n<h3>微生物分析技术</h3>\n<ul>\n<li><strong>微生物生物量碳测定</strong>：采用氯仿熏蒸提取法等方法测定微生物生物量碳，反映微生物群落规模及其对有机碳库的调控作用</li>\n<li><strong>高通量测序（16S/ITS）</strong>：利用扩增子测序技术分析土壤细菌和真菌群落结构，揭示微生物多样性与有机碳转化的关系</li>\n<li><strong>宏基因组测序</strong>：通过宏基因组学分析土壤微生物的功能基因组成，解析参与有机碳降解与转化的关键代谢通路和功能微生物类群</li>\n</ul>\n<h3>数据分析与建模</h3>\n<ul>\n<li><strong>多元统计分析</strong>：采用冗余分析（RDA）、结构方程模型（SEM）等方法，解析影响有机碳形成与转化的关键驱动因子</li>\n<li><strong>机器学习模型</strong>：基于随机森林、XGBoost等算法，整合土壤理化性质、微生物指标和环境因子，预测土壤有机碳含量分布及其变化趋势</li>\n</ul>\n<h2>研究特点与优势</h2>\n<h3>🏠 室内实验为主，科研环境舒适</h3>\n<p>本方向的核心研究——培养试验、有机碳组分分析、微生物测序等——均在实验室内完成。<strong>室内实验为主，仅需少量野外采样</strong>，科研生活规律有序，特别适合喜欢专注实验和数据分析的同学。</p>\n<h3>🧬 技术前沿，紧跟学科热点</h3>\n<p>土壤有机碳与&quot;双碳&quot;战略紧密相关，是土壤学和生态学的国际研究前沿。掌握同位素示踪、高通量测序等前沿技术，<strong>毕业后在学术界和行业中都极具竞争力</strong>。</p>\n<h3>📋 实验流程标准化，上手快</h3>\n<p>课题组已建立成熟的有机碳组分分析和微生物培养实验标准流程。新生入学后经过系统培训即可独立开展实验，<strong>培养周期短、成果产出快</strong>。</p>\n<h3>📊 数据分析能力强，就业面广</h3>\n<p>在课题组你将系统掌握土壤分析、微生物分析、多元统计和科学建模等能力。这些技能广泛适用于科研院所、生态环保、农业技术、碳交易等领域。</p>\n"
   },
   {
     "id": "soil-water-carbon",
@@ -49,6 +64,11 @@
       "en": "Investigating how plant diversity affects soil water transport and carbon cycling, revealing plant-soil-water coupling mechanisms to inform ecosystem management."
     },
     "icon": "leaf",
-    "image": "/images/research/soil-water-carbon.jpg"
+    "image": "/images/research/soil-water-carbon.jpg",
+    "methods": {
+      "zh": "野外样地调查、土壤水分入渗测定、盆栽控制实验、根系分析、土壤碳氮含量测定、植物群落多样性调查",
+      "en": "Field plot survey, soil water infiltration measurement, pot control experiments, root system analysis, soil C/N content analysis, plant community diversity survey"
+    },
+    "bodyHtml": "<h2>主要研究方法</h2>\n<h3>野外调查与原位监测</h3>\n<ul>\n<li><strong>植物群落多样性调查</strong>：在典型生态系统（喀斯特、草地、林地等）设置固定样地，调查植物物种组成、多样性指数及群落结构特征</li>\n<li><strong>土壤水分入渗测定</strong>：利用圆盘入渗仪、Hood入渗仪等设备，原位测定不同植被条件下的土壤导水率和入渗能力，揭示植物多样性对土壤水文过程的影响</li>\n<li><strong>根系分布特征调查</strong>：采用根钻法、微根管法等，分析不同植物群落的根系生物量、分布深度及根系性状</li>\n</ul>\n<h3>室内控制实验</h3>\n<ul>\n<li><strong>盆栽多样性控制实验</strong>：在温室中设计不同物种丰富度和功能群组合的盆栽实验，控制性地研究物种多样性对土壤水分保持和有机碳积累的影响</li>\n<li><strong>土壤碳氮含量测定</strong>：利用元素分析仪测定土壤有机碳、全氮含量，分析不同植物多样性水平下土壤碳氮库的变化规律</li>\n<li><strong>土壤水分特征曲线测定</strong>：采用压力膜仪法测定土壤持水特性，揭示植物根系活动对土壤孔隙结构和水分保持的影响</li>\n</ul>\n<h3>数据分析与建模</h3>\n<ul>\n<li><strong>多样性-功能关系分析</strong>：利用生物多样性-生态系统功能（BEF）分析框架，解析物种多样性与土壤水碳功能的定量关系</li>\n<li><strong>结构方程模型（SEM）</strong>：构建植物多样性→根系性状→土壤结构→水碳耦合的因果路径，识别关键调控因子</li>\n</ul>\n<h2>研究特点与优势</h2>\n<h3>🌿 室内外结合，研究方式灵活</h3>\n<p>本方向采用野外调查与室内盆栽实验相结合的模式。<strong>在生长季需要进行野外调查，其余时间在实验室内进行样品分析和数据处理</strong>，工作节奏张弛有度。</p>\n<h3>🔬 实验设计巧妙，逻辑性强</h3>\n<p>多样性控制实验是国际生态学研究的经典范式，实验设计清晰、因果推断力强。你将学会如何通过精巧的实验设计回答科学问题，<strong>培养严谨的科学思维</strong>。</p>\n<h3>🌏 紧扣生态文明战略，社会意义大</h3>\n<p>植物多样性与水土保持、碳汇功能直接相关，是生态文明建设和&quot;双碳&quot;目标的重要科学支撑。研究成果可直接服务于生态恢复和流域管理，<strong>社会影响力和应用价值高</strong>。</p>\n<h3>📋 培养体系完善，综合能力强</h3>\n<p>在课题组你将掌握植物分类与群落调查、土壤物理化学分析、生态统计建模等多方面技能。这种&quot;野外+室内+数据&quot;的综合训练，<strong>使你在生态学、环境科学、林业等方向的就业和深造中都具有明显优势</strong>。</p>\n"
   }
 ]

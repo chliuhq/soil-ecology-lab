@@ -109,12 +109,14 @@ function buildNews() {
 // ── 构建 research.json ────────────────────────────────────
 function buildResearch() {
   const items = readMdFiles(path.join(CONTENT_DIR, "research"));
-  return items.map(({ id, title_zh, title_en, description_zh, description_en, icon, image }) => ({
-    id,
-    title: { zh: title_zh, en: title_en },
-    description: { zh: description_zh, en: description_en },
-    icon,
-    image,
+  return items.map((item) => ({
+    id: item.id,
+    title: { zh: item.title_zh, en: item.title_en },
+    description: { zh: item.description_zh, en: item.description_en },
+    icon: item.icon,
+    image: item.image,
+    methods: { zh: item.methods_zh || "", en: item.methods_en || "" },
+    bodyHtml: item._content ? marked.parse(item._content) : "",
   }));
 }
 
