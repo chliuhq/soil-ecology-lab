@@ -19,11 +19,9 @@ export default function NewsPage() {
           <article key={n.id} id={`news-${n.id}`} className="scroll-mt-20 border-b border-gray-100 pb-6">
             <div className="flex items-center gap-3 mb-2">
               <span className="text-sm text-white bg-primary px-2.5 py-0.5 rounded">{n.date}</span>
-              {n.link && (
-                <Link href={n.link} className="text-xs text-primary hover:underline">
-                  {t.news.readMore} →
-                </Link>
-              )}
+              <Link href={`/news/${n.id}`} className="text-xs text-primary hover:underline">
+                {t.news.readMore} →
+              </Link>
             </div>
             <h2 className="text-lg font-semibold text-gray-900 mb-3">
               <Link href={`/news/${n.id}`} className="hover:text-primary transition-colors">
