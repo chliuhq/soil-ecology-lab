@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 import publications from "@/data/publications.json";
 import research from "@/data/research.json";
 import news from "@/data/news.json";
@@ -77,8 +78,10 @@ export default function HomePage() {
       {/* ===== 研究方向 ===== */}
       <section className="py-16 bg-white">
         <div className="container-main">
-          <h2 className="section-title text-center">{t.home.researchAreas}</h2>
-          <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
+          <FadeInOnScroll>
+            <h2 className="section-title text-center">{t.home.researchAreas}</h2>
+            <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
+          </FadeInOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {research.map((r) => (
               <Link
@@ -115,8 +118,10 @@ export default function HomePage() {
       {/* ===== 精选论文 ===== */}
       <section className="py-16 bg-bg-light">
         <div className="container-main">
-          <h2 className="section-title text-center">{t.home.featuredPubs}</h2>
-          <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
+          <FadeInOnScroll>
+            <h2 className="section-title text-center">{t.home.featuredPubs}</h2>
+            <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
+          </FadeInOnScroll>
           <div className="space-y-4 max-w-4xl mx-auto">
             {featured.map((pub) => (
               <Link key={pub.id} href={`/publications#pub-${pub.id}`}
@@ -141,8 +146,10 @@ export default function HomePage() {
       {/* ===== 最新动态 ===== */}
       <section className="py-16 bg-white">
         <div className="container-main">
-          <h2 className="section-title text-center">{t.home.latestNews}</h2>
-          <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
+          <FadeInOnScroll>
+            <h2 className="section-title text-center">{t.home.latestNews}</h2>
+            <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
+          </FadeInOnScroll>
           <div className="max-w-2xl mx-auto space-y-4">
             {news.slice(0, 5).map((n: any, i: number) => (
               <Link key={i} href={`/news#news-${n.id}`}
@@ -163,10 +170,12 @@ export default function HomePage() {
       {/* ===== 合作单位 ===== */}
       <section className="py-16 bg-bg-light">
         <div className="container-main">
-          <h2 className="section-title text-center">
-            {lt({ zh: "合作单位", en: "Partner Institutions" })}
-          </h2>
-          <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
+          <FadeInOnScroll>
+            <h2 className="section-title text-center">
+              {lt({ zh: "合作单位", en: "Partner Institutions" })}
+            </h2>
+            <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
+          </FadeInOnScroll>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {[
               { name: { zh: "中国科学院水土保持研究所", en: "Institute of Soil and Water Conservation, CAS" }, url: "http://www.iswc.ac.cn/" },
