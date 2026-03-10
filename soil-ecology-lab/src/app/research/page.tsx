@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import research from "@/data/research.json";
 import publications from "@/data/publications.json";
@@ -55,16 +56,27 @@ export default function ResearchPage() {
 
           return (
             <section key={r.id} id={r.id} className="scroll-mt-20">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">
-                  {r.icon === "leaf" && "🌿"}
-                  {r.icon === "layers" && "🧱"}
-                  {r.icon === "mountain" && "⛰️"}
-                  {r.icon === "satellite" && "🛰️"}
-                </span>
-                <h2 className="text-2xl font-serif font-bold text-gray-900">
-                  {lt(r.title)}
-                </h2>
+              {/* Banner 配图 */}
+              <div className="relative w-full h-48 md:h-56 rounded-xl overflow-hidden mb-6">
+                <Image
+                  src={r.image}
+                  alt={r.title.zh}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-4 left-5 flex items-center gap-3">
+                  <span className="text-3xl drop-shadow-lg">
+                    {r.icon === "leaf" && "🌿"}
+                    {r.icon === "layers" && "🧱"}
+                    {r.icon === "mountain" && "⛰️"}
+                    {r.icon === "satellite" && "🛰️"}
+                  </span>
+                  <h2 className="text-2xl font-serif font-bold text-white drop-shadow-lg">
+                    {lt(r.title)}
+                  </h2>
+                </div>
               </div>
               <p className="text-text-light leading-relaxed mb-4 max-w-3xl">
                 {lt(r.description)}

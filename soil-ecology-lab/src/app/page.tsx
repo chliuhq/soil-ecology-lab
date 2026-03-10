@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import publications from "@/data/publications.json";
 import research from "@/data/research.json";
@@ -77,16 +78,28 @@ export default function HomePage() {
               <Link
                 key={r.id}
                 href={`/research#${r.id}`}
-                className="card-hover bg-white border border-gray-100 rounded-xl p-6 text-center"
+                className="card-hover bg-white border border-gray-100 rounded-xl overflow-hidden text-center group"
               >
-                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center text-2xl">
-                  {r.icon === "leaf" && "🌿"}
-                  {r.icon === "layers" && "🧱"}
-                  {r.icon === "mountain" && "⛰️"}
-                  {r.icon === "satellite" && "🛰️"}
+                {/* 配图 */}
+                <div className="relative w-full h-36 bg-green-50 overflow-hidden">
+                  <Image
+                    src={r.image}
+                    alt={r.title.zh}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    unoptimized
+                  />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{lt(r.title)}</h3>
-                <p className="text-base text-text-light line-clamp-3">{lt(r.description)}</p>
+                <div className="p-5">
+                  <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-green-100 flex items-center justify-center text-lg -mt-8 relative z-10 border-2 border-white shadow-sm">
+                    {r.icon === "leaf" && "🌿"}
+                    {r.icon === "layers" && "🧱"}
+                    {r.icon === "mountain" && "⛰️"}
+                    {r.icon === "satellite" && "🛰️"}
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">{lt(r.title)}</h3>
+                  <p className="text-sm text-text-light line-clamp-3">{lt(r.description)}</p>
+                </div>
               </Link>
             ))}
           </div>
