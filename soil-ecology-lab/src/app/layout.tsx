@@ -5,7 +5,7 @@ import ClientLayout from "./client-layout";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
-const siteUrl = "https://soil-ecology-lab.vercel.app";
+const siteUrl = "https://www.soilecology.online";
 const siteTitle = "土壤生态与水土保持课题组 | Soil Ecology & Conservation Lab";
 const siteDescription = "广西大学土壤生态与水土保持课题组 — 聚焦植物多样性与土壤水碳耦合、土壤有机碳动态、土壤侵蚀与水土保持、遥感监测";
 

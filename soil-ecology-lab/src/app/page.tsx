@@ -20,8 +20,14 @@ export default function HomePage() {
   return (
     <>
       {/* ===== Hero Banner ===== */}
-      <section className="relative bg-gradient-to-br from-green-50 via-white to-emerald-50 py-20 md:py-28">
-        <div className="container-main text-center">
+      <section className="relative bg-gradient-to-br from-green-50 via-white to-emerald-50 py-20 md:py-28 overflow-hidden">
+        {/* 装饰性背景元素 */}
+        <div className="absolute top-10 left-10 w-64 h-64 bg-green-200/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-emerald-200/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/4 w-3 h-3 bg-green-300/40 rounded-full" />
+        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-emerald-400/30 rounded-full" />
+        <div className="absolute bottom-1/4 left-1/3 w-4 h-4 bg-green-200/50 rounded-full" />
+        <div className="container-main text-center relative z-10">
           <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-4 leading-tight">
             {t.home.title}
           </h1>
