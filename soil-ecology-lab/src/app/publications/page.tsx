@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import publications from "@/data/publications.json";
@@ -85,7 +86,11 @@ export default function PublicationsPage() {
 
                     return (
                       <div key={pub.id} id={`pub-${pub.id}`} className="pub-item scroll-mt-20">
-                        <h3 className="font-medium text-gray-900 mb-1">{pub.title}</h3>
+                        <h3 className="font-medium text-gray-900 mb-1">
+                          <Link href={`/publications/${pub.id}`} className="hover:text-primary transition-colors">
+                            {pub.title}
+                          </Link>
+                        </h3>
                         <p className="text-base text-text-light">{pub.authors}</p>
                         <p className="text-base mt-1">
                           <span className="font-medium text-primary">{pub.journal}</span>

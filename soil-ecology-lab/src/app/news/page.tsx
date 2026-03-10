@@ -23,7 +23,11 @@ export default function NewsPage() {
                 </Link>
               )}
             </div>
-            <h2 className="text-lg font-semibold text-gray-900 mb-3">{lt(n.title)}</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-3">
+              <Link href={`/news/${n.id}`} className="hover:text-primary transition-colors">
+                {lt(n.title)}
+              </Link>
+            </h2>
             {n.content ? (
               <p className="text-base text-text-main leading-relaxed">{String(lt(n.content))}</p>
             ) : null}
