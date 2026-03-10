@@ -52,16 +52,16 @@ export default function HomePage() {
         <div className="container-main">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { num: research.length, label: lt({ zh: "研究方向", en: "Research Areas" }), icon: "🔬" },
-              { num: publications.length, label: lt({ zh: "学术论文", en: "Publications" }), icon: "📄" },
-              { num: (projects as any[]).length, label: lt({ zh: "科研项目", en: "Projects" }), icon: "📋" },
-              { num: members.pi.length + members.students.length, label: lt({ zh: "团队成员", en: "Team Members" }), icon: "👥" },
+              { num: research.length, label: lt({ zh: "研究方向", en: "Research Areas" }), icon: "🔬", href: "/research" },
+              { num: publications.length, label: lt({ zh: "学术论文", en: "Publications" }), icon: "📄", href: "/publications" },
+              { num: (projects as any[]).length, label: lt({ zh: "科研项目", en: "Projects" }), icon: "📋", href: "/projects" },
+              { num: members.pi.length + members.students.length, label: lt({ zh: "团队成员", en: "Team Members" }), icon: "👥", href: "/members" },
             ].map((s, i) => (
-              <div key={i}>
+              <Link key={i} href={s.href} className="group cursor-pointer hover:scale-105 transition-transform">
                 <span className="text-2xl">{s.icon}</span>
-                <p className="text-3xl font-bold text-primary mt-1">{s.num}</p>
-                <p className="text-sm text-text-light">{s.label}</p>
-              </div>
+                <p className="text-3xl font-bold text-primary mt-1 group-hover:text-primary-dark transition-colors">{s.num}</p>
+                <p className="text-sm text-text-light group-hover:text-primary transition-colors">{s.label}</p>
+              </Link>
             ))}
           </div>
         </div>
