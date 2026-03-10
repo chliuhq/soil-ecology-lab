@@ -6,7 +6,7 @@ journal: "Catena"
 year: 2025
 volume: "261"
 pages: "109547"
-doi: ""
+doi: "10.1016/j.catena.2025.109547"
 category:
   - "remote-sensing"
   - "featured"

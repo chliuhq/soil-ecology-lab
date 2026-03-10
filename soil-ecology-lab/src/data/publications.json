@@ -287,7 +287,7 @@
     "year": 2025,
     "volume": "261",
     "pages": "109547",
-    "doi": "",
+    "doi": "10.1016/j.catena.2025.109547",
     "pdf": "",
     "category": [
       "remote-sensing",
@@ -299,15 +299,15 @@
       "en": "<p>This study proposes innovative methods for monitoring soil erosion using InSAR technology. Through synthetic aperture radar interferometry, high-precision and large-scale quantitative monitoring of soil erosion processes was achieved, opening new avenues for remote sensing applications in soil conservation.</p>\n",
       "highlights": {
         "zh": [
-          "首次将InSAR技术系统应用于土壤侵蚀监测\r",
-          "实现了毫米级精度的地表形变检测\r",
-          "大范围定量监测突破了传统方法的空间限制\r",
+          "首次将InSAR技术系统应用于土壤侵蚀监测",
+          "实现了毫米级精度的地表形变检测",
+          "大范围定量监测突破了传统方法的空间限制",
           "为遥感水土保持监测开辟了新技术路径"
         ],
         "en": [
-          "First systematic application of InSAR for soil erosion monitoring\r",
-          "Achieved millimeter-level surface deformation detection\r",
-          "Large-scale quantitative monitoring overcame spatial limitations of traditional methods\r",
+          "First systematic application of InSAR for soil erosion monitoring",
+          "Achieved millimeter-level surface deformation detection",
+          "Large-scale quantitative monitoring overcame spatial limitations of traditional methods",
           "Opens new technical pathways for remote sensing in soil conservation"
         ]
       },
@@ -330,7 +330,7 @@
     "year": 2025,
     "volume": "252",
     "pages": "108850",
-    "doi": "",
+    "doi": "10.1016/j.catena.2025.108850",
     "pdf": "",
     "category": [
       "erosion",
@@ -342,15 +342,15 @@
       "en": "<p>This study investigated soil property changes following a thaw-induced mass movement event in the Qinghai-Tibetan Plateau permafrost region. Thaw-induced mass movements significantly altered soil physicochemical properties and carbon-nitrogen stocks, revealing the profound impacts of permafrost degradation on soil ecosystems under climate warming.</p>\n",
       "highlights": {
         "zh": [
-          "调查青藏高原热融滑塌后土壤性质变化\r",
-          "热融事件显著改变了土壤理化性质和碳氮储量\r",
-          "揭示了冻土退化对土壤生态系统的深远影响\r",
+          "调查青藏高原热融滑塌后土壤性质变化",
+          "热融事件显著改变了土壤理化性质和碳氮储量",
+          "揭示了冻土退化对土壤生态系统的深远影响",
           "为气候变暖下冻土区生态风险评估提供依据"
         ],
         "en": [
-          "Investigated soil property changes after thaw-induced mass movement on QTP\r",
-          "Thaw events significantly altered soil physicochemical properties and C-N stocks\r",
-          "Revealed profound impacts of permafrost degradation on soil ecosystems\r",
+          "Investigated soil property changes after thaw-induced mass movement on QTP",
+          "Thaw events significantly altered soil physicochemical properties and C-N stocks",
+          "Revealed profound impacts of permafrost degradation on soil ecosystems",
           "Provides basis for ecological risk assessment in permafrost regions under warming"
         ]
       },
@@ -679,7 +679,7 @@
     "year": 2024,
     "volume": "651",
     "pages": "132594",
-    "doi": "",
+    "doi": "10.1016/j.jhydrol.2024.132594",
     "pdf": "",
     "category": [
       "soil-water-carbon"
@@ -690,15 +690,15 @@
       "en": "<p>This review and global meta-analysis systematically summarized patterns of freezing-induced soil water redistribution.</p>\n",
       "highlights": {
         "zh": [
-          "综述与荟萃分析结合揭示冻结水分再分布规律\r",
-          "冻融循环驱动土壤水分迁移的机制解析\r",
-          "温度梯度和土壤质地是关键影响因素\r",
+          "综述与荟萃分析结合揭示冻结水分再分布规律",
+          "冻融循环驱动土壤水分迁移的机制解析",
+          "温度梯度和土壤质地是关键影响因素",
           "为寒区水文模拟和水资源管理提供理论基础"
         ],
         "en": [
-          "Review and meta-analysis revealing freezing-induced water redistribution patterns\r",
-          "Mechanism analysis of freeze-thaw driven soil water migration\r",
-          "Temperature gradient and soil texture are key influencing factors\r",
+          "Review and meta-analysis revealing freezing-induced water redistribution patterns",
+          "Mechanism analysis of freeze-thaw driven soil water migration",
+          "Temperature gradient and soil texture are key influencing factors",
           "Provides theoretical foundations for cold region hydrological simulation"
         ]
       },

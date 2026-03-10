@@ -6,7 +6,7 @@ journal: "Journal of Hydrology"
 year: 2024
 volume: "651"
 pages: "132594"
-doi: ""
+doi: "10.1016/j.jhydrol.2024.132594"
 category: ["soil-water-carbon"]
 member: "jiahui-yang"
 images: []

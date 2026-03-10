@@ -6,7 +6,7 @@ journal: "Catena"
 year: 2025
 volume: "252"
 pages: "108850"
-doi: ""
+doi: "10.1016/j.catena.2025.108850"
 category:
   - "erosion"
   - "featured"

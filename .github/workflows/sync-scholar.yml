@@ -1,0 +1,44 @@
+name: Sync Google Scholar Publications
+
+on:
+  schedule:
+    # 每周一 UTC 8:00（北京时间 16:00）自动运行
+    - cron: '0 8 * * 1'
+  workflow_dispatch: # 支持手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: soil-ecology-lab
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Scholar sync
+        env:
+          SERP_API_KEY: ${{ secrets.SERP_API_KEY }}
+        run: node scripts/sync-scholar.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat(auto): sync new publications from Google Scholar"
+          git push
+

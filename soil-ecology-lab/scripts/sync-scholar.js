@@ -7,7 +7,8 @@ const https = require("https");
 const fs = require("fs");
 const path = require("path");
 
-const SERP_API_KEY = process.env.SERP_API_KEY || "7ef1e32fc97267d6304913dd8112673f538f15b618d91f2958e0941814b5d61d";
+const SERP_API_KEY = process.env.SERP_API_KEY;
+if (!SERP_API_KEY) { console.error("❌ 请设置环境变量 SERP_API_KEY"); process.exit(1); }
 const AUTHORS = [
   { id: "AyQBphkAAAAJ", member: "huaqing-liu", name: "Huaqing Liu" },
   { id: "spXTiCIAAAAJ", member: "jiahui-yang", name: "Jiahui Yang" },
