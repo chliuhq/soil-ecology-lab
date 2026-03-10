@@ -10,9 +10,34 @@ export default function ChatWidget() {
   const [msgs, setMsgs] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showBubble, setShowBubble] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [msgs]);
+
+  // 自动弹出欢迎气泡（每次会话只弹一次，3秒后出现）
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const dismissed = sessionStorage.getItem("chat_bubble_dismissed");
+    if (dismissed) return;
+    const timer = setTimeout(() => setShowBubble(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // 打开聊天窗口时关闭气泡
+  const handleOpen = () => {
+    setOpen(!open);
+    if (showBubble) {
+      setShowBubble(false);
+      sessionStorage.setItem("chat_bubble_dismissed", "1");
+    }
+  };
+
+  const dismissBubble = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setShowBubble(false);
+    sessionStorage.setItem("chat_bubble_dismissed", "1");
+  };
 
   const send = async () => {
     const q = input.trim();
@@ -43,9 +68,27 @@ export default function ChatWidget() {
 
   return (
     <>
+      {/* 欢迎气泡 */}
+      {showBubble && !open && (
+        <div className="fixed bottom-[5.5rem] right-6 z-50 animate-fade-in">
+          <div className="relative bg-white rounded-xl shadow-lg border border-gray-100 px-4 py-3 max-w-[220px]">
+            <button
+              onClick={dismissBubble}
+              className="absolute -top-2 -right-2 w-5 h-5 bg-gray-200 hover:bg-gray-300 rounded-full text-xs text-gray-600 flex items-center justify-center transition-colors"
+              aria-label="Close"
+            >✕</button>
+            <p className="text-sm text-gray-700 leading-relaxed">
+              {String(lt({ zh: "👋 你好，有什么可以帮你的？", en: "👋 Hi! How can I help you?" }))}
+            </p>
+            {/* 小三角箭头 */}
+            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-r border-b border-gray-100 transform rotate-45" />
+          </div>
+        </div>
+      )}
+
       {/* 浮动按钮 */}
       <button
-        onClick={() => setOpen(!open)}
+        onClick={handleOpen}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-primary text-white shadow-lg hover:bg-primary-dark transition-all flex items-center justify-center text-2xl"
         aria-label="Chat"
       >
