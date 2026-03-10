@@ -7,8 +7,10 @@ export default function ProjectsPage() {
   const { t } = useI18n();
   const lt = useLocaleText();
 
-  const ongoing = projects.filter((p) => p.status === "ongoing");
-  const completed = projects.filter((p) => p.status === "completed");
+  const sortByPeriodDesc = (a: (typeof projects)[0], b: (typeof projects)[0]) =>
+    b.period.localeCompare(a.period);
+  const ongoing = projects.filter((p) => p.status === "ongoing").sort(sortByPeriodDesc);
+  const completed = projects.filter((p) => p.status === "completed").sort(sortByPeriodDesc);
 
   const getMemberName = (id: string) => {
     const m = members.pi.find((m) => m.id === id);
