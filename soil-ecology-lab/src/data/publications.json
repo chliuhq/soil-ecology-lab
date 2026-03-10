@@ -908,5 +908,33 @@
       },
       "images": []
     }
+  },
+  {
+    "id": 26,
+    "authors": "H Liu, X Gao, C Li, Y Cai, X Song, X Zhao",
+    "title": "Global meta-analysis of water cycling response to plant mixture",
+    "journal": "EGUsphere [preprint]",
+    "year": 2023,
+    "volume": "",
+    "pages": "",
+    "doi": "10.5194/egusphere-2023-719",
+    "pdf": "",
+    "category": [
+      "soil-water-carbon"
+    ],
+    "member": "huaqing-liu",
+    "summary": {
+      "zh": "<p>（待补充）</p>\n",
+      "en": "<p>Global meta-analysis of water cycling response to plant mixture</p>\n",
+      "highlights": {
+        "zh": [
+          "待补充"
+        ],
+        "en": [
+          "To be added"
+        ]
+      },
+      "images": []
+    }
   }
 ]
