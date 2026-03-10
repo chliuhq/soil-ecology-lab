@@ -20,8 +20,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ===== Hero Banner + 数据概览 ===== */}
-      <section className="relative bg-gradient-to-br from-green-50 via-white to-emerald-50 pt-14 md:pt-20 pb-6 overflow-hidden">
+      {/* ===== Hero Banner ===== */}
+      <section className="relative bg-gradient-to-br from-green-50 via-white to-emerald-50 py-20 md:py-28 overflow-hidden">
         {/* 装饰性背景元素 */}
         <div className="absolute top-10 left-10 w-64 h-64 bg-green-200/20 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-10 w-80 h-80 bg-emerald-200/20 rounded-full blur-3xl" />
@@ -29,16 +29,16 @@ export default function HomePage() {
         <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-emerald-400/30 rounded-full" />
         <div className="absolute bottom-1/4 left-1/3 w-4 h-4 bg-green-200/50 rounded-full" />
         <div className="container-main text-center relative z-10">
-          <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-3 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-4 leading-tight">
             {t.home.title}
           </h1>
-          <p className="text-lg md:text-2xl text-primary font-medium mb-4">
+          <p className="text-xl md:text-2xl text-primary font-medium mb-6">
             {t.home.subtitle}
           </p>
-          <p className="max-w-3xl mx-auto text-text-light text-base md:text-lg leading-relaxed mb-6">
+          <p className="max-w-3xl mx-auto text-text-light text-lg md:text-xl leading-relaxed mb-8">
             {t.home.description}
           </p>
-          <div className="flex gap-4 justify-center mb-10">
+          <div className="flex gap-4 justify-center">
             <Link
               href="/research"
               className="px-6 py-2.5 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-medium"
@@ -52,8 +52,13 @@ export default function HomePage() {
               {t.nav.joinus}
             </Link>
           </div>
-          {/* 数据概览 - 整合在 Hero 底部 */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto bg-white/70 backdrop-blur rounded-xl p-4 border border-gray-100 shadow-sm">
+        </div>
+      </section>
+
+      {/* ===== 数据概览 ===== */}
+      <section className="py-8 bg-white border-b border-gray-100">
+        <div className="container-main">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { num: research.length, label: lt({ zh: "研究方向", en: "Research Areas" }), icon: "🔬", href: "/research" },
               { num: publications.length, label: lt({ zh: "学术论文", en: "Publications" }), icon: "📄", href: "/publications" },
@@ -61,9 +66,9 @@ export default function HomePage() {
               { num: members.pi.length + members.students.length, label: lt({ zh: "团队成员", en: "Team Members" }), icon: "👥", href: "/people" },
             ].map((s, i) => (
               <Link key={i} href={s.href} className="group cursor-pointer hover:scale-105 transition-transform">
-                <span className="text-xl">{s.icon}</span>
-                <p className="text-2xl font-bold text-primary mt-0.5 group-hover:text-primary-dark transition-colors">{s.num}</p>
-                <p className="text-xs text-text-light group-hover:text-primary transition-colors">{s.label}</p>
+                <span className="text-2xl">{s.icon}</span>
+                <p className="text-3xl font-bold text-primary mt-1 group-hover:text-primary-dark transition-colors">{s.num}</p>
+                <p className="text-sm text-text-light group-hover:text-primary transition-colors">{s.label}</p>
               </Link>
             ))}
           </div>
@@ -106,37 +111,6 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== 招生横幅 ===== */}
-      <section id="recruitment" className="py-10 bg-gradient-to-r from-green-600 to-emerald-600 text-white">
-        <div className="container-main flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2">
-              {lt({ zh: "🎓 2026年硕士研究生招生中", en: "🎓 Now Recruiting 2026 Graduate Students" })}
-            </h2>
-            <p className="text-green-100 max-w-xl">
-              {lt({
-                zh: "欢迎生态学、土壤学、林学、遥感、水土保持等相关专业的同学加入我们的团队",
-                en: "We welcome students from ecology, soil science, forestry, remote sensing, and related fields"
-              })}
-            </p>
-          </div>
-          <div className="flex gap-3 shrink-0">
-            <Link
-              href="/joinus"
-              className="px-6 py-2.5 bg-white text-green-700 rounded-lg font-bold hover:bg-green-50 transition-colors"
-            >
-              {lt({ zh: "了解详情", en: "Learn More" })}
-            </Link>
-            <a
-              href={`mailto:${members.pi[0].email}`}
-              className="px-6 py-2.5 border-2 border-white text-white rounded-lg font-bold hover:bg-white/10 transition-colors"
-            >
-              {lt({ zh: "联系导师", en: "Contact Us" })}
-            </a>
           </div>
         </div>
       </section>
