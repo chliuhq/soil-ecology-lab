@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Soil base -->
+  <ellipse cx="32" cy="52" rx="22" ry="8" fill="#8B6914" opacity="0.7"/>
+  <ellipse cx="32" cy="52" rx="16" ry="5" fill="#A0522D" opacity="0.5"/>
+  <!-- Stem -->
+  <path d="M32 50 Q32 36 30 28" stroke="#2E7D32" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Left leaf -->
+  <path d="M30 28 Q18 18 22 8 Q32 12 30 28Z" fill="#4CAF50"/>
+  <path d="M30 28 Q22 16 22 8" stroke="#2E7D32" stroke-width="0.8" fill="none"/>
+  <!-- Right leaf -->
+  <path d="M31 34 Q42 24 38 14 Q28 20 31 34Z" fill="#66BB6A"/>
+  <path d="M31 34 Q38 22 38 14" stroke="#2E7D32" stroke-width="0.8" fill="none"/>
+  <!-- Small leaf bud -->
+  <path d="M30.5 40 Q24 34 26 28 Q32 32 30.5 40Z" fill="#81C784" opacity="0.8"/>
+  <!-- Root lines in soil -->
+  <path d="M32 52 Q28 56 25 58" stroke="#6D4C12" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M32 52 Q36 57 38 58" stroke="#6D4C12" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M32 52 Q32 56 32 59" stroke="#6D4C12" stroke-width="0.8" fill="none" opacity="0.4"/>
+</svg>

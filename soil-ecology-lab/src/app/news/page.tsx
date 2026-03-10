@@ -9,7 +9,7 @@ export default function NewsPage() {
 
   return (
     <div className="container-main py-16">
-      <h1 className="section-title text-center">{(t as any).news?.title || "新闻动态"}</h1>
+      <h1 className="section-title text-center">{t.news.title}</h1>
       <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
 
       <div className="max-w-3xl mx-auto space-y-8">
@@ -19,7 +19,7 @@ export default function NewsPage() {
               <span className="text-sm text-white bg-primary px-2.5 py-0.5 rounded">{n.date}</span>
               {n.link && (
                 <Link href={n.link} className="text-xs text-primary hover:underline">
-                  {(t as any).news?.readMore || "阅读详情"} →
+                  {t.news.readMore} →
                 </Link>
               )}
             </div>
