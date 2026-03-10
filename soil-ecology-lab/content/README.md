@@ -183,6 +183,55 @@ git push
 
 ---
 
+## 🔬 Google Scholar 论文自动同步
+
+网站支持从 Google Scholar 自动同步新论文，无需手动添加。
+
+### 自动同步（GitHub Actions）
+
+已配置 GitHub Actions 工作流，**每周一北京时间 16:00** 自动运行：
+1. 从 Google Scholar 获取刘华清、杨佳慧两位老师的最新论文
+2. 与现有论文去重（标题模糊匹配 + DOI 精确匹配）
+3. 自动过滤预印本（EGUsphere、arXiv 等）
+4. 为新论文自动查询 DOI 并生成 Markdown 文件
+5. 自动提交推送，Vercel 自动部署
+
+**前提条件：** 需要在 GitHub 仓库 Settings → Secrets and variables → Actions 中添加 `SERP_API_KEY`。
+
+也可以在 GitHub 仓库的 Actions 页面手动点击 "Run workflow" 立即触发同步。
+
+### 手动同步
+
+在 `soil-ecology-lab` 目录下运行：
+
+```bash
+# 设置 API Key（每次新开终端需要设置）
+# Windows PowerShell:
+$env:SERP_API_KEY="你的SerpAPI密钥"
+# Mac/Linux:
+export SERP_API_KEY="你的SerpAPI密钥"
+
+# 预览模式（只看不写）
+node scripts/sync-scholar.js --dry-run
+
+# 正式同步（会生成文件并更新数据）
+node scripts/sync-scholar.js
+```
+
+同步后生成的论文文件中，中文摘要和研究亮点标记为"待补充"，请手动编辑补充。
+
+### DOI 补全
+
+如果有论文缺少 DOI，可以运行：
+
+```bash
+node scripts/fix-doi.js
+```
+
+脚本会自动从 CrossRef 查询并补全 DOI。中文论文可能查不到，需要手动从知网获取。
+
+---
+
 ## 🖼️ 图片与 PDF 文件说明
 
 所有图片和 PDF 文件都放在 `public/` 文件夹下，目录结构如下：
