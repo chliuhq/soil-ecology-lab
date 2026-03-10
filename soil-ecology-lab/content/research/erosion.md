@@ -1,10 +1,43 @@
 ---
 id: "erosion"
-title_zh: "土壤侵蚀与水土保持"
-title_en: "Soil Erosion & Conservation"
-description_zh: "研究土壤侵蚀过程与机理，开发水土保持技术与措施，关注冻融作用、降雨径流等对坡面侵蚀的影响。"
-description_en: "Studying soil erosion processes and mechanisms, developing conservation techniques, with focus on freeze-thaw effects and rainfall-runoff impacts on hillslope erosion."
+title_zh: "土壤侵蚀过程与机理"
+title_en: "Soil Erosion Processes and Mechanisms"
+description_zh: "研究土壤侵蚀过程与机理，关注气候变化、降雨径流等对坡面侵蚀的影响，揭示不同环境因子驱动下的侵蚀产沙规律。"
+description_en: "Studying soil erosion processes and mechanisms, with focus on climate change and rainfall-runoff impacts on hillslope erosion, revealing erosion and sediment yield patterns under different environmental drivers."
 icon: "mountain"
 image: "/images/research/erosion.jpg"
+methods_zh: "人工模拟降雨试验、径流小区观测、RUSLE侵蚀模型模拟、气候模拟试验"
+methods_en: "Artificial rainfall simulation, runoff plot monitoring, RUSLE erosion modeling, climate simulation"
 ---
+
+## 主要研究方法
+
+### 野外观测与原位试验
+- **径流小区观测**：在典型坡面布设不同坡度、坡长的标准径流小区，长期监测自然降雨条件下的产流产沙过程
+- **人工模拟降雨试验**：利用便携式人工降雨器，在可控条件下研究不同雨强、坡度、土壤类型对侵蚀过程的影响
+
+### 室内模拟与分析
+- **气候模拟试验**：在人工气候箱中进行气候梯度处理，研究气候变化对土壤结构、抗蚀性及侵蚀过程的影响机理
+- **土壤理化性质分析**：测定土壤团聚体稳定性、抗剪强度、渗透性等指标，揭示土壤可蚀性的影响因素
+
+### 数值模拟与建模
+- **RUSLE模型**：修正通用土壤流失方程，评估区域尺度的土壤侵蚀风险与水土流失量
+- **耦合模型开发**：将环境、植被、地形等因子纳入侵蚀模型，提升复杂环境下的侵蚀预测精度
+
+## 研究特点与优势
+
+### 🏠 以室内实验为主，科研体验友好
+本方向的核心研究工作主要在实验室内完成——人工模拟降雨、人工培养试验、土壤理化分析等均可在室内可控条件下开展。**不需要频繁出野外**，避免了长时间风吹日晒和恶劣天气的困扰，科研生活更加规律、舒适。
+
+### 🎯 实验过程可控，结果可重复
+室内模拟实验可以精确控制降雨强度、温湿度、坡度等变量，实验条件标准化程度高。这意味着你的实验数据质量有保障，结果可重复验证，**可产出高质量的学术论文**。
+
+### 📋 培养流程清晰，成长路径明确
+课题组已形成成熟的"文献阅读→实验设计→室内实验→数据分析→论文撰写"全链条培养体系。从入学第一天起，你就能清楚知道每个阶段的目标和任务，**不会迷茫、不走弯路**。导师团队全程指导，确保每位同学都能高效完成学业。
+
+### ⏰ 科研节奏合理，效率高
+室内实验不受季节和天气限制，可以全年持续推进。一组完整的模拟试验通常在数周内即可完成，**数据产出快、反馈周期短**，有利于在读研期间积累充足的科研成果。
+
+### 🔬 技能实用，就业面广
+在课题组你将掌握实验设计、数据统计分析、模型模拟、学术写作等核心技能。这些能力不仅适用于学术深造，在环保、国土、水利、生态修复等行业同样具有很强的竞争力。
 
