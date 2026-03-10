@@ -151,7 +151,7 @@ export default function HomePage() {
             <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
           </FadeInOnScroll>
           <div className="max-w-2xl mx-auto space-y-4">
-            {news.slice(0, 5).map((n: any, i: number) => (
+            {[...news].sort((a: any, b: any) => b.date.localeCompare(a.date)).slice(0, 5).map((n: any, i: number) => (
               <Link key={i} href={`/news#news-${n.id}`}
                 className="flex gap-4 items-start py-3 border-b border-gray-50 hover:bg-green-50/50 rounded px-2 -mx-2 transition-colors group">
                 <span className="text-base text-text-light whitespace-nowrap">{n.date}</span>

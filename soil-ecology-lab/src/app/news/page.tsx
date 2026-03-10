@@ -7,13 +7,15 @@ export default function NewsPage() {
   const { t } = useI18n();
   const lt = useLocaleText();
 
+  const sorted = [...news].sort((a: any, b: any) => b.date.localeCompare(a.date));
+
   return (
     <div className="container-main py-16">
       <h1 className="section-title text-center">{t.news.title}</h1>
       <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
 
       <div className="max-w-3xl mx-auto space-y-8">
-        {news.map((n: any) => (
+        {sorted.map((n: any) => (
           <article key={n.id} id={`news-${n.id}`} className="scroll-mt-20 border-b border-gray-100 pb-6">
             <div className="flex items-center gap-3 mb-2">
               <span className="text-sm text-white bg-primary px-2.5 py-0.5 rounded">{n.date}</span>
