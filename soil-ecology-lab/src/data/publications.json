@@ -1,49 +1,626 @@
 [
   {
     "id": 1,
-    "authors": "Huaqing Liu, Yaohui Cai*, Xiaodong Gao, Long Ma, Heng Liu, Xining Zhao",
-    "title": "Grass species diversity reduces water and nutrient loss under simulated extreme precipitation",
+    "authors": "Huaqing Liu, Jiahui Yang, Chuanxiao Liu, Yanfang Diao*, Depeng Ma, Fahu Li, Abass E. Rahma, Tingwu Lei*",
+    "title": "Flow velocity on cultivated soil slope with wheat straw incorporation",
     "journal": "Journal of Hydrology",
-    "year": 2026,
-    "volume": "664",
-    "pages": "134499",
-    "doi": "10.1016/j.jhydrol.2025.134499",
-    "pdf": "/papers/pub-1-grass-diversity.pdf",
+    "year": 2020,
+    "volume": "584",
+    "pages": "124667",
+    "doi": "10.1016/j.jhydrol.2020.124667",
+    "pdf": "",
     "category": [
-      "soil-water-carbon",
-      "featured"
+      "erosion"
     ],
     "member": "huaqing-liu",
     "summary": {
-      "zh": "<p>土壤饱和导水率（Ks）是衡量土壤水分渗透和运动能力的关键参数，直接影响生态系统的水循环和旱涝灾害调节。长期以来，人们对植物多样性如何影响 Ks 的认识往往停留在宏观假设。研究团队通过在黄土高原进行长期的草本物种丰富度控制实验，结合先进的 X 射线显微计算机断层扫描（X-ray micro-CT）技术，从微观角度定量揭示了植物多样性提升土壤导水能力的核心机理。研究发现：物种丰富度的增加并不仅是通过改变孔隙的大小，而是通过显著增加土壤孔隙的“连通性”（即改善土壤的“血管网络”）来增强 Ks。</p>\n<h3>研究方法与关键发现</h3>\n<p>研究团队设置了包含 1、2、4、8、16 种草本植物的物种丰富度梯度试验样地。通过对采集的土柱进行 3D CT 扫描（分辨率达 50 μm），精确重建了不同处理下的土壤孔隙结构。</p>\n<ul>\n<li>连通性是关键：随着草本植物物种丰富度的增加，土壤饱和导水率（Ks）呈显著上升趋势。关键在于，这种提升并非归因于孔隙总量的增加或孔隙变得更大，而是因为大孔隙（直径 &gt; 0.25 mm）的数量密度和连通性指标（如欧拉指数密度）显著提高。物种多样性越高，土壤中越容易形成贯穿性的、复杂的流体通道。</li>\n<li>根系是幕后推手：研究进一步通过结构方程模型（SEM）证明，植物多样性通过增加根系生物量和根体积密度，直接推动了土壤孔隙连通性的改善。不同物种根系在土壤中的互补分布和相互作用，如同自然界的“掘进机”，在土体中编织出一张复杂的、高度连通的“生物通道网”。</li>\n<li>大孔隙的作用：尽管大孔隙（&gt;1 mm）在总孔隙中占比很小，但由于其极高的连通性，它们是水分流动最有效的通道。物种丰富度显著增加了这类大孔隙的连通性。</li>\n</ul>\n<h3>科学意义与应用前景</h3>\n<p>本研究通过微观 CT 技术提供了坚实的实验证据，证实了植物多样性在塑造高效土壤孔隙网络中的决定性作用。这一发现将植物群落功能特性与土壤水动力学过程直接联系起来，为以下方面提供了重要的科学依据：</p>\n<ul>\n<li>生态恢复：在进行植被恢复（如退耕还林还草）时，应优先考虑使用高多样性的草本植物组合，以更有效地改善土壤结构，增强土壤的水分涵养和入渗能力。</li>\n<li>水文模型：研究结果可用于改进由于忽视植被多样性而导致的土壤导水率估算偏差，提升区域水文模型的准确性。</li>\n</ul>\n",
-      "en": "<p>Soil saturated hydraulic conductivity (Ks) is a key parameter for measuring soil water infiltration and movement, directly affecting ecosystem water cycling and flood regulation. This study combined long-term herbaceous species richness controlled experiments on the Loess Plateau with advanced X-ray micro-CT technology to quantitatively reveal the core mechanisms by which plant diversity enhances soil hydraulic conductivity from a microscopic perspective. The findings show that increased species richness enhances Ks not merely by altering pore size, but by significantly increasing soil pore connectivity.</p>\n<h3>Methods and Key Findings</h3>\n<p>The research team established experimental plots with species richness gradients of 1, 2, 4, 8, and 16 herbaceous plant species. 3D CT scanning of collected soil columns (resolution of 50 μm) precisely reconstructed soil pore structures under different treatments.</p>\n<ul>\n<li>Connectivity is key: As herbaceous species richness increased, Ks showed a significant upward trend. Critically, this enhancement was not attributable to increased total porosity or larger pores, but rather to significantly improved macropore (diameter &gt; 0.25 mm) number density and connectivity indices (e.g., Euler number density). Higher species diversity facilitated the formation of penetrating, complex fluid channels in the soil.</li>\n<li>Roots are the driving force: Structural equation modeling (SEM) further demonstrated that plant diversity directly promoted soil pore connectivity improvement by increasing root biomass and root volume density. The complementary distribution and interaction of different species&#39; root systems in the soil weave a complex, highly connected biological channel network.</li>\n<li>Role of macropores: Although macropores (&gt;1 mm) account for a small proportion of total porosity, their extremely high connectivity makes them the most effective channels for water flow. Species richness significantly increased the connectivity of these macropores.</li>\n</ul>\n<h3>Scientific Significance and Applications</h3>\n<p>This study provides solid experimental evidence through micro-CT technology, confirming the decisive role of plant diversity in shaping efficient soil pore networks. This finding directly links plant community functional traits with soil hydrodynamic processes, providing important scientific basis for:</p>\n<ul>\n<li>Ecological restoration: When conducting vegetation restoration (e.g., converting farmland to forests and grasslands), priority should be given to high-diversity herbaceous plant combinations to more effectively improve soil structure and enhance soil water retention and infiltration capacity.</li>\n<li>Hydrological modeling: The results can be used to improve Ks estimation biases caused by neglecting vegetation diversity, enhancing the accuracy of regional hydrological models.</li>\n</ul>\n",
+      "zh": "<p>本研究系统探究了小麦秸秆掺入对耕作坡面水流流速的影响规律。结果表明秸秆还田显著降低了坡面流速，改变了水流的水力学特性，为农田坡面水土保持技术的改进提供了实验依据。</p>\n",
+      "en": "<p>This study systematically investigated the effects of wheat straw incorporation on flow velocity over cultivated soil slopes. Results showed that straw incorporation significantly reduced surface flow velocity and altered hydraulic characteristics, providing experimental evidence for improving farmland slope conservation techniques.</p>\n",
       "highlights": {
         "zh": [
-          "构建1-16种草本植物物种丰富度梯度，结合X射线微CT扫描\r",
-          "物种丰富度显著提升土壤饱和导水率（Ks）\r",
-          "孔隙连通性而非孔隙大小是驱动Ks提升的关键机制\r",
-          "多样性植物群落的根系构建了高度连通的生物通道网络"
+          "定量测定秸秆掺入对坡面流速的影响\r",
+          "秸秆还田显著降低了坡面水流流速\r",
+          "建立了秸秆掺入量与流速的定量关系\r",
+          "为农田坡面水土保持技术改进提供实验依据"
         ],
         "en": [
-          "Established 1-16 species richness gradients with X-ray micro-CT scanning\r",
-          "Species richness significantly enhanced soil saturated hydraulic conductivity (Ks)\r",
-          "Pore connectivity, not pore size, is the key mechanism driving Ks improvement\r",
-          "Root systems from diverse plant communities create highly connected biological channel networks"
+          "Quantified straw incorporation effects on slope flow velocity\r",
+          "Straw incorporation significantly reduced surface flow velocity\r",
+          "Established quantitative relationships between straw amount and flow velocity\r",
+          "Provides experimental evidence for improving farmland conservation techniques"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 2,
+    "authors": "Huaqing Liu, Jiahui Yang, Yanfang Diao*, Tingwu Lei*, Abass E. Rahma",
+    "title": "The hydrodynamic mechanism of rainfall runoff from loess slopes treated with incorporated straw",
+    "journal": "Land Degradation & Development",
+    "year": 2021,
+    "volume": "32(14)",
+    "pages": "3812-3822",
+    "doi": "10.1002/ldr.3941",
+    "pdf": "",
+    "category": [
+      "erosion"
+    ],
+    "member": "huaqing-liu",
+    "summary": {
+      "zh": "<p>本研究揭示了秸秆还田处理对黄土坡面降雨径流的水动力学机制。秸秆掺入改变了坡面水流的流态和能量分布，有效降低了径流侵蚀力，为黄土高原水土保持措施优化提供了理论支撑。</p>\n",
+      "en": "<p>This study reveals the hydrodynamic mechanism of rainfall runoff on loess slopes treated with incorporated straw. Straw incorporation altered flow regime and energy distribution, effectively reducing runoff erosivity and providing theoretical support for optimizing conservation measures on the Loess Plateau.</p>\n",
+      "highlights": {
+        "zh": [
+          "系统分析秸秆还田对坡面径流水动力学的影响\r",
+          "秸秆掺入显著改变了水流流态和雷诺数\r",
+          "径流能量分布的变化降低了侵蚀动力\r",
+          "为黄土高原水土保持措施优化提供理论支撑"
+        ],
+        "en": [
+          "Systematically analyzed straw incorporation effects on slope runoff hydrodynamics\r",
+          "Straw incorporation significantly altered flow regime and Reynolds number\r",
+          "Changes in runoff energy distribution reduced erosion dynamics\r",
+          "Provides theoretical support for optimizing conservation on the Loess Plateau"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 3,
+    "authors": "Jiahui Yang, Huaqing Liu, Junpeng Zhang*, Abass E. Rahma, Tingwu Lei*",
+    "title": "Effect of straw-incorporation into farming soil layer on surface runoff under simulated rainfall",
+    "journal": "Catena",
+    "year": 2021,
+    "volume": "199",
+    "pages": "105082",
+    "doi": "10.1016/j.catena.2020.105082",
+    "pdf": "",
+    "category": [
+      "erosion"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究通过模拟降雨实验，探究了秸秆掺入耕作层对地表径流的影响。</p>\n",
+      "en": "<p>This study explored the effect of straw incorporation into the farming soil layer on surface runoff under simulated rainfall.</p>\n",
+      "highlights": {
+        "zh": [
+          "模拟降雨条件下研究秸秆还田对径流的影响\r",
+          "秸秆掺入显著减少地表径流量\r",
+          "土壤入渗能力随秸秆掺入量增加而提高\r",
+          "为旱区雨水资源化利用提供技术支撑"
+        ],
+        "en": [
+          "Studied straw incorporation effects on runoff under simulated rainfall\r",
+          "Straw incorporation significantly reduced surface runoff\r",
+          "Soil infiltration capacity increased with straw incorporation rate\r",
+          "Provides technical support for rainwater utilization in dryland areas"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 4,
+    "authors": "Xiaofeng Gao, Xiaonan Shi*, Tingwu Lei, Huaqing Liu, Jiahui Yang",
+    "title": "An experimental investigation of the effects of thawed soil depth on rill flow velocity",
+    "journal": "Hydrological Processes",
+    "year": 2021,
+    "volume": "35",
+    "pages": "e14043",
+    "doi": "10.1002/hyp.14043",
+    "pdf": "",
+    "category": [
+      "erosion"
+    ],
+    "member": "huaqing-liu",
+    "summary": {
+      "zh": "<p>本研究通过实验探究了融土深度对细沟水流流速的影响。</p>\n",
+      "en": "<p>This study experimentally investigated the effects of thawed soil depth on rill flow velocity.</p>\n",
+      "highlights": {
+        "zh": [
+          "实验探究融土深度对细沟流速的影响\r",
+          "融土层厚度显著影响水流动力学特征\r",
+          "建立了融土深度与流速的定量关系\r",
+          "为冻融条件下坡面侵蚀机理提供实验证据"
+        ],
+        "en": [
+          "Experimentally investigated thawed soil depth effects on rill flow velocity\r",
+          "Thawed soil thickness significantly affected flow dynamics\r",
+          "Established quantitative relationships between thaw depth and flow velocity\r",
+          "Provides experimental evidence for slope erosion under freeze-thaw conditions"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 5,
+    "authors": "亓波, 李靖江, 高崧, 孟书翰, 杨佳慧, 雷廷武*",
+    "title": "掺沙对盐渍土土块崩解和土壤盐分淋洗的影响机理",
+    "journal": "水土保持学报",
+    "year": 2021,
+    "volume": "35(6)",
+    "pages": "369-375",
+    "doi": "10.13870/j.cnki.stbcxb.2021.06.049",
+    "pdf": "",
+    "category": [
+      "erosion"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究揭示了掺沙处理对盐渍土土块崩解和盐分淋洗的影响机理。</p>\n",
+      "en": "<p>This study revealed the mechanisms of sand mixing on soil clod disintegration and salt leaching in saline soil.</p>\n",
+      "highlights": {
+        "zh": [
+          "揭示掺沙对盐渍土崩解和淋洗的影响机理\r",
+          "掺沙改善了盐渍土的物理结构\r",
+          "盐分淋洗效率随掺沙量增加而提高\r",
+          "为盐碱地改良技术发展提供理论依据"
+        ],
+        "en": [
+          "Revealed mechanisms of sand mixing on saline soil disintegration and leaching\r",
+          "Sand mixing improved physical structure of saline soil\r",
+          "Salt leaching efficiency increased with sand mixing rate\r",
+          "Provides theoretical basis for saline-alkali land improvement"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 6,
+    "authors": "Jiahui Yang, Huaixin Wei, Zelin Quan, Rui Xu, Zhaohui Wang, Hailong He*",
+    "title": "A global meta-analysis of coal mining studies provides insights into the hydrologic cycle at watershed scale",
+    "journal": "Journal of Hydrology",
+    "year": 2022,
+    "volume": "617",
+    "pages": "129023",
+    "doi": "10.1016/j.jhydrol.2022.129023",
+    "pdf": "",
+    "category": [
+      "erosion"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究通过全球荟萃分析，揭示了煤矿开采对流域尺度水文循环的影响规律。</p>\n",
+      "en": "<p>This global meta-analysis reveals the impacts of coal mining on the hydrologic cycle at watershed scale.</p>\n",
+      "highlights": {
+        "zh": [
+          "全球荟萃分析揭示煤矿开采的水文效应\r",
+          "煤矿开采系统性改变流域水文循环过程\r",
+          "地下水位下降和径流减少是主要影响\r",
+          "为矿区水资源管理和生态修复提供科学参考"
+        ],
+        "en": [
+          "Global meta-analysis revealing hydrological effects of coal mining\r",
+          "Coal mining systematically altered watershed hydrologic cycle\r",
+          "Groundwater decline and runoff reduction are primary impacts\r",
+          "Provides scientific references for mining area water management and restoration"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 7,
+    "authors": "Jiahui Yang, Gaolin Wu, Miles Dyck, Hailong He*",
+    "title": "Freeze-thaw induced landslides on grassland in cold regions",
+    "journal": "Catena",
+    "year": 2022,
+    "volume": "219",
+    "pages": "106650",
+    "doi": "10.1016/j.catena.2022.106650",
+    "pdf": "",
+    "category": [
+      "erosion"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究系统研究了寒区草地冻融诱发滑坡的发生机制。</p>\n",
+      "en": "<p>This study systematically investigated the mechanisms of freeze-thaw induced landslides on grassland in cold regions.</p>\n",
+      "highlights": {
+        "zh": [
+          "系统揭示寒区草地冻融滑坡的发生机制\r",
+          "冻融循环改变土壤力学性质和水分状态\r",
+          "草地根系对滑坡稳定性的影响具有双重性\r",
+          "为寒区草地灾害防治提供了重要认识"
+        ],
+        "en": [
+          "Systematically revealed mechanisms of freeze-thaw landslides on grassland\r",
+          "Freeze-thaw cycles altered soil mechanical properties and moisture conditions\r",
+          "Grassland root systems have dual effects on landslide stability\r",
+          "Provides important insights for hazard prevention in cold region grasslands"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 8,
+    "authors": "Jiahui Yang, Huaqing Liu, Junpeng Zhang*, Abass E. Rahma, Tingwu Lei*",
+    "title": "Lab simulation of soil erosion on cultivated soil slopes with wheat straw incorporation",
+    "journal": "Catena",
+    "year": 2022,
+    "volume": "210",
+    "pages": "105865",
+    "doi": "10.1016/j.catena.2021.105865",
+    "pdf": "",
+    "category": [
+      "erosion"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究通过室内模拟实验，研究了小麦秸秆掺入对耕作坡面土壤侵蚀的影响。</p>\n",
+      "en": "<p>This study investigated the effects of wheat straw incorporation on soil erosion of cultivated slopes through laboratory simulation.</p>\n",
+      "highlights": {
+        "zh": [
+          "室内模拟不同秸秆掺入量对坡面侵蚀的影响\r",
+          "秸秆还田有效减少了坡面侵蚀量\r",
+          "秸秆改善了土壤团聚体稳定性和抗蚀性\r",
+          "为农田水土保持措施优化提供实验依据"
+        ],
+        "en": [
+          "Lab simulation of different straw incorporation rates on slope erosion\r",
+          "Straw incorporation effectively reduced slope erosion\r",
+          "Straw improved soil aggregate stability and erosion resistance\r",
+          "Provides experimental evidence for optimizing farmland conservation measures"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 9,
+    "authors": "马南方, 高晓东*, 赵西宁, 赵连豪, 刘华清, 杨孟豪",
+    "title": "黄土丘陵区退耕小流域土壤有机碳分布特征及地形植被对其的影响",
+    "journal": "生态学报",
+    "year": 2022,
+    "volume": "42(14)",
+    "pages": "5838-5846",
+    "doi": "",
+    "pdf": "",
+    "category": [
+      "soc"
+    ],
+    "member": "huaqing-liu",
+    "summary": {
+      "zh": "<p>本研究分析了黄土丘陵区退耕还林小流域土壤有机碳的空间分布特征，并探讨了地形和植被因素的影响。</p>\n",
+      "en": "<p>This study analyzed the spatial distribution of soil organic carbon in a revegetated small watershed in the Loess Hilly Region and explored the influences of topography and vegetation.</p>\n",
+      "highlights": {
+        "zh": [
+          "分析退耕小流域土壤有机碳空间分布特征\r",
+          "地形因子显著影响有机碳分布格局\r",
+          "植被恢复类型对碳储量有差异化影响\r",
+          "为退耕还林碳汇效益评估提供基础数据"
+        ],
+        "en": [
+          "Analyzed SOC spatial distribution in a revegetated small watershed\r",
+          "Topographic factors significantly influenced SOC distribution patterns\r",
+          "Vegetation restoration types had differential effects on carbon stocks\r",
+          "Provides baseline data for Grain-for-Green carbon sequestration assessment"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 10,
+    "authors": "敖登, 杨佳慧, 丁维婷, 安韶山, 何海龙*",
+    "title": "54种植被指数研究进展综述",
+    "journal": "安徽农业科学",
+    "year": 2022,
+    "volume": "28",
+    "pages": "13-21",
+    "doi": "10.3969/j.issn.0517-6611.2023.01.004",
+    "pdf": "",
+    "category": [
+      "remote-sensing"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本文系统综述了54种植被指数的研究进展，涵盖了各类植被指数的原理、适用条件和应用领域。</p>\n",
+      "en": "<p>This review systematically summarized research progress on 54 vegetation indices.</p>\n",
+      "highlights": {
+        "zh": [
+          "系统综述54种植被指数的原理与应用\r",
+          "涵盖宽带、窄带和高光谱植被指数\r",
+          "分析各指数的适用条件和局限性\r",
+          "为遥感植被监测中指数选择提供全面参考"
+        ],
+        "en": [
+          "Systematic review of 54 vegetation indices' principles and applications\r",
+          "Covers broadband, narrowband, and hyperspectral vegetation indices\r",
+          "Analyzed applicable conditions and limitations of each index\r",
+          "Provides comprehensive reference for VI selection in remote sensing"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 11,
+    "authors": "孟书翰, 厉晓峰, 杨佳慧, 雷廷武*",
+    "title": "黄绵土细沟水流输沙能力对地表冲刷流量的响应",
+    "journal": "水土保持学报",
+    "year": 2022,
+    "volume": "36(6)",
+    "pages": "63-69",
+    "doi": "10.13870/j.cnki.stbcxb.2022.06.009",
+    "pdf": "",
+    "category": [
+      "erosion"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究探究了黄绵土坡面细沟水流输沙能力对地表冲刷流量的响应规律。</p>\n",
+      "en": "<p>This study investigated the response of rill flow sediment transport capacity to surface scouring discharge in loess soil.</p>\n",
+      "highlights": {
+        "zh": [
+          "探究细沟输沙能力对冲刷流量的响应规律\r",
+          "不同流量条件下输沙特征存在显著差异\r",
+          "建立了流量-输沙能力的定量关系\r",
+          "为黄土区侵蚀预报模型改进提供参数支持"
+        ],
+        "en": [
+          "Investigated rill sediment transport response to scouring discharge\r",
+          "Sediment transport characteristics varied significantly under different flows\r",
+          "Established quantitative discharge-transport capacity relationships\r",
+          "Provides parameter support for erosion prediction models in loess regions"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 12,
+    "authors": "Jiahui Yang, Autar K. Mattoo, Yang Liu*, Francis Zvomuya, Hailong He*",
+    "title": "Trade-offs of organic and organic-inorganic fertilizer combinations in tomato quality and yield: A global meta-analysis (1992-2021)",
+    "journal": "European Journal of Agronomy",
+    "year": 2023,
+    "volume": "151",
+    "pages": "126985",
+    "doi": "10.1016/j.eja.2023.126985",
+    "pdf": "",
+    "category": [
+      "erosion"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究通过全球荟萃分析（1992-2021），系统评估了有机肥和有机-无机肥配施对番茄品质和产量的权衡关系。研究为优化施肥策略、平衡作物产量与品质提供了全球尺度的定量证据。</p>\n",
+      "en": "<p>This global meta-analysis (1992-2021) systematically evaluated trade-offs between organic and organic-inorganic fertilizer combinations on tomato quality and yield, providing global-scale quantitative evidence for optimizing fertilization strategies and balancing crop yield with quality.</p>\n",
+      "highlights": {
+        "zh": [
+          "全球荟萃分析涵盖1992-2021年研究数据\r",
+          "有机-无机配施在产量和品质间取得最佳平衡\r",
+          "纯有机肥提升品质但可能降低产量\r",
+          "为全球番茄施肥策略优化提供定量依据"
+        ],
+        "en": [
+          "Global meta-analysis covering 1992-2021 research data\r",
+          "Organic-inorganic combinations achieved optimal yield-quality balance\r",
+          "Pure organic fertilizers improved quality but may reduce yield\r",
+          "Provides quantitative evidence for global tomato fertilization optimization"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 13,
+    "authors": "Huaqing Liu, Xiaodong Gao, Changjian Li, Long Ma, Kadambot H.M. Siddique, Xining Zhao*",
+    "title": "Short-term plant mixtures alter soil organic carbon components and microbial network characteristics",
+    "journal": "European Journal of Soil Biology",
+    "year": 2024,
+    "volume": "",
+    "pages": "103650",
+    "doi": "10.1016/j.ejsobi.2024.103650",
+    "pdf": "",
+    "category": [
+      "soc"
+    ],
+    "member": "huaqing-liu",
+    "summary": {
+      "zh": "<p>本研究发现短期植物混种能够改变土壤有机碳组分和微生物网络特征。混种处理显著影响了土壤碳库的组成结构和微生物群落的互作网络，揭示了植物多样性驱动土壤碳循环的微生物学机制。</p>\n",
+      "en": "<p>This study found that short-term plant mixtures alter soil organic carbon components and microbial network characteristics. Mixed planting significantly affected soil carbon pool composition and microbial community interaction networks, revealing microbiological mechanisms of plant diversity-driven soil carbon cycling.</p>\n",
+      "highlights": {
+        "zh": [
+          "短期混种即可显著改变土壤有机碳组分\r",
+          "混种增加了微生物网络的复杂性和稳定性\r",
+          "真菌群落对混种的响应比细菌更敏感\r",
+          "揭示了多样性驱动碳循环的微生物学机制"
+        ],
+        "en": [
+          "Short-term mixtures significantly altered SOC components\r",
+          "Mixtures increased microbial network complexity and stability\r",
+          "Fungal communities responded more sensitively to mixtures than bacteria\r",
+          "Revealed microbiological mechanisms of diversity-driven carbon cycling"
         ]
       },
       "images": [
         {
-          "src": "/images/papers/pub-1-ga.jpg",
+          "src": "/images/papers/pub-5-ga.jpg",
           "caption": {
-            "zh": "图文摘要：草本物种多样性减少极端降水下水土流失的机制",
-            "en": "Graphical Abstract: Mechanisms of grass diversity reducing water and soil loss under extreme precipitation"
+            "zh": "图文摘要：植物混种改变土壤有机碳组分和微生物网络",
+            "en": "Graphical Abstract: Plant mixtures alter SOC components and microbial networks"
           }
         }
       ]
     }
   },
   {
-    "id": 2,
+    "id": 14,
+    "authors": "Jiahui Yang, Yanchen Gao, Lang Jia, Wenjuan Wang, Qingbai Wu, Francis Zvomuya, Miles Dyck, Hailong He*",
+    "title": "Enhanced detection of freeze-thaw induced landslides in Zhidoi county (Tibetan Plateau, China) with Google Earth Engine and image fusion",
+    "journal": "Advances in Climate Change Research",
+    "year": 2024,
+    "volume": "15(3)",
+    "pages": "476-489",
+    "doi": "10.1016/j.accre.2024.03.002",
+    "pdf": "",
+    "category": [
+      "remote-sensing"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究利用Google Earth Engine和图像融合技术，增强了青藏高原治多县冻融滑坡的检测能力。</p>\n",
+      "en": "<p>This study enhanced the detection of freeze-thaw induced landslides in Zhidoi county using Google Earth Engine and image fusion.</p>\n",
+      "highlights": {
+        "zh": [
+          "利用GEE平台实现大规模冻融滑坡自动检测\r",
+          "多源遥感图像融合显著提高识别精度\r",
+          "建立了高寒区滑坡遥感监测技术流程\r",
+          "为青藏高原地质灾害预警提供技术支撑"
+        ],
+        "en": [
+          "Achieved large-scale freeze-thaw landslide detection using GEE platform\r",
+          "Multi-source image fusion significantly improved identification accuracy\r",
+          "Established remote sensing monitoring workflow for alpine landslides\r",
+          "Provides technical support for geological hazard early warning on QTP"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 15,
+    "authors": "Xiangwei Wang, Yanchen Gao, Jiagui Hou, Jiahui Yang, Kathleen Smits, Hailong He*",
+    "title": "Machine learning facilitates connections between soil thermal conductivity, soil water content, and soil matric potential",
+    "journal": "Journal of Hydrology",
+    "year": 2024,
+    "volume": "633",
+    "pages": "130950",
+    "doi": "10.1016/j.jhydrol.2024.130950",
+    "pdf": "",
+    "category": [
+      "soil-water-carbon"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究利用机器学习方法建立了土壤热导率、含水量和基质势之间的定量关联。</p>\n",
+      "en": "<p>This study used machine learning to establish quantitative connections between soil thermal conductivity, water content, and matric potential.</p>\n",
+      "highlights": {
+        "zh": [
+          "机器学习建立土壤热-水参数的定量关联\r",
+          "模型有效揭示了热-水耦合的非线性关系\r",
+          "预测精度优于传统经验模型\r",
+          "为土壤物理参数预测提供新技术手段"
+        ],
+        "en": [
+          "ML established quantitative connections between soil thermal-hydraulic parameters\r",
+          "Models effectively revealed nonlinear thermal-hydraulic coupling\r",
+          "Prediction accuracy surpassed traditional empirical models\r",
+          "Provides new technical approaches for soil physical parameter prediction"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 16,
+    "authors": "Yanchen Gao, Jiahui Yang, Xiaoyu Chen, Xiangwei Wang, Jinbo Li, Nasrin Azad, Francis Zvomuya, Hailong He*",
+    "title": "Using advanced InSAR techniques and Machine learning in Google Earth Engine (GEE) to monitor regional black soil erosion",
+    "journal": "Remote Sensing",
+    "year": 2024,
+    "volume": "16(20)",
+    "pages": "3842",
+    "doi": "",
+    "pdf": "",
+    "category": [
+      "remote-sensing"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究结合先进InSAR技术和Google Earth Engine机器学习方法，实现了区域黑土侵蚀的遥感监测。</p>\n",
+      "en": "<p>This study combined advanced InSAR techniques with machine learning in Google Earth Engine to monitor regional black soil erosion.</p>\n",
+      "highlights": {
+        "zh": [
+          "InSAR与GEE机器学习结合监测黑土侵蚀\r",
+          "以延寿县为案例验证方法有效性\r",
+          "实现了区域尺度黑土侵蚀定量监测\r",
+          "为东北黑土保护提供遥感技术方案"
+        ],
+        "en": [
+          "Combined InSAR with GEE machine learning for black soil erosion monitoring\r",
+          "Validated method effectiveness using Yanshou County case study\r",
+          "Achieved regional-scale quantitative black soil erosion monitoring\r",
+          "Provides remote sensing solutions for Northeast China black soil protection"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 17,
+    "authors": "Xiaobin Li, Xiaoyu Chen, Yanchen Gao, Jiahui Yang, Weiting Ding, Francis Zvomuya, Nasrin Azad, Jinbo Li, Hailong He*",
+    "title": "Freezing induced soil water redistribution: A review and global meta-analysis",
+    "journal": "Journal of Hydrology",
+    "year": 2024,
+    "volume": "651",
+    "pages": "132594",
+    "doi": "10.1016/j.jhydrol.2024.132594",
+    "pdf": "",
+    "category": [
+      "soil-water-carbon"
+    ],
+    "member": "jiahui-yang",
+    "summary": {
+      "zh": "<p>本研究通过综述和全球荟萃分析，系统总结了冻结过程引起的土壤水分再分布规律。</p>\n",
+      "en": "<p>This review and global meta-analysis systematically summarized patterns of freezing-induced soil water redistribution.</p>\n",
+      "highlights": {
+        "zh": [
+          "综述与荟萃分析结合揭示冻结水分再分布规律",
+          "冻融循环驱动土壤水分迁移的机制解析",
+          "温度梯度和土壤质地是关键影响因素",
+          "为寒区水文模拟和水资源管理提供理论基础"
+        ],
+        "en": [
+          "Review and meta-analysis revealing freezing-induced water redistribution patterns",
+          "Mechanism analysis of freeze-thaw driven soil water migration",
+          "Temperature gradient and soil texture are key influencing factors",
+          "Provides theoretical foundations for cold region hydrological simulation"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 18,
+    "authors": "王一帆, 刘华清, 赵西宁*, 高晓东",
+    "title": "禾豆间作系统水分和根系分隔对牧草氮素吸收利用及转移的影响",
+    "journal": "水土保持学报",
+    "year": 2024,
+    "volume": "38(4)",
+    "pages": "279-287",
+    "doi": "",
+    "pdf": "",
+    "category": [
+      "soil-water-carbon"
+    ],
+    "member": "huaqing-liu",
+    "summary": {
+      "zh": "<p>本研究探究了禾豆间作系统中水分和根系分隔对牧草氮素吸收利用及转移的影响机制。</p>\n",
+      "en": "<p>This study investigated the effects of water and root separation on nitrogen uptake, utilization, and transfer in grass-legume intercropping systems.</p>\n",
+      "highlights": {
+        "zh": [
+          "水分和根系分隔实验揭示氮素互作机制\r",
+          "间作促进了豆科向禾本科的氮素转移\r",
+          "根系交互是种间氮素互作的关键途径\r",
+          "为间作体系养分管理优化提供科学依据"
+        ],
+        "en": [
+          "Water and root separation experiments revealed nitrogen interaction mechanisms\r",
+          "Intercropping promoted nitrogen transfer from legumes to grasses\r",
+          "Root interaction is the key pathway for interspecific nitrogen exchange\r",
+          "Provides scientific basis for optimizing nutrient management in intercropping"
+        ]
+      },
+      "images": []
+    }
+  },
+  {
+    "id": 19,
     "authors": "Huaqing Liu, Xiaodong Gao*, Long Ma, Heng Liu, Xining Zhao",
     "title": "Herbaceous species richness enhances soil hydraulic conductivity by increasing soil pore connectivity",
     "journal": "Journal of Hydrology",
@@ -86,7 +663,7 @@
     }
   },
   {
-    "id": 3,
+    "id": 20,
     "authors": "Huaqing Liu, Xiaodong Gao, Xining Zhao*",
     "title": "Scale-dependent effects of tree diversity on soil erosion resistance",
     "journal": "Resources, Environment and Sustainability",
@@ -128,7 +705,7 @@
     }
   },
   {
-    "id": 4,
+    "id": 21,
     "authors": "Huaqing Liu, Xiaodong Gao, Changjian Li, Yaohui Cai, Xiaolin Song, Xining Zhao*",
     "title": "Intercropping increases plant water availability and water use efficiency: A synthesis",
     "journal": "Agriculture, Ecosystems and Environment",
@@ -170,117 +747,7 @@
     }
   },
   {
-    "id": 5,
-    "authors": "Huaqing Liu, Xiaodong Gao, Changjian Li, Long Ma, Kadambot H.M. Siddique, Xining Zhao*",
-    "title": "Short-term plant mixtures alter soil organic carbon components and microbial network characteristics",
-    "journal": "European Journal of Soil Biology",
-    "year": 2024,
-    "volume": "",
-    "pages": "103650",
-    "doi": "10.1016/j.ejsobi.2024.103650",
-    "pdf": "",
-    "category": [
-      "soc"
-    ],
-    "member": "huaqing-liu",
-    "summary": {
-      "zh": "<p>本研究发现短期植物混种能够改变土壤有机碳组分和微生物网络特征。混种处理显著影响了土壤碳库的组成结构和微生物群落的互作网络，揭示了植物多样性驱动土壤碳循环的微生物学机制。</p>\n",
-      "en": "<p>This study found that short-term plant mixtures alter soil organic carbon components and microbial network characteristics. Mixed planting significantly affected soil carbon pool composition and microbial community interaction networks, revealing microbiological mechanisms of plant diversity-driven soil carbon cycling.</p>\n",
-      "highlights": {
-        "zh": [
-          "短期混种即可显著改变土壤有机碳组分\r",
-          "混种增加了微生物网络的复杂性和稳定性\r",
-          "真菌群落对混种的响应比细菌更敏感\r",
-          "揭示了多样性驱动碳循环的微生物学机制"
-        ],
-        "en": [
-          "Short-term mixtures significantly altered SOC components\r",
-          "Mixtures increased microbial network complexity and stability\r",
-          "Fungal communities responded more sensitively to mixtures than bacteria\r",
-          "Revealed microbiological mechanisms of diversity-driven carbon cycling"
-        ]
-      },
-      "images": [
-        {
-          "src": "/images/papers/pub-5-ga.jpg",
-          "caption": {
-            "zh": "图文摘要：植物混种改变土壤有机碳组分和微生物网络",
-            "en": "Graphical Abstract: Plant mixtures alter SOC components and microbial networks"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "id": 6,
-    "authors": "Huaqing Liu, Jiahui Yang, Yanfang Diao*, Tingwu Lei*, Abass E. Rahma",
-    "title": "The hydrodynamic mechanism of rainfall runoff from loess slopes treated with incorporated straw",
-    "journal": "Land Degradation & Development",
-    "year": 2021,
-    "volume": "32(14)",
-    "pages": "3812-3822",
-    "doi": "10.1002/ldr.3941",
-    "pdf": "",
-    "category": [
-      "erosion"
-    ],
-    "member": "huaqing-liu",
-    "summary": {
-      "zh": "<p>本研究揭示了秸秆还田处理对黄土坡面降雨径流的水动力学机制。秸秆掺入改变了坡面水流的流态和能量分布，有效降低了径流侵蚀力，为黄土高原水土保持措施优化提供了理论支撑。</p>\n",
-      "en": "<p>This study reveals the hydrodynamic mechanism of rainfall runoff on loess slopes treated with incorporated straw. Straw incorporation altered flow regime and energy distribution, effectively reducing runoff erosivity and providing theoretical support for optimizing conservation measures on the Loess Plateau.</p>\n",
-      "highlights": {
-        "zh": [
-          "系统分析秸秆还田对坡面径流水动力学的影响\r",
-          "秸秆掺入显著改变了水流流态和雷诺数\r",
-          "径流能量分布的变化降低了侵蚀动力\r",
-          "为黄土高原水土保持措施优化提供理论支撑"
-        ],
-        "en": [
-          "Systematically analyzed straw incorporation effects on slope runoff hydrodynamics\r",
-          "Straw incorporation significantly altered flow regime and Reynolds number\r",
-          "Changes in runoff energy distribution reduced erosion dynamics\r",
-          "Provides theoretical support for optimizing conservation on the Loess Plateau"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 7,
-    "authors": "Huaqing Liu, Jiahui Yang, Chuanxiao Liu, Yanfang Diao*, Depeng Ma, Fahu Li, Abass E. Rahma, Tingwu Lei*",
-    "title": "Flow velocity on cultivated soil slope with wheat straw incorporation",
-    "journal": "Journal of Hydrology",
-    "year": 2020,
-    "volume": "584",
-    "pages": "124667",
-    "doi": "10.1016/j.jhydrol.2020.124667",
-    "pdf": "",
-    "category": [
-      "erosion"
-    ],
-    "member": "huaqing-liu",
-    "summary": {
-      "zh": "<p>本研究系统探究了小麦秸秆掺入对耕作坡面水流流速的影响规律。结果表明秸秆还田显著降低了坡面流速，改变了水流的水力学特性，为农田坡面水土保持技术的改进提供了实验依据。</p>\n",
-      "en": "<p>This study systematically investigated the effects of wheat straw incorporation on flow velocity over cultivated soil slopes. Results showed that straw incorporation significantly reduced surface flow velocity and altered hydraulic characteristics, providing experimental evidence for improving farmland slope conservation techniques.</p>\n",
-      "highlights": {
-        "zh": [
-          "定量测定秸秆掺入对坡面流速的影响\r",
-          "秸秆还田显著降低了坡面水流流速\r",
-          "建立了秸秆掺入量与流速的定量关系\r",
-          "为农田坡面水土保持技术改进提供实验依据"
-        ],
-        "en": [
-          "Quantified straw incorporation effects on slope flow velocity\r",
-          "Straw incorporation significantly reduced surface flow velocity\r",
-          "Established quantitative relationships between straw amount and flow velocity\r",
-          "Provides experimental evidence for improving farmland conservation techniques"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 8,
+    "id": 22,
     "authors": "Jiahui Yang, Nasem Badreldin, Yanchen Gao, Changchao Yan, Yizhan Zhao, Miles Dyck, Hailong He*",
     "title": "Innovative methods for monitoring soil erosion: Utilizing InSAR technology effectively",
     "journal": "Catena",
@@ -323,7 +790,7 @@
     }
   },
   {
-    "id": 9,
+    "id": 23,
     "authors": "Jiahui Yang, Ruhan Zhang, Xiaobin Li, Xiangwei Wang, Miles Dyck, Luyang Wang, Qingbai Wu, Hailong He*",
     "title": "Soil property changes following a thaw-induced mass movement event in the permafrost region of the Qinghai-Tibetan Plateau",
     "journal": "Catena",
@@ -366,347 +833,7 @@
     }
   },
   {
-    "id": 10,
-    "authors": "Jiahui Yang, Yanchen Gao, Lang Jia, Wenjuan Wang, Qingbai Wu, Francis Zvomuya, Miles Dyck, Hailong He*",
-    "title": "Enhanced detection of freeze-thaw induced landslides in Zhidoi county (Tibetan Plateau, China) with Google Earth Engine and image fusion",
-    "journal": "Advances in Climate Change Research",
-    "year": 2024,
-    "volume": "15(3)",
-    "pages": "476-489",
-    "doi": "10.1016/j.accre.2024.03.002",
-    "pdf": "",
-    "category": [
-      "remote-sensing"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本研究利用Google Earth Engine和图像融合技术，增强了青藏高原治多县冻融滑坡的检测能力。</p>\n",
-      "en": "<p>This study enhanced the detection of freeze-thaw induced landslides in Zhidoi county using Google Earth Engine and image fusion.</p>\n",
-      "highlights": {
-        "zh": [
-          "利用GEE平台实现大规模冻融滑坡自动检测\r",
-          "多源遥感图像融合显著提高识别精度\r",
-          "建立了高寒区滑坡遥感监测技术流程\r",
-          "为青藏高原地质灾害预警提供技术支撑"
-        ],
-        "en": [
-          "Achieved large-scale freeze-thaw landslide detection using GEE platform\r",
-          "Multi-source image fusion significantly improved identification accuracy\r",
-          "Established remote sensing monitoring workflow for alpine landslides\r",
-          "Provides technical support for geological hazard early warning on QTP"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 11,
-    "authors": "Jiahui Yang, Autar K. Mattoo, Yang Liu*, Francis Zvomuya, Hailong He*",
-    "title": "Trade-offs of organic and organic-inorganic fertilizer combinations in tomato quality and yield: A global meta-analysis (1992-2021)",
-    "journal": "European Journal of Agronomy",
-    "year": 2023,
-    "volume": "151",
-    "pages": "126985",
-    "doi": "10.1016/j.eja.2023.126985",
-    "pdf": "",
-    "category": [
-      "erosion"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本研究通过全球荟萃分析（1992-2021），系统评估了有机肥和有机-无机肥配施对番茄品质和产量的权衡关系。研究为优化施肥策略、平衡作物产量与品质提供了全球尺度的定量证据。</p>\n",
-      "en": "<p>This global meta-analysis (1992-2021) systematically evaluated trade-offs between organic and organic-inorganic fertilizer combinations on tomato quality and yield, providing global-scale quantitative evidence for optimizing fertilization strategies and balancing crop yield with quality.</p>\n",
-      "highlights": {
-        "zh": [
-          "全球荟萃分析涵盖1992-2021年研究数据\r",
-          "有机-无机配施在产量和品质间取得最佳平衡\r",
-          "纯有机肥提升品质但可能降低产量\r",
-          "为全球番茄施肥策略优化提供定量依据"
-        ],
-        "en": [
-          "Global meta-analysis covering 1992-2021 research data\r",
-          "Organic-inorganic combinations achieved optimal yield-quality balance\r",
-          "Pure organic fertilizers improved quality but may reduce yield\r",
-          "Provides quantitative evidence for global tomato fertilization optimization"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 12,
-    "authors": "Jiahui Yang, Huaixin Wei, Zelin Quan, Rui Xu, Zhaohui Wang, Hailong He*",
-    "title": "A global meta-analysis of coal mining studies provides insights into the hydrologic cycle at watershed scale",
-    "journal": "Journal of Hydrology",
-    "year": 2022,
-    "volume": "617",
-    "pages": "129023",
-    "doi": "10.1016/j.jhydrol.2022.129023",
-    "pdf": "",
-    "category": [
-      "erosion"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本研究通过全球荟萃分析，揭示了煤矿开采对流域尺度水文循环的影响规律。</p>\n",
-      "en": "<p>This global meta-analysis reveals the impacts of coal mining on the hydrologic cycle at watershed scale.</p>\n",
-      "highlights": {
-        "zh": [
-          "全球荟萃分析揭示煤矿开采的水文效应\r",
-          "煤矿开采系统性改变流域水文循环过程\r",
-          "地下水位下降和径流减少是主要影响\r",
-          "为矿区水资源管理和生态修复提供科学参考"
-        ],
-        "en": [
-          "Global meta-analysis revealing hydrological effects of coal mining\r",
-          "Coal mining systematically altered watershed hydrologic cycle\r",
-          "Groundwater decline and runoff reduction are primary impacts\r",
-          "Provides scientific references for mining area water management and restoration"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 13,
-    "authors": "Jiahui Yang, Gaolin Wu, Miles Dyck, Hailong He*",
-    "title": "Freeze-thaw induced landslides on grassland in cold regions",
-    "journal": "Catena",
-    "year": 2022,
-    "volume": "219",
-    "pages": "106650",
-    "doi": "10.1016/j.catena.2022.106650",
-    "pdf": "",
-    "category": [
-      "erosion"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本研究系统研究了寒区草地冻融诱发滑坡的发生机制。</p>\n",
-      "en": "<p>This study systematically investigated the mechanisms of freeze-thaw induced landslides on grassland in cold regions.</p>\n",
-      "highlights": {
-        "zh": [
-          "系统揭示寒区草地冻融滑坡的发生机制\r",
-          "冻融循环改变土壤力学性质和水分状态\r",
-          "草地根系对滑坡稳定性的影响具有双重性\r",
-          "为寒区草地灾害防治提供了重要认识"
-        ],
-        "en": [
-          "Systematically revealed mechanisms of freeze-thaw landslides on grassland\r",
-          "Freeze-thaw cycles altered soil mechanical properties and moisture conditions\r",
-          "Grassland root systems have dual effects on landslide stability\r",
-          "Provides important insights for hazard prevention in cold region grasslands"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 14,
-    "authors": "Jiahui Yang, Huaqing Liu, Junpeng Zhang*, Abass E. Rahma, Tingwu Lei*",
-    "title": "Lab simulation of soil erosion on cultivated soil slopes with wheat straw incorporation",
-    "journal": "Catena",
-    "year": 2022,
-    "volume": "210",
-    "pages": "105865",
-    "doi": "10.1016/j.catena.2021.105865",
-    "pdf": "",
-    "category": [
-      "erosion"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本研究通过室内模拟实验，研究了小麦秸秆掺入对耕作坡面土壤侵蚀的影响。</p>\n",
-      "en": "<p>This study investigated the effects of wheat straw incorporation on soil erosion of cultivated slopes through laboratory simulation.</p>\n",
-      "highlights": {
-        "zh": [
-          "室内模拟不同秸秆掺入量对坡面侵蚀的影响\r",
-          "秸秆还田有效减少了坡面侵蚀量\r",
-          "秸秆改善了土壤团聚体稳定性和抗蚀性\r",
-          "为农田水土保持措施优化提供实验依据"
-        ],
-        "en": [
-          "Lab simulation of different straw incorporation rates on slope erosion\r",
-          "Straw incorporation effectively reduced slope erosion\r",
-          "Straw improved soil aggregate stability and erosion resistance\r",
-          "Provides experimental evidence for optimizing farmland conservation measures"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 15,
-    "authors": "Jiahui Yang, Huaqing Liu, Junpeng Zhang*, Abass E. Rahma, Tingwu Lei*",
-    "title": "Effect of straw-incorporation into farming soil layer on surface runoff under simulated rainfall",
-    "journal": "Catena",
-    "year": 2021,
-    "volume": "199",
-    "pages": "105082",
-    "doi": "10.1016/j.catena.2020.105082",
-    "pdf": "",
-    "category": [
-      "erosion"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本研究通过模拟降雨实验，探究了秸秆掺入耕作层对地表径流的影响。</p>\n",
-      "en": "<p>This study explored the effect of straw incorporation into the farming soil layer on surface runoff under simulated rainfall.</p>\n",
-      "highlights": {
-        "zh": [
-          "模拟降雨条件下研究秸秆还田对径流的影响\r",
-          "秸秆掺入显著减少地表径流量\r",
-          "土壤入渗能力随秸秆掺入量增加而提高\r",
-          "为旱区雨水资源化利用提供技术支撑"
-        ],
-        "en": [
-          "Studied straw incorporation effects on runoff under simulated rainfall\r",
-          "Straw incorporation significantly reduced surface runoff\r",
-          "Soil infiltration capacity increased with straw incorporation rate\r",
-          "Provides technical support for rainwater utilization in dryland areas"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 16,
-    "authors": "Xiangwei Wang, Yanchen Gao, Jiagui Hou, Jiahui Yang, Kathleen Smits, Hailong He*",
-    "title": "Machine learning facilitates connections between soil thermal conductivity, soil water content, and soil matric potential",
-    "journal": "Journal of Hydrology",
-    "year": 2024,
-    "volume": "633",
-    "pages": "130950",
-    "doi": "10.1016/j.jhydrol.2024.130950",
-    "pdf": "",
-    "category": [
-      "soil-water-carbon"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本研究利用机器学习方法建立了土壤热导率、含水量和基质势之间的定量关联。</p>\n",
-      "en": "<p>This study used machine learning to establish quantitative connections between soil thermal conductivity, water content, and matric potential.</p>\n",
-      "highlights": {
-        "zh": [
-          "机器学习建立土壤热-水参数的定量关联\r",
-          "模型有效揭示了热-水耦合的非线性关系\r",
-          "预测精度优于传统经验模型\r",
-          "为土壤物理参数预测提供新技术手段"
-        ],
-        "en": [
-          "ML established quantitative connections between soil thermal-hydraulic parameters\r",
-          "Models effectively revealed nonlinear thermal-hydraulic coupling\r",
-          "Prediction accuracy surpassed traditional empirical models\r",
-          "Provides new technical approaches for soil physical parameter prediction"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 17,
-    "authors": "Xiaofeng Gao, Xiaonan Shi*, Tingwu Lei, Huaqing Liu, Jiahui Yang",
-    "title": "An experimental investigation of the effects of thawed soil depth on rill flow velocity",
-    "journal": "Hydrological Processes",
-    "year": 2021,
-    "volume": "35",
-    "pages": "e14043",
-    "doi": "10.1002/hyp.14043",
-    "pdf": "",
-    "category": [
-      "erosion"
-    ],
-    "member": "huaqing-liu",
-    "summary": {
-      "zh": "<p>本研究通过实验探究了融土深度对细沟水流流速的影响。</p>\n",
-      "en": "<p>This study experimentally investigated the effects of thawed soil depth on rill flow velocity.</p>\n",
-      "highlights": {
-        "zh": [
-          "实验探究融土深度对细沟流速的影响\r",
-          "融土层厚度显著影响水流动力学特征\r",
-          "建立了融土深度与流速的定量关系\r",
-          "为冻融条件下坡面侵蚀机理提供实验证据"
-        ],
-        "en": [
-          "Experimentally investigated thawed soil depth effects on rill flow velocity\r",
-          "Thawed soil thickness significantly affected flow dynamics\r",
-          "Established quantitative relationships between thaw depth and flow velocity\r",
-          "Provides experimental evidence for slope erosion under freeze-thaw conditions"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 18,
-    "authors": "Yanchen Gao, Jiahui Yang, Xiaoyu Chen, Xiangwei Wang, Jinbo Li, Nasrin Azad, Francis Zvomuya, Hailong He*",
-    "title": "Using advanced InSAR techniques and Machine learning in Google Earth Engine (GEE) to monitor regional black soil erosion",
-    "journal": "Remote Sensing",
-    "year": 2024,
-    "volume": "16(20)",
-    "pages": "3842",
-    "doi": "",
-    "pdf": "",
-    "category": [
-      "remote-sensing"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本研究结合先进InSAR技术和Google Earth Engine机器学习方法，实现了区域黑土侵蚀的遥感监测。</p>\n",
-      "en": "<p>This study combined advanced InSAR techniques with machine learning in Google Earth Engine to monitor regional black soil erosion.</p>\n",
-      "highlights": {
-        "zh": [
-          "InSAR与GEE机器学习结合监测黑土侵蚀\r",
-          "以延寿县为案例验证方法有效性\r",
-          "实现了区域尺度黑土侵蚀定量监测\r",
-          "为东北黑土保护提供遥感技术方案"
-        ],
-        "en": [
-          "Combined InSAR with GEE machine learning for black soil erosion monitoring\r",
-          "Validated method effectiveness using Yanshou County case study\r",
-          "Achieved regional-scale quantitative black soil erosion monitoring\r",
-          "Provides remote sensing solutions for Northeast China black soil protection"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 19,
-    "authors": "Xiaobin Li, Xiaoyu Chen, Yanchen Gao, Jiahui Yang, Weiting Ding, Francis Zvomuya, Nasrin Azad, Jinbo Li, Hailong He*",
-    "title": "Freezing induced soil water redistribution: A review and global meta-analysis",
-    "journal": "Journal of Hydrology",
-    "year": 2024,
-    "volume": "651",
-    "pages": "132594",
-    "doi": "10.1016/j.jhydrol.2024.132594",
-    "pdf": "",
-    "category": [
-      "soil-water-carbon"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本研究通过综述和全球荟萃分析，系统总结了冻结过程引起的土壤水分再分布规律。</p>\n",
-      "en": "<p>This review and global meta-analysis systematically summarized patterns of freezing-induced soil water redistribution.</p>\n",
-      "highlights": {
-        "zh": [
-          "综述与荟萃分析结合揭示冻结水分再分布规律",
-          "冻融循环驱动土壤水分迁移的机制解析",
-          "温度梯度和土壤质地是关键影响因素",
-          "为寒区水文模拟和水资源管理提供理论基础"
-        ],
-        "en": [
-          "Review and meta-analysis revealing freezing-induced water redistribution patterns",
-          "Mechanism analysis of freeze-thaw driven soil water migration",
-          "Temperature gradient and soil texture are key influencing factors",
-          "Provides theoretical foundations for cold region hydrological simulation"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 20,
+    "id": 24,
     "authors": "马龙, 刘华清, 高晓东, 赵西宁*",
     "title": "饲草间作方式对增产及节水效应的影响",
     "journal": "水土保持通报",
@@ -740,173 +867,46 @@
     }
   },
   {
-    "id": 21,
-    "authors": "王一帆, 刘华清, 赵西宁*, 高晓东",
-    "title": "禾豆间作系统水分和根系分隔对牧草氮素吸收利用及转移的影响",
-    "journal": "水土保持学报",
-    "year": 2024,
-    "volume": "38(4)",
-    "pages": "279-287",
-    "doi": "",
-    "pdf": "",
-    "category": [
-      "soil-water-carbon"
-    ],
-    "member": "huaqing-liu",
-    "summary": {
-      "zh": "<p>本研究探究了禾豆间作系统中水分和根系分隔对牧草氮素吸收利用及转移的影响机制。</p>\n",
-      "en": "<p>This study investigated the effects of water and root separation on nitrogen uptake, utilization, and transfer in grass-legume intercropping systems.</p>\n",
-      "highlights": {
-        "zh": [
-          "水分和根系分隔实验揭示氮素互作机制\r",
-          "间作促进了豆科向禾本科的氮素转移\r",
-          "根系交互是种间氮素互作的关键途径\r",
-          "为间作体系养分管理优化提供科学依据"
-        ],
-        "en": [
-          "Water and root separation experiments revealed nitrogen interaction mechanisms\r",
-          "Intercropping promoted nitrogen transfer from legumes to grasses\r",
-          "Root interaction is the key pathway for interspecific nitrogen exchange\r",
-          "Provides scientific basis for optimizing nutrient management in intercropping"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 22,
-    "authors": "马南方, 高晓东*, 赵西宁, 赵连豪, 刘华清, 杨孟豪",
-    "title": "黄土丘陵区退耕小流域土壤有机碳分布特征及地形植被对其的影响",
-    "journal": "生态学报",
-    "year": 2022,
-    "volume": "42(14)",
-    "pages": "5838-5846",
-    "doi": "",
-    "pdf": "",
-    "category": [
-      "soc"
-    ],
-    "member": "huaqing-liu",
-    "summary": {
-      "zh": "<p>本研究分析了黄土丘陵区退耕还林小流域土壤有机碳的空间分布特征，并探讨了地形和植被因素的影响。</p>\n",
-      "en": "<p>This study analyzed the spatial distribution of soil organic carbon in a revegetated small watershed in the Loess Hilly Region and explored the influences of topography and vegetation.</p>\n",
-      "highlights": {
-        "zh": [
-          "分析退耕小流域土壤有机碳空间分布特征\r",
-          "地形因子显著影响有机碳分布格局\r",
-          "植被恢复类型对碳储量有差异化影响\r",
-          "为退耕还林碳汇效益评估提供基础数据"
-        ],
-        "en": [
-          "Analyzed SOC spatial distribution in a revegetated small watershed\r",
-          "Topographic factors significantly influenced SOC distribution patterns\r",
-          "Vegetation restoration types had differential effects on carbon stocks\r",
-          "Provides baseline data for Grain-for-Green carbon sequestration assessment"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 23,
-    "authors": "敖登, 杨佳慧, 丁维婷, 安韶山, 何海龙*",
-    "title": "54种植被指数研究进展综述",
-    "journal": "安徽农业科学",
-    "year": 2022,
-    "volume": "28",
-    "pages": "13-21",
-    "doi": "10.3969/j.issn.0517-6611.2023.01.004",
-    "pdf": "",
-    "category": [
-      "remote-sensing"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本文系统综述了54种植被指数的研究进展，涵盖了各类植被指数的原理、适用条件和应用领域。</p>\n",
-      "en": "<p>This review systematically summarized research progress on 54 vegetation indices.</p>\n",
-      "highlights": {
-        "zh": [
-          "系统综述54种植被指数的原理与应用\r",
-          "涵盖宽带、窄带和高光谱植被指数\r",
-          "分析各指数的适用条件和局限性\r",
-          "为遥感植被监测中指数选择提供全面参考"
-        ],
-        "en": [
-          "Systematic review of 54 vegetation indices' principles and applications\r",
-          "Covers broadband, narrowband, and hyperspectral vegetation indices\r",
-          "Analyzed applicable conditions and limitations of each index\r",
-          "Provides comprehensive reference for VI selection in remote sensing"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
-    "id": 24,
-    "authors": "孟书翰, 厉晓峰, 杨佳慧, 雷廷武*",
-    "title": "黄绵土细沟水流输沙能力对地表冲刷流量的响应",
-    "journal": "水土保持学报",
-    "year": 2022,
-    "volume": "36(6)",
-    "pages": "63-69",
-    "doi": "10.13870/j.cnki.stbcxb.2022.06.009",
-    "pdf": "",
-    "category": [
-      "erosion"
-    ],
-    "member": "jiahui-yang",
-    "summary": {
-      "zh": "<p>本研究探究了黄绵土坡面细沟水流输沙能力对地表冲刷流量的响应规律。</p>\n",
-      "en": "<p>This study investigated the response of rill flow sediment transport capacity to surface scouring discharge in loess soil.</p>\n",
-      "highlights": {
-        "zh": [
-          "探究细沟输沙能力对冲刷流量的响应规律\r",
-          "不同流量条件下输沙特征存在显著差异\r",
-          "建立了流量-输沙能力的定量关系\r",
-          "为黄土区侵蚀预报模型改进提供参数支持"
-        ],
-        "en": [
-          "Investigated rill sediment transport response to scouring discharge\r",
-          "Sediment transport characteristics varied significantly under different flows\r",
-          "Established quantitative discharge-transport capacity relationships\r",
-          "Provides parameter support for erosion prediction models in loess regions"
-        ]
-      },
-      "images": []
-    }
-  },
-  {
     "id": 25,
-    "authors": "亓波, 李靖江, 高崧, 孟书翰, 杨佳慧, 雷廷武*",
-    "title": "掺沙对盐渍土土块崩解和土壤盐分淋洗的影响机理",
-    "journal": "水土保持学报",
-    "year": 2021,
-    "volume": "35(6)",
-    "pages": "369-375",
-    "doi": "10.13870/j.cnki.stbcxb.2021.06.049",
-    "pdf": "",
+    "authors": "Huaqing Liu, Yaohui Cai*, Xiaodong Gao, Long Ma, Heng Liu, Xining Zhao",
+    "title": "Grass species diversity reduces water and nutrient loss under simulated extreme precipitation",
+    "journal": "Journal of Hydrology",
+    "year": 2026,
+    "volume": "664",
+    "pages": "134499",
+    "doi": "10.1016/j.jhydrol.2025.134499",
+    "pdf": "/papers/pub-1-grass-diversity.pdf",
     "category": [
-      "erosion"
+      "soil-water-carbon",
+      "featured"
     ],
-    "member": "jiahui-yang",
+    "member": "huaqing-liu",
     "summary": {
-      "zh": "<p>本研究揭示了掺沙处理对盐渍土土块崩解和盐分淋洗的影响机理。</p>\n",
-      "en": "<p>This study revealed the mechanisms of sand mixing on soil clod disintegration and salt leaching in saline soil.</p>\n",
+      "zh": "<p>土壤饱和导水率（Ks）是衡量土壤水分渗透和运动能力的关键参数，直接影响生态系统的水循环和旱涝灾害调节。长期以来，人们对植物多样性如何影响 Ks 的认识往往停留在宏观假设。研究团队通过在黄土高原进行长期的草本物种丰富度控制实验，结合先进的 X 射线显微计算机断层扫描（X-ray micro-CT）技术，从微观角度定量揭示了植物多样性提升土壤导水能力的核心机理。研究发现：物种丰富度的增加并不仅是通过改变孔隙的大小，而是通过显著增加土壤孔隙的“连通性”（即改善土壤的“血管网络”）来增强 Ks。</p>\n<h3>研究方法与关键发现</h3>\n<p>研究团队设置了包含 1、2、4、8、16 种草本植物的物种丰富度梯度试验样地。通过对采集的土柱进行 3D CT 扫描（分辨率达 50 μm），精确重建了不同处理下的土壤孔隙结构。</p>\n<ul>\n<li>连通性是关键：随着草本植物物种丰富度的增加，土壤饱和导水率（Ks）呈显著上升趋势。关键在于，这种提升并非归因于孔隙总量的增加或孔隙变得更大，而是因为大孔隙（直径 &gt; 0.25 mm）的数量密度和连通性指标（如欧拉指数密度）显著提高。物种多样性越高，土壤中越容易形成贯穿性的、复杂的流体通道。</li>\n<li>根系是幕后推手：研究进一步通过结构方程模型（SEM）证明，植物多样性通过增加根系生物量和根体积密度，直接推动了土壤孔隙连通性的改善。不同物种根系在土壤中的互补分布和相互作用，如同自然界的“掘进机”，在土体中编织出一张复杂的、高度连通的“生物通道网”。</li>\n<li>大孔隙的作用：尽管大孔隙（&gt;1 mm）在总孔隙中占比很小，但由于其极高的连通性，它们是水分流动最有效的通道。物种丰富度显著增加了这类大孔隙的连通性。</li>\n</ul>\n<h3>科学意义与应用前景</h3>\n<p>本研究通过微观 CT 技术提供了坚实的实验证据，证实了植物多样性在塑造高效土壤孔隙网络中的决定性作用。这一发现将植物群落功能特性与土壤水动力学过程直接联系起来，为以下方面提供了重要的科学依据：</p>\n<ul>\n<li>生态恢复：在进行植被恢复（如退耕还林还草）时，应优先考虑使用高多样性的草本植物组合，以更有效地改善土壤结构，增强土壤的水分涵养和入渗能力。</li>\n<li>水文模型：研究结果可用于改进由于忽视植被多样性而导致的土壤导水率估算偏差，提升区域水文模型的准确性。</li>\n</ul>\n",
+      "en": "<p>Soil saturated hydraulic conductivity (Ks) is a key parameter for measuring soil water infiltration and movement, directly affecting ecosystem water cycling and flood regulation. This study combined long-term herbaceous species richness controlled experiments on the Loess Plateau with advanced X-ray micro-CT technology to quantitatively reveal the core mechanisms by which plant diversity enhances soil hydraulic conductivity from a microscopic perspective. The findings show that increased species richness enhances Ks not merely by altering pore size, but by significantly increasing soil pore connectivity.</p>\n<h3>Methods and Key Findings</h3>\n<p>The research team established experimental plots with species richness gradients of 1, 2, 4, 8, and 16 herbaceous plant species. 3D CT scanning of collected soil columns (resolution of 50 μm) precisely reconstructed soil pore structures under different treatments.</p>\n<ul>\n<li>Connectivity is key: As herbaceous species richness increased, Ks showed a significant upward trend. Critically, this enhancement was not attributable to increased total porosity or larger pores, but rather to significantly improved macropore (diameter &gt; 0.25 mm) number density and connectivity indices (e.g., Euler number density). Higher species diversity facilitated the formation of penetrating, complex fluid channels in the soil.</li>\n<li>Roots are the driving force: Structural equation modeling (SEM) further demonstrated that plant diversity directly promoted soil pore connectivity improvement by increasing root biomass and root volume density. The complementary distribution and interaction of different species&#39; root systems in the soil weave a complex, highly connected biological channel network.</li>\n<li>Role of macropores: Although macropores (&gt;1 mm) account for a small proportion of total porosity, their extremely high connectivity makes them the most effective channels for water flow. Species richness significantly increased the connectivity of these macropores.</li>\n</ul>\n<h3>Scientific Significance and Applications</h3>\n<p>This study provides solid experimental evidence through micro-CT technology, confirming the decisive role of plant diversity in shaping efficient soil pore networks. This finding directly links plant community functional traits with soil hydrodynamic processes, providing important scientific basis for:</p>\n<ul>\n<li>Ecological restoration: When conducting vegetation restoration (e.g., converting farmland to forests and grasslands), priority should be given to high-diversity herbaceous plant combinations to more effectively improve soil structure and enhance soil water retention and infiltration capacity.</li>\n<li>Hydrological modeling: The results can be used to improve Ks estimation biases caused by neglecting vegetation diversity, enhancing the accuracy of regional hydrological models.</li>\n</ul>\n",
       "highlights": {
         "zh": [
-          "揭示掺沙对盐渍土崩解和淋洗的影响机理\r",
-          "掺沙改善了盐渍土的物理结构\r",
-          "盐分淋洗效率随掺沙量增加而提高\r",
-          "为盐碱地改良技术发展提供理论依据"
+          "构建1-16种草本植物物种丰富度梯度，结合X射线微CT扫描\r",
+          "物种丰富度显著提升土壤饱和导水率（Ks）\r",
+          "孔隙连通性而非孔隙大小是驱动Ks提升的关键机制\r",
+          "多样性植物群落的根系构建了高度连通的生物通道网络"
         ],
         "en": [
-          "Revealed mechanisms of sand mixing on saline soil disintegration and leaching\r",
-          "Sand mixing improved physical structure of saline soil\r",
-          "Salt leaching efficiency increased with sand mixing rate\r",
-          "Provides theoretical basis for saline-alkali land improvement"
+          "Established 1-16 species richness gradients with X-ray micro-CT scanning\r",
+          "Species richness significantly enhanced soil saturated hydraulic conductivity (Ks)\r",
+          "Pore connectivity, not pore size, is the key mechanism driving Ks improvement\r",
+          "Root systems from diverse plant communities create highly connected biological channel networks"
         ]
       },
-      "images": []
+      "images": [
+        {
+          "src": "/images/papers/pub-1-ga.jpg",
+          "caption": {
+            "zh": "图文摘要：草本物种多样性减少极端降水下水土流失的机制",
+            "en": "Graphical Abstract: Mechanisms of grass diversity reducing water and soil loss under extreme precipitation"
+          }
+        }
+      ]
     }
   }
 ]

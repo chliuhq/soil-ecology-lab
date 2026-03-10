@@ -136,14 +136,16 @@ function buildProjects() {
 // ── 构建 publications.json ────────────────────────────────
 function buildPublications() {
   const items = readMdFiles(path.join(CONTENT_DIR, "publications"));
-  return items.map((item) => {
+  // 按年份升序排列（同年按原始 id 升序），最早发表的论文编号为 1
+  items.sort((a, b) => a.year - b.year || a.id - b.id);
+  return items.map((item, idx) => {
     const summary = parsePubSummary(item._content);
     const images = (item.images || []).map((img) => ({
       src: img.src,
       caption: { zh: img.caption_zh || "", en: img.caption_en || "" },
     }));
     return {
-      id: item.id,
+      id: idx + 1,
       authors: item.authors,
       title: item.title,
       journal: item.journal,
