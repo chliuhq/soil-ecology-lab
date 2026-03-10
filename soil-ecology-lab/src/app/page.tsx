@@ -159,6 +159,35 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ===== 合作单位 ===== */}
+      <section className="py-16 bg-bg-light">
+        <div className="container-main">
+          <h2 className="section-title text-center">
+            {lt({ zh: "合作单位", en: "Partner Institutions" })}
+          </h2>
+          <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {[
+              { name: { zh: "中国科学院水土保持研究所", en: "Institute of Soil and Water Conservation, CAS" }, url: "http://www.iswc.ac.cn/" },
+              { name: { zh: "西北农林科技大学", en: "Northwest A&F University" }, url: "https://www.nwsuaf.edu.cn/" },
+              { name: { zh: "山东农业大学", en: "Shandong Agricultural University" }, url: "https://www.sdau.edu.cn/" },
+              { name: { zh: "广西大学林学院", en: "College of Forestry, GXU" }, url: "https://lxy.gxu.edu.cn/" },
+              { name: { zh: "广西大学农学院", en: "College of Agriculture, GXU" }, url: "https://nxy.gxu.edu.cn/" },
+            ].map((p, i) => (
+              <a
+                key={i}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3 bg-white rounded-lg border border-gray-100 text-sm text-gray-600 hover:text-primary hover:border-primary/30 hover:shadow-md transition-all duration-300"
+              >
+                {lt(p.name)}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
