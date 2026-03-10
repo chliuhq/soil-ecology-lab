@@ -29,7 +29,7 @@ export default function PublicationsPage() {
   const [citeId, setCiteId] = useState<number | null>(null);
   const [copied, setCopied] = useState("");
 
-  const sorted = [...publications].sort((a, b) => b.year - a.year);
+  const sorted = [...publications].sort((a, b) => b.year - a.year || b.id - a.id);
   const years = [...new Set(sorted.map((p) => p.year))];
   const filtered = filter === "all" ? sorted : sorted.filter((p) => p.year === Number(filter));
 

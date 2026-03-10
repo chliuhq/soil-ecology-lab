@@ -46,7 +46,7 @@ export default function ResearchPage() {
         {filtered.map((r) => {
           const relatedPubs = publications
             .filter((p) => p.category.includes(r.id))
-            .sort((a, b) => b.year - a.year)
+            .sort((a, b) => b.year - a.year || b.id - a.id)
             .slice(0, 5);
 
           const rAny = r as any;
