@@ -172,8 +172,6 @@ export default function HomePage() {
               { name: { zh: "中国科学院水土保持研究所", en: "Institute of Soil and Water Conservation, CAS" }, url: "http://www.iswc.ac.cn/" },
               { name: { zh: "西北农林科技大学", en: "Northwest A&F University" }, url: "https://www.nwsuaf.edu.cn/" },
               { name: { zh: "山东农业大学", en: "Shandong Agricultural University" }, url: "https://www.sdau.edu.cn/" },
-              { name: { zh: "广西大学林学院", en: "College of Forestry, GXU" }, url: "https://lxy.gxu.edu.cn/" },
-              { name: { zh: "广西大学农学院", en: "College of Agriculture, GXU" }, url: "https://nxy.gxu.edu.cn/" },
             ].map((p, i) => (
               <a
                 key={i}
