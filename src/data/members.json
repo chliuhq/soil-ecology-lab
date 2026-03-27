@@ -1,4 +1,4 @@
-{
+﻿{
   "pi": [
     {
       "id": "huaqing-liu",
@@ -26,8 +26,8 @@
         "en": ["Data Collection and Preprocessing", "Restoration Ecology", "Landscape Ecology"]
       },
       "enrollment": {
-        "zh": "生态学（学硕）；林业（专硕）；风景园林（专硕）",
-        "en": "Ecology (Academic Master); Forestry (Professional Master); Landscape Architecture (Professional Master)"
+        "zh": "生态学（学硕）；林业（专硕）",
+        "en": "Ecology (Academic Master); Forestry (Professional Master)"
       }
     },
     {

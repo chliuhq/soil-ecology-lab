@@ -24,7 +24,7 @@ huaqingliu@gxu.edu.cn
 ResearchGate：https://www.researchgate.net/profile/Huaqing-Liu-8?ev=hdr_xprf
 Google Scholar: https://scholar.google.com/citations?user=AyQBphkAAAAJ&hl=zh-CN
 
-招生信息：生态学（学硕）；林业（专硕）；风景园林（专硕）
+招生信息：生态学（学硕）；林业（专硕）
 
 诚挚邀请具有生态学、农业资源与环境、水文学、微生物学、水土保持学、计算机、遥感科学与技术、人工智能、林学等相关专业背景的本科生报考硕士；
 
@@ -77,7 +77,7 @@ Google Scholar: https://scholar.google.com/citations?user=AyQBphkAAAAJ&hl=zh-CN
 13.马龙, 刘华清, 高晓东, 赵西宁*. 饲草间作方式对增产及节水效应的影响. 水土保持通报. 2025, 45, 161–172.
 荣誉与获奖
 招生信息
-诚挚邀请具有生态学、林学、土壤学、水文学、微生物学、水土保持学、遥感科学与技术、人工智能等专业背景的本科生报考生态学学术硕士及风景园林专业硕士；
+诚挚邀请具有生态学、林学、土壤学、水文学、微生物学、水土保持学、遥感科学与技术、人工智能等专业背景的本科生报考生态学学术硕士及林业专业硕士；
 
 欢迎任何专业背景和年级的本科生及硕士研究生联系，参与合作研究，加入现有的课题或者根据个人兴趣开展新的研究项目；
 

@@ -1,4 +1,4 @@
----
+﻿---
 id: "huaqing-liu"
 name_zh: "刘华清"
 name_en: "Huaqing Liu"
@@ -41,8 +41,8 @@ courses_en:
   - "Data Collection and Preprocessing"
   - "Restoration Ecology"
   - "Landscape Ecology"
-enrollment_zh: "生态学（学硕）；林业（专硕）；风景园林（专硕）"
-enrollment_en: "Ecology (Academic Master); Forestry (Professional Master); Landscape Architecture (Professional Master)"
+enrollment_zh: "生态学（学硕）；林业（专硕）"
+enrollment_en: "Ecology (Academic Master); Forestry (Professional Master)"
 ---
 
 ## 个人简介 / Bio
