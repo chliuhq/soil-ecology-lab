@@ -7,6 +7,7 @@
     "publications": "论文发表",
     "projects": "科研项目",
     "joinus": "招生信息",
+    "resources": "资源平台",
     "contact": "联系我们"
   },
   "home": {
@@ -65,6 +66,10 @@
     "address": "地址",
     "email": "邮箱",
     "profiles": "学术主页"
+  },
+  "resources": {
+    "title": "资源平台",
+    "subtitle": "课题组为学生提供的科研资源与工具"
   },
   "common": {
     "switchLang": "English",

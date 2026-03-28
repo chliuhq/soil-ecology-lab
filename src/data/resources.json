@@ -1,0 +1,88 @@
+{
+  "sections": [
+    {
+      "id": "gxuai",
+      "icon": "🤖",
+      "title": { "zh": "GXUAI 智慧平台", "en": "GXUAI AI Platform" },
+      "description": {
+        "zh": "课题组自主开发的 AI 服务平台，面向高校师生提供国内直连的 GPT-5、Claude、DeepSeek 等 15+ 顶尖 AI 模型。支持论文写作、文献翻译、代码调试、数据分析等科研场景，按量计费，最低 ¥1 起充。",
+        "en": "An AI service platform developed by our lab for university faculty and students. Provides direct access to 15+ top AI models including GPT-5, Claude, and DeepSeek. Supports research tasks such as paper writing, literature translation, code debugging, and data analysis. Pay-per-use pricing starting from ¥1."
+      },
+      "features": [
+        { "zh": "国内直连，无需翻墙", "en": "Direct access in China, no VPN needed" },
+        { "zh": "15+ AI 模型可选", "en": "15+ AI models available" },
+        { "zh": "按量计费，无月费绑定", "en": "Pay-per-use, no subscription" },
+        { "zh": "注册需 .edu.cn 教育邮箱", "en": "Registration requires .edu.cn email" }
+      ],
+      "link": "https://gxuai.cn/",
+      "linkText": { "zh": "访问平台", "en": "Visit Platform" }
+    },
+    {
+      "id": "textbook",
+      "icon": "📖",
+      "title": { "zh": "数字教材", "en": "Digital Textbooks" },
+      "description": {
+        "zh": "课题组编写的数字化课程教材，托管于 GitHub Pages，内容持续更新。",
+        "en": "Digital course textbooks authored by our lab, hosted on GitHub Pages with continuous updates."
+      },
+      "items": [
+        {
+          "title": { "zh": "《数据采集与预处理》2027 春季学期", "en": "Data Collection and Preprocessing (2027 Spring)" },
+          "description": {
+            "zh": "教授数据驱动的可重复性研究方法，涵盖 R、Python 等工具的实践操作，强调动手能力和项目导向。",
+            "en": "Teaching data-driven reproducible research methods, covering hands-on practice with R, Python, and other tools, emphasizing practical skills and project-based learning."
+          },
+          "link": "https://data-collection-and-preprocessing.github.io/Data-collection-and-preprocessing-2027-Spring/",
+          "linkText": { "zh": "查看教材", "en": "View Textbook" }
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "icon": "🛠️",
+      "title": { "zh": "学术工具推荐", "en": "Recommended Academic Tools" },
+      "description": {
+        "zh": "课题组日常科研中使用的工具和平台，推荐给组内学生和同行参考。",
+        "en": "Tools and platforms used in our daily research, recommended for lab members and peers."
+      },
+      "items": [
+        {
+          "name": "Zotero",
+          "category": { "zh": "文献管理", "en": "Reference Management" },
+          "description": { "zh": "免费开源的文献管理工具，支持浏览器一键导入和多设备同步", "en": "Free and open-source reference manager with browser import and multi-device sync" },
+          "link": "https://www.zotero.org/"
+        },
+        {
+          "name": "R / RStudio",
+          "category": { "zh": "数据分析", "en": "Data Analysis" },
+          "description": { "zh": "统计分析和数据可视化的首选工具，生态学研究必备", "en": "Primary tool for statistical analysis and data visualization, essential for ecology research" },
+          "link": "https://posit.co/download/rstudio-desktop/"
+        },
+        {
+          "name": "Python",
+          "category": { "zh": "编程语言", "en": "Programming" },
+          "description": { "zh": "通用编程语言，适用于数据处理、机器学习和自动化脚本", "en": "General-purpose language for data processing, machine learning, and automation" },
+          "link": "https://www.python.org/"
+        },
+        {
+          "name": "Google Earth Engine",
+          "category": { "zh": "遥感平台", "en": "Remote Sensing" },
+          "description": { "zh": "云端地理空间分析平台，提供海量卫星影像数据和计算资源", "en": "Cloud-based geospatial analysis platform with massive satellite imagery and computing resources" },
+          "link": "https://earthengine.google.com/"
+        },
+        {
+          "name": "Overleaf",
+          "category": { "zh": "论文写作", "en": "Paper Writing" },
+          "description": { "zh": "在线 LaTeX 编辑器，支持多人协作，主流期刊模板齐全", "en": "Online LaTeX editor with real-time collaboration and templates for major journals" },
+          "link": "https://www.overleaf.com/"
+        },
+        {
+          "name": "Git / GitHub",
+          "category": { "zh": "版本控制", "en": "Version Control" },
+          "description": { "zh": "代码和文档版本管理工具，科研项目协作必备", "en": "Version control for code and documents, essential for research collaboration" },
+          "link": "https://github.com/"
+        }
+      ]
+    }
+  ]
+}
