@@ -11,6 +11,7 @@ const navItems = [
   { key: "research", href: "/research" },
   { key: "publications", href: "/publications" },
   { key: "projects", href: "/projects" },
+  { key: "resources", href: "/resources" },
   { key: "joinus", href: "/joinus" },
   { key: "contact", href: "/contact" },
 ] as const;
