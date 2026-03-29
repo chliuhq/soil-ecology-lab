@@ -2,6 +2,83 @@
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import members from "@/data/members.json";
 
+const interestTracks = [
+  {
+    icon: "📸",
+    title: { zh: "摄影爱好者", en: "Photography Enthusiast" },
+    color: "from-amber-50 to-orange-50",
+    border: "border-amber-200",
+    badge: "bg-amber-100 text-amber-800",
+    items: [
+      { zh: "无人机航拍与遥感影像采集", en: "UAV aerial photography & remote sensing image acquisition" },
+      { zh: "生态景观摄影记录", en: "Ecological landscape photography & documentation" },
+      { zh: "CT扫描土壤孔隙结构的微观摄影", en: "CT-scan micro-photography of soil pore structures" },
+      { zh: "图像后处理与智能分析", en: "Image post-processing & intelligent analysis" },
+    ],
+  },
+  {
+    icon: "🏕️",
+    title: { zh: "野外探索者", en: "Field Explorer" },
+    color: "from-green-50 to-emerald-50",
+    border: "border-green-200",
+    badge: "bg-green-100 text-green-800",
+    items: [
+      { zh: "亚热带森林样地调查", en: "Subtropical forest plot surveys" },
+      { zh: "土壤剖面采样与观测", en: "Soil profile sampling & observation" },
+      { zh: "野外长期定位监测站维护", en: "Long-term field monitoring station maintenance" },
+      { zh: "不同生态系统的对比研究", en: "Comparative studies across ecosystems" },
+    ],
+  },
+  {
+    icon: "💻",
+    title: { zh: "编程/数据爱好者", en: "Coding & Data Enthusiast" },
+    color: "from-blue-50 to-indigo-50",
+    border: "border-blue-200",
+    badge: "bg-blue-100 text-blue-800",
+    items: [
+      { zh: "遥感影像智能分析（Google Earth Engine）", en: "Remote sensing image analysis (Google Earth Engine)" },
+      { zh: "无人机影像拼接与三维重建", en: "UAV image mosaicking & 3D reconstruction" },
+      { zh: "CT扫描图像的深度学习分析", en: "Deep learning analysis of CT scan images" },
+      { zh: "大数据荟萃分析", en: "Big data meta-analysis" },
+    ],
+  },
+  {
+    icon: "🔬",
+    title: { zh: "跨学科创新者", en: "Interdisciplinary Innovator" },
+    color: "from-purple-50 to-fuchsia-50",
+    border: "border-purple-200",
+    badge: "bg-purple-100 text-purple-800",
+    items: [
+      { zh: "多源遥感（卫星+无人机+地面传感器）数据融合", en: "Multi-source remote sensing data fusion (satellite + UAV + ground sensors)" },
+      { zh: "AI辅助土壤分类与制图", en: "AI-assisted soil classification & mapping" },
+      { zh: "物联网土壤监测系统", en: "IoT-based soil monitoring systems" },
+    ],
+  },
+];
+
+const techHighlights = [
+  {
+    icon: "🛸",
+    title: { zh: "无人机遥感", en: "UAV Remote Sensing" },
+    desc: { zh: "航拍、多光谱、LiDAR——从空中精准感知地表变化", en: "Aerial photography, multispectral & LiDAR — precision sensing from above" },
+  },
+  {
+    icon: "🔍",
+    title: { zh: "CT扫描", en: "CT Scanning" },
+    desc: { zh: "土壤孔隙结构三维重建、根系形态无损观测", en: "3D reconstruction of soil pore structures & non-destructive root morphology observation" },
+  },
+  {
+    icon: "🤖",
+    title: { zh: "图像智能分析", en: "AI Image Analysis" },
+    desc: { zh: "深度学习、目标检测、语义分割——让AI读懂土壤", en: "Deep learning, object detection & semantic segmentation — teaching AI to read soil" },
+  },
+  {
+    icon: "🌍",
+    title: { zh: "多源遥感融合", en: "Multi-source RS Fusion" },
+    desc: { zh: "卫星+无人机+地面传感器，多尺度立体监测", en: "Satellite + UAV + ground sensors for multi-scale 3D monitoring" },
+  },
+];
+
 export default function JoinUsPage() {
   const { t } = useI18n();
   const lt = useLocaleText();
@@ -12,9 +89,60 @@ export default function JoinUsPage() {
       <p className="section-subtitle text-center">{t.joinus.subtitle}</p>
       <div className="h-1 w-12 bg-primary mx-auto mb-12 rounded" />
 
-      {/* 欢迎语 */}
-      <div className="max-w-3xl mx-auto mb-12 bg-green-50 rounded-xl p-8 text-center">
-        <p className="text-text-main leading-relaxed">{t.joinus.welcome}</p>
+      {/* Hero banner */}
+      <div className="max-w-4xl mx-auto mb-14 bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 rounded-2xl p-8 md:p-10 border border-green-100">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 text-center">
+          {lt({ zh: "🌿 不只是传统土壤学", en: "🌿 Beyond Traditional Soil Science" })}
+        </h2>
+        <p className="text-text-main leading-relaxed text-center max-w-2xl mx-auto">
+          {lt({
+            zh: "我们将无人机遥感、CT扫描、深度学习等前沿技术与经典土壤生态学深度融合，用新视角、新工具探索土壤世界的奥秘。无论你是喜欢飞无人机、写代码，还是热爱野外探索，这里都有属于你的舞台。",
+            en: "We deeply integrate cutting-edge technologies — UAV remote sensing, CT scanning, deep learning — with classical soil ecology. Whether you love flying drones, writing code, or exploring the field, there's a stage for you here."
+          })}
+        </p>
+      </div>
+
+      {/* 你可以做什么 */}
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-2 border-b pb-2">
+        {lt({ zh: "🎯 你可以做什么", en: "🎯 What You Can Do" })}
+      </h2>
+      <p className="text-text-light mb-6">
+        {lt({ zh: "根据你的兴趣，找到最适合你的研究方向", en: "Find the research track that matches your interests" })}
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
+        {interestTracks.map((track, i) => (
+          <div key={i} className={`bg-gradient-to-br ${track.color} border ${track.border} rounded-xl p-6 hover:shadow-md transition-shadow`}>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">{track.icon}</span>
+              <span className={`text-sm font-semibold px-3 py-0.5 rounded-full ${track.badge}`}>{lt(track.title)}</span>
+            </div>
+            <ul className="space-y-1.5">
+              {track.items.map((item, j) => (
+                <li key={j} className="flex items-start gap-2 text-sm text-gray-700">
+                  <span className="text-primary mt-0.5 shrink-0">▸</span>
+                  <span>{lt(item)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      {/* 前沿技术手段 */}
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-2 border-b pb-2">
+        {lt({ zh: "🚀 前沿技术手段", en: "🚀 Cutting-edge Technologies" })}
+      </h2>
+      <p className="text-text-light mb-6">
+        {lt({ zh: "不仅是传统遥感——我们的技术工具箱", en: "Beyond traditional remote sensing — our technology toolbox" })}
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+        {techHighlights.map((tech, i) => (
+          <div key={i} className="bg-white border border-gray-100 rounded-xl p-5 text-center hover:border-primary/30 hover:shadow-sm transition-all">
+            <span className="text-3xl block mb-2">{tech.icon}</span>
+            <h3 className="font-bold text-gray-900 mb-1">{lt(tech.title)}</h3>
+            <p className="text-xs text-text-light leading-relaxed">{lt(tech.desc)}</p>
+          </div>
+        ))}
       </div>
 
       {/* 招生方向 */}
