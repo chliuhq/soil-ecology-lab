@@ -150,12 +150,17 @@ export default function HomePage() {
             <h2 className="section-title text-center">{t.home.latestNews}</h2>
             <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
           </FadeInOnScroll>
-          <div className="max-w-2xl mx-auto space-y-4">
-            {[...news].sort((a: any, b: any) => b.date.localeCompare(a.date)).slice(0, 5).map((n: any, i: number) => (
+          <div className="max-w-3xl mx-auto space-y-5">
+            {[...news].sort((a: any, b: any) => b.date.localeCompare(a.date)).slice(0, 4).map((n: any, i: number) => (
               <Link key={i} href={`/news/${n.id}`}
-                className="flex gap-4 items-start py-3 border-b border-gray-50 hover:bg-green-50/50 rounded px-2 -mx-2 transition-colors group">
-                <span className="text-base text-text-light whitespace-nowrap">{n.date}</span>
-                <p className="text-gray-900 group-hover:text-primary transition-colors">{lt(n.title)}</p>
+                className="block py-4 px-4 -mx-4 border-b border-gray-50 hover:bg-green-50/50 rounded transition-colors group">
+                <div className="flex gap-3 items-center mb-1">
+                  <span className="text-sm text-white bg-primary px-2.5 py-0.5 rounded whitespace-nowrap">{n.date}</span>
+                  <h3 className="text-gray-900 font-medium group-hover:text-primary transition-colors">{lt(n.title)}</h3>
+                </div>
+                {n.content && (
+                  <p className="text-sm text-text-light line-clamp-2 mt-1 ml-0">{String(lt(n.content))}</p>
+                )}
               </Link>
             ))}
           </div>
