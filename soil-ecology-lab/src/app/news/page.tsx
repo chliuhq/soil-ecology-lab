@@ -16,14 +16,14 @@ export default function NewsPage() {
 
       <div className="max-w-3xl mx-auto space-y-8">
         {sorted.map((n: any) => (
-          <article key={n.id} id={`news-${n.id}`} className="scroll-mt-20 border-b border-gray-100 pb-6">
+          <article key={n.id} id={`news-${n.id}`} className="scroll-mt-20 border-b border-gray-100 dark:border-gray-700 pb-6">
             <div className="flex items-center gap-3 mb-2">
               <span className="text-sm text-white bg-primary px-2.5 py-0.5 rounded">{n.date}</span>
               <Link href={`/news/${n.id}`} className="text-xs text-primary hover:underline">
                 {t.news.readMore} →
               </Link>
             </div>
-            <h2 className="text-lg font-semibold text-gray-900 mb-3">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
               <Link href={`/news/${n.id}`} className="hover:text-primary transition-colors">
                 {lt(n.title)}
               </Link>

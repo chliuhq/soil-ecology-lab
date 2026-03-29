@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
@@ -10,6 +11,12 @@ module.exports = {
         "text-main": "#333333",
         "text-light": "#666666",
         "bg-light": "#f8f9fa",
+        // New design system colors
+        "primary-blue": "#1e3a5f",
+        "accent-green": "#2d6a4f",
+        earth: "#d4a373",
+        "dark-bg": "#0f172a",
+        "dark-surface": "#1e293b",
       },
       fontFamily: {
         serif: ['"Source Serif 4"', '"Noto Serif SC"', "Georgia", "serif"],

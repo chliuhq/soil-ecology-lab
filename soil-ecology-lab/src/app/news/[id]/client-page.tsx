@@ -33,7 +33,7 @@ export default function NewsDetailClient() {
         <div className="mb-4">
           <span className="text-sm text-white bg-primary px-3 py-1 rounded">{n.date}</span>
         </div>
-        <h1 className="text-2xl md:text-3xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+        <h1 className="text-2xl md:text-3xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-6 leading-tight">
           {lt(n.title)}
         </h1>
         {n.content && (

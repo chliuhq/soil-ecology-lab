@@ -90,8 +90,8 @@ export default function JoinUsPage() {
       <div className="h-1 w-12 bg-primary mx-auto mb-12 rounded" />
 
       {/* Hero banner */}
-      <div className="max-w-4xl mx-auto mb-14 bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 rounded-2xl p-8 md:p-10 border border-green-100">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 text-center">
+      <div className="max-w-4xl mx-auto mb-14 bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 dark:from-green-900/20 dark:via-emerald-900/20 dark:to-teal-900/20 rounded-2xl p-8 md:p-10 border border-green-100 dark:border-green-800">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3 text-center">
           {lt({ zh: "🌿 不只是传统土壤学", en: "🌿 Beyond Traditional Soil Science" })}
         </h2>
         <p className="text-text-main leading-relaxed text-center max-w-2xl mx-auto">
@@ -103,7 +103,7 @@ export default function JoinUsPage() {
       </div>
 
       {/* 你可以做什么 */}
-      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-2 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-2 border-b dark:border-gray-700 pb-2">
         {lt({ zh: "🎯 你可以做什么", en: "🎯 What You Can Do" })}
       </h2>
       <p className="text-text-light mb-6">
@@ -129,7 +129,7 @@ export default function JoinUsPage() {
       </div>
 
       {/* 前沿技术手段 */}
-      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-2 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-2 border-b dark:border-gray-700 pb-2">
         {lt({ zh: "🚀 前沿技术手段", en: "🚀 Cutting-edge Technologies" })}
       </h2>
       <p className="text-text-light mb-6">
@@ -137,22 +137,22 @@ export default function JoinUsPage() {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
         {techHighlights.map((tech, i) => (
-          <div key={i} className="bg-white border border-gray-100 rounded-xl p-5 text-center hover:border-primary/30 hover:shadow-sm transition-all">
+          <div key={i} className="bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl p-5 text-center hover:border-primary/30 hover:shadow-sm transition-all">
             <span className="text-3xl block mb-2">{tech.icon}</span>
-            <h3 className="font-bold text-gray-900 mb-1">{lt(tech.title)}</h3>
-            <p className="text-xs text-text-light leading-relaxed">{lt(tech.desc)}</p>
+            <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-1">{lt(tech.title)}</h3>
+            <p className="text-xs text-text-light dark:text-gray-400 leading-relaxed">{lt(tech.desc)}</p>
           </div>
         ))}
       </div>
 
       {/* 招生方向 */}
-      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
         {t.joinus.directions}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {members.pi.map((m) => (
-          <div key={m.id} className="bg-white border border-gray-100 rounded-xl p-6">
-            <h3 className="font-bold text-gray-900 mb-1">{lt(m.name)}</h3>
+          <div key={m.id} className="bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl p-6">
+            <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-1">{lt(m.name)}</h3>
             <p className="text-base text-primary mb-3">
               <a href={(m as any).departmentUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">{lt(m.department)}</a>
             </p>
@@ -178,10 +178,10 @@ export default function JoinUsPage() {
       </div>
 
       {/* 我们期待的你 */}
-      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
         {t.joinus.requirements}
       </h2>
-      <div className="max-w-3xl space-y-3 text-text-light leading-relaxed">
+      <div className="max-w-3xl space-y-3 text-text-light dark:text-gray-400 leading-relaxed">
         <p>{lt({
           zh: "诚挚邀请具有生态学、土壤学、水文学、林学、农业资源与环境、微生物学、水土保持学、遥感科学与技术、地理信息科学、计算机、人工智能等相关专业背景的本科生报考硕士研究生。",
           en: "We sincerely invite undergraduates with backgrounds in ecology, soil science, hydrology, forestry, agricultural resources and environment, microbiology, soil and water conservation, remote sensing, GIS, computer science, or AI to apply for our graduate programs."
@@ -197,10 +197,10 @@ export default function JoinUsPage() {
       </div>
 
       {/* 培养理念 */}
-      <h2 className="text-2xl font-serif font-semibold text-gray-800 mt-12 mb-6 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mt-12 mb-6 border-b dark:border-gray-700 pb-2">
         {lt({ zh: "培养理念", en: "Our Philosophy" })}
       </h2>
-      <div className="max-w-3xl space-y-3 text-text-light leading-relaxed mb-12">
+      <div className="max-w-3xl space-y-3 text-text-light dark:text-gray-400 leading-relaxed mb-12">
         <p>{lt({
           zh: "课题组秉持「以学生为中心」的培养理念，注重科研能力与综合素质的协同发展。我们相信每位学生都有独特的潜力，导师的角色是引导、支持和激发，而非简单的任务分配。",
           en: "Our lab upholds a student-centered philosophy, emphasizing the synergistic development of research capabilities and comprehensive qualities. We believe every student has unique potential, and the advisor's role is to guide, support, and inspire rather than simply assign tasks."
@@ -212,7 +212,7 @@ export default function JoinUsPage() {
       </div>
 
       {/* 成长路径 */}
-      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
         {lt({ zh: "研究生成长路径", en: "Graduate Growth Path" })}
       </h2>
       <div className="max-w-3xl mb-12">
@@ -225,11 +225,11 @@ export default function JoinUsPage() {
             { icon: "🎓", period: { zh: "第三阶段：总结提升期（第5-6学期）", en: "Phase 3: Synthesis & Completion (Semester 5-6)" },
               desc: { zh: "完善研究成果、撰写学位论文、准备毕业答辩。同时提供职业规划指导，协助申请博士深造或就业推荐。", en: "Refining research outcomes, writing thesis, preparing for defense. Career planning guidance provided, including assistance with PhD applications or employment recommendations." } },
           ].map((phase, i) => (
-            <div key={i} className="flex gap-4 items-start bg-white border border-gray-100 rounded-xl p-5">
+            <div key={i} className="flex gap-4 items-start bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl p-5">
               <span className="text-2xl shrink-0">{phase.icon}</span>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">{lt(phase.period)}</h3>
-                <p className="text-sm text-text-light leading-relaxed">{lt(phase.desc)}</p>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">{lt(phase.period)}</h3>
+                <p className="text-sm text-text-light dark:text-gray-400 leading-relaxed">{lt(phase.desc)}</p>
               </div>
             </div>
           ))}
@@ -237,7 +237,7 @@ export default function JoinUsPage() {
       </div>
 
       {/* 资源支持 */}
-      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
         {lt({ zh: "资源与支持", en: "Resources & Support" })}
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-12">
@@ -254,12 +254,12 @@ export default function JoinUsPage() {
             desc: { zh: "课题组内部科研基本技能培训资料，帮助新生快速上手", en: "Internal research skills training materials to help new students get started quickly" },
             link: "https://woa.wps.cn/invite/ditbl363h8v?channel=stable" },
         ].map((item, i) => (
-          <div key={i} className="bg-white border border-gray-100 rounded-xl p-5">
+          <div key={i} className="bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl p-5">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-xl">{item.icon}</span>
-              <h3 className="font-semibold text-gray-900">{lt(item.title)}</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100">{lt(item.title)}</h3>
             </div>
-            <p className="text-sm text-text-light leading-relaxed">{lt(item.desc)}</p>
+            <p className="text-sm text-text-light dark:text-gray-400 leading-relaxed">{lt(item.desc)}</p>
             {(item as any).link && (
               <a href={(item as any).link} target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-1 mt-2 text-sm text-primary hover:underline">
@@ -271,8 +271,8 @@ export default function JoinUsPage() {
       </div>
 
       {/* 招生链接 */}
-      <div className="mt-12 p-6 bg-green-50 rounded-xl text-center">
-        <p className="text-base text-text-main mb-3">
+      <div className="mt-12 p-6 bg-green-50 dark:bg-green-900/20 rounded-xl text-center">
+        <p className="text-base text-text-main dark:text-gray-300 mb-3">
           {lt({ zh: "更多招生信息请访问", en: "For more admission information, please visit" })}
         </p>
         <a

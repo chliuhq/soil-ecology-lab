@@ -20,10 +20,10 @@ export default function ResourcesPage() {
 
       {/* GXUAI 智慧平台 */}
       <section className="mb-16">
-        <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+        <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
           {gxuai.icon} {lt(gxuai.title)}
         </h2>
-        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8">
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-8">
           <p className="text-text-main leading-relaxed mb-6">{lt(gxuai.description)}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
             {gxuai.features!.map((f, i) => (
@@ -49,15 +49,15 @@ export default function ResourcesPage() {
 
       {/* 数字教材 */}
       <section className="mb-16">
-        <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+        <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
           {textbook.icon} {lt(textbook.title)}
         </h2>
         <p className="text-text-light mb-6">{lt(textbook.description)}</p>
         <div className="space-y-4">
           {textbook.items!.map((item: any, i: number) => (
-            <div key={i} className="bg-white border border-gray-100 rounded-xl p-6 hover:border-primary/30 transition-colors">
-              <h3 className="font-semibold text-gray-900 mb-2">{lt(item.title)}</h3>
-              <p className="text-base text-text-light mb-4">{lt(item.description)}</p>
+            <div key={i} className="bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl p-6 hover:border-primary/30 transition-colors">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{lt(item.title)}</h3>
+              <p className="text-base text-text-light dark:text-gray-400 mb-4">{lt(item.description)}</p>
               <a
                 href={item.link}
                 target="_blank"
@@ -76,7 +76,7 @@ export default function ResourcesPage() {
 
       {/* 学术工具推荐 */}
       <section>
-        <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+        <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
           {tools.icon} {lt(tools.title)}
         </h2>
         <p className="text-text-light mb-6">{lt(tools.description)}</p>
@@ -87,11 +87,11 @@ export default function ResourcesPage() {
               href={tool.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="card-hover bg-white border border-gray-100 rounded-xl p-5"
+              className="card-hover bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl p-5"
             >
               <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-gray-900">{tool.name}</h3>
-                <span className="text-xs px-2 py-0.5 bg-green-100 text-green-800 rounded-full">
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100">{tool.name}</h3>
+                <span className="text-xs px-2 py-0.5 bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-300 rounded-full">
                   {lt(tool.category)}
                 </span>
               </div>

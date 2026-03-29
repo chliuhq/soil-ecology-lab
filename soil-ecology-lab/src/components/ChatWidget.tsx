@@ -71,17 +71,17 @@ export default function ChatWidget() {
       {/* 欢迎气泡 */}
       {showBubble && !open && (
         <div className="fixed bottom-[5.5rem] right-6 z-50 animate-fade-in">
-          <div className="relative bg-white rounded-xl shadow-lg border border-gray-100 px-4 py-3 max-w-[220px]">
+          <div className="relative bg-white dark:bg-dark-surface rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 px-4 py-3 max-w-[220px]">
             <button
               onClick={dismissBubble}
-              className="absolute -top-2 -right-2 w-5 h-5 bg-gray-200 hover:bg-gray-300 rounded-full text-xs text-gray-600 flex items-center justify-center transition-colors"
+              className="absolute -top-2 -right-2 w-5 h-5 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full text-xs text-gray-600 dark:text-gray-300 flex items-center justify-center transition-colors"
               aria-label="Close"
             >✕</button>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
               {String(lt({ zh: "👋 你好，有什么可以帮你的？", en: "👋 Hi! How can I help you?" }))}
             </p>
             {/* 小三角箭头 */}
-            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-r border-b border-gray-100 transform rotate-45" />
+            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white dark:bg-dark-surface border-r border-b border-gray-100 dark:border-gray-700 transform rotate-45" />
           </div>
         </div>
       )}
@@ -97,7 +97,7 @@ export default function ChatWidget() {
 
       {/* 聊天窗口 */}
       {open && (
-        <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 h-[28rem] bg-white rounded-xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden">
+        <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 h-[28rem] bg-white dark:bg-dark-surface rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden">
           {/* 头部 */}
           <div className="bg-primary text-white px-4 py-3 text-sm font-medium flex items-center gap-2">
             <span>🤖</span>
@@ -105,17 +105,17 @@ export default function ChatWidget() {
           </div>
 
           {/* 消息区 */}
-          <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-gray-50 dark:bg-dark-bg">
             {/* 欢迎语 */}
             {msgs.length === 0 && (
-              <div className="bg-white rounded-lg p-3 text-sm text-text-light shadow-sm">{greeting}</div>
+              <div className="bg-white dark:bg-dark-surface rounded-lg p-3 text-sm text-text-light dark:text-gray-400 shadow-sm">{greeting}</div>
             )}
             {msgs.map((m, i) => (
               <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div className={`max-w-[80%] rounded-lg px-3 py-2 text-sm whitespace-pre-wrap ${
                   m.role === "user"
                     ? "bg-primary text-white"
-                    : "bg-white text-gray-800 shadow-sm"
+                    : "bg-white dark:bg-dark-surface text-gray-800 dark:text-gray-200 shadow-sm"
                 }`}>
                   {m.content}
                 </div>
@@ -123,7 +123,7 @@ export default function ChatWidget() {
             ))}
             {loading && (
               <div className="flex justify-start">
-                <div className="bg-white rounded-lg px-3 py-2 text-sm text-gray-400 shadow-sm">
+                <div className="bg-white dark:bg-dark-surface rounded-lg px-3 py-2 text-sm text-gray-400 shadow-sm">
                   {String(lt({ zh: "思考中...", en: "Thinking..." }))}
                 </div>
               </div>
@@ -132,13 +132,13 @@ export default function ChatWidget() {
           </div>
 
           {/* 输入区 */}
-          <div className="border-t border-gray-200 p-2 flex gap-2">
+          <div className="border-t border-gray-200 dark:border-gray-700 p-2 flex gap-2">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && send()}
               placeholder={String(lt({ zh: "输入你的问题...", en: "Ask a question..." }))}
-              className="flex-1 text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-primary"
+              className="flex-1 text-sm border border-gray-200 dark:border-gray-600 dark:bg-dark-bg dark:text-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-primary"
               disabled={loading}
             />
             <button

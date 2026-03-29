@@ -49,7 +49,7 @@ export default function PublicationsPage() {
         <button
           onClick={() => setFilter("all")}
           className={`px-4 py-1.5 rounded-full text-base transition-colors ${
-            filter === "all" ? "bg-primary text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            filter === "all" ? "bg-primary text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
           }`}
         >
           {t.publications.all}
@@ -59,7 +59,7 @@ export default function PublicationsPage() {
             key={y}
             onClick={() => setFilter(String(y))}
             className={`px-4 py-1.5 rounded-full text-base transition-colors ${
-              filter === String(y) ? "bg-primary text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              filter === String(y) ? "bg-primary text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
           >
             {y}
@@ -73,7 +73,7 @@ export default function PublicationsPage() {
           .filter((y) => filter === "all" || y === Number(filter))
           .map((year) => (
             <div key={year} className="mb-10">
-              <h2 className="text-2xl font-serif font-bold text-gray-800 mb-4 border-b pb-2">
+              <h2 className="text-2xl font-serif font-bold text-gray-800 dark:text-gray-200 mb-4 border-b dark:border-gray-700 pb-2">
                 {year}
               </h2>
               <div className="space-y-4">
@@ -86,12 +86,12 @@ export default function PublicationsPage() {
 
                     return (
                       <div key={pub.id} id={`pub-${pub.id}`} className="pub-item scroll-mt-20">
-                        <h3 className="font-medium text-gray-900 mb-1">
+                        <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-1">
                           <Link href={`/publications/${pub.id}`} className="hover:text-primary transition-colors">
                             {pub.title}
                           </Link>
                         </h3>
-                        <p className="text-base text-text-light">{pub.authors}</p>
+                        <p className="text-base text-text-light dark:text-gray-400">{pub.authors}</p>
                         <p className="text-base mt-1">
                           <span className="font-medium text-primary">{pub.journal}</span>
                           {pub.volume && <span className="text-text-light">, {pub.volume}</span>}
@@ -153,7 +153,7 @@ export default function PublicationsPage() {
 
                         {/* 引用格式面板 */}
                         {citeId === pub.id && (
-                          <div className="mt-3 p-4 bg-purple-50 rounded-lg border border-purple-100 text-sm space-y-3">
+                          <div className="mt-3 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-100 dark:border-purple-800 text-sm space-y-3">
                             <div>
                               <div className="flex items-center justify-between mb-1">
                                 <span className="font-semibold text-purple-900">APA</span>
@@ -179,7 +179,7 @@ export default function PublicationsPage() {
 
                         {/* 论文解读展开区 - 图文并茂 */}
                         {expandedId === pub.id && summary && (
-                          <div className="mt-3 p-5 bg-amber-50 rounded-lg border border-amber-100 text-base text-text-main leading-relaxed">
+                          <div className="mt-3 p-5 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-100 dark:border-amber-800 text-base text-text-main dark:text-gray-200 leading-relaxed">
                             {/* 概述 */}
                             <div className="mb-4 pub-summary" dangerouslySetInnerHTML={{ __html: lt(summary) as string }} />
 

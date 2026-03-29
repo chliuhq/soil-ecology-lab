@@ -23,7 +23,7 @@ export default function ResearchPage() {
         <button
           onClick={() => setFilter("all")}
           className={`px-4 py-1.5 rounded-full text-base transition-colors ${
-            filter === "all" ? "bg-primary text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            filter === "all" ? "bg-primary text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
           }`}
         >
           {lt({ zh: "全部方向", en: "All" })}
@@ -33,7 +33,7 @@ export default function ResearchPage() {
             key={r.id}
             onClick={() => setFilter(r.id)}
             className={`px-4 py-1.5 rounded-full text-base transition-colors ${
-              filter === r.id ? "bg-primary text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              filter === r.id ? "bg-primary text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
           >
             {lt(r.title)}
@@ -99,7 +99,7 @@ export default function ResearchPage() {
                     {sections.map((section: string, i: number) => (
                       <div
                         key={i}
-                        className="research-content bg-gray-50 rounded-xl p-6"
+                        className="research-content bg-gray-50 dark:bg-dark-surface rounded-xl p-6"
                         dangerouslySetInnerHTML={{ __html: section }}
                       />
                     ))}
@@ -110,15 +110,15 @@ export default function ResearchPage() {
               {/* 代表性论文 */}
               {relatedPubs.length > 0 && (
                 <div>
-                  <h3 className="text-base font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                  <h3 className="text-base font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
                     {t.research.relatedPubs}
                   </h3>
                   <div className="space-y-3">
                     {relatedPubs.map((pub) => (
                       <Link key={pub.id} href={`/publications#pub-${pub.id}`}
-                        className="pub-item text-base block hover:bg-green-50/50">
-                        <p className="font-medium text-gray-800 hover:text-primary transition-colors">{pub.title}</p>
-                        <p className="text-text-light">
+                        className="pub-item text-base block hover:bg-green-50/50 dark:hover:bg-green-900/20">
+                        <p className="font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors">{pub.title}</p>
+                        <p className="text-text-light dark:text-gray-400">
                           {pub.authors} — <span className="text-primary">{pub.journal}</span>, {pub.year}
                         </p>
                       </Link>
@@ -127,7 +127,7 @@ export default function ResearchPage() {
                 </div>
               )}
 
-              <hr className="mt-10 border-gray-100" />
+              <hr className="mt-10 border-gray-100 dark:border-gray-700" />
             </section>
           );
         })}

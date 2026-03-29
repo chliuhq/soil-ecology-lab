@@ -1,42 +1,44 @@
 "use client";
-import { useEffect, useRef, useState, ReactNode } from "react";
+import { useRef, ReactNode } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface Props {
   children: ReactNode;
   className?: string;
   delay?: number;
+  direction?: "up" | "down" | "left" | "right";
 }
 
-export default function FadeInOnScroll({ children, className = "", delay = 0 }: Props) {
+export default function FadeInOnScroll({
+  children,
+  className = "",
+  delay = 0,
+  direction = "up",
+}: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const directionOffset = {
+    up: { y: 32 },
+    down: { y: -32 },
+    left: { x: 32 },
+    right: { x: -32 },
+  };
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      } ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      initial={{ opacity: 0, ...directionOffset[direction] }}
+      animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+      transition={{
+        duration: 0.7,
+        ease: "easeOut",
+        delay: delay / 1000,
+      }}
+      className={className}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
 

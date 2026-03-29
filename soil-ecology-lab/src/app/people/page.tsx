@@ -14,15 +14,15 @@ export default function PeoplePage() {
       <div className="h-1 w-12 bg-primary mx-auto mb-12 rounded" />
 
       {/* PI */}
-      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
         {t.people.pi}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         {members.pi.map((m) => (
-          <div key={m.id} className="card-hover bg-white border border-gray-100 rounded-xl p-6">
+          <div key={m.id} className="card-hover bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl p-6">
             <div className="flex gap-5 items-start">
               {/* 头像 */}
-              <div className="w-28 h-28 rounded-full bg-green-100 overflow-hidden shrink-0 border-2 border-green-200">
+              <div className="w-28 h-28 rounded-full bg-green-100 dark:bg-green-900/30 overflow-hidden shrink-0 border-2 border-green-200 dark:border-green-800">
                 <Image
                   src={m.photo}
                   alt={lt(m.name)}
@@ -32,9 +32,9 @@ export default function PeoplePage() {
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-lg font-bold text-gray-900">{lt(m.name)}</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{lt(m.name)}</h3>
                 <p className="text-base text-primary font-medium">{lt(m.title)}</p>
-                <p className="text-base text-text-light mt-1">
+                <p className="text-base text-text-light dark:text-gray-400 mt-1">
                   <a href={(m as any).departmentUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:underline">{lt(m.department)}</a>
                 </p>
                 <p className="text-base text-text-light mt-1">
@@ -58,16 +58,16 @@ export default function PeoplePage() {
             </div>
 
             {/* 简介 */}
-            <p className="text-base text-text-light mt-4 leading-relaxed">{lt(m.bio)}</p>
+            <p className="text-base text-text-light dark:text-gray-400 mt-4 leading-relaxed">{lt(m.bio)}</p>
 
             {/* 学历 */}
             <div className="mt-4">
-              <h4 className="text-base font-semibold text-gray-700 mb-2">
+              <h4 className="text-base font-semibold text-gray-700 dark:text-gray-300 mb-2">
                 {lt({ zh: "教育背景", en: "Education" })}
               </h4>
               <div className="space-y-1">
                 {m.education.map((e, i) => (
-                  <div key={i} className="text-sm text-text-light flex gap-2">
+                  <div key={i} className="text-sm text-text-light dark:text-gray-400 flex gap-2">
                     <span className="whitespace-nowrap font-mono">{e.period}</span>
                     <span>
                       {(e as any).url ? (
@@ -83,21 +83,21 @@ export default function PeoplePage() {
 
             {/* 课程 */}
             <div className="mt-4">
-              <h4 className="text-base font-semibold text-gray-700 mb-1">
+              <h4 className="text-base font-semibold text-gray-700 dark:text-gray-300 mb-1">
                 {lt({ zh: "主讲课程", en: "Courses" })}
               </h4>
-              <p className="text-sm text-text-light">{lt(m.courses).join("、")}</p>
+              <p className="text-sm text-text-light dark:text-gray-400">{lt(m.courses).join("、")}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* 研究生 */}
-      <h2 className="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">
+      <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
         {t.people.students}
       </h2>
       {members.students.length === 0 ? (
-        <Link href="/joinus" className="block text-center py-12 bg-green-50 rounded-xl hover:bg-green-100 transition-colors group">
+        <Link href="/joinus" className="block text-center py-12 bg-green-50 dark:bg-green-900/20 rounded-xl hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors group">
           <p className="text-lg text-primary group-hover:underline">{t.people.noStudents}</p>
           <p className="text-sm text-primary/60 mt-2">{lt({ zh: "点击查看招生信息 →", en: "View recruitment info →" })}</p>
         </Link>
@@ -107,17 +107,17 @@ export default function PeoplePage() {
             {members.students.map((s) => {
               const advisor = members.pi.find((m) => m.id === s.advisor);
               return (
-                <div key={s.id} className="bg-white border border-gray-100 rounded-xl p-5">
-                  <h3 className="text-lg font-bold text-gray-900">{lt(s.name)}</h3>
+                <div key={s.id} className="bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl p-5">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{lt(s.name)}</h3>
                   <p className="text-base text-primary mt-1">{lt(s.major)}</p>
-                  <p className="text-sm text-text-light mt-1">
+                  <p className="text-sm text-text-light dark:text-gray-400 mt-1">
                     {lt({ zh: "本科院校", en: "Undergraduate" })}: {lt(s.undergraduate)}
                   </p>
-                  <p className="text-sm text-text-light mt-1">
+                  <p className="text-sm text-text-light dark:text-gray-400 mt-1">
                     {lt({ zh: "入学时间", en: "Enrollment" })}: {s.enrollment}
                   </p>
                   {advisor && (
-                    <p className="text-sm text-text-light mt-1">
+                    <p className="text-sm text-text-light dark:text-gray-400 mt-1">
                       {lt({ zh: "导师", en: "Advisor" })}: {lt(advisor.name)}
                     </p>
                   )}

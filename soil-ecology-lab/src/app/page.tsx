@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import publications from "@/data/publications.json";
 import research from "@/data/research.json";
 import news from "@/data/news.json";
@@ -21,7 +22,7 @@ export default function HomePage() {
   return (
     <>
       {/* ===== Hero Banner ===== */}
-      <section className="relative bg-gradient-to-br from-green-50 via-white to-emerald-50 py-20 md:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg py-20 md:py-28 overflow-hidden">
         {/* 装饰性背景元素 */}
         <div className="absolute top-10 left-10 w-64 h-64 bg-green-200/20 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-10 w-80 h-80 bg-emerald-200/20 rounded-full blur-3xl" />
@@ -29,7 +30,7 @@ export default function HomePage() {
         <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-emerald-400/30 rounded-full" />
         <div className="absolute bottom-1/4 left-1/3 w-4 h-4 bg-green-200/50 rounded-full" />
         <div className="container-main text-center relative z-10">
-          <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-4 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4 leading-tight">
             {t.home.title}
           </h1>
           <p className="text-xl md:text-2xl text-primary font-medium mb-6">
@@ -47,7 +48,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/joinus"
-              className="px-6 py-2.5 border border-primary text-primary rounded-lg hover:bg-green-50 transition-colors font-medium"
+              className="px-6 py-2.5 border border-primary text-primary rounded-lg hover:bg-green-50 dark:hover:bg-green-900/30 transition-colors font-medium"
             >
               {t.nav.joinus}
             </Link>
@@ -56,7 +57,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 数据概览 ===== */}
-      <section className="py-8 bg-white border-b border-gray-100">
+      <section className="py-8 bg-white dark:bg-dark-surface border-b border-gray-100 dark:border-gray-700">
         <div className="container-main">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
@@ -67,7 +68,10 @@ export default function HomePage() {
             ].map((s, i) => (
               <Link key={i} href={s.href} className="group cursor-pointer hover:scale-105 transition-transform">
                 <span className="text-2xl">{s.icon}</span>
-                <p className="text-3xl font-bold text-primary mt-1 group-hover:text-primary-dark transition-colors">{s.num}</p>
+                <AnimatedCounter
+                  target={s.num}
+                  className="text-3xl font-bold text-primary mt-1 group-hover:text-primary-dark transition-colors block"
+                />
                 <p className="text-sm text-text-light group-hover:text-primary transition-colors">{s.label}</p>
               </Link>
             ))}
@@ -76,7 +80,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 研究方向 ===== */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-dark-bg">
         <div className="container-main">
           <FadeInOnScroll>
             <h2 className="section-title text-center">{t.home.researchAreas}</h2>
@@ -87,10 +91,10 @@ export default function HomePage() {
               <Link
                 key={r.id}
                 href={`/research#${r.id}`}
-                className="card-hover bg-white border border-gray-100 rounded-xl overflow-hidden text-center group"
+                className="card-hover bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden text-center group"
               >
                 {/* 配图 */}
-                <div className="relative w-full h-36 bg-green-50 overflow-hidden">
+                <div className="relative w-full h-36 bg-green-50 dark:bg-green-900/20 overflow-hidden">
                   <Image
                     src={r.image}
                     alt={r.title.zh}
@@ -100,14 +104,14 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="p-5">
-                  <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-green-100 flex items-center justify-center text-lg -mt-8 relative z-10 border-2 border-white shadow-sm">
+                  <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center text-lg -mt-8 relative z-10 border-2 border-white dark:border-dark-surface shadow-sm">
                     {r.icon === "leaf" && "🌿"}
                     {r.icon === "layers" && "🧱"}
                     {r.icon === "mountain" && "⛰️"}
                     {r.icon === "satellite" && "🛰️"}
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{lt(r.title)}</h3>
-                  <p className="text-sm text-text-light line-clamp-3">{lt(r.description)}</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{lt(r.title)}</h3>
+                  <p className="text-sm text-text-light dark:text-gray-400 line-clamp-3">{lt(r.description)}</p>
                 </div>
               </Link>
             ))}
@@ -116,7 +120,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 精选论文 ===== */}
-      <section className="py-16 bg-bg-light">
+      <section className="py-16 bg-bg-light dark:bg-dark-surface">
         <div className="container-main">
           <FadeInOnScroll>
             <h2 className="section-title text-center">{t.home.featuredPubs}</h2>
@@ -125,9 +129,9 @@ export default function HomePage() {
           <div className="space-y-4 max-w-4xl mx-auto">
             {featured.map((pub) => (
               <Link key={pub.id} href={`/publications#pub-${pub.id}`}
-                className="pub-item bg-white rounded-lg p-5 border border-gray-100 block hover:border-primary/30">
-                <h3 className="font-medium text-gray-900 mb-1 hover:text-primary transition-colors">{pub.title}</h3>
-                <p className="text-base text-text-light mb-1">{pub.authors}</p>
+                className="pub-item bg-white dark:bg-dark-bg rounded-lg p-5 border border-gray-100 dark:border-gray-700 block hover:border-primary/30">
+                <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-1 hover:text-primary transition-colors">{pub.title}</h3>
+                <p className="text-base text-text-light dark:text-gray-400 mb-1">{pub.authors}</p>
                 <p className="text-base">
                   <span className="font-medium text-primary">{pub.journal}</span>
                   <span className="text-text-light">, {pub.year}</span>
@@ -144,7 +148,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 最新动态 ===== */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-dark-bg">
         <div className="container-main">
           <FadeInOnScroll>
             <h2 className="section-title text-center">{t.home.latestNews}</h2>
@@ -153,13 +157,13 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto space-y-5">
             {[...news].sort((a: any, b: any) => b.date.localeCompare(a.date)).slice(0, 4).map((n: any, i: number) => (
               <Link key={i} href={`/news/${n.id}`}
-                className="block py-4 px-4 -mx-4 border-b border-gray-50 hover:bg-green-50/50 rounded transition-colors group">
+                className="block py-4 px-4 -mx-4 border-b border-gray-50 dark:border-gray-700 hover:bg-green-50/50 dark:hover:bg-green-900/20 rounded transition-colors group">
                 <div className="flex gap-3 items-center mb-1">
                   <span className="text-sm text-white bg-primary px-2.5 py-0.5 rounded whitespace-nowrap">{n.date}</span>
-                  <h3 className="text-gray-900 font-medium group-hover:text-primary transition-colors">{lt(n.title)}</h3>
+                  <h3 className="text-gray-900 dark:text-gray-100 font-medium group-hover:text-primary transition-colors">{lt(n.title)}</h3>
                 </div>
                 {n.content && (
-                  <p className="text-sm text-text-light line-clamp-2 mt-1 ml-0">{String(lt(n.content))}</p>
+                  <p className="text-sm text-text-light dark:text-gray-400 line-clamp-2 mt-1 ml-0">{String(lt(n.content))}</p>
                 )}
               </Link>
             ))}
@@ -173,7 +177,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 合作单位 ===== */}
-      <section className="py-16 bg-bg-light">
+      <section className="py-16 bg-bg-light dark:bg-dark-surface">
         <div className="container-main">
           <FadeInOnScroll>
             <h2 className="section-title text-center">
@@ -192,7 +196,7 @@ export default function HomePage() {
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-3 bg-white rounded-lg border border-gray-100 text-sm text-gray-600 hover:text-primary hover:border-primary/30 hover:shadow-md transition-all duration-300"
+                className="px-5 py-3 bg-white dark:bg-dark-bg rounded-lg border border-gray-100 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-300 hover:text-primary hover:border-primary/30 hover:shadow-md transition-all duration-300"
               >
                 {lt(p.name)}
               </a>

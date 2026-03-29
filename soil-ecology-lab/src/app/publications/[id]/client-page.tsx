@@ -53,10 +53,10 @@ export default function PublicationDetailClient() {
       </Link>
 
       {/* 标题 */}
-      <h1 className="text-2xl md:text-3xl font-serif font-bold text-gray-900 mb-4 leading-tight">{pub.title}</h1>
+      <h1 className="text-2xl md:text-3xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4 leading-tight">{pub.title}</h1>
 
       {/* 作者 */}
-      <p className="text-base text-text-light mb-3">{pub.authors}</p>
+      <p className="text-base text-text-light dark:text-gray-400 mb-3">{pub.authors}</p>
 
       {/* 期刊信息 */}
       <p className="text-base mb-4">
@@ -67,7 +67,7 @@ export default function PublicationDetailClient() {
       </p>
 
       {/* 按钮行 */}
-      <div className="flex flex-wrap gap-2 mb-8 pb-6 border-b border-gray-200">
+      <div className="flex flex-wrap gap-2 mb-8 pb-6 border-b border-gray-200 dark:border-gray-700">
         {pub.doi && (
           <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-sm px-4 py-1.5 rounded-full bg-green-100 text-green-800 hover:bg-green-200 transition-colors">
@@ -85,7 +85,7 @@ export default function PublicationDetailClient() {
       {/* 论文解读 */}
       {summary && (
         <section className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">
+          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
             {lt({ zh: "论文解读", en: "Paper Summary" })}
           </h2>
           <div className="pub-summary text-base text-text-main leading-relaxed"
@@ -111,7 +111,7 @@ export default function PublicationDetailClient() {
 
       {/* 研究亮点 */}
       {hasHighlights && (
-        <section className="mb-8 bg-green-50 rounded-lg p-5 border border-green-100">
+        <section className="mb-8 bg-green-50 dark:bg-green-900/20 rounded-lg p-5 border border-green-100 dark:border-green-800">
           <h3 className="text-sm font-semibold text-green-900 mb-3 uppercase tracking-wide">
             {pubs.keyFindings || "Research Highlights"}
           </h3>
@@ -127,8 +127,8 @@ export default function PublicationDetailClient() {
       )}
 
       {/* 引用 */}
-      <section className="bg-gray-50 rounded-lg p-5 border border-gray-200">
-        <h3 className="font-semibold text-gray-800 mb-3">{lt({ zh: "引用格式", en: "Citation" })}</h3>
+      <section className="bg-gray-50 dark:bg-dark-surface rounded-lg p-5 border border-gray-200 dark:border-gray-700">
+        <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-3">{lt({ zh: "引用格式", en: "Citation" })}</h3>
         <div className="space-y-3 text-sm">
           <div>
             <div className="flex items-center justify-between mb-1">

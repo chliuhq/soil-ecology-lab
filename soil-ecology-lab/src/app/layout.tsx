@@ -99,7 +99,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh" suppressHydrationWarning>
+    <html lang="zh" suppressHydrationWarning className="light">
       <head>
         <script
           type="application/ld+json"
@@ -114,7 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
       </head>
-      <body className="min-h-screen flex flex-col bg-white antialiased">
+      <body className="min-h-screen flex flex-col bg-[#fafaf9] dark:bg-dark-bg antialiased text-gray-900 dark:text-gray-200 transition-colors duration-300">
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
