@@ -1,137 +1,183 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 import research from "@/data/research.json";
 import publications from "@/data/publications.json";
+
+const ICON_MAP: Record<string, string> = {
+  leaf: "🌿",
+  layers: "🧱",
+  mountain: "⛰️",
+  satellite: "🛰️",
+};
+
+const TECH_ITEMS = [
+  { icon: "🛰️", label: { zh: "无人机遥感", en: "UAV Remote Sensing" } },
+  { icon: "🔬", label: { zh: "CT 扫描", en: "CT Scanning" } },
+  { icon: "🤖", label: { zh: "AI / 机器学习", en: "AI / Machine Learning" } },
+  { icon: "🌍", label: { zh: "Google Earth Engine", en: "Google Earth Engine" } },
+  { icon: "📡", label: { zh: "InSAR 监测", en: "InSAR Monitoring" } },
+  { icon: "🧬", label: { zh: "高通量测序", en: "High-throughput Sequencing" } },
+  { icon: "🏷️", label: { zh: "稳定同位素示踪", en: "Stable Isotope Tracing" } },
+  { icon: "📊", label: { zh: "结构方程模型", en: "Structural Equation Modeling" } },
+];
 
 export default function ResearchPage() {
   const { t } = useI18n();
   const lt = useLocaleText();
-  const [filter, setFilter] = useState<string>("all");
-
-  const filtered = filter === "all" ? research : research.filter((r) => r.id === filter);
 
   return (
-    <div className="container-main py-16">
-      <h1 className="section-title text-center">{t.research.title}</h1>
-      <div className="h-1 w-12 bg-primary mx-auto mb-8 rounded" />
+    <>
+      {/* ===== Hero ===== */}
+      <section className="relative py-28 md:py-36 overflow-hidden bg-gradient-to-br from-[#0f2027] via-[#1a4a3a] to-[#2c5f2d] dark:from-[#070d10] dark:via-[#0d2820] dark:to-[#142e15]">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-emerald-400/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-green-300/10 rounded-full blur-3xl" />
+        <div className="container-main text-center relative z-10">
+          <FadeInOnScroll>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+              {lt({ zh: "探索土壤的奥秘", en: "Exploring the Secrets of Soil" })}
+            </h1>
+          </FadeInOnScroll>
+          <FadeInOnScroll delay={100}>
+            <p className="text-lg md:text-xl text-emerald-300/90 max-w-2xl mx-auto">
+              {lt({
+                zh: "从微观碳循环到宏观遥感监测，多尺度揭示土壤生态系统的运行规律",
+                en: "From microscale carbon cycling to macroscale remote sensing, revealing soil ecosystem dynamics across multiple scales",
+              })}
+            </p>
+          </FadeInOnScroll>
+        </div>
+      </section>
 
-      {/* 研究方向筛选标签 */}
-      <div className="flex flex-wrap gap-2 justify-center mb-12">
-        <button
-          onClick={() => setFilter("all")}
-          className={`px-4 py-1.5 rounded-full text-base transition-colors ${
-            filter === "all" ? "bg-primary text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-          }`}
-        >
-          {lt({ zh: "全部方向", en: "All" })}
-        </button>
-        {research.map((r) => (
-          <button
-            key={r.id}
-            onClick={() => setFilter(r.id)}
-            className={`px-4 py-1.5 rounded-full text-base transition-colors ${
-              filter === r.id ? "bg-primary text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-            }`}
-          >
-            {lt(r.title)}
-          </button>
-        ))}
-      </div>
+      {/* ===== Research Directions — Alternating Layout ===== */}
+      <section className="py-16 bg-white dark:bg-dark-bg">
+        <div className="container-main">
+          <FadeInOnScroll>
+            <h2 className="section-title text-center">{t.research.title}</h2>
+            <div className="h-1 w-12 bg-primary mx-auto mb-14 rounded" />
+          </FadeInOnScroll>
 
-      {/* 研究方向列表 */}
-      <div className="space-y-16">
-        {filtered.map((r) => {
-          const relatedPubs = publications
-            .filter((p) => p.category.includes(r.id))
-            .sort((a, b) => b.year - a.year || b.id - a.id)
-            .slice(0, 5);
+          <div className="space-y-24">
+            {research.map((r, idx) => {
+              const isEven = idx % 2 === 1;
+              const rAny = r as any;
+              const methods = String(lt(rAny.methods || { zh: "", en: "" }) || "");
+              const methodList = methods ? methods.split(/、|,\s*/).map((m: string) => m.trim()).filter(Boolean) : [];
 
-          const rAny = r as any;
-          const methods = String(lt(rAny.methods || { zh: "", en: "" }) || "");
-          const methodList = methods ? methods.split(/、|,\s*/).map((m: string) => m.trim()).filter(Boolean) : [];
-          const bodyHtml = rAny.bodyHtml || "";
+              const relatedPubs = publications
+                .filter((p) => p.category.includes(r.id))
+                .sort((a, b) => b.year - a.year || b.id - a.id)
+                .slice(0, 3);
 
-          return (
-            <section key={r.id} id={r.id} className="scroll-mt-20">
-              {/* Banner 配图 */}
-              <div className="relative w-full h-48 md:h-56 rounded-xl overflow-hidden mb-6">
-                <Image
-                  src={r.image}
-                  alt={r.title.zh}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className="absolute bottom-4 left-5 flex items-center gap-3">
-                  <span className="text-3xl drop-shadow-lg">
-                    {r.icon === "leaf" && "🌿"}
-                    {r.icon === "layers" && "🧱"}
-                    {r.icon === "mountain" && "⛰️"}
-                    {r.icon === "satellite" && "🛰️"}
-                  </span>
-                  <h2 className="text-2xl font-serif font-bold text-white drop-shadow-lg">
-                    {lt(r.title)}
-                  </h2>
-                </div>
-              </div>
-              <p className="text-text-light leading-relaxed mb-4 max-w-3xl">
-                {lt(r.description)}
-              </p>
+              return (
+                <div key={r.id} id={r.id} className="scroll-mt-20">
+                  <div className={`flex flex-col ${isEven ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 lg:gap-12 items-center`}>
+                    {/* Image */}
+                    <FadeInOnScroll direction={isEven ? "right" : "left"} delay={100} className="w-full lg:w-1/2">
+                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                        <Image
+                          src={r.image}
+                          alt={lt(r.title)}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                        <div className="absolute bottom-4 left-5 flex items-center gap-2">
+                          <span className="text-3xl drop-shadow-lg">{ICON_MAP[r.icon] || "🔬"}</span>
+                          <span className="text-white font-serif font-bold text-xl drop-shadow-lg">{lt(r.title)}</span>
+                        </div>
+                      </div>
+                    </FadeInOnScroll>
 
-              {/* 研究方法标签 */}
-              {methodList.length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {methodList.map((m: string, i: number) => (
-                    <span key={i} className="tag tag-primary">{m}</span>
-                  ))}
-                </div>
-              )}
+                    {/* Text */}
+                    <FadeInOnScroll direction={isEven ? "left" : "right"} delay={200} className="w-full lg:w-1/2">
+                      <h3 className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                        <span className="text-2xl">{ICON_MAP[r.icon] || "🔬"}</span>
+                        {lt(r.title)}
+                      </h3>
+                      <p className="text-text-light dark:text-gray-400 leading-relaxed mb-5">
+                        {lt(r.description)}
+                      </p>
 
-              {/* 研究详细内容（研究方法 + 研究特点），按 h2 拆分为独立卡片 */}
-              {bodyHtml && (() => {
-                const sections = (bodyHtml as string).split(/(?=<h2>)/).filter((s: string) => s.trim());
-                return (
-                  <div className="space-y-6 mb-6">
-                    {sections.map((section: string, i: number) => (
-                      <div
-                        key={i}
-                        className="research-content bg-gray-50 dark:bg-dark-surface rounded-xl p-6"
-                        dangerouslySetInnerHTML={{ __html: section }}
-                      />
-                    ))}
+                      {/* Methods */}
+                      {methodList.length > 0 && (
+                        <div className="mb-5">
+                          <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
+                            {lt({ zh: "研究方法", en: "Methods" })}
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {methodList.map((m: string, i: number) => (
+                              <span key={i} className="tag tag-primary">{m}</span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Tech tags */}
+                      <div className="mb-5">
+                        <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
+                          {lt({ zh: "技术手段", en: "Technologies" })}
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {methodList.slice(0, 4).map((m: string, i: number) => (
+                            <span key={i} className="tag tag-accent">{m}</span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Related pubs */}
+                      {relatedPubs.length > 0 && (
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
+                            {t.research.relatedPubs}
+                          </h4>
+                          <div className="space-y-2">
+                            {relatedPubs.map((pub) => (
+                              <Link key={pub.id} href={`/publications#pub-${pub.id}`}
+                                className="pub-item text-sm block hover:bg-green-50/50 dark:hover:bg-green-900/20 rounded-lg px-3 py-2">
+                                <p className="font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors line-clamp-1">{pub.title}</p>
+                                <p className="text-text-light dark:text-gray-400 text-xs">
+                                  {pub.authors.split(",").slice(0, 3).join(",")}... — <span className="text-primary">{pub.journal}</span>, {pub.year}
+                                </p>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </FadeInOnScroll>
                   </div>
-                );
-              })()}
-
-              {/* 代表性论文 */}
-              {relatedPubs.length > 0 && (
-                <div>
-                  <h3 className="text-base font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
-                    {t.research.relatedPubs}
-                  </h3>
-                  <div className="space-y-3">
-                    {relatedPubs.map((pub) => (
-                      <Link key={pub.id} href={`/publications#pub-${pub.id}`}
-                        className="pub-item text-base block hover:bg-green-50/50 dark:hover:bg-green-900/20">
-                        <p className="font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors">{pub.title}</p>
-                        <p className="text-text-light dark:text-gray-400">
-                          {pub.authors} — <span className="text-primary">{pub.journal}</span>, {pub.year}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
                 </div>
-              )}
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-              <hr className="mt-10 border-gray-100 dark:border-gray-700" />
-            </section>
-          );
-        })}
-      </div>
-    </div>
+      {/* ===== Frontier Technologies Grid ===== */}
+      <section className="py-16 bg-bg-light dark:bg-dark-surface">
+        <div className="container-main">
+          <FadeInOnScroll>
+            <h2 className="section-title text-center">
+              {lt({ zh: "前沿技术手段", en: "Frontier Technologies" })}
+            </h2>
+            <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
+          </FadeInOnScroll>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {TECH_ITEMS.map((tech, i) => (
+              <FadeInOnScroll key={i} delay={i * 80}>
+                <div className="bg-white dark:bg-dark-bg border border-gray-100 dark:border-gray-700 rounded-xl p-5 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <span className="text-3xl mb-2 block">{tech.icon}</span>
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">{lt(tech.label)}</p>
+                </div>
+              </FadeInOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
