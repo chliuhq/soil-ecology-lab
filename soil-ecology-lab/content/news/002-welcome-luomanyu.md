@@ -1,5 +1,5 @@
 ---
-date: "2025-09"
+date: "2025-09-01"
 title_zh: "欢迎研究生罗曼玉加入课题组！"
 title_en: "Welcome graduate student Manyu Luo to our lab!"
 link: "/people"
