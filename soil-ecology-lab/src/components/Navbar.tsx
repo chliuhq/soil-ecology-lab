@@ -1,6 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useI18n } from "@/lib/i18n-context";
 import { locales, localeNames } from "@/i18n";
@@ -23,13 +24,33 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => setMounted(true), []);
 
+  const handleScroll = useCallback(() => {
+    setScrolled(window.scrollY > 10);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
   const isDark = mounted && theme === "dark";
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 dark:bg-dark-surface/95 backdrop-blur border-b border-gray-100 dark:border-gray-700 transition-colors">
+    <nav
+      className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+        scrolled
+          ? "bg-white/80 dark:bg-dark-surface/80 backdrop-blur-lg shadow-sm border-gray-200/60 dark:border-gray-700/60"
+          : "bg-white dark:bg-dark-surface border-gray-100 dark:border-gray-700"
+      }`}
+    >
       <div className="container-main flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
@@ -42,7 +63,11 @@ export default function Navbar() {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
-            <Link key={item.key} href={item.href} className="nav-link">
+            <Link
+              key={item.key}
+              href={item.href}
+              className={`nav-link ${isActive(item.href) ? "active" : ""}`}
+            >
               {(t.nav as any)[item.key]}
             </Link>
           ))}
@@ -111,7 +136,11 @@ export default function Navbar() {
             <Link
               key={item.key}
               href={item.href}
-              className="block px-6 py-2.5 text-base text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-green-50 dark:hover:bg-green-900/30"
+              className={`block px-6 py-2.5 text-base transition-colors ${
+                isActive(item.href)
+                  ? "text-primary bg-green-50 dark:bg-green-900/30 font-medium"
+                  : "text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-green-50 dark:hover:bg-green-900/30"
+              }`}
               onClick={() => setOpen(false)}
             >
               {(t.nav as any)[item.key]}

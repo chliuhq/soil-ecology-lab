@@ -20,7 +20,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-gray-200 dark:border-gray-700 bg-gray-800 dark:bg-dark-bg text-gray-300 mt-20">
+    <footer className="relative bg-gray-900 text-gray-300 mt-20">
+      {/* Subtle top divider */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-green-500/40 to-transparent" />
       <div className="container-main py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* 课题组信息 */}
@@ -112,7 +114,7 @@ export default function Footer() {
         </div>
 
         {/* 底部版权 */}
-        <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
+        <div className="border-t border-gray-700/50 mt-10 pt-6 text-center text-sm text-gray-500">
           <p>&copy; {year} {t.common.copyright}. All rights reserved.</p>
         </div>
       </div>
