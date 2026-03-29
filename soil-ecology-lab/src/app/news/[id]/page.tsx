@@ -1,55 +1,32 @@
-"use client";
-import { useParams } from "next/navigation";
-import Link from "next/link";
-import { useI18n, useLocaleText } from "@/lib/i18n-context";
+import type { Metadata } from "next";
 import news from "@/data/news.json";
+import NewsDetailClient from "./client-page";
 
-export default function NewsDetailPage() {
-  const params = useParams();
-  const { t } = useI18n();
-  const lt = useLocaleText();
+type Props = { params: Promise<{ id: string }> };
 
-  const item = news.find((n: any) => n.id === params.id);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const item = news.find((n: any) => n.id === id) as any;
   if (!item) {
-    return (
-      <div className="container-main py-16 text-center">
-        <p className="text-xl text-text-light">{lt({ zh: "新闻未找到", en: "News not found" })}</p>
-        <Link href="/news" className="text-primary hover:underline mt-4 inline-block">
-          ← {lt({ zh: "返回新闻列表", en: "Back to news" })}
-        </Link>
-      </div>
-    );
+    return { title: "新闻未找到 | News Not Found" };
   }
-
-  const n = item as any;
-
-  return (
-    <div className="container-main py-16 max-w-3xl mx-auto">
-      <Link href="/news" className="text-primary hover:underline text-sm mb-6 inline-block">
-        ← {lt({ zh: "返回新闻列表", en: "Back to news" })}
-      </Link>
-
-      <article>
-        <div className="mb-4">
-          <span className="text-sm text-white bg-primary px-3 py-1 rounded">{n.date}</span>
-        </div>
-        <h1 className="text-2xl md:text-3xl font-serif font-bold text-gray-900 mb-6 leading-tight">
-          {lt(n.title)}
-        </h1>
-        {n.content && (
-          <div className="text-base text-text-main leading-relaxed">
-            <p>{String(lt(n.content))}</p>
-          </div>
-        )}
-        {n.link && n.link !== `/news/${n.id}` && (
-          <div className="mt-8">
-            <Link href={n.link} className="text-primary hover:underline font-medium">
-              {lt({ zh: "查看相关页面", en: "View related page" })} →
-            </Link>
-          </div>
-        )}
-      </article>
-    </div>
-  );
+  return {
+    title: `${item.title.zh} | ${item.title.en}`,
+    description: item.content?.zh || item.title.zh,
+    alternates: { canonical: `/news/${id}` },
+    openGraph: {
+      title: item.title.zh,
+      description: item.content?.en || item.title.en,
+      type: "article",
+      publishedTime: item.date,
+    },
+  };
 }
 
+export async function generateStaticParams() {
+  return (news as any[]).map((n) => ({ id: n.id }));
+}
+
+export default function NewsDetailPage() {
+  return <NewsDetailClient />;
+}

@@ -1,5 +1,15 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
 Sitemap: https://www.soilecology.online/sitemap.xml
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /

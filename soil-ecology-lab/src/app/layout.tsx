@@ -7,15 +7,43 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
 const siteUrl = "https://www.soilecology.online";
 const siteTitle = "土壤生态与水土保持课题组 | Soil Ecology & Conservation Lab";
-const siteDescription = "广西大学土壤生态与水土保持课题组 — 聚焦植物多样性与土壤水碳耦合、土壤有机碳动态、土壤侵蚀与水土保持、遥感监测";
+const siteDescription = "广西大学土壤生态与水土保持课题组（刘华清、杨佳慧）— 聚焦植物多样性与土壤水碳耦合、土壤有机碳动态、土壤侵蚀与水土保持、遥感监测。Guangxi University Soil Ecology Lab.";
 
 export const metadata: Metadata = {
-  title: siteTitle,
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: `%s | 土壤生态与水土保持课题组`,
+  },
   description: siteDescription,
-  keywords: ["soil ecology", "soil erosion", "water conservation", "Guangxi University", "土壤生态", "水土保持", "广西大学"],
+  keywords: [
+    "土壤生态学", "Soil Ecology", "广西大学", "Guangxi University",
+    "刘华清", "杨佳慧", "Huaqing Liu", "Jiahui Yang",
+    "植物多样性", "plant diversity", "土壤有机碳", "soil organic carbon",
+    "水土保持", "soil and water conservation", "土壤侵蚀", "soil erosion",
+    "遥感监测", "remote sensing", "土壤水碳耦合",
+  ],
+  authors: [
+    { name: "刘华清 (Huaqing Liu)", url: "https://scholar.google.com/citations?user=AyQBphkAAAAJ" },
+    { name: "杨佳慧 (Jiahui Yang)", url: "https://scholar.google.com/citations?user=spXTiCIAAAAJ" },
+  ],
+  alternates: {
+    canonical: siteUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: siteTitle,
-    description: "Guangxi University — Research on plant diversity–soil water-carbon coupling, SOC dynamics, soil erosion & conservation, remote sensing monitoring",
+    description: "Guangxi University Soil Ecology & Conservation Lab — Research on plant diversity–soil water-carbon coupling, SOC dynamics, soil erosion & conservation, remote sensing monitoring",
     url: siteUrl,
     siteName: siteTitle,
     locale: "zh_CN",
@@ -27,8 +55,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
+    images: [`${siteUrl}/images/og-cover.jpg`],
   },
-  metadataBase: new URL(siteUrl),
 };
 
 const jsonLd = {
