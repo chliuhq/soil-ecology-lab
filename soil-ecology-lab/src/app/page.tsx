@@ -32,7 +32,7 @@ export default function HomePage() {
   const featured = publications
     .filter((p) => p.category.includes("featured"))
     .sort((a, b) => b.year - a.year || b.id - a.id)
-    .slice(0, 4);
+    .slice(0, 8);
 
   const latestNews = [...news]
     .sort((a: any, b: any) => b.date.localeCompare(a.date))
@@ -206,26 +206,23 @@ export default function HomePage() {
             <h2 className="section-title text-center">{t.home.featuredPubs}</h2>
             <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
           </FadeInOnScroll>
-        </div>
-        <div
-          ref={pubScrollRef}
-          className="flex gap-5 overflow-x-auto snap-x snap-mandatory px-[max(1rem,calc((100vw-72rem)/2))] pb-4 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600"
-        >
-          {featured.map((pub, i) => (
-            <FadeInOnScroll key={pub.id} delay={i * 100} direction="right">
-              <Link
-                href={`/publications#pub-${pub.id}`}
-                className="snap-start shrink-0 w-80 bg-white dark:bg-dark-bg rounded-xl p-6 border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:shadow-lg transition-all duration-300 flex flex-col"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-medium text-white bg-primary px-2 py-0.5 rounded">{pub.year}</span>
-                  <span className="text-xs text-primary font-medium truncate">{pub.journal}</span>
-                </div>
-                <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-3 line-clamp-3 text-sm leading-relaxed flex-1">{pub.title}</h3>
-                <p className="text-xs text-text-light dark:text-gray-400 line-clamp-2">{pub.authors}</p>
-              </Link>
-            </FadeInOnScroll>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {featured.map((pub, i) => (
+              <FadeInOnScroll key={pub.id} delay={i * 100}>
+                <Link
+                  href={`/publications#pub-${pub.id}`}
+                  className="bg-white dark:bg-dark-bg rounded-xl p-6 border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:shadow-lg transition-all duration-300 flex flex-col"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-medium text-white bg-primary px-2 py-0.5 rounded">{pub.year}</span>
+                    <span className="text-xs text-primary font-medium truncate">{pub.journal}</span>
+                  </div>
+                  <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-3 line-clamp-3 text-sm leading-relaxed flex-1">{pub.title}</h3>
+                  <p className="text-xs text-text-light dark:text-gray-400 line-clamp-2">{pub.authors}</p>
+                </Link>
+              </FadeInOnScroll>
+            ))}
+          </div>
         </div>
         <div className="text-center mt-6">
           <Link href="/publications" className="text-primary hover:underline font-medium">

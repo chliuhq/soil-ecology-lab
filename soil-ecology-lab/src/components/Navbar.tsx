@@ -38,14 +38,8 @@ const desktopNav: NavEntry[] = [
     ],
   },
   { type: "link", key: "resources", href: "/resources" },
-  {
-    type: "dropdown",
-    key: "joinUs",
-    children: [
-      { key: "joinus", href: "/joinus" },
-      { key: "contact", href: "/contact" },
-    ],
-  },
+  { type: "link", key: "joinus", href: "/joinus" },
+  { type: "link", key: "contact", href: "/contact" },
 ];
 
 const mobileNavItems = [

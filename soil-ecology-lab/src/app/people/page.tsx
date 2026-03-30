@@ -40,7 +40,7 @@ export default function PeoplePage() {
             <div className="h-1 w-12 bg-primary mx-auto mb-12 rounded" />
           </FadeInOnScroll>
 
-          <div className="space-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {members.pi.map((m, idx) => (
               <FadeInOnScroll key={m.id} delay={idx * 120}>
                 <div className="bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
@@ -66,11 +66,11 @@ export default function PeoplePage() {
                         )}
                         {m.researchgate && (
                           <a href={m.researchgate} target="_blank" rel="noopener noreferrer"
-                            className="text-xs tag tag-primary">RG</a>
+                            className="text-xs tag tag-primary">ResearchGate</a>
                         )}
                         {m.googlescholar && (
                           <a href={m.googlescholar} target="_blank" rel="noopener noreferrer"
-                            className="text-xs tag tag-accent">GS</a>
+                            className="text-xs tag tag-accent">Google Scholar</a>
                         )}
                       </div>
                     </div>
