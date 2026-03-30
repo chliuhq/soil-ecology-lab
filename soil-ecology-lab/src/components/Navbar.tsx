@@ -56,17 +56,17 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <span className="text-primary text-xl">🌱</span>
           <span className="font-serif font-bold text-lg text-gray-900 dark:text-gray-100 hidden sm:inline">
-            {locale === "zh" ? "土壤生态与水土保持课题组" : "Soil Ecology & Conservation Lab"}
+            {locale === "zh" ? "土壤生态与水土保持课题�? : "Soil Ecology & Conservation Lab"}
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-0.5">
           {navItems.map((item) => (
             <Link
               key={item.key}
               href={item.href}
-              className={`nav-link ${isActive(item.href) ? "active" : ""}`}
+              className={`nav-link text-sm px-2 py-1.5 ${isActive(item.href) ? "active" : ""}`}
             >
               {(t.nav as any)[item.key]}
             </Link>
@@ -76,7 +76,7 @@ export default function Navbar() {
               onClick={() => setLangOpen(!langOpen)}
               className="text-sm px-3 py-1.5 border border-gray-200 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-1 dark:text-gray-300"
             >
-              {translating ? "⏳" : "🌐"} {localeNames[locale]}
+              {translating ? "�? : "🌐"} {localeNames[locale]}
               <svg className={`w-3 h-3 transition-transform ${langOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -115,7 +115,7 @@ export default function Navbar() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-300"
+          className="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-300"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -131,7 +131,7 @@ export default function Navbar() {
 
       {/* Mobile nav */}
       {open && (
-        <div className="md:hidden border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-dark-surface pb-4">
+        <div className="lg:hidden border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-dark-surface pb-4">
           {navItems.map((item) => (
             <Link
               key={item.key}
