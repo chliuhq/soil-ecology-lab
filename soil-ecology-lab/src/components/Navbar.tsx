@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -7,7 +7,48 @@ import { useI18n } from "@/lib/i18n-context";
 import { locales, localeNames } from "@/i18n";
 import type { Locale } from "@/i18n";
 
-const navItems = [
+interface DropdownItem {
+  key: string;
+  href: string;
+}
+
+interface NavDropdown {
+  type: "dropdown";
+  key: string;
+  children: DropdownItem[];
+}
+
+interface NavLink {
+  type: "link";
+  key: string;
+  href: string;
+}
+
+type NavEntry = NavLink | NavDropdown;
+
+const desktopNav: NavEntry[] = [
+  { type: "link", key: "people", href: "/people" },
+  {
+    type: "dropdown",
+    key: "scienceWork",
+    children: [
+      { key: "research", href: "/research" },
+      { key: "projects", href: "/projects" },
+      { key: "publications", href: "/publications" },
+    ],
+  },
+  { type: "link", key: "resources", href: "/resources" },
+  {
+    type: "dropdown",
+    key: "joinUs",
+    children: [
+      { key: "joinus", href: "/joinus" },
+      { key: "contact", href: "/contact" },
+    ],
+  },
+];
+
+const mobileNavItems = [
   { key: "home", href: "/" },
   { key: "people", href: "/people" },
   { key: "research", href: "/research" },
@@ -16,11 +57,93 @@ const navItems = [
   { key: "resources", href: "/resources" },
   { key: "joinus", href: "/joinus" },
   { key: "contact", href: "/contact" },
-] as const;
+];
+
+function ChevronDown({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
+  );
+}
+
+function DropdownMenu({
+  entry,
+  nav,
+  isActive,
+}: {
+  entry: NavDropdown;
+  nav: Record<string, string>;
+  isActive: (href: string) => boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const timeout = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  const parentActive = entry.children.some((c) => isActive(c.href));
+
+  const handleEnter = () => {
+    clearTimeout(timeout.current);
+    setOpen(true);
+  };
+  const handleLeave = () => {
+    timeout.current = setTimeout(() => setOpen(false), 150);
+  };
+
+  // close on outside click (for touch)
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    if (open) document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
+  }, [open]);
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className={`nav-link text-sm px-2 py-1.5 inline-flex items-center gap-0.5 ${parentActive ? "active" : ""}`}
+      >
+        {nav[entry.key]}
+        <ChevronDown className={`w-3 h-3 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="absolute left-1/2 -translate-x-1/2 pt-2 z-50">
+          {/* triangle arrow */}
+          <div className="flex justify-center -mb-[1px] relative z-10">
+            <div className="w-3 h-3 rotate-45 bg-white dark:bg-dark-surface border-l border-t border-gray-200 dark:border-gray-600" />
+          </div>
+          <div className="bg-white dark:bg-dark-surface border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg py-1 min-w-[140px]">
+            {entry.children.map((child) => (
+              <Link
+                key={child.key}
+                href={child.href}
+                onClick={() => setOpen(false)}
+                className={`block px-4 py-2 text-sm whitespace-nowrap transition-colors ${
+                  isActive(child.href)
+                    ? "text-primary bg-green-50 dark:bg-green-900/30 font-medium"
+                    : "text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-green-50 dark:hover:bg-green-900/30"
+                }`}
+              >
+                {nav[child.key]}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Navbar() {
   const { t, locale, setLocale, translating } = useI18n();
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -39,6 +162,7 @@ export default function Navbar() {
   }, [handleScroll]);
 
   const isDark = mounted && theme === "dark";
+  const nav = t.nav as Record<string, string>;
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -62,24 +186,27 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-0.5">
-          {navItems.map((item) => (
-            <Link
-              key={item.key}
-              href={item.href}
-              className={`nav-link text-sm px-2 py-1.5 ${isActive(item.href) ? "active" : ""}`}
-            >
-              {(t.nav as any)[item.key]}
-            </Link>
-          ))}
+          {desktopNav.map((entry) =>
+            entry.type === "link" ? (
+              <Link
+                key={entry.key}
+                href={entry.href}
+                className={`nav-link text-sm px-2 py-1.5 ${isActive(entry.href) ? "active" : ""}`}
+              >
+                {nav[entry.key]}
+              </Link>
+            ) : (
+              <DropdownMenu key={entry.key} entry={entry} nav={nav} isActive={isActive} />
+            )
+          )}
+          {/* Language switcher */}
           <div className="relative ml-3">
             <button
               onClick={() => setLangOpen(!langOpen)}
               className="text-sm px-3 py-1.5 border border-gray-200 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-1 dark:text-gray-300"
             >
               {translating ? "⏳" : "🌐"} {localeNames[locale]}
-              <svg className={`w-3 h-3 transition-transform ${langOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+              <ChevronDown className={`w-3 h-3 transition-transform ${langOpen ? "rotate-180" : ""}`} />
             </button>
             {langOpen && (
               <div className="absolute right-0 mt-1 bg-white dark:bg-dark-surface border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg py-1 min-w-[120px] z-50">
@@ -116,11 +243,11 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           className="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-300"
-          onClick={() => setOpen(!open)}
+          onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {open ? (
+            {mobileOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -130,9 +257,9 @@ export default function Navbar() {
       </div>
 
       {/* Mobile nav */}
-      {open && (
+      {mobileOpen && (
         <div className="lg:hidden border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-dark-surface pb-4">
-          {navItems.map((item) => (
+          {mobileNavItems.map((item) => (
             <Link
               key={item.key}
               href={item.href}
@@ -141,15 +268,15 @@ export default function Navbar() {
                   ? "text-primary bg-green-50 dark:bg-green-900/30 font-medium"
                   : "text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-green-50 dark:hover:bg-green-900/30"
               }`}
-              onClick={() => setOpen(false)}
+              onClick={() => setMobileOpen(false)}
             >
-              {(t.nav as any)[item.key]}
+              {nav[item.key]}
             </Link>
           ))}
           <div className="px-6 mt-2 flex gap-2">
             <select
               value={locale}
-              onChange={(e) => { setLocale(e.target.value as Locale); setOpen(false); }}
+              onChange={(e) => { setLocale(e.target.value as Locale); setMobileOpen(false); }}
               className="text-sm px-3 py-1.5 border border-gray-200 dark:border-gray-600 dark:bg-dark-surface dark:text-gray-300 rounded-md flex-1"
             >
               {locales.map((l) => (

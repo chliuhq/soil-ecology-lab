@@ -3,11 +3,13 @@
     "home": "Home",
     "about": "About",
     "people": "People",
+    "scienceWork": "Research & Projects",
     "research": "Research",
     "publications": "Publications",
     "projects": "Projects",
-    "joinus": "Join Us",
     "resources": "Resources",
+    "joinUs": "Join Us",
+    "joinus": "Admissions",
     "contact": "Contact"
   },
   "home": {

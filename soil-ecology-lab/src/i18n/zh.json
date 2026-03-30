@@ -2,13 +2,15 @@
   "nav": {
     "home": "首页",
     "about": "关于",
-    "people": "团队",
-    "research": "研究",
-    "publications": "论文",
-    "projects": "项目",
-    "joinus": "招生",
-    "resources": "资源",
-    "contact": "联系"
+    "people": "团队成员",
+    "scienceWork": "科研工作",
+    "research": "研究方向",
+    "publications": "论文发表",
+    "projects": "科研项目",
+    "resources": "资源平台",
+    "joinUs": "加入我们",
+    "joinus": "招生信息",
+    "contact": "联系我们"
   },
   "home": {
     "title": "土壤生态与水土保持课题组",
