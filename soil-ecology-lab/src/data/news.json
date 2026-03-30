@@ -26,16 +26,16 @@
     }
   },
   {
-    "id": "003-liu-conference",
+    "id": "003-conference",
     "date": "2025-10-15",
     "title": {
-      "zh": "刘华清老师参加中国土壤学会学术年会",
-      "en": "Dr. Huaqing Liu attends the Annual Meeting of the Soil Science Society of China"
+      "zh": "刘华清、杨佳慧老师参加中国土壤学会学术年会",
+      "en": "Dr. Huaqing Liu and Dr. Jiahui Yang attend the Annual Meeting of the Soil Science Society of China"
     },
     "link": "",
     "content": {
-      "zh": "2025年10月，刘华清老师赴会参加中国土壤学会2025年学术年会，并就植物多样性与土壤水碳耦合研究方向进行了学术交流。",
-      "en": "In October 2025, Dr. Huaqing Liu attended the 2025 Annual Meeting of the Soil Science Society of China and presented on plant diversity and soil water-carbon coupling research."
+      "zh": "2025年10月，刘华清老师和杨佳慧老师赴会参加中国土壤学会2025年学术年会，分别就植物多样性与土壤水碳耦合、多源遥感定量监测与水土保持等研究方向进行了学术交流。",
+      "en": "In October 2025, Dr. Huaqing Liu and Dr. Jiahui Yang attended the 2025 Annual Meeting of the Soil Science Society of China, presenting on plant diversity–soil water-carbon coupling and multi-source remote sensing monitoring for soil-water conservation, respectively."
     }
   },
   {
@@ -52,16 +52,16 @@
     }
   },
   {
-    "id": "005-yang-nsfc",
+    "id": "005-nsfc-grants",
     "date": "2026-03-20",
     "title": {
-      "zh": "杨佳慧老师获批广西自然科学基金青年项目",
-      "en": "Dr. Jiahui Yang awarded Guangxi Natural Science Foundation Youth Project"
+      "zh": "刘华清、杨佳慧老师分别获批广西自然科学基金青年项目",
+      "en": "Dr. Huaqing Liu and Dr. Jiahui Yang each awarded Guangxi Natural Science Foundation Youth Projects"
     },
-    "link": "",
+    "link": "/projects",
     "content": {
-      "zh": "祝贺杨佳慧老师成功获批广西自然科学基金青年项目！该项目将围绕多源遥感定量监测与水土保持方向开展深入研究，项目执行期为2026年4月至2029年3月。",
-      "en": "Congratulations to Dr. Jiahui Yang for being awarded the Guangxi Natural Science Foundation Youth Project! The project will focus on multi-source remote sensing monitoring and soil-water conservation, running from April 2026 to March 2029."
+      "zh": "祝贺刘华清老师和杨佳慧老师分别获批广西自然科学基金青年科学基金项目！刘华清老师主持的项目为"树种多样性调控多源DOM输入驱动土壤碳形成与稳定"，杨佳慧老师主持的项目为"广西坡耕地土壤侵蚀定量评价与未来趋势预测"，项目执行期均为2026年4月至2029年3月。",
+      "en": "Congratulations to Dr. Huaqing Liu and Dr. Jiahui Yang for each being awarded a Guangxi Natural Science Foundation Youth Project! Dr. Liu's project focuses on \"Tree Species Diversity Regulates Multi-source DOM Input Driving Soil Carbon Formation and Stabilization,\" while Dr. Yang's project addresses \"Quantitative Assessment and Future Trend Prediction of Soil Erosion on Sloping Farmland in Guangxi.\" Both projects run from April 2026 to March 2029."
     }
   }
 ]
