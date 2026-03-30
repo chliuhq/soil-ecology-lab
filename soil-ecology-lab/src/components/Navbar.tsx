@@ -56,7 +56,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <span className="text-primary text-xl">🌱</span>
           <span className="font-serif font-bold text-lg text-gray-900 dark:text-gray-100 hidden sm:inline">
-            {locale === "zh" ? "土壤生态与水土保持课题�? : "Soil Ecology & Conservation Lab"}
+            {locale === "zh" ? "土壤生态与水土保持课题组" : "Soil Ecology & Conservation Lab"}
           </span>
         </Link>
 
@@ -76,7 +76,7 @@ export default function Navbar() {
               onClick={() => setLangOpen(!langOpen)}
               className="text-sm px-3 py-1.5 border border-gray-200 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-1 dark:text-gray-300"
             >
-              {translating ? "�? : "🌐"} {localeNames[locale]}
+              {translating ? "⏳" : "🌐"} {localeNames[locale]}
               <svg className={`w-3 h-3 transition-transform ${langOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>

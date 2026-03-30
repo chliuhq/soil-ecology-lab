@@ -8,8 +8,8 @@
     },
     "link": "/people",
     "content": {
-      "zh": "2025年7月，刘华清博士正式加入广西大学林学院，杨佳慧博士正式加入广西大学农学院，共同成立土壤生态与水土保持课题组。课题组聚焦植物多样性与土壤水碳耦合、土壤有机碳形成与转化、土壤侵蚀与水土保持、多源遥感定量监测等前沿方向，欢迎有志青年加入！",
-      "en": "In July 2025, Dr. Huaqing Liu joined the College of Forestry and Dr. Jiahui Yang joined the College of Agriculture at Guangxi University, co-founding the Soil Ecology and Conservation Lab. The lab focuses on plant diversity–soil water-carbon coupling, soil organic carbon dynamics, soil erosion and conservation, and multi-source remote sensing monitoring. We welcome aspiring students to join!"
+      "zh": "2025年7月，刘华清博士和杨佳慧博士正式加入广西大学农学院，成立土壤生态与水土保持课题组。课题组聚焦植物多样性与土壤水碳耦合、土壤侵蚀与水土保持等前沿方向，欢迎有志青年加入！",
+      "en": "In July 2025, Dr. Huaqing Liu and Dr. Jiahui Yang officially joined the College of Agriculture at Guangxi University, establishing the Soil Ecology and Conservation Lab. The lab focuses on plant diversity–soil water-carbon coupling, soil erosion and conservation, and welcomes aspiring students to join!"
     }
   },
   {
@@ -21,47 +21,47 @@
     },
     "link": "/people",
     "content": {
-      "zh": "热烈欢迎罗曼玉同学加入土壤生态与水土保持课题组！罗曼玉本科毕业于福州大学，将在杨佳慧老师指导下攻读资源利用与植物保护专业硕士学位。期待她在课题组的学习和科研中不断成长，取得丰硕成果！🎉",
-      "en": "We are delighted to welcome Manyu Luo to the Soil Ecology and Conservation Lab! Manyu graduated from Fuzhou University and will pursue her professional master's degree in Resource Utilization and Plant Protection under the supervision of Dr. Jiahui Yang. We look forward to her growth and achievements in the lab! 🎉"
+      "zh": "热烈欢迎罗曼玉同学加入土壤生态与水土保持课题组！罗曼玉将作为硕士研究生开展相关研究工作。期待她在课题组的学习和科研中不断成长，取得丰硕成果！🎉",
+      "en": "We are delighted to welcome Manyu Luo to the Soil Ecology and Conservation Lab! Manyu will join as a graduate student to conduct related research. We look forward to her growth and achievements in the lab! 🎉"
     }
   },
   {
-    "id": "003-conference",
+    "id": "003-liu-conference",
     "date": "2025-10-15",
     "title": {
-      "zh": "刘华清、杨佳慧老师参加中国土壤学会学术年会",
-      "en": "Dr. Huaqing Liu and Dr. Jiahui Yang attend the Annual Meeting of the Soil Science Society of China"
+      "zh": "刘华清老师参加中国土壤学会学术年会",
+      "en": "Dr. Huaqing Liu attends the Annual Meeting of the Soil Science Society of China"
     },
     "link": "",
     "content": {
-      "zh": "2025年10月，刘华清老师和杨佳慧老师赴会参加中国土壤学会2025年学术年会，分别就植物多样性与土壤水碳耦合、多源遥感定量监测与水土保持等研究方向进行了学术交流。",
-      "en": "In October 2025, Dr. Huaqing Liu and Dr. Jiahui Yang attended the 2025 Annual Meeting of the Soil Science Society of China, presenting on plant diversity–soil water-carbon coupling and multi-source remote sensing monitoring for soil-water conservation, respectively."
+      "zh": "2025年10月，刘华清老师赴会参加中国土壤学会2025年学术年会，并就植物多样性与土壤水碳耦合研究方向进行了学术交流。（示例新闻）",
+      "en": "In October 2025, Dr. Huaqing Liu attended the 2025 Annual Meeting of the Soil Science Society of China and presented on plant diversity and soil water-carbon coupling research. (Example news)"
     }
   },
   {
     "id": "004-website-launch",
-    "date": "2026-03-15",
+    "date": "2026-01-10",
     "title": {
       "zh": "课题组网站正式上线！",
       "en": "Lab website officially launched!"
     },
     "link": "/",
     "content": {
-      "zh": "土壤生态与水土保持课题组网站（soilecology.online）正式上线！网站全面展示课题组的研究方向、团队成员、学术成果和最新动态，支持中英双语切换，欢迎访问了解更多信息。",
-      "en": "The Soil Ecology and Conservation Lab website (soilecology.online) is now live! The site showcases our research directions, team members, publications, and latest news with bilingual support. Welcome to explore!"
+      "zh": "土壤生态与水土保持课题组网站正式上线！网站全面展示课题组的研究方向、团队成员、学术成果和最新动态，欢迎访问了解更多信息。（示例新闻）",
+      "en": "The Soil Ecology and Conservation Lab website is now live! The site showcases our research directions, team members, publications, and latest news. Welcome to explore! (Example news)"
     }
   },
   {
-    "id": "005-nsfc-grants",
+    "id": "005-yang-nsfc",
     "date": "2026-03-20",
     "title": {
-      "zh": "刘华清、杨佳慧老师分别获批广西自然科学基金青年项目",
-      "en": "Dr. Huaqing Liu and Dr. Jiahui Yang each awarded Guangxi Natural Science Foundation Youth Projects"
+      "zh": "杨佳慧老师获批广西自然科学基金青年项目",
+      "en": "Dr. Jiahui Yang awarded Guangxi Natural Science Foundation Youth Project"
     },
-    "link": "/projects",
+    "link": "",
     "content": {
-      "zh": "祝贺刘华清老师和杨佳慧老师分别获批广西自然科学基金青年科学基金项目！刘华清老师主持的项目为"树种多样性调控多源DOM输入驱动土壤碳形成与稳定"，杨佳慧老师主持的项目为"广西坡耕地土壤侵蚀定量评价与未来趋势预测"，项目执行期均为2026年4月至2029年3月。",
-      "en": "Congratulations to Dr. Huaqing Liu and Dr. Jiahui Yang for each being awarded a Guangxi Natural Science Foundation Youth Project! Dr. Liu's project focuses on \"Tree Species Diversity Regulates Multi-source DOM Input Driving Soil Carbon Formation and Stabilization,\" while Dr. Yang's project addresses \"Quantitative Assessment and Future Trend Prediction of Soil Erosion on Sloping Farmland in Guangxi.\" Both projects run from April 2026 to March 2029."
+      "zh": "祝贺杨佳慧老师成功获批广西自然科学基金青年项目！该项目将围绕多源遥感定量监测与水土保持方向开展深入研究，项目执行期为2026年4月至2029年3月。（示例新闻）",
+      "en": "Congratulations to Dr. Jiahui Yang for being awarded the Guangxi Natural Science Foundation Youth Project! The project will focus on multi-source remote sensing monitoring and soil-water conservation, running from April 2026 to March 2029. (Example news)"
     }
   }
 ]
