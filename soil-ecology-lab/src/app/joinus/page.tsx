@@ -2,10 +2,49 @@
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import members from "@/data/members.json";
 
+const crossDisciplines = [
+  {
+    from: { zh: "生物科学/生物技术", en: "Biology / Biotechnology" },
+    to: { zh: "土壤微生物组分析、生物多样性调查、分子生态学", en: "Soil microbiome analysis, biodiversity surveys, molecular ecology" },
+    icon: "🧬",
+  },
+  {
+    from: { zh: "环境科学/环境工程", en: "Environmental Science / Engineering" },
+    to: { zh: "土壤污染修复、水土保持工程、环境监测", en: "Soil remediation, soil & water conservation engineering, environmental monitoring" },
+    icon: "🌍",
+  },
+  {
+    from: { zh: "地理信息科学/测绘", en: "GIS / Surveying & Mapping" },
+    to: { zh: "GIS空间分析、遥感影像处理、数字地形分析", en: "GIS spatial analysis, remote sensing image processing, digital terrain analysis" },
+    icon: "🗺️",
+  },
+  {
+    from: { zh: "计算机/人工智能", en: "Computer Science / AI" },
+    to: { zh: "深度学习图像分析、大数据挖掘、自动化监测系统", en: "Deep learning image analysis, big data mining, automated monitoring systems" },
+    icon: "🤖",
+  },
+  {
+    from: { zh: "水利工程/水文学", en: "Hydraulic Engineering / Hydrology" },
+    to: { zh: "水土流失模拟、流域水文过程、坡面产流产沙", en: "Soil erosion modeling, watershed hydrology, hillslope runoff & sediment" },
+    icon: "💧",
+  },
+  {
+    from: { zh: "林学/园林", en: "Forestry / Landscape Architecture" },
+    to: { zh: "森林生态系统调查、植被恢复、混交林研究", en: "Forest ecosystem surveys, vegetation restoration, mixed forest studies" },
+    icon: "🌲",
+  },
+  {
+    from: { zh: "农学/植物保护", en: "Agronomy / Plant Protection" },
+    to: { zh: "土壤-植物互作、根际生态、养分循环", en: "Soil-plant interactions, rhizosphere ecology, nutrient cycling" },
+    icon: "🌾",
+  },
+];
+
 const interestTracks = [
   {
     icon: "📸",
     title: { zh: "摄影爱好者", en: "Photography Enthusiast" },
+    tagline: { zh: "适合喜欢摄影、视觉创作、记录美好的你", en: "For those who love photography, visual creation & capturing beauty" },
     color: "from-amber-50 to-orange-50",
     border: "border-amber-200",
     badge: "bg-amber-100 text-amber-800",
@@ -19,6 +58,7 @@ const interestTracks = [
   {
     icon: "🏕️",
     title: { zh: "野外探索者", en: "Field Explorer" },
+    tagline: { zh: "适合喜欢户外、热爱自然、享受野外的你", en: "For those who love the outdoors, nature & fieldwork adventures" },
     color: "from-green-50 to-emerald-50",
     border: "border-green-200",
     badge: "bg-green-100 text-green-800",
@@ -32,6 +72,7 @@ const interestTracks = [
   {
     icon: "💻",
     title: { zh: "编程/数据爱好者", en: "Coding & Data Enthusiast" },
+    tagline: { zh: "适合喜欢独处、沉浸思考、享受代码世界的你", en: "For those who enjoy solitude, deep thinking & the world of code" },
     color: "from-blue-50 to-indigo-50",
     border: "border-blue-200",
     badge: "bg-blue-100 text-blue-800",
@@ -45,6 +86,7 @@ const interestTracks = [
   {
     icon: "🔬",
     title: { zh: "跨学科创新者", en: "Interdisciplinary Innovator" },
+    tagline: { zh: "适合喜欢跨界、脑洞大开、不走寻常路的你", en: "For those who love cross-boundary thinking & unconventional paths" },
     color: "from-purple-50 to-fuchsia-50",
     border: "border-purple-200",
     badge: "bg-purple-100 text-purple-800",
@@ -102,6 +144,32 @@ export default function JoinUsPage() {
         </p>
       </div>
 
+      {/* 跨专业欢迎 */}
+      <div className="max-w-4xl mx-auto mb-14">
+        <div className="bg-gradient-to-r from-violet-50 via-pink-50 to-amber-50 dark:from-violet-900/20 dark:via-pink-900/20 dark:to-amber-900/20 rounded-2xl p-8 md:p-10 border border-violet-100 dark:border-violet-800">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3 text-center">
+            {lt({ zh: "🌈 我们不看专业，看你", en: "🌈 We Don't Judge by Major — We See You" })}
+          </h2>
+          <p className="text-text-main leading-relaxed text-center max-w-2xl mx-auto mb-8">
+            {lt({
+              zh: "态度和能力远比专业对口重要。无论你来自什么专业，只要有好奇心和行动力，结合你的专业特长，都能在课题组找到属于自己的研究方向。",
+              en: "Attitude and ability matter far more than having the \"right\" major. No matter your background, if you bring curiosity and initiative, you can combine your expertise with our research to carve out your own path."
+            })}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {crossDisciplines.map((d, i) => (
+              <div key={i} className="flex items-start gap-3 bg-white/70 dark:bg-gray-800/50 rounded-lg p-3.5">
+                <span className="text-xl shrink-0">{d.icon}</span>
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">{lt(d.from)}</p>
+                  <p className="text-xs text-text-light dark:text-gray-400 mt-0.5">→ {lt(d.to)}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* 你可以做什么 */}
       <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-2 border-b dark:border-gray-700 pb-2">
         {lt({ zh: "🎯 你可以做什么", en: "🎯 What You Can Do" })}
@@ -112,6 +180,7 @@ export default function JoinUsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
         {interestTracks.map((track, i) => (
           <div key={i} className={`bg-gradient-to-br ${track.color} border ${track.border} rounded-xl p-6 hover:shadow-md transition-shadow`}>
+            <p className="text-xs text-gray-500 dark:text-gray-400 italic mb-2">✨ {lt(track.tagline)}</p>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-2xl">{track.icon}</span>
               <span className={`text-sm font-semibold px-3 py-0.5 rounded-full ${track.badge}`}>{lt(track.title)}</span>
@@ -183,12 +252,12 @@ export default function JoinUsPage() {
       </h2>
       <div className="max-w-3xl space-y-3 text-text-light dark:text-gray-400 leading-relaxed">
         <p>{lt({
-          zh: "诚挚邀请具有生态学、土壤学、水文学、林学、农业资源与环境、微生物学、水土保持学、遥感科学与技术、地理信息科学、计算机、人工智能等相关专业背景的本科生报考硕士研究生。",
-          en: "We sincerely invite undergraduates with backgrounds in ecology, soil science, hydrology, forestry, agricultural resources and environment, microbiology, soil and water conservation, remote sensing, GIS, computer science, or AI to apply for our graduate programs."
+          zh: "我们热忱欢迎各专业背景的同学报考！近年来，越来越多生物科学、生物技术、环境科学、地理信息、计算机等专业的同学选择跨考生态学和林业方向。事实证明，跨专业背景往往能带来独特的视角和方法，结合课题组的研究方向，同样能开展出色的研究工作。",
+          en: "We warmly welcome applicants from all academic backgrounds! In recent years, more and more students from biology, biotechnology, environmental science, GIS, computer science and other fields have chosen to pursue graduate studies in ecology and forestry. Experience shows that cross-disciplinary backgrounds often bring unique perspectives and methods, enabling equally outstanding research when combined with our lab's directions."
         })}</p>
         <p>{lt({
-          zh: "欢迎不同专业背景和年级的本科生及硕士研究生联系，参与课题研究，加入现有课题或者根据个人兴趣开展新的课题！",
-          en: "Students of all backgrounds and levels are welcome to contact us, participate in ongoing projects, or initiate new research based on personal interests!"
+          zh: "我们最看重的不是你的专业是否对口，而是你是否具备：对科学研究的热情与好奇心、踏实认真的工作态度、主动学习和解决问题的能力。专业知识可以学，但态度和热情是最宝贵的。",
+          en: "What we value most is not whether your major is a perfect match, but whether you have: passion and curiosity for scientific research, a diligent and earnest work ethic, and the ability to learn proactively and solve problems. Domain knowledge can be learned — attitude and enthusiasm are what truly matter."
         })}</p>
         <p>{lt({
           zh: "期待有志于土壤生态、植被恢复和水土保持等相关领域的学生加入，共同探索科学前沿，实现自我的成长与发展。",
