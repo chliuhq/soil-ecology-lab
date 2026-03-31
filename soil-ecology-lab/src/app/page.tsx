@@ -2,22 +2,73 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import publications from "@/data/publications.json";
 import research from "@/data/research.json";
 import news from "@/data/news.json";
-import projects from "@/data/projects.json";
 import members from "@/data/members.json";
 
-const ICON_MAP: Record<string, string> = {
-  leaf: "🌿",
-  layers: "🧱",
-  mountain: "⛰️",
-  satellite: "🛰️",
+/* ── SVG icon components for research areas ── */
+function IconMountain({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 21l4.8-12L16 15l4 6H4z" />
+      <path d="M2 21h20" />
+      <path d="M12 9l-1.5-3L8 12" />
+    </svg>
+  );
+}
+function IconSatellite({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M13 7L9 3 3 9l4 4" />
+      <path d="M11 13l4 4 6-6-4-4" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M3 21l4.35-4.35" />
+      <path d="M16.65 3.35L21 7.7" />
+    </svg>
+  );
+}
+function IconLayers({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+      <path d="M2 17l10 5 10-5" />
+      <path d="M2 12l10 5 10-5" />
+    </svg>
+  );
+}
+function IconLeaf({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.55-3.42C11.26 20.85 16.57 18.5 20 14c1.5-2 2-5 2-8-3 0-6 .5-8 2z" />
+      <path d="M2 2l7.05 7.05" />
+    </svg>
+  );
+}
+
+const SVG_ICON_MAP: Record<string, (props: { className?: string }) => React.ReactElement> = {
+  leaf: IconLeaf,
+  layers: IconLayers,
+  mountain: IconMountain,
+  satellite: IconSatellite,
 };
+
+/* ── Journal color map ── */
+const JOURNAL_COLORS: Record<string, { bg: string; text: string }> = {
+  "Journal of Hydrology": { bg: "bg-blue-100 dark:bg-blue-900/40", text: "text-blue-700 dark:text-blue-300" },
+  "Catena": { bg: "bg-amber-100 dark:bg-amber-900/40", text: "text-amber-700 dark:text-amber-300" },
+  "Land Degradation & Development": { bg: "bg-rose-100 dark:bg-rose-900/40", text: "text-rose-700 dark:text-rose-300" },
+  "Hydrological Processes": { bg: "bg-cyan-100 dark:bg-cyan-900/40", text: "text-cyan-700 dark:text-cyan-300" },
+  "European Journal of Soil Biology": { bg: "bg-emerald-100 dark:bg-emerald-900/40", text: "text-emerald-700 dark:text-emerald-300" },
+  "European Journal of Agronomy": { bg: "bg-lime-100 dark:bg-lime-900/40", text: "text-lime-700 dark:text-lime-300" },
+  "Agriculture, Ecosystems and Environment": { bg: "bg-green-100 dark:bg-green-900/40", text: "text-green-700 dark:text-green-300" },
+  "Remote Sensing": { bg: "bg-violet-100 dark:bg-violet-900/40", text: "text-violet-700 dark:text-violet-300" },
+};
+const DEFAULT_JOURNAL_COLOR = { bg: "bg-gray-100 dark:bg-gray-800", text: "text-gray-600 dark:text-gray-400" };
 
 const PARTNERS = [
   { name: { zh: "中国科学院水土保持研究所", en: "Institute of Soil and Water Conservation, CAS" }, url: "http://www.iswc.ac.cn/" },
@@ -45,8 +96,6 @@ export default function HomePage() {
   });
   const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 80]);
-
-  const pubScrollRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
@@ -133,26 +182,56 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* ===== Stats Section ===== */}
-      <section className="py-12 bg-white dark:bg-dark-surface border-b border-gray-100 dark:border-gray-700">
+      {/* ===== Stats Bar (green) ===== */}
+      <section className="py-10 bg-gradient-to-r from-emerald-600 to-green-700 dark:from-emerald-800 dark:to-green-900">
         <div className="container-main">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { num: research.length, label: lt({ zh: "研究方向", en: "Research Areas" }), icon: "🔬", href: "/research" },
-              { num: publications.length, label: lt({ zh: "学术论文", en: "Publications" }), icon: "📄", href: "/publications" },
-              { num: (projects as any[]).length, label: lt({ zh: "科研项目", en: "Projects" }), icon: "📋", href: "/projects" },
-              { num: members.pi.length + members.students.length, label: lt({ zh: "团队成员", en: "Team Members" }), icon: "👥", href: "/people" },
+              {
+                value: <AnimatedCounter target={research.length} className="text-4xl font-bold text-white block" />,
+                label: lt({ zh: "研究方向", en: "Research Areas" }),
+                icon: (
+                  <svg className="w-6 h-6 text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.3 24.3 0 0 1 4.5 0m0 0v5.714a2.25 2.25 0 0 0 .659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47-2.47" />
+                  </svg>
+                ),
+              },
+              {
+                value: <AnimatedCounter target={members.pi.length + members.students.length} className="text-4xl font-bold text-white block" />,
+                label: lt({ zh: "核心成员", en: "Core Members" }),
+                icon: (
+                  <svg className="w-6 h-6 text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21 12.318 12.318 0 0 1 2.25 19.234v-.106A6.375 6.375 0 0 1 8.624 12.75a6.375 6.375 0 0 1 6.376 6.375M15 10.5a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                  </svg>
+                ),
+              },
+              {
+                value: <span className="text-2xl md:text-3xl font-bold text-white block">{lt({ zh: "广西大学", en: "GXU" })}</span>,
+                label: lt({ zh: "所属单位", en: "Affiliation" }),
+                icon: (
+                  <svg className="w-6 h-6 text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21" />
+                  </svg>
+                ),
+              },
+              {
+                value: <span className="text-4xl font-bold text-white block">2025</span>,
+                label: lt({ zh: "成立年份", en: "Established" }),
+                icon: (
+                  <svg className="w-6 h-6 text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                  </svg>
+                ),
+              },
             ].map((s, i) => (
               <FadeInOnScroll key={i} delay={i * 100}>
-                <Link href={s.href} className="group cursor-pointer block">
-                  <span className="text-3xl block mb-2">{s.icon}</span>
-                  <AnimatedCounter
-                    target={s.num}
-                    className="text-4xl font-bold text-primary group-hover:text-primary-dark transition-colors block"
-                    suffix="+"
-                  />
-                  <p className="text-sm text-text-light group-hover:text-primary transition-colors mt-1">{s.label}</p>
-                </Link>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-1">
+                    {s.icon}
+                  </div>
+                  {s.value}
+                  <p className="text-sm text-emerald-100 mt-0.5">{s.label}</p>
+                </div>
               </FadeInOnScroll>
             ))}
           </div>
@@ -183,8 +262,10 @@ export default function HomePage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                      <span className="w-8 h-8 rounded-full bg-white/90 dark:bg-dark-surface/90 flex items-center justify-center text-base shadow">
-                        {ICON_MAP[r.icon] || "🔬"}
+                      <span className="w-8 h-8 rounded-full bg-white/90 dark:bg-dark-surface/90 flex items-center justify-center shadow text-emerald-600 dark:text-emerald-400">
+                        {SVG_ICON_MAP[r.icon]
+                          ? SVG_ICON_MAP[r.icon]({ className: "w-4 h-4" })
+                          : <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}><circle cx="12" cy="12" r="10" /><path d="M12 8v4m0 4h.01" /></svg>}
                       </span>
                       <h3 className="font-semibold text-white text-lg drop-shadow">{lt(r.title)}</h3>
                     </div>
@@ -213,9 +294,11 @@ export default function HomePage() {
                   href={`/publications#pub-${pub.id}`}
                   className="bg-white dark:bg-dark-bg rounded-xl p-6 border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:shadow-lg transition-all duration-300 flex flex-col"
                 >
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex items-center gap-2 mb-3 flex-wrap">
                     <span className="text-xs font-medium text-white bg-primary px-2 py-0.5 rounded">{pub.year}</span>
-                    <span className="text-xs text-primary font-medium truncate">{pub.journal}</span>
+                    <span className={`text-xs font-medium px-2 py-0.5 rounded ${(JOURNAL_COLORS[pub.journal] || DEFAULT_JOURNAL_COLOR).bg} ${(JOURNAL_COLORS[pub.journal] || DEFAULT_JOURNAL_COLOR).text}`}>
+                      {pub.journal}
+                    </span>
                   </div>
                   <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-3 line-clamp-3 text-sm leading-relaxed flex-1">{pub.title}</h3>
                   <p className="text-xs text-text-light dark:text-gray-400 line-clamp-2">{pub.authors}</p>
@@ -231,36 +314,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== Latest News — Timeline ===== */}
+      {/* ===== Latest News — Card Layout ===== */}
       <section className="py-16 bg-white dark:bg-dark-bg">
         <div className="container-main">
           <FadeInOnScroll>
             <h2 className="section-title text-center">{t.home.latestNews}</h2>
             <div className="h-1 w-12 bg-primary mx-auto mb-10 rounded" />
           </FadeInOnScroll>
-          <div className="relative max-w-3xl mx-auto">
-            {/* Vertical timeline line */}
-            <div className="absolute left-4 md:left-6 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700" />
-            <div className="space-y-8">
-              {latestNews.map((n: any, i: number) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {latestNews.map((n: any, i: number) => {
+              const [year, month, day] = n.date.split("-");
+              const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+              return (
                 <FadeInOnScroll key={i} delay={i * 120}>
                   <Link
                     href={`/news/${n.id}`}
-                    className="group relative pl-12 md:pl-16 block"
+                    className="group flex bg-white dark:bg-dark-surface rounded-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300"
                   >
-                    {/* Timeline dot */}
-                    <div className="absolute left-2.5 md:left-4.5 top-1 w-3 h-3 rounded-full bg-primary ring-4 ring-white dark:ring-dark-bg group-hover:scale-125 transition-transform" />
-                    <span className="text-xs text-text-light dark:text-gray-500 font-mono">{n.date}</span>
-                    <h3 className="text-gray-900 dark:text-gray-100 font-medium mt-0.5 group-hover:text-primary transition-colors">
-                      {lt(n.title)}
-                    </h3>
-                    {n.content && (
-                      <p className="text-sm text-text-light dark:text-gray-400 line-clamp-2 mt-1">{String(lt(n.content))}</p>
-                    )}
+                    {/* Date card */}
+                    <div className="flex-shrink-0 w-20 bg-gradient-to-b from-emerald-500 to-green-600 dark:from-emerald-700 dark:to-green-800 flex flex-col items-center justify-center text-white p-3">
+                      <span className="text-2xl font-bold leading-none">{parseInt(day)}</span>
+                      <span className="text-xs font-medium uppercase mt-1">{monthNames[parseInt(month) - 1]}</span>
+                      <span className="text-xs opacity-80 mt-0.5">{year}</span>
+                    </div>
+                    {/* Content */}
+                    <div className="flex-1 p-4 min-w-0">
+                      <h3 className="text-gray-900 dark:text-gray-100 font-medium group-hover:text-primary transition-colors line-clamp-2 text-sm">
+                        {lt(n.title)}
+                      </h3>
+                      {n.content && (
+                        <p className="text-xs text-text-light dark:text-gray-400 line-clamp-2 mt-2">{String(lt(n.content))}</p>
+                      )}
+                    </div>
                   </Link>
                 </FadeInOnScroll>
-              ))}
-            </div>
+              );
+            })}
           </div>
           <div className="text-center mt-8">
             <Link href="/news" className="text-primary hover:underline font-medium">
