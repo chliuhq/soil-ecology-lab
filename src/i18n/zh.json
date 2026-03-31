@@ -19,7 +19,13 @@
     "viewAllPubs": "查看全部论文",
     "researchAreas": "研究方向",
     "latestNews": "最新动态",
-    "viewAllNews": "查看全部"
+    "viewAllNews": "查看全部",
+    "stats": {
+      "publications": "发表论文",
+      "researchAreas": "研究方向",
+      "teamMembers": "团队成员",
+      "journals": "合作期刊"
+    }
   },
   "people": {
     "title": "团队成员",

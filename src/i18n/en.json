@@ -19,7 +19,13 @@
     "viewAllPubs": "View All Publications",
     "researchAreas": "Research Areas",
     "latestNews": "Latest News",
-    "viewAllNews": "View All"
+    "viewAllNews": "View All",
+    "stats": {
+      "publications": "Publications",
+      "researchAreas": "Research Areas",
+      "teamMembers": "Team Members",
+      "journals": "Journals"
+    }
   },
   "people": {
     "title": "People",
