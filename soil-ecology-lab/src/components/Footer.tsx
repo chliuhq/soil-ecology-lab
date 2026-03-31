@@ -60,31 +60,30 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-3">
               {lt({ zh: "学术主页", en: "Academic Profiles" })}
             </h3>
-            <ul className="space-y-2">
-              {pi.researchgate && (
-                <li>
-                  <a href={pi.researchgate} target="_blank" rel="noopener noreferrer"
-                     className="text-sm hover:text-white transition-colors">
-                    🔬 ResearchGate
-                  </a>
+            <ul className="space-y-3">
+              {members.pi.map((m) => (
+                <li key={m.id}>
+                  <p className="text-xs text-gray-400 mb-1">{lt(m.name)}</p>
+                  {m.researchgate && (
+                    <a href={m.researchgate} target="_blank" rel="noopener noreferrer"
+                       className="text-sm hover:text-white transition-colors block">
+                      🔬 ResearchGate
+                    </a>
+                  )}
+                  {m.googlescholar && (
+                    <a href={m.googlescholar} target="_blank" rel="noopener noreferrer"
+                       className="text-sm hover:text-white transition-colors block">
+                      🎓 Google Scholar
+                    </a>
+                  )}
+                  {(m as any).homepage && (
+                    <a href={(m as any).homepage} target="_blank" rel="noopener noreferrer"
+                       className="text-sm hover:text-white transition-colors block">
+                      🏫 {lt({ zh: "学校主页", en: "University Profile" })}
+                    </a>
+                  )}
                 </li>
-              )}
-              {pi.googlescholar && (
-                <li>
-                  <a href={pi.googlescholar} target="_blank" rel="noopener noreferrer"
-                     className="text-sm hover:text-white transition-colors">
-                    🎓 Google Scholar
-                  </a>
-                </li>
-              )}
-              {(pi as any).homepage && (
-                <li>
-                  <a href={(pi as any).homepage} target="_blank" rel="noopener noreferrer"
-                     className="text-sm hover:text-white transition-colors">
-                    🏫 {lt({ zh: "学校主页", en: "University Profile" })}
-                  </a>
-                </li>
-              )}
+              ))}
             </ul>
 
             <h3 className="text-white font-semibold mt-6 mb-3">
