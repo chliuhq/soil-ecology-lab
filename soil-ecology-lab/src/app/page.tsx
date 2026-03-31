@@ -183,8 +183,8 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* ===== Stats Bar (green) ===== */}
-      <section className="py-10 bg-gradient-to-r from-emerald-600 to-green-700 dark:from-emerald-800 dark:to-green-900">
+      {/* ===== Stats Bar ===== */}
+      <section className="py-12 bg-white dark:bg-dark-surface border-b border-gray-100 dark:border-gray-700">
         <div className="container-main">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -198,10 +198,10 @@ export default function HomePage() {
                   <span className="text-3xl block mb-2">{s.icon}</span>
                   <AnimatedCounter
                     target={s.num}
-                    className="text-4xl font-bold text-white block"
+                    className="text-4xl font-bold text-primary block"
                     suffix="+"
                   />
-                  <p className="text-sm text-emerald-100 mt-1">{s.label}</p>
+                  <p className="text-sm text-text-light mt-1">{s.label}</p>
                 </Link>
               </FadeInOnScroll>
             ))}
