@@ -65,9 +65,6 @@ export default function HomePage() {
             {/* Left: Text content */}
             <FadeInOnScroll>
               <div className="mb-6">
-                <p className="text-sm font-medium text-primary tracking-wide uppercase mb-3">
-                  {lt({ zh: "广西大学林学院 · 土壤生态学", en: "College of Forestry, Guangxi University" })}
-                </p>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight mb-4">
                   {t.home.title}
                 </h1>
