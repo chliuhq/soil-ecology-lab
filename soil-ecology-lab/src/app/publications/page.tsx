@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import publications from "@/data/publications.json";
+import research from "@/data/research.json";
 
 function genBibtex(pub: any) {
   const key = `${pub.authors.split(",")[0].trim().split(" ").pop()}${pub.year}`;
@@ -20,18 +21,36 @@ function genApa(pub: any) {
   return `${authors} (${pub.year}). ${pub.title}. ${pub.journal}${pub.volume ? `, ${pub.volume}` : ""}${pub.pages ? `, ${pub.pages}` : ""}.${pub.doi ? ` https://doi.org/${pub.doi}` : ""}`;
 }
 
+const AREA_COLORS: Record<string, string> = {
+  "erosion": "bg-orange-100 text-orange-700",
+  "soc": "bg-amber-100 text-amber-700",
+  "remote-sensing": "bg-blue-100 text-blue-700",
+  "soil-water-carbon": "bg-emerald-100 text-emerald-700",
+};
+
 export default function PublicationsPage() {
   const { t } = useI18n();
   const lt = useLocaleText();
   const [filter, setFilter] = useState<string>("all");
+  const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
   const [citeId, setCiteId] = useState<number | null>(null);
-  const [copied, setCopied] = useState("");
+  const [copied, setCopied] = useState<string>("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get("category");
+    if (cat) setCategoryFilter(cat);
+  }, []);
 
   const sorted = [...publications].sort((a, b) => b.year - a.year || b.id - a.id);
   const years = [...new Set(sorted.map((p) => p.year))];
-  const filtered = filter === "all" ? sorted : sorted.filter((p) => p.year === Number(filter));
+  const filtered = sorted
+    .filter((p) => categoryFilter === "all" || (Array.isArray(p.category) && p.category.includes(categoryFilter)))
+    .filter((p) => filter === "all" || p.year === Number(filter));
+
+  const activeCategory = research.find((r) => r.id === categoryFilter);
 
   const toggleSummary = (id: number) => {
     setExpandedId(expandedId === id ? null : id);
@@ -43,6 +62,47 @@ export default function PublicationsPage() {
     <div className="container-main py-16">
       <h1 className="section-title text-center">{t.publications.title}</h1>
       <div className="h-1 w-12 bg-primary mx-auto mb-8 rounded" />
+
+      {/* 方向筛选 */}
+      <div className="flex flex-wrap gap-2 justify-center mb-6">
+        <button
+          onClick={() => { setCategoryFilter("all"); setFilter("all"); }}
+          className={`px-4 py-1.5 rounded-full text-sm transition-colors ${
+            categoryFilter === "all" ? "bg-primary text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+          }`}
+        >
+          {lt({ zh: "全部", en: "All" })}
+        </button>
+        {research.map((r) => (
+          <button
+            key={r.id}
+            onClick={() => { setCategoryFilter(r.id); setFilter("all"); }}
+            className={`px-4 py-1.5 rounded-full text-sm transition-colors ${
+              categoryFilter === r.id ? "bg-primary text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+            }`}
+          >
+            {lt(r.title)}
+          </button>
+        ))}
+      </div>
+
+      {/* 当前方向提示 */}
+      {activeCategory && (
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <div className={`px-3 py-1 rounded-full text-sm ${AREA_COLORS[activeCategory.id] || "bg-gray-100 text-gray-700"}`}>
+            {lt(activeCategory.title)}
+          </div>
+          <span className="text-sm text-text-light">
+            {filtered.length} {lt({ zh: "篇相关论文", en: "related papers" })}
+          </span>
+          <button
+            onClick={() => { setCategoryFilter("all"); setFilter("all"); }}
+            className="text-sm text-primary hover:underline"
+          >
+            {lt({ zh: "清除筛选", en: "Clear filter" })}
+          </button>
+        </div>
+      )}
 
       {/* 年份筛选 */}
       <div className="flex flex-wrap gap-2 justify-center mb-10">
@@ -86,6 +146,25 @@ export default function PublicationsPage() {
 
                     return (
                       <div key={pub.id} id={`pub-${pub.id}`} className="pub-item scroll-mt-20">
+                        {/* 论文方向标签 */}
+                        {categoryFilter === "all" && Array.isArray(pub.category) && (
+                          <div className="flex flex-wrap gap-1 mb-2">
+                            {pub.category.map((cat: string) => {
+                              const area = research.find((r) => r.id === cat);
+                              if (!area) return null;
+                              return (
+                                <Link
+                                  key={cat}
+                                  href={`/publications?category=${cat}`}
+                                  className={`text-xs px-2 py-0.5 rounded-full ${AREA_COLORS[cat] || "bg-gray-100 text-gray-700"} hover:opacity-80 transition-opacity`}
+                                >
+                                  {lt(area.title)}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        )}
+
                         <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-1">
                           <Link href={`/publications/${pub.id}`} className="hover:text-primary transition-colors">
                             {pub.title}
@@ -177,13 +256,11 @@ export default function PublicationsPage() {
                           </div>
                         )}
 
-                        {/* 论文解读展开区 - 图文并茂 */}
+                        {/* 论文解读展开区 */}
                         {expandedId === pub.id && summary && (
                           <div className="mt-3 p-5 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-100 dark:border-amber-800 text-base text-text-main dark:text-gray-200 leading-relaxed">
-                            {/* 概述 */}
                             <div className="mb-4 pub-summary" dangerouslySetInnerHTML={{ __html: lt(summary) as string }} />
 
-                            {/* 图片区域 */}
                             {hasImages && (
                               <div className="mb-4">
                                 {summary.images.map((img: any, idx: number) => (
@@ -208,7 +285,6 @@ export default function PublicationsPage() {
                               </div>
                             )}
 
-                            {/* 研究要点 */}
                             {hasHighlights && (
                               <div className="bg-white/60 rounded-lg p-4 border border-amber-100/50">
                                 <h4 className="text-sm font-semibold text-amber-900 mb-2 uppercase tracking-wide">

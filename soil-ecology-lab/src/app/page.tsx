@@ -142,6 +142,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {research.map((r, i) => (
               <FadeInOnScroll key={r.id} delay={i * 80}>
+                <div>
                 <Link
                   href={`/research#${r.id}`}
                   className="group block bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
@@ -167,6 +168,13 @@ export default function HomePage() {
                     </p>
                   </div>
                 </Link>
+                <Link
+                  href={`/publications?category=${r.id}`}
+                  className="block text-xs text-primary hover:underline mt-1.5 px-1"
+                >
+                  {lt({ zh: "查看相关论文 →", en: "View papers →" })}
+                </Link>
+                </div>
               </FadeInOnScroll>
             ))}
           </div>
