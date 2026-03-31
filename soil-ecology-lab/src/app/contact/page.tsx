@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import members from "@/data/members.json";
 
@@ -15,8 +16,15 @@ export default function ContactPage() {
         {members.pi.map((m) => (
           <div key={m.id} className="bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl p-8">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-2xl">
-                {m.id === "huaqing-liu" ? "👨‍🔬" : "👩‍🔬"}
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-green-200 shadow-sm flex-shrink-0">
+                <Image
+                  src={m.photo}
+                  alt={lt(m.name)}
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-cover object-top"
+                  unoptimized
+                />
               </div>
               <div>
                 <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100">{lt(m.name)}</h2>
