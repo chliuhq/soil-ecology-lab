@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -90,97 +88,35 @@ export default function HomePage() {
     .sort((a: any, b: any) => b.date.localeCompare(a.date))
     .slice(0, 4);
 
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 80]);
-
   return (
     <>
-      {/* ===== Full-screen Hero ===== */}
-      <section
-        ref={heroRef}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f2027] via-[#1a4a3a] to-[#2c5f2d] dark:from-[#070d10] dark:via-[#0d2820] dark:to-[#142e15]"
-      >
-        {/* Decorative blurred orbs */}
-        <div className="absolute top-10 left-10 w-72 h-72 bg-emerald-400/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-300/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-green-300/40 rounded-full" />
-        <div className="absolute bottom-1/3 left-1/4 w-3 h-3 bg-emerald-200/30 rounded-full" />
-
-        <motion.div
-          style={{ opacity: heroOpacity, y: heroY }}
-          className="container-main text-center relative z-10 px-4"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl md:text-6xl font-serif font-bold text-white mb-4 leading-tight"
-          >
+      {/* ===== Hero ===== */}
+      <section className="py-24 md:py-32 bg-white border-b border-gray-100">
+        <div className="container-main text-center">
+          <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-4 leading-tight">
             {t.home.title}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-            className="text-xl md:text-2xl text-emerald-300 font-medium mb-6"
-          >
+          </h1>
+          <p className="text-xl md:text-2xl text-primary font-medium mb-6">
             {t.home.subtitle}
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="max-w-3xl mx-auto text-gray-300 text-lg md:text-xl leading-relaxed mb-10"
-          >
+          </p>
+          <p className="max-w-3xl mx-auto text-text-light text-lg md:text-xl leading-relaxed mb-8">
             {t.home.description}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
-            className="flex gap-4 justify-center"
-          >
+          </p>
+          <div className="flex gap-4 justify-center">
             <Link
               href="/research"
-              className="px-8 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-400 transition-colors font-medium text-lg shadow-lg shadow-emerald-500/20"
+              className="px-6 py-2.5 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-medium"
             >
               {t.home.learnMore}
             </Link>
             <Link
               href="/joinus"
-              className="px-8 py-3 border border-emerald-400/60 text-emerald-300 rounded-lg hover:bg-emerald-400/10 transition-colors font-medium text-lg"
+              className="px-6 py-2.5 border border-primary text-primary rounded-lg hover:bg-green-50 transition-colors font-medium"
             >
               {t.nav.joinus}
             </Link>
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll-down arrow */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2 cursor-pointer"
-            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-          >
-            <span className="text-xs text-gray-400 tracking-widest uppercase">
-              {lt({ zh: "向下滚动", en: "Scroll Down" })}
-            </span>
-            <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* ===== Stats Bar ===== */}
@@ -210,7 +146,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Research Areas — 2×2 Grid ===== */}
-      <section className="py-16 bg-white dark:bg-dark-bg">
+      <section className="py-16 bg-bg-light dark:bg-dark-bg">
         <div className="container-main">
           <FadeInOnScroll>
             <h2 className="section-title text-center">{t.home.researchAreas}</h2>
@@ -251,8 +187,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== Featured Publications — Horizontal Scroll ===== */}
-      <section className="py-16 bg-bg-light dark:bg-dark-surface">
+      {/* ===== Featured Publications ===== */}
+      <section className="py-16 bg-white dark:bg-dark-surface">
         <div className="container-main">
           <FadeInOnScroll>
             <h2 className="section-title text-center">{t.home.featuredPubs}</h2>
@@ -285,8 +221,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== Latest News — Card Layout ===== */}
-      <section className="py-16 bg-white dark:bg-dark-bg">
+      {/* ===== Latest News ===== */}
+      <section className="py-16 bg-bg-light dark:bg-dark-bg">
         <div className="container-main">
           <FadeInOnScroll>
             <h2 className="section-title text-center">{t.home.latestNews}</h2>
@@ -302,13 +238,11 @@ export default function HomePage() {
                     href={`/news/${n.id}`}
                     className="group flex bg-white dark:bg-dark-surface rounded-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300"
                   >
-                    {/* Date card */}
                     <div className="flex-shrink-0 w-20 bg-emerald-600 flex flex-col items-center justify-center text-white p-3">
                       <span className="text-2xl font-bold leading-none">{parseInt(day)}</span>
                       <span className="text-xs font-medium uppercase mt-1">{monthNames[parseInt(month) - 1]}</span>
                       <span className="text-xs opacity-80 mt-0.5">{year}</span>
                     </div>
-                    {/* Content */}
                     <div className="flex-1 p-4 min-w-0">
                       <h3 className="text-gray-900 dark:text-gray-100 font-medium group-hover:text-primary transition-colors line-clamp-2 text-sm">
                         {lt(n.title)}
@@ -331,7 +265,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Partner Institutions ===== */}
-      <section className="py-16 bg-bg-light dark:bg-dark-surface">
+      <section className="py-16 bg-white dark:bg-dark-surface">
         <div className="container-main">
           <FadeInOnScroll>
             <h2 className="section-title text-center">
@@ -346,7 +280,7 @@ export default function HomePage() {
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 bg-white dark:bg-dark-bg rounded-lg border border-gray-100 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-300 hover:text-primary hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  className="px-6 py-3.5 bg-bg-light dark:bg-dark-bg rounded-lg border border-gray-100 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-300 hover:text-primary hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                 >
                   {lt(p.name)}
                 </a>
