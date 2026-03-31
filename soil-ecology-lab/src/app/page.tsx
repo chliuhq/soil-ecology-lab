@@ -332,7 +332,7 @@ export default function HomePage() {
                     className="group flex bg-white dark:bg-dark-surface rounded-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300"
                   >
                     {/* Date card */}
-                    <div className="flex-shrink-0 w-20 bg-gradient-to-b from-emerald-500 to-green-600 dark:from-emerald-700 dark:to-green-800 flex flex-col items-center justify-center text-white p-3">
+                    <div className="flex-shrink-0 w-20 bg-emerald-600 flex flex-col items-center justify-center text-white p-3">
                       <span className="text-2xl font-bold leading-none">{parseInt(day)}</span>
                       <span className="text-xs font-medium uppercase mt-1">{monthNames[parseInt(month) - 1]}</span>
                       <span className="text-xs opacity-80 mt-0.5">{year}</span>
