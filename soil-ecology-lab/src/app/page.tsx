@@ -10,6 +10,7 @@ import publications from "@/data/publications.json";
 import research from "@/data/research.json";
 import news from "@/data/news.json";
 import members from "@/data/members.json";
+import projects from "@/data/projects.json";
 
 /* ── SVG icon components for research areas ── */
 function IconMountain({ className = "w-5 h-5" }: { className?: string }) {
@@ -187,51 +188,21 @@ export default function HomePage() {
         <div className="container-main">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              {
-                value: <AnimatedCounter target={publications.length} className="text-4xl font-bold text-white block" />,
-                label: lt({ zh: "发表论文", en: "Publications" }),
-                icon: (
-                  <svg className="w-6 h-6 text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-                  </svg>
-                ),
-              },
-              {
-                value: <AnimatedCounter target={research.length} className="text-4xl font-bold text-white block" />,
-                label: lt({ zh: "研究方向", en: "Research Areas" }),
-                icon: (
-                  <svg className="w-6 h-6 text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.3 24.3 0 0 1 4.5 0m0 0v5.714a2.25 2.25 0 0 0 .659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47-2.47" />
-                  </svg>
-                ),
-              },
-              {
-                value: <AnimatedCounter target={members.pi.length + members.students.length} className="text-4xl font-bold text-white block" />,
-                label: lt({ zh: "团队成员", en: "Team Members" }),
-                icon: (
-                  <svg className="w-6 h-6 text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21 12.318 12.318 0 0 1 2.25 19.234v-.106A6.375 6.375 0 0 1 8.624 12.75a6.375 6.375 0 0 1 6.376 6.375M15 10.5a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                  </svg>
-                ),
-              },
-              {
-                value: <AnimatedCounter target={new Set(publications.map((p) => p.journal)).size} className="text-4xl font-bold text-white block" />,
-                label: lt({ zh: "来源期刊", en: "Journals" }),
-                icon: (
-                  <svg className="w-6 h-6 text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                  </svg>
-                ),
-              },
+              { num: publications.length, label: lt({ zh: "学术论文", en: "Publications" }), icon: "📄", href: "/publications" },
+              { num: research.length, label: lt({ zh: "研究方向", en: "Research Areas" }), icon: "🔬", href: "/research" },
+              { num: (projects as any[]).length, label: lt({ zh: "科研项目", en: "Projects" }), icon: "📋", href: "/projects" },
+              { num: members.pi.length + members.students.length, label: lt({ zh: "团队成员", en: "Team Members" }), icon: "👥", href: "/people" },
             ].map((s, i) => (
               <FadeInOnScroll key={i} delay={i * 100}>
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-1">
-                    {s.icon}
-                  </div>
-                  {s.value}
-                  <p className="text-sm text-emerald-100 mt-0.5">{s.label}</p>
-                </div>
+                <Link href={s.href} className="group cursor-pointer block">
+                  <span className="text-3xl block mb-2">{s.icon}</span>
+                  <AnimatedCounter
+                    target={s.num}
+                    className="text-4xl font-bold text-white block"
+                    suffix="+"
+                  />
+                  <p className="text-sm text-emerald-100 mt-1">{s.label}</p>
+                </Link>
               </FadeInOnScroll>
             ))}
           </div>
