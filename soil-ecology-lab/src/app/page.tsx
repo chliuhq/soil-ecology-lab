@@ -95,17 +95,18 @@ export default function HomePage() {
             <FadeInOnScroll delay={150}>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { num: publications.length, label: lt({ zh: "学术论文", en: "Publications" }), highlight: true },
-                  { num: research.length, label: lt({ zh: "研究方向", en: "Research Areas" }), highlight: false },
-                  { num: (projects as any[]).length, label: lt({ zh: "科研项目", en: "Projects" }), highlight: false },
-                  { num: members.pi.length + members.students.length, label: lt({ zh: "团队成员", en: "Team Members" }), highlight: false },
+                  { num: publications.length, label: lt({ zh: "学术论文", en: "Publications" }), href: "/publications", highlight: true },
+                  { num: research.length, label: lt({ zh: "研究方向", en: "Research Areas" }), href: "/research", highlight: false },
+                  { num: (projects as any[]).length, label: lt({ zh: "科研项目", en: "Projects" }), href: "/projects", highlight: false },
+                  { num: members.pi.length + members.students.length, label: lt({ zh: "团队成员", en: "Team Members" }), href: "/people", highlight: false },
                 ].map((s, i) => (
-                  <div
+                  <Link
                     key={i}
-                    className={`rounded-xl p-5 text-center ${
+                    href={s.href}
+                    className={`rounded-xl p-5 text-center block transition-all hover:-translate-y-0.5 hover:shadow-md ${
                       s.highlight
                         ? "bg-primary text-white shadow-md"
-                        : "bg-gray-50 dark:bg-dark-surface border border-gray-100 dark:border-gray-700"
+                        : "bg-gray-50 dark:bg-dark-surface border border-gray-100 dark:border-gray-700 hover:border-primary/30"
                     }`}
                   >
                     <AnimatedCounter
@@ -114,7 +115,7 @@ export default function HomePage() {
                       suffix="+"
                     />
                     <p className={`text-xs mt-1 ${s.highlight ? "text-emerald-100" : "text-text-light"}`}>{s.label}</p>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </FadeInOnScroll>
