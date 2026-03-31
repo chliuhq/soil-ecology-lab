@@ -27,6 +27,7 @@ interface NavLink {
 type NavEntry = NavLink | NavDropdown;
 
 const desktopNav: NavEntry[] = [
+  { type: "link", key: "home", href: "/" },
   { type: "link", key: "people", href: "/people" },
   {
     type: "dropdown",
