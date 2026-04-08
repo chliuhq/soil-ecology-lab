@@ -250,7 +250,7 @@ export default function JoinUsPage() {
       <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
         {t.joinus.requirements}
       </h2>
-      <div className="max-w-3xl space-y-3 text-text-light dark:text-gray-400 leading-relaxed">
+      <div className="max-w-3xl space-y-5 text-text-light dark:text-gray-400 leading-loose text-base">
         <p>{lt({
           zh: "我们热忱欢迎各专业背景的同学报考！近年来，越来越多生物科学、生物技术、环境科学、地理信息、计算机等专业的同学选择跨考生态学和林业方向。事实证明，跨专业背景往往能带来独特的视角和方法，结合课题组的研究方向，同样能开展出色的研究工作。",
           en: "We warmly welcome applicants from all academic backgrounds! In recent years, more and more students from biology, biotechnology, environmental science, GIS, computer science and other fields have chosen to pursue graduate studies in ecology and forestry. Experience shows that cross-disciplinary backgrounds often bring unique perspectives and methods, enabling equally outstanding research when combined with our lab's directions."

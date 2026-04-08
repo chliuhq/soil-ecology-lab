@@ -36,3 +36,35 @@ link: ''
 目前,采集的土壤样品已安全运回实验室。团队将开展系统的实验室分析工作,包括土壤物理性质测定、化学指标分析、微生物群落测序等。相关研究成果将为揭示多树种混交林土壤生态过程提供科学依据,并为区域森林经营管理提供理论支撑。
 
 此次野外调查工作得到了中国林业科学研究院热带林业研究中心的大力支持和协助。
+
+## English
+
+From April 4 to 7, 2026, Dr. Huaqing Liu of Guangxi University led a research team to Pingxiang City, Guangxi Zhuang Autonomous Region, for a four-day field soil survey and sample collection at the multi-species mixed forest experimental plot.
+
+## Site Overview
+
+The Pingxiang multi-species mixed forest experimental plot was established by the Research Center of Tropical Forestry of the Chinese Academy of Forestry. The research team from Guangxi University conducted quadrat delineation and plot surveys on this basis. Located in Pingxiang City, Guangxi, the site aims to investigate the effects of different tree species mixing patterns on soil physicochemical properties, microbial communities, and ecosystem functions. Our team also focuses on the impacts of mixed forests on water and carbon transport. The plot contains a variety of native and economically important tree species, providing an ideal experimental platform for forest soil ecology research.
+
+![Plot Signboard](/images/news/2026-04-08-01.jpg)
+
+## Survey Content
+
+The field survey primarily consisted of soil sample collection and plot maintenance.
+
+### Soil Sample Collection
+
+Following standardized sampling protocols, team members systematically excavated soil profiles and collected samples across different tree species mixing zones within the plot. These soil samples will be used to analyze soil physical structure, chemical properties, and microbial community composition, providing foundational data for subsequent research.
+
+![Field Photos](/images/news/2026-04-08-02.jpg)
+
+### Plot Maintenance
+
+During the survey, the team also inspected and maintained the plot's signage, fences, and other facilities to ensure the smooth progress of long-term monitoring efforts. All members worked collaboratively and efficiently to complete the fieldwork tasks.
+
+![Soil Profile](/images/news/2026-04-08-03.jpg)
+
+## Follow-up Work
+
+The collected soil samples have been safely transported back to the laboratory. The team will conduct systematic laboratory analyses, including soil physical property measurements, chemical indicator analyses, and microbial community sequencing. These research findings will provide scientific basis for understanding soil ecological processes in multi-species mixed forests and offer theoretical support for regional forest management practices.
+
+We sincerely appreciate the strong support and assistance from the Research Center of Tropical Forestry, Chinese Academy of Forestry.
