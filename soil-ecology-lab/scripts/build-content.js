@@ -79,12 +79,28 @@ function parsePubSummary(content) {
   return { zh: zhHtml, en: enHtml, highlights: { zh: highlights_zh, en: highlights_en } };
 }
 
-// ── 解析 news 正文（中英文） ─────────────────────────────
+// ── 解析 news 正文（分离中英文） ───────────────────────
 function parseNewsContent(content) {
   if (!content) return { zh: "", en: "" };
-  // 去掉顶部的 "## 中文" / "## English" 标题行，保留后面所有内容（含图片）
-  const cleaned = content.replace(/^##\s*(中文|English)\s*$/gim, "").trim();
-  return { zh: cleaned, en: cleaned };
+  // 先在原始内容上定位分节标记
+  const markerZH = content.indexOf("## 中文");
+  const markerEN = content.indexOf("## English");
+  let zh = content;
+  let en = "";
+  if (markerEN !== -1) {
+    // 英文节存在：markerEN 之前为中文（含 ## 中文 标题行），markerEN 之后为英文
+    zh = content.substring(0, markerEN);
+    en = content.substring(markerEN);
+  } else if (markerZH !== -1) {
+    // 只有中文节
+    zh = content.substring(markerZH);
+  }
+  // 去掉各自的标题行
+  zh = zh.replace(/^##\s*中文\s*$/gim, "").trim();
+  en = en.replace(/^##\s*English\s*$/gim, "").trim();
+  // 如果中英文相同（无分节），整个内容作为中文
+  if (zh === en) zh = content;
+  return { zh, en };
 }
 
 // ── 构建 news.json ────────────────────────────────────────

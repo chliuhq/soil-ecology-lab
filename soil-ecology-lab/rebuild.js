@@ -1,0 +1,1 @@
+require("E:/Claude/Github_SoilEcoloy/soil-ecology-lab/scripts/build-content.js")

@@ -6,6 +6,7 @@ import publications from "@/data/publications.json";
 import research from "@/data/research.json";
 import news from "@/data/news.json";
 import members from "@/data/members.json";
+import HeroBackground from "@/components/HeroBackground";
 
 /* ===== SVG Icons for Research Areas ===== */
 const researchIcons: Record<string, React.ReactNode> = {
@@ -112,27 +113,40 @@ export default function HomePage() {
   return (
     <>
       {/* ===== Hero Banner ===== */}
-      <section className="relative bg-gradient-to-br from-green-50 via-white to-emerald-50 pt-20 md:pt-28 pb-28 md:pb-36">
-        <div className="container-main text-center">
-          <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-4 leading-tight">
+      <section className="relative bg-gradient-to-br from-green-50 via-emerald-50/50 to-white pt-20 md:pt-28 pb-28 md:pb-36 overflow-hidden">
+        <HeroBackground />
+        <div className="container-main text-center relative z-10">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-green-200/50 mb-6 shadow-sm">
+            <svg className="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+            </svg>
+            <span className="text-sm font-medium text-gray-700">广西大学土壤生态研究团队</span>
+          </div>
+
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900 mb-6 leading-tight">
             {t.home.title}
           </h1>
-          <p className="text-xl md:text-2xl text-primary font-medium mb-6">
+          <p className="text-2xl md:text-3xl text-primary font-semibold mb-6 tracking-wide">
             {t.home.subtitle}
           </p>
-          <p className="max-w-3xl mx-auto text-text-light text-lg md:text-xl leading-relaxed mb-8">
+          <p className="max-w-3xl mx-auto text-gray-600 text-lg md:text-xl leading-relaxed mb-10">
             {t.home.description}
           </p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/research"
-              className="px-6 py-2.5 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-medium"
+              className="group px-8 py-3.5 bg-primary text-white rounded-xl hover:bg-primary-dark transition-all duration-300 font-semibold shadow-lg shadow-green-900/20 hover:shadow-xl hover:shadow-green-900/30 hover:-translate-y-0.5 flex items-center gap-2"
             >
               {t.home.learnMore}
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
             </Link>
             <Link
               href="/joinus"
-              className="px-6 py-2.5 border border-primary text-primary rounded-lg hover:bg-green-50 transition-colors font-medium"
+              className="px-8 py-3.5 bg-white border-2 border-primary text-primary rounded-xl hover:bg-green-50 transition-all duration-300 font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
               {t.nav.joinus}
             </Link>
