@@ -1,8 +1,27 @@
 "use client";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import news from "@/data/news.json";
+
+// 从 markdown 内容中提取所有图片（markdown 语法）
+function extractImages(content: string): string[] {
+  const regex = /!\[(.*?)\]\((.*?)\)/g;
+  const images: string[] = [];
+  let match;
+  while ((match = regex.exec(content)) !== null) {
+    images.push(match[2]);
+  }
+  return images;
+}
+
+// 将 markdown 图片语法转为 HTML
+function renderImages(content: string): string {
+  return content.replace(/!\[(.*?)\]\((.*?)\)/g, (_match, _alt, src) => {
+    return `<figure style="margin: 1.5rem 0;"><img src="${src}" alt="${_alt}" style="width:100%;border-radius:8px;" loading="lazy" /><figcaption style="text-align:center;font-size:0.875rem;color:#666;margin-top:0.5rem;">${_alt}</figcaption></figure>`;
+  });
+}
 
 export default function NewsDetailClient() {
   const params = useParams();
@@ -37,9 +56,10 @@ export default function NewsDetailClient() {
           {lt(n.title)}
         </h1>
         {n.content && (
-          <div className="text-base text-text-main leading-relaxed">
-            <p>{String(lt(n.content))}</p>
-          </div>
+          <div
+            className="text-base text-text-main leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: renderImages(String(lt(n.content))) }}
+          />
         )}
         {n.link && n.link !== `/news/${n.id}` && (
           <div className="mt-8">

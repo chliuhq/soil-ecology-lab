@@ -82,16 +82,9 @@ function parsePubSummary(content) {
 // ── 解析 news 正文（中英文） ─────────────────────────────
 function parseNewsContent(content) {
   if (!content) return { zh: "", en: "" };
-  const sections = content.split(/^## /m).filter(Boolean);
-  let zh = "", en = "";
-  for (const sec of sections) {
-    const lines = sec.trim().split("\n");
-    const title = lines[0].trim();
-    const body = lines.slice(1).join("\n").trim();
-    if (title.includes("中文")) zh = body;
-    else if (title.includes("English")) en = body;
-  }
-  return { zh: zh || content, en: en || content };
+  // 去掉顶部的 "## 中文" / "## English" 标题行，保留后面所有内容（含图片）
+  const cleaned = content.replace(/^##\s*(中文|English)\s*$/gim, "").trim();
+  return { zh: cleaned, en: cleaned };
 }
 
 // ── 构建 news.json ────────────────────────────────────────
