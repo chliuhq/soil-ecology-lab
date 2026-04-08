@@ -37,50 +37,6 @@ const AREA_THEME: Record<string, string> = {
   satellite: "from-blue-50 to-indigo-50",
 };
 
-// Inline SVG icons (no external library needed)
-const LeafIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
-    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-  </svg>
-);
-const LayersIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-    <polyline points="2 17 12 22 22 17"/>
-    <polyline points="2 12 12 17 22 12"/>
-  </svg>
-);
-const MountainIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
-    <path d="m4.14 15.08 2.86-2.86"/>
-  </svg>
-);
-const SatelliteIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M13 7 9 3 5 7l4 4"/>
-    <path d="m17 11 4 4-4 4-4-4"/>
-    <path d="m8 12 4 4"/>
-    <path d="m12 8 4 4"/>
-    <circle cx="5" cy="19" r="2"/>
-    <path d="M5 17v-3"/>
-  </svg>
-);
-const DefaultIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"/>
-    <path d="M12 6v6l4 2"/>
-  </svg>
-);
-
-const ICON_MAP: Record<string, React.ReactNode> = {
-  leaf: <LeafIcon />,
-  layers: <LayersIcon />,
-  mountain: <MountainIcon />,
-  satellite: <SatelliteIcon />,
-};
-
 const AREA_ICON_BG: Record<string, string> = {
   leaf: "bg-emerald-100 text-emerald-600",
   layers: "bg-amber-100 text-amber-600",
@@ -197,8 +153,8 @@ export default function HomePage() {
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     <div className="absolute bottom-3 left-3">
-                      <span className={`w-9 h-9 rounded-lg ${AREA_ICON_BG[r.icon] || "bg-gray-100 text-gray-600"} flex items-center justify-center shadow-sm`}>
-                        {ICON_MAP[r.icon] || <DefaultIcon />}
+                      <span className={`w-9 h-9 rounded-lg ${AREA_ICON_BG[r.icon] || "bg-gray-100 text-gray-600"} flex items-center justify-center shadow-sm text-lg`}>
+                        {r.icon === "leaf" ? "🌿" : r.icon === "layers" ? "🪵" : r.icon === "mountain" ? "🏔️" : r.icon === "satellite" ? "🛰️" : "🔬"}
                       </span>
                     </div>
                   </div>
