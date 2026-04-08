@@ -284,7 +284,7 @@ export default function JoinUsPage() {
       <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
         {lt({ zh: "研究生成长路径", en: "Graduate Growth Path" })}
       </h2>
-      <div className="max-w-3xl mb-12">
+      <div className="max-w-3xl mx-auto mb-12">
         <div className="space-y-4">
           {[
             { icon: "🌱", period: { zh: "第一阶段：入学适应期（第1学期）", en: "Phase 1: Orientation (Semester 1)" },
@@ -309,7 +309,7 @@ export default function JoinUsPage() {
       <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
         {lt({ zh: "资源与支持", en: "Resources & Support" })}
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto mb-12">
         {[
           { icon: "💻", title: { zh: "计算与工具", en: "Computing & Tools" },
             desc: { zh: "提供高性能计算资源、专业软件许可、数据分析平台等科研必备工具支持", en: "High-performance computing resources, professional software licenses, and data analysis platforms" } },
