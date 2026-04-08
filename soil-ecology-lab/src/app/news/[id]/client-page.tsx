@@ -65,7 +65,7 @@ export default function NewsDetailClient() {
         </h1>
         {n.content && (
           <div
-            className="prose prose-sm max-w-none text-text-main"
+            className="prose prose-base max-w-none text-text-main"
             dangerouslySetInnerHTML={{ __html: parseContent(String(lt(n.content))) }}
           />
         )}
