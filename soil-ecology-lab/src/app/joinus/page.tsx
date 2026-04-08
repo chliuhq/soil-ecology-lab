@@ -250,7 +250,7 @@ export default function JoinUsPage() {
       <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mb-6 border-b dark:border-gray-700 pb-2">
         {t.joinus.requirements}
       </h2>
-      <div className="max-w-3xl space-y-5 text-text-light dark:text-gray-400 leading-loose text-base">
+      <div className="max-w-3xl mx-auto space-y-5 text-text-light dark:text-gray-400 leading-loose text-base">
         <p>{lt({
           zh: "我们热忱欢迎各专业背景的同学报考！近年来，越来越多生物科学、生物技术、环境科学、地理信息、计算机等专业的同学选择跨考生态学和林业方向。事实证明，跨专业背景往往能带来独特的视角和方法，结合课题组的研究方向，同样能开展出色的研究工作。",
           en: "We warmly welcome applicants from all academic backgrounds! In recent years, more and more students from biology, biotechnology, environmental science, GIS, computer science and other fields have chosen to pursue graduate studies in ecology and forestry. Experience shows that cross-disciplinary backgrounds often bring unique perspectives and methods, enabling equally outstanding research when combined with our lab's directions."
@@ -269,7 +269,7 @@ export default function JoinUsPage() {
       <h2 className="text-2xl font-serif font-semibold text-gray-800 dark:text-gray-200 mt-12 mb-6 border-b dark:border-gray-700 pb-2">
         {lt({ zh: "培养理念", en: "Our Philosophy" })}
       </h2>
-      <div className="max-w-3xl space-y-3 text-text-light dark:text-gray-400 leading-relaxed mb-12">
+      <div className="max-w-3xl mx-auto space-y-5 text-text-light dark:text-gray-400 leading-loose text-base mb-12">
         <p>{lt({
           zh: "课题组秉持「以学生为中心」的培养理念，注重科研能力与综合素质的协同发展。我们相信每位学生都有独特的潜力，导师的角色是引导、支持和激发，而非简单的任务分配。",
           en: "Our lab upholds a student-centered philosophy, emphasizing the synergistic development of research capabilities and comprehensive qualities. We believe every student has unique potential, and the advisor's role is to guide, support, and inspire rather than simply assign tasks."
