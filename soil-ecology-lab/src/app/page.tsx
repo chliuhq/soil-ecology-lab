@@ -154,7 +154,7 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     <div className="absolute bottom-3 left-3">
                       <span className={`w-9 h-9 rounded-lg ${AREA_ICON_BG[r.icon] || "bg-gray-100 text-gray-600"} flex items-center justify-center shadow-sm text-lg`}>
-                        {r.icon === "leaf" ? "🌿" : r.icon === "layers" ? "🪵" : r.icon === "mountain" ? "🏔️" : r.icon === "satellite" ? "🛰️" : "🔬"}
+                        {r.icon === "leaf" ? "🌿" : r.icon === "layers" ? "🪵" : r.icon === "mountain" ? "⛰️" : r.icon === "satellite" ? "🛰️" : "🔬"}
                       </span>
                     </div>
                   </div>
