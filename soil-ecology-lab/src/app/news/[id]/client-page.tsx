@@ -1,7 +1,7 @@
 "use client";
+import { marked } from "marked";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import news from "@/data/news.json";
 
@@ -16,11 +16,19 @@ function extractImages(content: string): string[] {
   return images;
 }
 
-// 将 markdown 图片语法转为 HTML
+// 将 markdown 图片语法转为 figure HTML（居中+标题）
 function renderImages(content: string): string {
   return content.replace(/!\[(.*?)\]\((.*?)\)/g, (_match: string, alt: string, src: string) => {
     return `<figure style="margin:1.5rem 0;text-align:center;"><img src="${src}" alt="${alt}" style="max-width:640px;display:block;margin:0 auto;border-radius:8px;" loading="lazy" /><figcaption style="font-size:0.875rem;color:#666;margin-top:0.5rem;">${alt}</figcaption></figure>`;
   });
+}
+
+// 解析 markdown 内容（支持标题、段落、加粗、列表等）
+function parseContent(content: string): string {
+  // 先处理图片语法为 figure HTML
+  const withFigures = renderImages(content);
+  // 再用 marked 解析剩余 markdown 语法
+  return marked.parse(withFigures) as string;
 }
 
 export default function NewsDetailClient() {
@@ -57,8 +65,8 @@ export default function NewsDetailClient() {
         </h1>
         {n.content && (
           <div
-            className="text-base text-text-main leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: renderImages(String(lt(n.content))) }}
+            className="prose prose-sm max-w-none text-text-main"
+            dangerouslySetInnerHTML={{ __html: parseContent(String(lt(n.content))) }}
           />
         )}
         {n.link && n.link !== `/news/${n.id}` && (
