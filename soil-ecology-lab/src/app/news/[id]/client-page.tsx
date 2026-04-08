@@ -19,7 +19,7 @@ function extractImages(content: string): string[] {
 // 将 markdown 图片语法转为 HTML
 function renderImages(content: string): string {
   return content.replace(/!\[(.*?)\]\((.*?)\)/g, (_match, _alt, src) => {
-    return `<figure style="margin: 1.5rem 0;"><img src="${src}" alt="${_alt}" style="width:100%;border-radius:8px;" loading="lazy" /><figcaption style="text-align:center;font-size:0.875rem;color:#666;margin-top:0.5rem;">${_alt}</figcaption></figure>`;
+    return `<figure style="margin: 1.5rem 0;"><img src="${src}" alt="${alt}" style="width:100%;max-width:640px;display:block;margin:0 auto;border-radius:8px;" loading="lazy" /><figcaption style="text-align:center;font-size:0.875rem;color:#666;margin-top:0.5rem;">${alt}</figcaption></figure>`;
   });
 }
 
