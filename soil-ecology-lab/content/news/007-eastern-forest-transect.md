@@ -11,12 +11,12 @@ link: ''
 
 本次工作围绕森林样带调查开展，团队在不同区域进行野外调查与样品采集，为后续土壤生态学研究和相关数据分析积累基础资料。
 
-![森林样带调查照片](/images/news/2026-09-04/IMG_6186.JPG)
-![森林样带调查照片](/images/news/2026-09-04/IMG_6211.JPG)
-![森林样带调查照片](/images/news/2026-09-04/IMG_6257.JPG)
-![森林样带调查照片](/images/news/2026-09-04/IMG_6435.JPG)
-![森林样带调查照片](/images/news/2026-09-04/IMG_6681.JPG)
-![森林样带调查照片](/images/news/2026-09-04/IMG_6685.JPG)
+![森林样带调查照片](/images/news/2026-09-04/IMG_6186.webp)
+![森林样带调查照片](/images/news/2026-09-04/IMG_6211.webp)
+![森林样带调查照片](/images/news/2026-09-04/IMG_6257.webp)
+![森林样带调查照片](/images/news/2026-09-04/IMG_6435.webp)
+![森林样带调查照片](/images/news/2026-09-04/IMG_6681.webp)
+![森林样带调查照片](/images/news/2026-09-04/IMG_6685.webp)
 
 ## English
 
@@ -24,9 +24,9 @@ From July 25 to September 4, 2026, the team traveled to Inner Mongolia, Heilongj
 
 The work focused on forest transect surveys, with field investigations and sample collection conducted across multiple regions. It provides foundational materials for subsequent soil ecological research and data analysis.
 
-![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6186.JPG)
-![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6211.JPG)
-![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6257.JPG)
-![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6435.JPG)
-![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6681.JPG)
-![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6685.JPG)
+![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6186.webp)
+![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6211.webp)
+![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6257.webp)
+![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6435.webp)
+![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6681.webp)
+![Eastern China forest transect survey](/images/news/2026-09-04/IMG_6685.webp)
