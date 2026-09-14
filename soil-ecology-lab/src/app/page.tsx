@@ -196,10 +196,10 @@ export default function HomePage() {
           </FadeInOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {featured.map((pub, i) => (
-              <FadeInOnScroll key={pub.id} delay={i * 80}>
+              <FadeInOnScroll key={pub.id} delay={i * 80} className="h-full">
                 <Link
                   href={`/publications#pub-${pub.id}`}
-                  className="group block bg-white dark:bg-dark-bg rounded-xl border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:shadow-md transition-all duration-300 p-5"
+                  className="group flex flex-col h-full bg-white dark:bg-dark-bg rounded-xl border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-5"
                 >
                   <div className="flex flex-wrap gap-1.5 mb-3">
                     <span className="text-xs font-medium text-white bg-primary px-2 py-0.5 rounded">{pub.year}</span>
@@ -237,10 +237,10 @@ export default function HomePage() {
               const [year, month, day] = n.date.split("-");
               const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
               return (
-                <FadeInOnScroll key={i} delay={i * 80}>
+                <FadeInOnScroll key={i} delay={i * 80} className="h-full">
                   <Link
                     href={`/news/${n.id}`}
-                    className="group flex gap-0 bg-white dark:bg-dark-surface rounded-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                    className="group flex h-full bg-white dark:bg-dark-surface rounded-xl border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden"
                   >
                     <div className="flex-shrink-0 w-20 bg-emerald-600 flex flex-col items-center justify-center text-white p-3">
                       <span className="text-2xl font-bold leading-none">{parseInt(day)}</span>
