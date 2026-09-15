@@ -48,6 +48,15 @@
 1. `projects.member`、`publications.member`、`students.advisor` 必须与 `content/members/` 中已有的 `id` 完全一致。
 2. 现有成员 id：`huaqing-liu`、`jiahui-yang`、`manyu-luo`（以实际目录为准）。
 
+## 图片压缩规则（强制）
+
+1. 相机/手机原图（JPG，常 >1MB）**禁止**直接在 Markdown 中引用；必须先压缩为 WebP 再引用。
+2. 压缩参数：最长边 1280 px（LANCZOS）、quality 80、method 6、EXIF 方向校正（`ImageOps.exif_transpose`）、转 RGB。
+3. 统一命令（仓库根目录执行）：`python -X utf8 soil-ecology-lab/scripts/compress_images.py <图片目录>`；脚本在同目录生成同名 `.webp`，不删除原图。
+4. Markdown 一律引用 `.webp` 路径（与 007 新闻一致）；原图（`.JPG`/`.jpg`）保留在同目录仅作存档，不被页面引用。
+5. 压缩后单张 webp 应 ≤200 KB（典型 30–150 KB）；超出时检查参数是否被改动。
+6. 修改图片引用后必须运行 `npm --prefix soil-ecology-lab run content` 重新构建，并验证详情页图片正常加载。
+
 ## 验证与发布
 
 1. 列表页验证：`curl -s -L http://localhost:3100/<page>` 输出到文件后用 `findstr` 检查（超长 HTML 勿直接管道匹配）。
