@@ -6,7 +6,7 @@ journal: "Remote Sensing"
 year: 2024
 volume: "16(20)"
 pages: "3842"
-doi: ""
+doi: "10.3390/rs16203842"
 category: ["remote-sensing"]
 member: "jiahui-yang"
 images: []
