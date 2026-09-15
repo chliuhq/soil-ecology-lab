@@ -60,19 +60,19 @@ export default function HomePage() {
   return (
     <>
       {/* ===== Hero: Left content + Right stats panel ===== */}
-      <section className="bg-white border-b border-gray-100">
+      <section className="bg-white dark:bg-dark-bg border-b border-gray-100 dark:border-gray-700">
         <div className="container-main py-14 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 items-end">
             {/* Left: Text content */}
             <FadeInOnScroll>
               <div className="mb-6">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight mb-4">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 dark:text-gray-100 leading-tight mb-4">
                   {t.home.title}
                 </h1>
                 <p className="text-lg md:text-xl text-primary font-medium mb-4">
                   {t.home.subtitle}
                 </p>
-                <p className="text-base md:text-lg text-text-light leading-relaxed max-w-2xl mb-8">
+                <p className="text-base md:text-lg text-text-light dark:text-gray-300 leading-relaxed max-w-2xl mb-8">
                   {t.home.description}
                 </p>
                 <div className="flex flex-wrap gap-3">
@@ -84,7 +84,7 @@ export default function HomePage() {
                   </Link>
                   <Link
                     href="/joinus"
-                    className="px-6 py-2.5 border border-gray-200 text-gray-700 rounded-lg hover:border-primary hover:text-primary transition-colors font-medium text-sm"
+                    className="px-6 py-2.5 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-primary hover:text-primary transition-colors font-medium text-sm"
                   >
                     {t.nav.joinus}
                   </Link>
@@ -115,7 +115,7 @@ export default function HomePage() {
                       className={`text-3xl md:text-4xl font-bold block ${s.highlight ? "text-white" : "text-primary"}`}
                       suffix="+"
                     />
-                    <p className={`text-xs mt-1 ${s.highlight ? "text-emerald-100" : "text-text-light"}`}>{s.label}</p>
+                    <p className={`text-xs mt-1 ${s.highlight ? "text-emerald-100" : "text-text-light dark:text-gray-400"}`}>{s.label}</p>
                   </Link>
                 ))}
               </div>
