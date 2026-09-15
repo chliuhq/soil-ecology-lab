@@ -12,6 +12,14 @@ title_en: 'Congratulations to Manyu Luo on Winning the Third Prize at the 2026 (
 
 祝贺罗曼玉同学和各位指导教师！🎉
 
+![参赛照片 1](/images/news/009-smart-agriculture-award/01F23D5FDF718287AC19D10FCD33E841.jpg)
+
+![参赛照片 2](/images/news/009-smart-agriculture-award/174DEF610D1FF76E05BBE72EC73A66E4.jpg)
+
+![参赛照片 3](/images/news/009-smart-agriculture-award/406CC0FF7CDC5ECA4228BF107C02378A.jpg)
+
+![参赛照片 4](/images/news/009-smart-agriculture-award/D60E88B7935F89111AD72276ACA5753A.jpg)
+
 ## English
 
 Congratulations to Manyu Luo on winning the Third Prize at the 2026 (6th) Smart Agriculture Creative Competition as the first completer (team leader)! The winning entry is titled "Automatic Extraction and Spatiotemporal Evolution Analysis of Cropland Multiple Cropping Index in Southwest Karst Regions," supervised by Dr. Jiahui Yang, Dr. Huaqing Liu, and Yuhan Huang.
@@ -19,3 +27,11 @@ Congratulations to Manyu Luo on winning the Third Prize at the 2026 (6th) Smart 
 The project was selected as a finalist (student category) of the 2026 International Smart Agriculture Creative Competition, representing Guangxi University. It addresses the monitoring needs of cropland intensification in southwest karst regions through automatic extraction and spatiotemporal evolution analysis of the cropland multiple cropping index, providing technical support for regional cropland monitoring and food security.
 
 Congratulations to Manyu Luo and all supervising teachers! 🎉
+
+![Competition photo 1](/images/news/009-smart-agriculture-award/01F23D5FDF718287AC19D10FCD33E841.jpg)
+
+![Competition photo 2](/images/news/009-smart-agriculture-award/174DEF610D1FF76E05BBE72EC73A66E4.jpg)
+
+![Competition photo 3](/images/news/009-smart-agriculture-award/406CC0FF7CDC5ECA4228BF107C02378A.jpg)
+
+![Competition photo 4](/images/news/009-smart-agriculture-award/D60E88B7935F89111AD72276ACA5753A.jpg)
