@@ -56,7 +56,7 @@ const mobileNavItems = [
 
 function ChevronDown({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
     </svg>
   );
@@ -103,6 +103,8 @@ function DropdownMenu({
     >
       <button
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-haspopup="true"
         className={`nav-link text-sm px-2 py-1.5 inline-flex items-center gap-0.5 ${parentActive ? "active" : ""}`}
       >
         {nav[entry.key]}
@@ -198,9 +200,12 @@ export default function Navbar() {
           <div className="relative ml-3">
             <button
               onClick={() => setLangOpen(!langOpen)}
+              aria-expanded={langOpen}
+              aria-haspopup="true"
+              aria-label="Switch language"
               className="text-sm px-3 py-1.5 border border-gray-200 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-1 dark:text-gray-300"
             >
-              {translating ? "⏳" : "🌐"} {localeNames[locale]}
+              🌐 {localeNames[locale]}
               <ChevronDown className={`w-3 h-3 transition-transform ${langOpen ? "rotate-180" : ""}`} />
             </button>
             {langOpen && (

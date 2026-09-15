@@ -119,6 +119,11 @@ a { @apply transition-colors duration-200; }
   @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+/* ===== 无障碍焦点样式 ===== */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-emerald-500;
+}
+
 /* ===== 淡入动画 ===== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
