@@ -68,3 +68,15 @@
 1. 中文输出用 `python -X utf8` 包装脚本，避免 GBK 乱码。
 2. `findstr` 遇到超长单行会报"打开的文件太多"，先 `> 文件` 再搜索。
 3. 路径使用 `path.join`/`Join-Path` 拼接，遵循 `Path Safety.md`；`soil-ecology-lab` 路径为纯 ASCII，无中文风险。
+
+## Git 推送代理问题排查（2026-10-03 经验）
+
+本机全局 Git 配置了代理 `http://127.0.0.1:7890`（Clash），推送失败时按以下顺序排查：
+
+1. **`Failed to connect to 127.0.0.1 port 7890`** → 代理软件未启动，提示用户启动 Clash 后重试。
+2. **`Could not resolve host: github.com`**（绕过代理后）→ 当前网络必须走代理，不能绕过；回到步骤 1。
+3. **`schannel: failed to receive handshake, SSL/TLS connection failed`**（代理已启动）→ 代理 HTTPS 拦截导致证书不受信任，用以下命令本次跳过校验（不改全局配置）：
+   ```cmd
+   git -c http.sslVerify=false push origin main
+   ```
+4. 上述 `-c` 参数仅对当次命令生效，不会修改用户全局 `http.sslVerify` 设置。
