@@ -15,8 +15,8 @@ export default function AnnouncementBar() {
         <span className="animate-pulse">🎓</span>
         <span>
           {lt({
-            zh: "2026年硕士研究生招生进行中",
-            en: "2026 Graduate Student Recruitment Open",
+            zh: "招收2027年研究生和2028年推免生",
+            en: "Recruiting 2027 Graduate Students and 2028 Recommended-Admission Students",
           })}
         </span>
         <Link
