@@ -1,11 +1,31 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLocaleText } from "@/lib/i18n-context";
+
+const STORAGE_KEY = "announcement-dismissed";
 
 export default function AnnouncementBar() {
   const lt = useLocaleText();
   const [visible, setVisible] = useState(true);
+
+  // 读取持久化状态：若用户已关闭过公告，则不再显示（避免 hydration 不一致，放在 effect 中）
+  useEffect(() => {
+    try {
+      if (localStorage.getItem(STORAGE_KEY) === "1") setVisible(false);
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  const dismiss = () => {
+    setVisible(false);
+    try {
+      localStorage.setItem(STORAGE_KEY, "1");
+    } catch {
+      // localStorage unavailable (e.g. private mode) — just hide for this session
+    }
+  };
 
   if (!visible) return null;
 
@@ -26,7 +46,7 @@ export default function AnnouncementBar() {
           {lt({ zh: "了解详情 →", en: "Learn More →" })}
         </Link>
         <button
-          onClick={() => setVisible(false)}
+          onClick={dismiss}
           className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors text-lg leading-none"
           aria-label="Close announcement"
         >

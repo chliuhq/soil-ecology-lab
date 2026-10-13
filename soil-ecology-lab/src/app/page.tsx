@@ -25,9 +25,12 @@ const JOURNAL_COLORS: Record<string, { bg: string; text: string }> = {
 const DEFAULT_JOURNAL_COLOR = { bg: "bg-gray-100 dark:bg-gray-800", text: "text-gray-600 dark:text-gray-400" };
 
 const PARTNERS = [
-  { name: { zh: "中国科学院水土保持研究所", en: "Institute of Soil and Water Conservation, CAS" }, url: "http://www.iswc.ac.cn/" },
-  { name: { zh: "西北农林科技大学", en: "Northwest A&F University" }, url: "https://www.nwsuaf.edu.cn/" },
-  { name: { zh: "山东农业大学", en: "Shandong Agricultural University" }, url: "https://www.sdau.edu.cn/" },
+  { abbr: "GXU", name: { zh: "广西大学", en: "Guangxi University" }, url: "https://www.gxu.edu.cn/", color: "from-green-600 to-emerald-600" },
+  { abbr: "ISWC", name: { zh: "中国科学院水土保持研究所", en: "Institute of Soil and Water Conservation, CAS" }, url: "http://www.iswc.ac.cn/", color: "from-amber-600 to-yellow-600" },
+  { abbr: "NWAFU", name: { zh: "西北农林科技大学", en: "Northwest A&F University" }, url: "https://www.nwsuaf.edu.cn/", color: "from-blue-600 to-cyan-600" },
+  { abbr: "SDAU", name: { zh: "山东农业大学", en: "Shandong Agricultural University" }, url: "https://www.sdau.edu.cn/", color: "from-rose-600 to-pink-600" },
+  { abbr: "CAF-RCF", name: { zh: "中国林科院热带林业研究中心", en: "Research Center of Tropical Forestry, CAF" }, url: "https://www.caf.ac.cn/", color: "from-emerald-600 to-teal-600" },
+  { abbr: "HUNAU", name: { zh: "湖南农业大学", en: "Hunan Agricultural University" }, url: "https://www.hunau.edu.cn/", color: "from-violet-600 to-purple-600" },
 ];
 
 const AREA_THEME: Record<string, string> = {
@@ -263,24 +266,112 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== Team Snapshot ===== */}
+      <section className="py-14 bg-white dark:bg-dark-surface">
+        <div className="container-main">
+          <FadeInOnScroll>
+            <div className="flex items-end justify-between mb-8">
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100">
+                  {lt({ zh: "团队速览", en: "Our Team" })}
+                </h2>
+                <div className="h-1 w-12 bg-primary rounded mt-2" />
+              </div>
+              <Link href="/people" className="text-sm text-primary hover:underline font-medium shrink-0">
+                {lt({ zh: "查看全部成员 →", en: "View all members →" })}
+              </Link>
+            </div>
+          </FadeInOnScroll>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1.2fr] gap-4">
+            {/* PI cards */}
+            {members.pi.map((m, i) => (
+              <FadeInOnScroll key={m.id} delay={i * 80} className="h-full">
+                <Link
+                  href={`/people#${m.id}`}
+                  className="group flex items-center gap-4 h-full bg-gray-50 dark:bg-dark-bg rounded-xl border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-5"
+                >
+                  <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-dark-surface">
+                    {m.photo && (
+                      <Image
+                        src={m.photo}
+                        alt={lt(m.name)}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        unoptimized
+                      />
+                    )}
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-gray-900 dark:text-gray-100 group-hover:text-primary transition-colors">
+                      {lt(m.name)}
+                    </h3>
+                    <p className="text-xs text-primary font-medium mt-0.5">{lt(m.title)}</p>
+                    <p className="text-xs text-text-light dark:text-gray-400 mt-1 line-clamp-2">{lt(m.department)}</p>
+                  </div>
+                </Link>
+              </FadeInOnScroll>
+            ))}
+            {/* Students grid */}
+            <FadeInOnScroll delay={160} className="h-full">
+              <div className="h-full bg-gray-50 dark:bg-dark-bg rounded-xl border border-gray-100 dark:border-gray-700 p-5">
+                <p className="text-xs font-semibold text-text-light dark:text-gray-400 uppercase tracking-wide mb-3">
+                  {lt({ zh: `研究生 · ${members.students.length} 人`, en: `Graduate Students · ${members.students.length}` })}
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {members.students.map((s) => (
+                    <Link
+                      key={s.id}
+                      href={`/people#${s.id}`}
+                      className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:text-primary transition-colors group"
+                    >
+                      <span className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 flex items-center justify-center text-[10px] font-bold shrink-0">
+                        {lt(s.name).slice(0, 1)}
+                      </span>
+                      <span className="text-xs text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors truncate">
+                        {lt(s.name)}
+                      </span>
+                    </Link>
+                  ))}
+                  <Link
+                    href="/joinus"
+                    className="flex items-center justify-center px-2.5 py-1.5 rounded-lg border border-dashed border-emerald-300 dark:border-emerald-700 text-xs text-primary hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors"
+                  >
+                    {lt({ zh: "等你加入 +", en: "Join us +" })}
+                  </Link>
+                </div>
+              </div>
+            </FadeInOnScroll>
+          </div>
+        </div>
+      </section>
+
       {/* ===== Partner Institutions ===== */}
       <section className="py-12 bg-white dark:bg-dark-surface border-t border-gray-100 dark:border-gray-700">
         <div className="container-main">
           <FadeInOnScroll>
-            <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300 text-center mb-6">
+            <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300 text-center mb-8">
               {lt({ zh: "合作单位", en: "Partner Institutions" })}
             </h2>
           </FadeInOnScroll>
-          <div className="flex flex-wrap justify-center items-center gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {PARTNERS.map((p, i) => (
-              <FadeInOnScroll key={i} delay={i * 60}>
+              <FadeInOnScroll key={p.abbr} delay={i * 60}>
                 <a
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 bg-gray-50 dark:bg-dark-bg rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400 hover:text-primary hover:border-primary/40 hover:shadow-sm transition-all duration-200"
+                  className="group flex flex-col items-center gap-3 p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-dark-bg hover:border-primary/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                  title={lt(p.name)}
                 >
-                  {lt(p.name)}
+                  <span
+                    className={`w-14 h-14 rounded-full bg-gradient-to-br ${p.color} flex items-center justify-center text-white font-bold text-sm shadow-sm grayscale group-hover:grayscale-0 transition-all duration-300`}
+                  >
+                    {p.abbr}
+                  </span>
+                  <span className="text-xs text-center text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors leading-snug line-clamp-2">
+                    {lt(p.name)}
+                  </span>
                 </a>
               </FadeInOnScroll>
             ))}

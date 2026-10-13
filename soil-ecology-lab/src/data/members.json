@@ -176,6 +176,74 @@
         "en": "Fuzhou University"
       },
       "advisor": "jiahui-yang"
+    },
+    {
+      "id": "shuangli-hu",
+      "name": {
+        "zh": "胡双力",
+        "en": "Shuangli Hu"
+      },
+      "major": {
+        "zh": "生态学（学硕）",
+        "en": "Ecology (Academic Master)"
+      },
+      "enrollment": "2026.09",
+      "undergraduate": {
+        "zh": "玉溪师范学院",
+        "en": "Yuxi Normal University"
+      },
+      "advisor": "huaqing-liu"
+    },
+    {
+      "id": "shuwen-jiang",
+      "name": {
+        "zh": "姜舒文",
+        "en": "Shuwen Jiang"
+      },
+      "major": {
+        "zh": "资源利用与植物保护（专硕）",
+        "en": "Resource Utilization and Plant Protection (Professional Master)"
+      },
+      "enrollment": "2026.09",
+      "undergraduate": {
+        "zh": "西北农林科技大学",
+        "en": "Northwest A&F University"
+      },
+      "advisor": "jiahui-yang"
+    },
+    {
+      "id": "xu-zhang",
+      "name": {
+        "zh": "张旭",
+        "en": "Xu Zhang"
+      },
+      "major": {
+        "zh": "农业资源与环境（学硕）",
+        "en": "Agricultural Resources and Environment (Academic Master)"
+      },
+      "enrollment": "2026.09",
+      "undergraduate": {
+        "zh": "湖南农业大学",
+        "en": "Hunan Agricultural University"
+      },
+      "advisor": "jiahui-yang"
+    },
+    {
+      "id": "zhijie-huang",
+      "name": {
+        "zh": "黄汁杰",
+        "en": "Zhijie Huang"
+      },
+      "major": {
+        "zh": "林业（专硕）",
+        "en": "Forestry (Professional Master)"
+      },
+      "enrollment": "2026.09",
+      "undergraduate": {
+        "zh": "长江师范学院",
+        "en": "Yangtze Normal University"
+      },
+      "advisor": "huaqing-liu"
     }
   ],
   "alumni": []

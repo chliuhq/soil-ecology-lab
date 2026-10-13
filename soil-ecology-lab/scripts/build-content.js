@@ -12,6 +12,7 @@ const { marked } = require("marked");
 
 const CONTENT_DIR = path.join(__dirname, "..", "content");
 const DATA_DIR = path.join(__dirname, "..", "src", "data");
+const PUBLIC_DIR = path.join(__dirname, "..", "public");
 
 // ── 工具函数 ──────────────────────────────────────────────
 function readMdFiles(dir) {
@@ -149,10 +150,20 @@ function buildPublications() {
   items.sort((a, b) => a.year - b.year || a.id - b.id);
   return items.map((item, idx) => {
     const summary = parsePubSummary(item._content);
-    const images = (item.images || []).map((img) => ({
-      src: img.src,
-      caption: { zh: img.caption_zh || "", en: img.caption_en || "" },
-    }));
+    const images = (item.images || [])
+      .map((img) => ({
+        src: img.src,
+        caption: { zh: img.caption_zh || "", en: img.caption_en || "" },
+      }))
+      .filter((img) => {
+        // 过滤 public/ 下不存在的图片，避免页面 404 破图
+        if (!img.src) return false;
+        const exists = fs.existsSync(path.join(PUBLIC_DIR, img.src.replace(/^\//, "")));
+        if (!exists) {
+          console.warn(`  ⚠ 图片缺失已跳过: ${item._file} -> ${img.src}`);
+        }
+        return exists;
+      });
     return {
       id: idx + 1,
       authors: item.authors,
@@ -251,7 +262,6 @@ function buildKnowledgeBase() {
   readMdFiles(path.join(CONTENT_DIR, "publications")).forEach((d) => {
     s.push(`- ${d.authors}: "${d.title}". ${d.journal}, ${d.year}. DOI: ${d.doi || "N/A"}`);
   });
-
   // 项目
   s.push("\n## 科研项目 / Projects");
   readMdFiles(path.join(CONTENT_DIR, "projects")).forEach((d) => {

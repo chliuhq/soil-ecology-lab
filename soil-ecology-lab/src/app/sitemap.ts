@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/people`, changeFrequency: "monthly" as const, priority: 0.8, lastModified: now },
     { url: `${BASE}/research`, changeFrequency: "monthly" as const, priority: 0.8, lastModified: now },
     { url: `${BASE}/publications`, changeFrequency: "weekly" as const, priority: 0.9, lastModified: now },
+    { url: `${BASE}/gallery`, changeFrequency: "monthly" as const, priority: 0.6, lastModified: now },
     { url: `${BASE}/projects`, changeFrequency: "monthly" as const, priority: 0.7, lastModified: now },
     { url: `${BASE}/news`, changeFrequency: "weekly" as const, priority: 0.7, lastModified: now },
     { url: `${BASE}/resources`, changeFrequency: "monthly" as const, priority: 0.6, lastModified: now },

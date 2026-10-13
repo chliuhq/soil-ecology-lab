@@ -33,6 +33,7 @@ export default function PublicationsPage() {
   const lt = useLocaleText();
   const [filter, setFilter] = useState<string>("all");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
+  const [query, setQuery] = useState<string>("");
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
   const [citeId, setCiteId] = useState<number | null>(null);
@@ -46,9 +47,17 @@ export default function PublicationsPage() {
 
   const sorted = [...publications].sort((a, b) => b.year - a.year || b.id - a.id);
   const years = [...new Set(sorted.map((p) => p.year))];
+  const q = query.trim().toLowerCase();
   const filtered = sorted
     .filter((p) => categoryFilter === "all" || (Array.isArray(p.category) && p.category.includes(categoryFilter)))
-    .filter((p) => filter === "all" || p.year === Number(filter));
+    .filter((p) => filter === "all" || p.year === Number(filter))
+    .filter(
+      (p) =>
+        !q ||
+        p.title.toLowerCase().includes(q) ||
+        (p.authors || "").toLowerCase().includes(q) ||
+        (p.journal || "").toLowerCase().includes(q)
+    );
 
   const activeCategory = research.find((r) => r.id === categoryFilter);
 
@@ -62,6 +71,34 @@ export default function PublicationsPage() {
     <div className="container-main py-16">
       <h1 className="section-title text-center">{t.publications.title}</h1>
       <div className="h-1 w-12 bg-primary mx-auto mb-8 rounded" />
+
+      {/* 搜索框 */}
+      <div className="relative max-w-lg mx-auto mb-6">
+        <svg
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder={lt({ zh: "搜索论文标题、作者或期刊…", en: "Search by title, author, or journal…" })}
+          className="w-full pl-11 pr-10 py-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/60 border border-transparent focus:border-primary/40"
+        />
+        {query && (
+          <button
+            onClick={() => setQuery("")}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center rounded-full bg-gray-300/70 dark:bg-gray-600/70 text-gray-600 dark:text-gray-300 hover:bg-gray-400/80 transition-colors"
+            aria-label="Clear search"
+          >
+            &#10005;
+          </button>
+        )}
+      </div>
 
       {/* 方向筛选 */}
       <div className="flex flex-wrap gap-2 justify-center mb-6">
@@ -129,8 +166,27 @@ export default function PublicationsPage() {
 
       {/* 论文列表 */}
       <div className="max-w-4xl mx-auto">
+        {filtered.length === 0 && (
+          <div className="text-center py-16">
+            <p className="text-gray-400 text-4xl mb-3">&#128269;</p>
+            <p className="text-text-light dark:text-gray-400">
+              {lt({ zh: "没有找到匹配的论文", en: "No papers match your search" })}
+            </p>
+            <button
+              onClick={() => { setQuery(""); setFilter("all"); setCategoryFilter("all"); }}
+              className="mt-3 text-sm text-primary hover:underline"
+            >
+              {lt({ zh: "清除全部筛选", en: "Clear all filters" })}
+            </button>
+          </div>
+        )}
+        {q && filtered.length > 0 && (
+          <p className="text-center text-sm text-text-light dark:text-gray-400 mb-8">
+            {lt({ zh: `找到 ${filtered.length} 篇匹配论文`, en: `${filtered.length} matching paper${filtered.length > 1 ? "s" : ""} found` })}
+          </p>
+        )}
         {years
-          .filter((y) => filter === "all" || y === Number(filter))
+          .filter((y) => filtered.some((p) => p.year === y))
           .map((year) => (
             <div key={year} className="mb-10">
               <h2 className="text-2xl font-serif font-bold text-gray-800 dark:text-gray-200 mb-4 border-b dark:border-gray-700 pb-2">

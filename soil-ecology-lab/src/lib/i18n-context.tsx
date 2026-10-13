@@ -91,7 +91,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     if (isNativeLocale(l)) setTranslatedDict(null);
   };
 
-  const currentDict = isNativeLocale(locale) ? dicts[locale] : (translatedDict || dicts.zh);
+  const currentDict = isNativeLocale(locale) ? dicts[locale] : (translatedDict || dicts.en);
 
   // 翻译动态文本（{zh, en} 对象）
   const translateText = useCallback((obj: { zh: string; en: string }): string => {

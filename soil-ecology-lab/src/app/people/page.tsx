@@ -19,7 +19,7 @@ export default function PeoplePage() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         {members.pi.map((m) => (
-          <div key={m.id} className="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-md transition-shadow">
+          <div key={m.id} id={m.id} className="scroll-mt-24 bg-white border border-gray-100 rounded-xl p-6 hover:shadow-md transition-shadow">
             <div className="flex gap-5 items-start">
               {/* 头像 */}
               <div className="w-28 h-28 rounded-full bg-green-100 overflow-hidden shrink-0 border-2 border-green-200">
@@ -104,7 +104,7 @@ export default function PeoplePage() {
             {members.students.map((s) => {
               const advisor = members.pi.find((m) => m.id === s.advisor);
               return (
-                <div key={s.id} className="bg-white border border-gray-100 rounded-xl p-5">
+                <div key={s.id} id={s.id} className="scroll-mt-24 bg-white border border-gray-100 rounded-xl p-5">
                   <h3 className="text-lg font-bold text-gray-900">{lt(s.name)}</h3>
                   <p className="text-base text-primary mt-1">{lt(s.major)}</p>
                   <p className="text-sm text-text-light mt-1">

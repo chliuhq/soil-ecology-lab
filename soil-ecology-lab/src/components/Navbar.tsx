@@ -38,6 +38,7 @@ const desktopNav: NavEntry[] = [
       { key: "publications", href: "/publications" },
     ],
   },
+  { type: "link", key: "gallery", href: "/gallery" },
   { type: "link", key: "resources", href: "/resources" },
   { type: "link", key: "joinus", href: "/joinus" },
   { type: "link", key: "contact", href: "/contact" },
@@ -49,6 +50,7 @@ const mobileNavItems = [
   { key: "research", href: "/research" },
   { key: "publications", href: "/publications" },
   { key: "projects", href: "/projects" },
+  { key: "gallery", href: "/gallery" },
   { key: "resources", href: "/resources" },
   { key: "joinus", href: "/joinus" },
   { key: "contact", href: "/contact" },
@@ -205,7 +207,15 @@ export default function Navbar() {
               aria-label="Switch language"
               className="text-sm px-3 py-1.5 border border-gray-200 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-1 dark:text-gray-300"
             >
-              🌐 {localeNames[locale]}
+              {translating ? (
+                <svg className="w-4 h-4 animate-spin text-primary" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                </svg>
+              ) : (
+                <span>🌐</span>
+              )}
+              <span>{translating ? "…" : localeNames[locale]}</span>
               <ChevronDown className={`w-3 h-3 transition-transform ${langOpen ? "rotate-180" : ""}`} />
             </button>
             {langOpen && (
