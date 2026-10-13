@@ -1,0 +1,5 @@
+# 存档原图:页面仅引用 .webp,原图保留在 git 作存档,不部署到 Vercel
+# (若 Vercel Root Directory = soil-ecology-lab,由该目录下的 .vercelignore 生效)
+soil-ecology-lab/public/images/news/**/*.jpg
+soil-ecology-lab/public/images/news/**/*.JPG
+soil-ecology-lab/public/images/news/**/*.jpeg

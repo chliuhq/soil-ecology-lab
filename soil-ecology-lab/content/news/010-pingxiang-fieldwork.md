@@ -13,7 +13,7 @@ link: ''
 
 凭祥多树种混交实验样地由中国林业科学研究院热带林业研究中心建立,广西大学研究团队在此基础上进行了样方划定和样地调查工作。该样地位于广西壮族自治区凭祥市境内,旨在研究不同树种混交模式对土壤理化性质、微生物群落及生态系统功能的影响,本团队同时关注混交林对水分和碳素运移的影响。样地内种植有多种乡土树种和经济树种,为开展森林土壤生态学研究提供了理想的试验平台。
 
-![样地标志牌](/images/news/2026-04-08-01.jpg)
+![样地标志牌](/images/news/2026-04-08-01.webp)
 
 ## 调查内容
 
@@ -23,13 +23,13 @@ link: ''
 
 团队成员按照标准化采样方案,在样地内不同树种混交区域进行了系统的土壤剖面挖掘和样品采集。采集的土壤样品将用于分析土壤物理结构、化学性质以及微生物群落组成,为后续研究提供基础数据支撑。
 
-![样地照片](/images/news/2026-04-08-02.jpg)
+![样地照片](/images/news/2026-04-08-02.webp)
 
 ### 样地维护
 
 调查期间,团队还对样地的标识牌、围栏等设施进行了检查和维护,确保样地长期监测工作的顺利开展。全体成员分工协作,高效完成了各项野外调查任务。
 
-![土壤剖面](/images/news/2026-04-08-03.jpg)
+![土壤剖面](/images/news/2026-04-08-03.webp)
 
 ## 后续工作
 
@@ -45,7 +45,7 @@ From April 4 to 7, 2026, Dr. Huaqing Liu of Guangxi University led a research te
 
 The Pingxiang multi-species mixed forest experimental plot was established by the Research Center of Tropical Forestry of the Chinese Academy of Forestry. The research team from Guangxi University conducted quadrat delineation and plot surveys on this basis. Located in Pingxiang City, Guangxi, the site aims to investigate the effects of different tree species mixing patterns on soil physicochemical properties, microbial communities, and ecosystem functions. Our team also focuses on the impacts of mixed forests on water and carbon transport. The plot contains a variety of native and economically important tree species, providing an ideal experimental platform for forest soil ecology research.
 
-![Plot Signboard](/images/news/2026-04-08-01.jpg)
+![Plot Signboard](/images/news/2026-04-08-01.webp)
 
 ## Survey Content
 
@@ -55,13 +55,13 @@ The field survey primarily consisted of soil sample collection and plot maintena
 
 Following standardized sampling protocols, team members systematically excavated soil profiles and collected samples across different tree species mixing zones within the plot. These soil samples will be used to analyze soil physical structure, chemical properties, and microbial community composition, providing foundational data for subsequent research.
 
-![Field Photos](/images/news/2026-04-08-02.jpg)
+![Field Photos](/images/news/2026-04-08-02.webp)
 
 ### Plot Maintenance
 
 During the survey, the team also inspected and maintained the plot's signage, fences, and other facilities to ensure the smooth progress of long-term monitoring efforts. All members worked collaboratively and efficiently to complete the fieldwork tasks.
 
-![Soil Profile](/images/news/2026-04-08-03.jpg)
+![Soil Profile](/images/news/2026-04-08-03.webp)
 
 ## Follow-up Work
 

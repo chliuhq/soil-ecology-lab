@@ -1,0 +1,4 @@
+# 存档原图:页面仅引用 .webp,原图保留在 git 作存档,不部署到 Vercel
+public/images/news/**/*.jpg
+public/images/news/**/*.JPG
+public/images/news/**/*.jpeg
