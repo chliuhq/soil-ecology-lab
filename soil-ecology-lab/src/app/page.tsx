@@ -6,6 +6,7 @@ import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FieldMoments from "@/components/FieldMoments";
+import SectionHeader from "@/components/SectionHeader";
 import publications from "@/data/publications.json";
 import research from "@/data/research.json";
 import news from "@/data/news.json";
@@ -26,8 +27,8 @@ const JOURNAL_COLORS: Record<string, { bg: string; text: string }> = {
 const DEFAULT_JOURNAL_COLOR = { bg: "bg-gray-100 dark:bg-gray-800", text: "text-gray-600 dark:text-gray-400" };
 
 const PARTNERS = [
-  { abbr: "GXU", name: { zh: "广西大学", en: "Guangxi University" }, url: "https://www.gxu.edu.cn/", color: "from-green-600 to-emerald-600" },
-  { abbr: "ISWC", name: { zh: "中国科学院水土保持研究所", en: "Institute of Soil and Water Conservation, CAS" }, url: "http://www.iswc.ac.cn/", color: "from-amber-600 to-yellow-600" },
+  { abbr: "GXU", name: { zh: "广西大学", en: "Guangxi University" }, url: "https://www.gxu.edu.cn/", color: "from-primary to-primary-dark" },
+  { abbr: "ISWC", name: { zh: "中国科学院水土保持研究所", en: "Institute of Soil and Water Conservation, CAS" }, url: "http://www.iswc.ac.cn/", color: "from-accent to-rust" },
   { abbr: "NWAFU", name: { zh: "西北农林科技大学", en: "Northwest A&F University" }, url: "https://www.nwsuaf.edu.cn/", color: "from-blue-600 to-cyan-600" },
   { abbr: "SDAU", name: { zh: "山东农业大学", en: "Shandong Agricultural University" }, url: "https://www.sdau.edu.cn/", color: "from-rose-600 to-pink-600" },
   { abbr: "CAF-RCF", name: { zh: "中国林科院热带林业研究中心", en: "Research Center of Tropical Forestry, CAF" }, url: "https://www.caf.ac.cn/", color: "from-emerald-600 to-teal-600" },
@@ -63,16 +64,28 @@ export default function HomePage() {
   return (
     <>
       {/* ===== Hero: Left content + Right stats panel ===== */}
-      <section className="bg-white dark:bg-dark-bg border-b border-gray-100 dark:border-gray-700">
-        <div className="container-main py-14 md:py-20">
+      <section className="relative overflow-hidden border-b border-gray-200/60 dark:border-gray-700/60 bg-paper dark:bg-dark-bg">
+        {/* 网格线底纹 + 右侧柔光 */}
+        <div className="absolute inset-0 grid-lines opacity-60 dark:opacity-25" aria-hidden="true" />
+        <div
+          className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-accent-soft/25 dark:bg-accent/10 blur-3xl"
+          aria-hidden="true"
+        />
+        {/* 底部土壤层理条带 */}
+        <div className="absolute bottom-0 inset-x-0 soil-strata h-[6px]" aria-hidden="true" />
+
+        <div className="container-main relative py-16 md:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 items-end">
             {/* Left: Text content */}
             <FadeInOnScroll>
               <div className="mb-6">
+                <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-accent mb-3">
+                  Guangxi University · Soil Ecology Lab
+                </p>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 dark:text-gray-100 leading-tight mb-4">
                   {t.home.title}
                 </h1>
-                <p className="text-lg md:text-xl text-primary font-medium mb-4">
+                <p className="text-lg md:text-xl text-primary dark:text-accent-soft font-medium mb-4">
                   {t.home.subtitle}
                 </p>
                 <p className="text-base md:text-lg text-text-light dark:text-gray-300 leading-relaxed max-w-2xl mb-8">
@@ -81,13 +94,13 @@ export default function HomePage() {
                 <div className="flex flex-wrap gap-3">
                   <Link
                     href="/research"
-                    className="px-6 py-2.5 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-medium text-sm"
+                    className="btn-sheen px-6 py-2.5 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-medium text-sm shadow-sm"
                   >
                     {t.home.learnMore}
                   </Link>
                   <Link
                     href="/joinus"
-                    className="px-6 py-2.5 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-primary hover:text-primary transition-colors font-medium text-sm"
+                    className="px-6 py-2.5 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-primary hover:text-primary dark:hover:border-accent-soft dark:hover:text-accent-soft transition-colors font-medium text-sm bg-paper-card/60 dark:bg-dark-surface/60 backdrop-blur-sm"
                   >
                     {t.nav.joinus}
                   </Link>
@@ -107,18 +120,18 @@ export default function HomePage() {
                   <Link
                     key={i}
                     href={s.href}
-                    className={`rounded-xl p-5 text-center block transition-all hover:-translate-y-0.5 hover:shadow-md ${
+                    className={`rounded-xl p-5 text-center block transition-all hover:-translate-y-0.5 ${
                       s.highlight
-                        ? "bg-primary text-white shadow-md"
-                        : "bg-gray-50 dark:bg-dark-surface border border-gray-100 dark:border-gray-700 hover:border-primary/30"
+                        ? "bg-gradient-to-br from-primary to-primary-dark text-white shadow-card-hover"
+                        : "bg-paper-card dark:bg-dark-surface border border-gray-200 dark:border-gray-700 shadow-card hover:shadow-card-hover hover:border-accent/40"
                     }`}
                   >
                     <AnimatedCounter
                       target={s.num}
-                      className={`text-3xl md:text-4xl font-bold block ${s.highlight ? "text-white" : "text-primary"}`}
+                      className={`text-3xl md:text-4xl font-bold block ${s.highlight ? "text-white" : "text-primary dark:text-accent-soft"}`}
                       suffix="+"
                     />
-                    <p className={`text-xs mt-1 ${s.highlight ? "text-emerald-100" : "text-text-light dark:text-gray-400"}`}>{s.label}</p>
+                    <p className={`text-xs mt-1 ${s.highlight ? "text-accent-soft" : "text-text-light dark:text-gray-400"}`}>{s.label}</p>
                   </Link>
                 ))}
               </div>
@@ -130,24 +143,19 @@ export default function HomePage() {
       {/* ===== Research Areas ===== */}
       <section className="py-14 bg-bg-light dark:bg-dark-bg">
         <div className="container-main">
-          <FadeInOnScroll>
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <h2 className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100">{t.home.researchAreas}</h2>
-                <div className="h-1 w-12 bg-primary rounded mt-2" />
-              </div>
-              <Link href="/research" className="text-sm text-primary hover:underline font-medium shrink-0">
-                {lt({ zh: "查看全部 →", en: "View all →" })}
-              </Link>
-            </div>
-          </FadeInOnScroll>
+          <SectionHeader
+            eyebrow="Research"
+            title={t.home.researchAreas}
+            moreHref="/research"
+            moreLabel={{ zh: "查看全部", en: "View all" }}
+          />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {research.map((r, i) => (
               <FadeInOnScroll key={r.id} delay={i * 80}>
                 <div>
                 <Link
                   href={`/research#${r.id}`}
-                  className="group block bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                  className="group block bg-paper-card dark:bg-dark-surface border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
                 >
                   {/* Image area with color gradient */}
                   <div className={`relative h-28 bg-gradient-to-br ${AREA_THEME[r.icon] || "from-gray-50 to-gray-100"} overflow-hidden`}>
@@ -172,7 +180,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href={`/publications?category=${r.id}`}
-                  className="block text-xs text-primary hover:underline mt-1.5 px-1"
+                  className="block text-xs text-primary dark:text-accent-soft hover:text-accent hover:underline mt-1.5 px-1 transition-colors"
                 >
                   {lt({ zh: "查看相关论文 →", en: "View papers →" })}
                 </Link>
@@ -184,25 +192,20 @@ export default function HomePage() {
       </section>
 
       {/* ===== Featured Publications ===== */}
-      <section className="py-14 bg-white dark:bg-dark-surface">
+      <section className="py-14 bg-paper-card dark:bg-dark-surface">
         <div className="container-main">
-          <FadeInOnScroll>
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <h2 className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100">{t.home.featuredPubs}</h2>
-                <div className="h-1 w-12 bg-primary rounded mt-2" />
-              </div>
-              <Link href="/publications" className="text-sm text-primary hover:underline font-medium shrink-0">
-                {t.home.viewAllPubs} →
-              </Link>
-            </div>
-          </FadeInOnScroll>
+          <SectionHeader
+            eyebrow="Publications"
+            title={t.home.featuredPubs}
+            moreHref="/publications"
+            moreLabel={{ zh: "查看全部论文", en: "View All Publications" }}
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {featured.map((pub, i) => (
               <FadeInOnScroll key={pub.id} delay={i * 80} className="h-full">
                 <Link
                   href={`/publications#pub-${pub.id}`}
-                  className="group flex flex-col h-full bg-white dark:bg-dark-bg rounded-xl border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-5"
+                  className="group flex flex-col h-full bg-paper dark:bg-dark-bg rounded-xl border border-gray-200 dark:border-gray-700 hover:border-accent/50 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 p-5"
                 >
                   <div className="flex flex-wrap gap-1.5 mb-3">
                     <span className="text-xs font-medium text-white bg-primary px-2 py-0.5 rounded">{pub.year}</span>
@@ -224,17 +227,12 @@ export default function HomePage() {
       {/* ===== Latest News ===== */}
       <section className="py-14 bg-bg-light dark:bg-dark-bg">
         <div className="container-main">
-          <FadeInOnScroll>
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <h2 className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100">{t.home.latestNews}</h2>
-                <div className="h-1 w-12 bg-primary rounded mt-2" />
-              </div>
-              <Link href="/news" className="text-sm text-primary hover:underline font-medium shrink-0">
-                {t.home.viewAllNews} →
-              </Link>
-            </div>
-          </FadeInOnScroll>
+          <SectionHeader
+            eyebrow="News"
+            title={t.home.latestNews}
+            moreHref="/news"
+            moreLabel={{ zh: "查看全部", en: "View All" }}
+          />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {latestNews.map((n: any, i: number) => {
               const [year, month, day] = n.date.split("-");
@@ -243,9 +241,9 @@ export default function HomePage() {
                 <FadeInOnScroll key={i} delay={i * 80} className="h-full">
                   <Link
                     href={`/news/${n.id}`}
-                    className="group flex h-full bg-white dark:bg-dark-surface rounded-xl border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden"
+                    className="group flex h-full bg-paper-card dark:bg-dark-surface rounded-xl border border-gray-200 dark:border-gray-700 hover:border-accent/50 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 overflow-hidden"
                   >
-                    <div className="flex-shrink-0 w-20 bg-emerald-600 flex flex-col items-center justify-center text-white p-3">
+                    <div className="flex-shrink-0 w-20 bg-gradient-to-b from-primary to-primary-dark flex flex-col items-center justify-center text-white p-3">
                       <span className="text-2xl font-bold leading-none">{parseInt(day)}</span>
                       <span className="text-xs font-medium uppercase mt-1">{monthNames[parseInt(month) - 1]}</span>
                       <span className="text-[10px] opacity-70 mt-0.5">{year}</span>
@@ -267,30 +265,23 @@ export default function HomePage() {
       </section>
 
       {/* ===== Team Snapshot ===== */}
-      <section className="py-14 bg-white dark:bg-dark-surface">
+      <section className="py-14 bg-paper-card dark:bg-dark-surface">
         <div className="container-main">
-          <FadeInOnScroll>
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <h2 className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100">
-                  {lt({ zh: "团队速览", en: "Our Team" })}
-                </h2>
-                <div className="h-1 w-12 bg-primary rounded mt-2" />
-              </div>
-              <Link href="/people" className="text-sm text-primary hover:underline font-medium shrink-0">
-                {lt({ zh: "查看全部成员 →", en: "View all members →" })}
-              </Link>
-            </div>
-          </FadeInOnScroll>
+          <SectionHeader
+            eyebrow="People"
+            title={{ zh: "团队速览", en: "Our Team" }}
+            moreHref="/people"
+            moreLabel={{ zh: "查看全部成员", en: "View all members" }}
+          />
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1.2fr] gap-4">
             {/* PI cards */}
             {members.pi.map((m, i) => (
               <FadeInOnScroll key={m.id} delay={i * 80} className="h-full">
                 <Link
                   href={`/people#${m.id}`}
-                  className="group flex items-center gap-4 h-full bg-gray-50 dark:bg-dark-bg rounded-xl border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-5"
+                  className="group flex items-center gap-4 h-full bg-paper dark:bg-dark-bg rounded-xl border border-gray-200 dark:border-gray-700 hover:border-accent/50 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 p-5"
                 >
-                  <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-dark-surface">
+                  <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-accent-soft dark:border-accent/50 bg-accent-soft/20 dark:bg-dark-surface">
                     {m.photo && (
                       <Image
                         src={m.photo}
@@ -306,7 +297,7 @@ export default function HomePage() {
                     <h3 className="font-bold text-gray-900 dark:text-gray-100 group-hover:text-primary transition-colors">
                       {lt(m.name)}
                     </h3>
-                    <p className="text-xs text-primary font-medium mt-0.5">{lt(m.title)}</p>
+                    <p className="text-xs text-primary dark:text-accent-soft font-medium mt-0.5">{lt(m.title)}</p>
                     <p className="text-xs text-text-light dark:text-gray-400 mt-1 line-clamp-2">{lt(m.department)}</p>
                   </div>
                 </Link>
@@ -314,7 +305,7 @@ export default function HomePage() {
             ))}
             {/* Students grid */}
             <FadeInOnScroll delay={160} className="h-full">
-              <div className="h-full bg-gray-50 dark:bg-dark-bg rounded-xl border border-gray-100 dark:border-gray-700 p-5">
+              <div className="h-full bg-paper dark:bg-dark-bg rounded-xl border border-gray-200 dark:border-gray-700 shadow-card p-5">
                 <p className="text-xs font-semibold text-text-light dark:text-gray-400 uppercase tracking-wide mb-3">
                   {lt({ zh: `研究生 · ${members.students.length} 人`, en: `Graduate Students · ${members.students.length}` })}
                 </p>
@@ -323,9 +314,9 @@ export default function HomePage() {
                     <Link
                       key={s.id}
                       href={`/people#${s.id}`}
-                      className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white dark:bg-dark-surface border border-gray-100 dark:border-gray-700 hover:border-primary/40 hover:text-primary transition-colors group"
+                      className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-paper-card dark:bg-dark-surface border border-gray-200 dark:border-gray-700 hover:border-accent/50 hover:text-primary transition-colors group"
                     >
-                      <span className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 flex items-center justify-center text-[10px] font-bold shrink-0">
+                      <span className="w-6 h-6 rounded-full bg-accent-soft/30 dark:bg-accent/20 text-primary dark:text-accent-soft flex items-center justify-center text-[10px] font-bold shrink-0">
                         {lt(s.name).slice(0, 1)}
                       </span>
                       <span className="text-xs text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors truncate">
@@ -335,7 +326,7 @@ export default function HomePage() {
                   ))}
                   <Link
                     href="/joinus"
-                    className="flex items-center justify-center px-2.5 py-1.5 rounded-lg border border-dashed border-emerald-300 dark:border-emerald-700 text-xs text-primary hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors"
+                    className="flex items-center justify-center px-2.5 py-1.5 rounded-lg border border-dashed border-accent/50 dark:border-accent/40 text-xs text-primary dark:text-accent-soft hover:bg-accent-soft/20 dark:hover:bg-accent/10 transition-colors"
                   >
                     {lt({ zh: "等你加入 +", en: "Join us +" })}
                   </Link>
@@ -350,12 +341,16 @@ export default function HomePage() {
       <FieldMoments />
 
       {/* ===== Partner Institutions ===== */}
-      <section className="py-12 bg-white dark:bg-dark-surface border-t border-gray-100 dark:border-gray-700">
+      <section className="py-12 bg-paper-card dark:bg-dark-surface border-t border-gray-200 dark:border-gray-700">
         <div className="container-main">
           <FadeInOnScroll>
-            <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300 text-center mb-8">
-              {lt({ zh: "合作单位", en: "Partner Institutions" })}
-            </h2>
+            <div className="text-center mb-8">
+              <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-accent mb-1.5">Collaboration</p>
+              <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300">
+                {lt({ zh: "合作单位", en: "Partner Institutions" })}
+              </h2>
+              <div className="soil-strata h-[4px] w-12 rounded mx-auto mt-2.5" />
+            </div>
           </FadeInOnScroll>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {PARTNERS.map((p, i) => (
@@ -364,7 +359,7 @@ export default function HomePage() {
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col items-center gap-3 p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-dark-bg hover:border-primary/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                  className="group flex flex-col items-center gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-paper dark:bg-dark-bg shadow-card hover:shadow-card-hover hover:border-accent/50 hover:-translate-y-1 transition-all duration-300"
                   title={lt(p.name)}
                 >
                   <span

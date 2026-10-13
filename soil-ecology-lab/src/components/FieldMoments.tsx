@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLocaleText } from "@/lib/i18n-context";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import SectionHeader from "@/components/SectionHeader";
 import { ALBUMS } from "@/data/gallery";
 
 /** 首页照片墙：每个相册取前 2 张代表图，点击跳转 /gallery 对应相册 */
@@ -17,19 +18,12 @@ export default function FieldMoments() {
   return (
     <section className="py-14 bg-bg-light dark:bg-dark-bg">
       <div className="container-main">
-        <FadeInOnScroll>
-          <div className="flex items-end justify-between mb-8">
-            <div>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100">
-                {lt({ zh: "活动掠影", en: "Moments" })}
-              </h2>
-              <div className="h-1 w-12 bg-primary rounded mt-2" />
-            </div>
-            <Link href="/gallery" className="text-sm text-primary hover:underline font-medium shrink-0">
-              {lt({ zh: "照片画廊 →", en: "Photo Gallery →" })}
-            </Link>
-          </div>
-        </FadeInOnScroll>
+        <SectionHeader
+          eyebrow="Field"
+          title={{ zh: "活动掠影", en: "Moments" }}
+          moreHref="/gallery"
+          moreLabel={{ zh: "照片画廊", en: "Photo Gallery" }}
+        />
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
           {picks.map(({ photo, album }, i) => (
             <FadeInOnScroll key={photo.src} delay={i * 60} className="h-full">

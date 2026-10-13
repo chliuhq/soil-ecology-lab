@@ -30,7 +30,8 @@ export default function AnnouncementBar() {
   if (!visible) return null;
 
   return (
-    <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white text-sm py-2 px-4 relative z-50">
+    <div className="relative bg-gradient-to-r from-primary-dark to-primary text-gray-50 text-sm py-2 px-4 z-50">
+      <div className="absolute inset-x-0 bottom-0 soil-strata h-[3px]" aria-hidden="true" />
       <div className="container-main flex items-center justify-center gap-2">
         <span className="animate-pulse">🎓</span>
         <span>

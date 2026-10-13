@@ -4,19 +4,19 @@
 
 /* ===== CSS Variables ===== */
 :root {
-  --bg-primary: #fafaf9;
-  --bg-surface: #ffffff;
-  --bg-light: #f8f9fa;
-  --text-primary: #333333;
-  --text-secondary: #666666;
+  --bg-primary: #f7f4ec;
+  --bg-surface: #fffdf7;
+  --bg-light: #f2ede1;
+  --text-primary: #302c24;
+  --text-secondary: #6d6455;
 }
 
 .dark {
-  --bg-primary: #0f172a;
-  --bg-surface: #1e293b;
-  --bg-light: #1e293b;
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
+  --bg-primary: #141812;
+  --bg-surface: #1e241b;
+  --bg-light: #1e241b;
+  --text-primary: #e8e2d3;
+  --text-secondary: #a2987f;
 }
 
 /* ===== 全局基础样式 ===== */
@@ -25,25 +25,52 @@ body {
   @apply text-text-main font-sans text-base md:text-lg leading-relaxed;
   @apply dark:text-gray-200;
   background-color: var(--bg-primary);
+  letter-spacing: 0.01em;
 }
+
+/* 极淡纸张噪声，全站质感但不抢注意力 */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.035'/></svg>");
+}
+main { position: relative; }
 
 /* ===== 学术风格链接 ===== */
 a { @apply transition-colors duration-200; }
 
 /* ===== 导航栏样式 ===== */
 .nav-link {
-  @apply text-base font-medium text-gray-600 hover:text-primary transition-colors px-3 py-2 rounded-md;
-  @apply dark:text-gray-300 dark:hover:text-accent;
+  @apply text-[15px] font-medium text-gray-600 hover:text-primary transition-colors px-3 py-2 rounded-md relative;
+  @apply dark:text-gray-300 dark:hover:text-accent-soft;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: width 0.25s ease, left 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  left: 25%;
+  width: 50%;
 }
 .nav-link.active {
-  @apply text-primary bg-green-50;
-  @apply dark:bg-green-900/30;
+  @apply text-primary dark:text-accent-soft;
 }
 
 /* ===== 卡片悬停效果 ===== */
 .card-hover {
-  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
-  @apply dark:hover:shadow-black/30;
+  @apply transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
 }
 
 /* ===== 论文条目 ===== */
@@ -71,21 +98,39 @@ a { @apply transition-colors duration-200; }
   @apply inline-block text-sm px-2.5 py-1 rounded-full font-medium;
 }
 .tag-primary {
-  @apply bg-green-100 text-green-800;
-  @apply dark:bg-green-900/40 dark:text-green-300;
+  @apply bg-amber-100/80 text-amber-800 border border-amber-200/70;
+  @apply dark:bg-amber-900/30 dark:text-amber-300 dark:border-amber-800/40;
 }
 .tag-accent {
-  @apply bg-amber-100 text-amber-800;
-  @apply dark:bg-amber-900/40 dark:text-amber-300;
+  @apply bg-emerald-100/80 text-emerald-800 border border-emerald-200/70;
+  @apply dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-800/40;
+}
+
+/* ===== 土壤层理横条（Section 分隔质感） ===== */
+/* 不设 height/width —— 由使用方的 Tailwind 工具类控制尺寸 */
+.soil-strata {
+  display: block;
+  background-image: repeating-linear-gradient(
+    135deg,
+    #c98a3d 0 6px,
+    #d9a860 6px 12px,
+    #b3552e 12px 18px,
+    #9b6a2f 18px 24px
+  );
+  opacity: 0.5;
+}
+.dark .soil-strata {
+  opacity: 0.3;
 }
 
 /* ===== Section 标题 ===== */
 .section-title {
-  @apply text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-2;
+  @apply text-[28px] md:text-4xl font-serif font-bold text-gray-900 mb-2;
   @apply dark:text-gray-100;
+  letter-spacing: 0.02em;
 }
 .section-subtitle {
-  @apply text-text-light text-lg md:text-xl mb-8;
+  @apply text-text-light text-base md:text-lg mb-8;
   @apply dark:text-gray-400;
 }
 
@@ -114,6 +159,19 @@ a { @apply transition-colors duration-200; }
   @apply dark:text-gray-200;
 }
 
+/* ===== 网格细线背景（Hero / 分区） ===== */
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(48, 44, 36, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(48, 44, 36, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.dark .grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(232, 226, 211, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(232, 226, 211, 0.045) 1px, transparent 1px);
+}
+
 /* ===== 响应式容器 ===== */
 .container-main {
   @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -121,7 +179,7 @@ a { @apply transition-colors duration-200; }
 
 /* ===== 无障碍焦点样式 ===== */
 :focus-visible {
-  @apply outline-2 outline-offset-2 outline-emerald-500;
+  @apply outline-2 outline-offset-2 outline-primary;
 }
 
 /* ===== 淡入动画 ===== */
@@ -131,4 +189,26 @@ a { @apply transition-colors duration-200; }
 }
 .animate-fade-in {
   animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* ===== 霓虹按钮（Hero 主 CTA） ===== */
+@keyframes sheen {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
+}
+.btn-sheen {
+  @apply relative overflow-hidden;
+}
+.btn-sheen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: translateX(-150%) skewX(-20deg);
+}
+.btn-sheen:hover::before {
+  animation: sheen 0.9s ease;
 }

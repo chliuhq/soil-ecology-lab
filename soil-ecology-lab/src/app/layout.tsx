@@ -1,7 +1,22 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Fraunces, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./client-layout";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
@@ -114,7 +129,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
       </head>
-      <body className="min-h-screen flex flex-col bg-[#fafaf9] dark:bg-dark-bg antialiased text-gray-900 dark:text-gray-200 transition-colors duration-300">
+      <body className={`${fraunces.variable} ${sourceSans.variable} min-h-screen flex flex-col bg-paper dark:bg-dark-bg antialiased text-gray-900 dark:text-gray-200 transition-colors duration-300`}>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
