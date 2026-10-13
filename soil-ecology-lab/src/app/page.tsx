@@ -31,7 +31,6 @@ const PARTNERS = [
   { abbr: "NWAFU", name: { zh: "西北农林科技大学", en: "Northwest A&F University" }, url: "https://www.nwsuaf.edu.cn/", color: "from-blue-600 to-cyan-600" },
   { abbr: "SDAU", name: { zh: "山东农业大学", en: "Shandong Agricultural University" }, url: "https://www.sdau.edu.cn/", color: "from-rose-600 to-pink-600" },
   { abbr: "CAF-RCF", name: { zh: "中国林科院热带林业研究中心", en: "Research Center of Tropical Forestry, CAF" }, url: "https://www.caf.ac.cn/", color: "from-emerald-600 to-teal-600" },
-  { abbr: "HUNAU", name: { zh: "湖南农业大学", en: "Hunan Agricultural University" }, url: "https://www.hunau.edu.cn/", color: "from-violet-600 to-purple-600" },
 ];
 
 const AREA_THEME: Record<string, string> = {
@@ -358,7 +357,7 @@ export default function HomePage() {
               {lt({ zh: "合作单位", en: "Partner Institutions" })}
             </h2>
           </FadeInOnScroll>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {PARTNERS.map((p, i) => (
               <FadeInOnScroll key={p.abbr} delay={i * 60}>
                 <a

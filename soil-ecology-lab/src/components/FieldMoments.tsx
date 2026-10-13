@@ -21,7 +21,7 @@ export default function FieldMoments() {
           <div className="flex items-end justify-between mb-8">
             <div>
               <h2 className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100">
-                {lt({ zh: "田野瞬间", en: "Field Moments" })}
+                {lt({ zh: "活动掠影", en: "Moments" })}
               </h2>
               <div className="h-1 w-12 bg-primary rounded mt-2" />
             </div>
