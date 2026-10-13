@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useI18n, useLocaleText } from "@/lib/i18n-context";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import FieldMoments from "@/components/FieldMoments";
 import publications from "@/data/publications.json";
 import research from "@/data/research.json";
 import news from "@/data/news.json";
@@ -345,6 +346,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ===== Field Moments (photo wall) ===== */}
+      <FieldMoments />
 
       {/* ===== Partner Institutions ===== */}
       <section className="py-12 bg-white dark:bg-dark-surface border-t border-gray-100 dark:border-gray-700">
